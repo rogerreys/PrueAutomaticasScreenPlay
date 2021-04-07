@@ -1,8 +1,10 @@
 package com.cobiscorp.cobis.tllrs.impl.steps;
 
 import com.cobiscorp.cobis.serenity.actions.FormActions;
+import com.cobiscorp.cobis.serenity.actions.GridActions;
 import com.cobiscorp.cobis.tllrs.test.AdminAsientoContableMayorizado;
-
+import com.cobiscorp.cobis.tllrs.test.AdminClientes;
+import com.cobiscorp.cobis.tllrs.test.BusquedaClientes;
 
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Entonces;
@@ -19,6 +21,17 @@ public class AsientoContableMayorizadoStepDefinitions {
 		FormActions.clickOn(AdminAsientoContableMayorizado.Cliente.areaOrigen);
 		FormActions.clickOn(AdminAsientoContableMayorizado.Cliente.areaOrigenGrid);
 		
+		FormActions.clickOn(AdminAsientoContableMayorizado.FiltroNuevoAsiento.Buttons._1);
+		FormActions.clickOn(AdminAsientoContableMayorizado.FiltroNuevoAsiento.Buttons._2);
+		GridActions.selectRecord(AdminAsientoContableMayorizado.gridCliente , 3);
+		FormActions.clickOn(AdminAsientoContableMayorizado.FiltroNuevoAsiento.Buttons._3);
+		GridActions.selectRecord(AdminAsientoContableMayorizado.gridCliente2 , 2);
+		FormActions.clickOn(AdminAsientoContableMayorizado.FiltroNuevoAsiento.Buttons._4);
+		GridActions.selectRecord(AdminAsientoContableMayorizado.gridCliente3 , 1);
+		FormActions.enterText(AdminAsientoContableMayorizado.FiltroNuevoAsiento.descripcion, "PRUEBA");
+		FormActions.scrollTotheEndOfThePage();
+		FormActions.clickOn(AdminAsientoContableMayorizado.FiltroNuevoAsiento.valormn);	
+		FormActions.enterText(AdminAsientoContableMayorizado.FiltroNuevoAsiento.valormn, "1230");	
 	}
 	
 	@Cuando("selecciona Checkbox Mayorizado")
