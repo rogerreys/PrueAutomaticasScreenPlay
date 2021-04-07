@@ -14,7 +14,13 @@ Antecedentes:
 	Escenario: 
   Dado que navega desde "Contabilidad>>Transacciones" hacia "Comprobantes Contables"
   Cuando el ingresa y selecciona los valores
+  Y selecciona Checkbox Mayorizado
   Y realiza el ingreso en la grilla, registro de Cuenta Debito por un valor x
   Y realiza el ingreso en la grilla, registro de Cuenta Credito por un valor x
   Y se hace click en el boton guardar
-  Entonces se emite mensaje de "Operacion realizada con exito"
+  Y se emite mensaje de "Operacion realizada con exito"
+  Y en la  sección Comprobante contables” se muestran los campos como no editables 
+  Entonces se carga la Cabecera de Comprobante Contable  
+
+  
+  

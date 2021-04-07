@@ -6,6 +6,10 @@ import net.serenitybdd.screenplay.targets.Target;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import com.cobiscorp.cobis.utils.controls.IControl;
 import com.cobiscorp.cobis.utils.events.IClickable;
 import com.cobiscorp.cobis.utils.events.IDigitable;
@@ -26,10 +30,13 @@ public class BaseActions extends BaseActionsTasks{
 	 * @param control Elemento a ser clickeado
 	 */
 	public static void clickOn(IClickable control) {
+		//WebElement entityName = new WebDriverWait(fff, 20).until(ExpectedConditions.elementToBeClickable(By.xpath(control.getId())));
 		waitUntilCharge();
 		theActorInTheSpotlight().attemptsTo(BaseActionsTasks.ClickOn.element(control.getTarget()));
 		waitUntilCharge();
 	}
+	
+	
 	
 	/**
 	 * Hace click derecho en un elemento IClickable
@@ -78,6 +85,15 @@ public class BaseActions extends BaseActionsTasks{
 	public static void enterText(IDigitable control, String text) {
 		waitUntilCharge();
 		theActorInTheSpotlight().attemptsTo(BaseActionsTasks.EnterTheText.text(control.getTarget(), control.getId(), text ));
+	}
+	/**
+	 * Ingresa una fecha
+	 * @param control Elemento en el cual se va a escribir
+	 * @param text fecha a escribir
+	 */
+	public static void EnterDate(IDigitable control, String texto) {
+		waitUntilCharge();
+		theActorInTheSpotlight().attemptsTo(BaseActionsTasks.EnterDate.text(texto, control.getTarget()));
 	}
 	
 	/**

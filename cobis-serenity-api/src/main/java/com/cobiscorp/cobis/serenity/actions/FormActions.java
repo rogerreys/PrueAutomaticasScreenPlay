@@ -138,6 +138,12 @@ public class FormActions extends BaseActions{
 		ContainerActions.enterText(control, day + "/" + month + "/" + year);
 	}
 	
+	public static void setDateById2(IDigitable control, String day, String month, String year) {
+		ContainerActions.EnterDate(control, day +month+ year);
+	}
+	
+	
+	
 	/**
 	 * Ingreso de fecha y hora por texto, formato DD/MM/YYYY HH:MM.
 	 *
