@@ -8,6 +8,7 @@ import com.cobiscorp.cobis.tllrs.test.BusquedaClientes;
 
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Entonces;
+import net.serenitybdd.core.annotations.findby.By;
 
 public class AsientoContableMayorizadoStepDefinitions {
 	
@@ -21,6 +22,7 @@ public class AsientoContableMayorizadoStepDefinitions {
 		FormActions.clickOn(AdminAsientoContableMayorizado.Cliente.areaOrigen);
 		FormActions.clickOn(AdminAsientoContableMayorizado.Cliente.areaOrigenGrid);
 		
+		
 	}
 	
 	@Cuando("selecciona Checkbox Mayorizado")
@@ -31,6 +33,7 @@ public class AsientoContableMayorizadoStepDefinitions {
 	}
 	@Cuando("realiza el ingreso en la grilla, registro de Cuenta Debito por un valor x")
 	public void realiza_el_ingreso_en_la_grilla_registro_de_Cuenta_Debito_por_un_valor_x() {
+		FormActions.scrollTotheEndOfThePage();
 		FormActions.clickOn(AdminAsientoContableMayorizado.FiltroNuevoAsiento.Buttons._1);
 		FormActions.clickOn(AdminAsientoContableMayorizado.FiltroNuevoAsiento.Buttons._2);
 		GridActions.selectRecord(AdminAsientoContableMayorizado.gridCliente , 3);
@@ -39,9 +42,9 @@ public class AsientoContableMayorizadoStepDefinitions {
 		FormActions.clickOn(AdminAsientoContableMayorizado.FiltroNuevoAsiento.Buttons._4);
 		GridActions.selectRecord(AdminAsientoContableMayorizado.gridCliente3 , 1);
 		FormActions.enterText(AdminAsientoContableMayorizado.FiltroNuevoAsiento.descripcion, "PRUEBA");
-		FormActions.scrollTotheEndOfThePage();
-		FormActions.clickOn(AdminAsientoContableMayorizado.FiltroNuevoAsiento.valormn);	
-		FormActions.enterText(AdminAsientoContableMayorizado.FiltroNuevoAsiento.valormn, "1230");	
+		GridActions.scrollToRight("QV_2194_82959");
+		GridActions.scrollToRight("QV_2194_82959");
+		FormActions.enterText(AdminAsientoContableMayorizado.FiltroNuevoAsiento.valor, "1,230.00");	
 	}
 
 	@Cuando("realiza el ingreso en la grilla, registro de Cuenta Credito por un valor x")

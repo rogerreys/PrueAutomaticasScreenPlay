@@ -279,7 +279,7 @@ public class AdminAsientoContableMayorizado {
 		private Target target = Target.the("FiltroCliente").located(By.id(id));
 
 		public static final Descripcion descripcion = Singleton.getInstance(Descripcion.class);
-		public static final Valormn valormn = Singleton.getInstance(Valormn.class);
+		public static final Valor valor = Singleton.getInstance(Valor.class);
 
 		public static class Buttons {
 			public static final botonNuevoAsientoContable _1 = Singleton
@@ -376,10 +376,10 @@ public class AdminAsientoContableMayorizado {
 			}
 		}
 
-		public static class Valormn implements IInputValue {
+		public static class Valor implements IInputValue {
 
-			private String id = "/html/body/div[1]/div[2]/div[2]/div/div[2]/div/div/div/div/div[3]/table/tbody/tr/td[9]/span[1]/span/input[1]";
-			private Target target = Target.the("Apellido").located(By.xpath(id));
+			private String id = "/html/body/div[1]/div[2]/div[2]/div/div[2]/div/div/div/div/div[3]/table/tbody/tr/td[9]/span/span/input[1]";
+			private Target target = Target.the("Valor").located(By.xpath(id));
 
 			@Override
 			public Target getTarget() {
