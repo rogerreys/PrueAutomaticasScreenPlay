@@ -10,8 +10,18 @@ import com.cobiscorp.cobis.tllrs.test.AdminClientes.Cliente.Genero;
 import com.cobiscorp.cobis.tllrs.test.AdminClientes.Cliente.Hobbies;
 import com.cobiscorp.cobis.tllrs.test.AdminClientes.Cliente.PaisNac;
 import com.cobiscorp.cobis.tllrs.test.AdminClientes.Cliente.ProvinciaNac;
+import com.cobiscorp.cobis.tllrs.test.BusquedaClientes.FiltroCliente;
+import com.cobiscorp.cobis.tllrs.test.BusquedaClientes.Cliente.FechaIngreso;
+import com.cobiscorp.cobis.tllrs.test.BusquedaClientes.Cliente.PrimerApellido;
+import com.cobiscorp.cobis.tllrs.test.BusquedaClientes.Cliente.PrimerNombre;
+import com.cobiscorp.cobis.tllrs.test.BusquedaClientes.FiltroCliente.Apellido;
+import com.cobiscorp.cobis.tllrs.test.BusquedaClientes.FiltroCliente.Identificacion;
+import com.cobiscorp.cobis.tllrs.test.BusquedaClientes.FiltroCliente.Buttons.VA_VAIMAGEBUTTONNN_843565;
 import com.cobiscorp.cobis.utils.base.Singleton;
+import com.cobiscorp.cobis.utils.controls.IButton;
 import com.cobiscorp.cobis.utils.controls.IComboBox;
+import com.cobiscorp.cobis.utils.controls.IControl;
+import com.cobiscorp.cobis.utils.controls.IGrid;
 import com.cobiscorp.cobis.utils.controls.IInputValue;
 import com.cobiscorp.cobis.utils.controls.ILayout;
 import com.cobiscorp.cobis.utils.controls.IMultiSelect;
@@ -159,4 +169,405 @@ public class AdminAsientoContableMayorizado {
 
 	}
 
+	public static final FiltroNuevoAsiento filtroCliente = Singleton.getInstance(FiltroNuevoAsiento.class);
+
+	public static class FiltroNuevoAsiento implements IControl {
+
+		private String id = "G_BUSQUEDENT_111565";
+		private Target target = Target.the("FiltroCliente").located(By.id(id));
+
+		public static final Descripcion descripcion = Singleton.getInstance(Descripcion.class);
+		public static final Valormn valormn = Singleton.getInstance(Valormn.class);
+
+		public static class Buttons {
+			public static final botonNuevoAsientoContable _1 = Singleton
+					.getInstance(botonNuevoAsientoContable.class);
+			
+			public static final botonTresLineas _2 = Singleton
+					.getInstance(botonTresLineas.class);
+			
+			public static final botonTresLineas2 _3 = Singleton
+					.getInstance(botonTresLineas2.class);
+			
+			public static final botonTresLineas3 _4 = Singleton
+					.getInstance(botonTresLineas3.class);
+
+			
+			public static class botonNuevoAsientoContable implements IButton {
+
+				private String id = "/html/body/div[1]/div[2]/div[2]/div/div[2]/div/div/div/div/div[1]/button";
+				private Target target = Target.the("botonNuevoAsientoContable").located(By.xpath(id));
+
+				@Override
+				public Target getTarget() {
+					return target;
+				}
+
+				@Override
+				public String getId() {
+					return id;
+				}
+			}
+			
+			public static class botonTresLineas implements IButton {
+
+				private String id = "/html/body/div[1]/div[2]/div[2]/div/div[2]/div/div/div/div/div[3]/table/tbody/tr/td[2]/div/div/button";
+				private Target target = Target.the("botonTresLineas").located(By.xpath(id));
+
+				@Override
+				public Target getTarget() {
+					return target;
+				}
+
+				@Override
+				public String getId() {
+					return id;
+				}
+			}
+			
+			public static class botonTresLineas2 implements IButton {
+
+				private String id = "/html/body/div[1]/div[2]/div[2]/div/div[2]/div/div/div/div/div[3]/table/tbody/tr/td[5]/div/div/button";
+				private Target target = Target.the("botonTresLineas2").located(By.xpath(id));
+
+				@Override
+				public Target getTarget() {
+					return target;
+				}
+
+				@Override
+				public String getId() {
+					return id;
+				}
+			}
+			
+			public static class botonTresLineas3 implements IButton {
+
+				private String id = "/html/body/div[1]/div[2]/div[2]/div/div[2]/div/div/div/div/div[3]/table/tbody/tr/td[7]/div/div/button";
+				private Target target = Target.the("botonTresLineas3").located(By.xpath(id));
+
+				@Override
+				public Target getTarget() {
+					return target;
+				}
+
+				@Override
+				public String getId() {
+					return id;
+				}
+			}
+		}
+		
+		public static class Descripcion implements IInputValue {
+
+			private String id = "/html/body/div[1]/div[2]/div[2]/div/div[2]/div/div/div/div/div[3]/table/tbody/tr/td[8]/input";
+			private Target target = Target.the("Identificacion").located(By.xpath(id));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return id;
+			}
+		}
+
+		public static class Valormn implements IInputValue {
+
+			private String id = "/html/body/div[1]/div[2]/div[2]/div/div[2]/div/div/div/div/div[3]/table/tbody/tr/td[9]/span[1]/span/input[1]";
+			private Target target = Target.the("Apellido").located(By.xpath(id));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return id;
+			}
+		}
+
+		@Override
+		public Target getTarget() {
+			return target;
+		}
+
+		@Override
+		public String getId() {
+			return id;
+		}
+
+	}
+	
+	public static final Cliente2 gridCliente = Singleton.getInstance(Cliente2.class);
+
+	public static class Cliente2 implements IGrid {
+
+		private String id = "QV_2606_54353";
+		private Target target = Target.the("GridQV_1473_12174").located(By.xpath(id));
+
+		public static final Identificacion identificacion = Singleton.getInstance(Identificacion.class);
+		public static final PrimerNombre primerNombre = Singleton.getInstance(PrimerNombre.class);
+		public static final PrimerApellido primerApellido = Singleton.getInstance(PrimerApellido.class);
+		public static final FechaIngreso fechaIngreso = Singleton.getInstance(FechaIngreso.class);
+
+		public static class Identificacion implements IInputValue {
+
+			private String id = "VA_TEXTINPUTBOXEEJ_319565";
+			private Target target = Target.the("Identificacion").located(By.id(id));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return id;
+			}
+		}
+
+		public static class PrimerNombre implements IInputValue {
+
+			private String id = "VA_TEXTINPUTBOXTJD_690565";
+			private Target target = Target.the("PrimerNombre").located(By.id(id));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return id;
+			}
+		}
+
+		public static class PrimerApellido implements IInputValue {
+
+			private String id = "VA_TEXTINPUTBOXUDF_325565";
+			private Target target = Target.the("PrimerApellido").located(By.id(id));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return id;
+			}
+
+		}
+
+		public static class FechaIngreso implements IInputValue {
+
+			private String id = "VA_DATEFIELDFJLPTS_246565";
+			private Target target = Target.the("FechaIngreso").located(By.id(id));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return id;
+			}
+		}
+
+		@Override
+		public Target getTarget() {
+			return target;
+		}
+
+		@Override
+		public String getId() {
+			return id;
+		}
+	}
+	
+	public static final Cliente3 gridCliente2 = Singleton.getInstance(Cliente3.class);
+
+	public static class Cliente3 implements IGrid {
+
+		private String id = "QV_4420_87124";
+		private Target target = Target.the("GridQV_1473_12174").located(By.xpath(id));
+
+		public static final Identificacion identificacion = Singleton.getInstance(Identificacion.class);
+		public static final PrimerNombre primerNombre = Singleton.getInstance(PrimerNombre.class);
+		public static final PrimerApellido primerApellido = Singleton.getInstance(PrimerApellido.class);
+		public static final FechaIngreso fechaIngreso = Singleton.getInstance(FechaIngreso.class);
+
+		public static class Identificacion implements IInputValue {
+
+			private String id = "VA_TEXTINPUTBOXEEJ_319565";
+			private Target target = Target.the("Identificacion").located(By.id(id));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return id;
+			}
+		}
+
+		public static class PrimerNombre implements IInputValue {
+
+			private String id = "VA_TEXTINPUTBOXTJD_690565";
+			private Target target = Target.the("PrimerNombre").located(By.id(id));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return id;
+			}
+		}
+
+		public static class PrimerApellido implements IInputValue {
+
+			private String id = "VA_TEXTINPUTBOXUDF_325565";
+			private Target target = Target.the("PrimerApellido").located(By.id(id));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return id;
+			}
+
+		}
+
+		public static class FechaIngreso implements IInputValue {
+
+			private String id = "VA_DATEFIELDFJLPTS_246565";
+			private Target target = Target.the("FechaIngreso").located(By.id(id));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return id;
+			}
+		}
+
+		@Override
+		public Target getTarget() {
+			return target;
+		}
+
+		@Override
+		public String getId() {
+			return id;
+		}
+	}
+
+	public static final Cliente4 gridCliente3 = Singleton.getInstance(Cliente4.class);
+
+	public static class Cliente4 implements IGrid {
+
+		private String id = "QV_4420_87124";
+		private Target target = Target.the("GridQV_1473_12174").located(By.xpath(id));
+
+		public static final Identificacion identificacion = Singleton.getInstance(Identificacion.class);
+		public static final PrimerNombre primerNombre = Singleton.getInstance(PrimerNombre.class);
+		public static final PrimerApellido primerApellido = Singleton.getInstance(PrimerApellido.class);
+		public static final FechaIngreso fechaIngreso = Singleton.getInstance(FechaIngreso.class);
+
+		public static class Identificacion implements IInputValue {
+
+			private String id = "VA_TEXTINPUTBOXEEJ_319565";
+			private Target target = Target.the("Identificacion").located(By.id(id));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return id;
+			}
+		}
+
+		public static class PrimerNombre implements IInputValue {
+
+			private String id = "VA_TEXTINPUTBOXTJD_690565";
+			private Target target = Target.the("PrimerNombre").located(By.id(id));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return id;
+			}
+		}
+
+		public static class PrimerApellido implements IInputValue {
+
+			private String id = "VA_TEXTINPUTBOXUDF_325565";
+			private Target target = Target.the("PrimerApellido").located(By.id(id));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return id;
+			}
+
+		}
+
+		public static class FechaIngreso implements IInputValue {
+
+			private String id = "VA_DATEFIELDFJLPTS_246565";
+			private Target target = Target.the("FechaIngreso").located(By.id(id));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return id;
+			}
+		}
+
+		@Override
+		public Target getTarget() {
+			return target;
+		}
+
+		@Override
+		public String getId() {
+			return id;
+		}
+	}
+
+	
+
+	
+	
 }
