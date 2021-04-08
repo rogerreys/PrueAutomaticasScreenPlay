@@ -32,6 +32,8 @@ public class AperturaDepositoPlazoStepDefinitions {
 	public void realiza_la_busqueda_de_un_cliente(String string) {
 		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_IDENTIFICACION, string);
 		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarCliente);
+		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridPrimerCliente);
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonBuscarCliente);	
 	}
 
 	
