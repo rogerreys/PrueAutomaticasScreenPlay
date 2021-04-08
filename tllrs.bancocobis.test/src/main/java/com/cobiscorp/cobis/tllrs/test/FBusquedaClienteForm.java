@@ -88,6 +88,8 @@ public class FBusquedaClienteForm {
 
 	public static class GridListaP{
 		public static final GridPrimerCliente gridPrimerCliente = Singleton.getInstance(GridPrimerCliente.class);
+		public static final GridSegundoCliente gridSegundoCliente = Singleton.getInstance(GridSegundoCliente.class);
+		
 		public static class GridPrimerCliente implements IButton{
 	
 			private String rutaXPath = "//span[contains(text(),'1366')]";
@@ -104,5 +106,23 @@ public class FBusquedaClienteForm {
 			}
 	
 		}
+		
+		public static class GridSegundoCliente implements IButton{
+			
+			private String rutaXPath = "//span[contains(text(),'71')]";
+			private Target target = Target.the("Primer Cliente").located(By.xpath(rutaXPath));
+	
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+	
+			@Override
+			public String getId() {
+				return rutaXPath;
+			}
+	
+		}
+		
 	}
 }

@@ -6,6 +6,7 @@ import org.openqa.selenium.Keys;
 
 import com.cobiscorp.cobis.serenity.actions.FormActions;
 import com.cobiscorp.cobis.tllrs.test.AdminAperturaPlazoFijo;
+import com.cobiscorp.cobis.tllrs.test.AdminClientes;
 import com.cobiscorp.cobis.tllrs.test.FBusquedaClienteForm;
 import com.cobiscorp.cobis.tllrs.test.TarjetaCredito;
 

@@ -6,7 +6,9 @@ import com.cobiscorp.cobis.tllrs.test.BusquedaClientes.FiltroCliente.Apellido;
 import com.cobiscorp.cobis.tllrs.test.BusquedaClientes.FiltroCliente.Identificacion;
 import com.cobiscorp.cobis.utils.base.Singleton;
 import com.cobiscorp.cobis.utils.controls.IButton;
+import com.cobiscorp.cobis.utils.controls.IComboBox;
 import com.cobiscorp.cobis.utils.controls.IControl;
+import com.cobiscorp.cobis.utils.controls.IDropDownList;
 import com.cobiscorp.cobis.utils.controls.IInputValue;
 
 import net.serenitybdd.screenplay.targets.Target;
@@ -14,6 +16,8 @@ import net.serenitybdd.screenplay.targets.Target;
 public class AdminAperturaPlazoFijo {
 	
 	public static final BusquedaClientes busquedaCliuentes = Singleton.getInstance(BusquedaClientes.class);
+	
+	public static final TipoCuenta tipoCuenta = Singleton.getInstance(TipoCuenta.class);
 	
 	public static class BusquedaClientes implements IControl{
 		
@@ -166,5 +170,22 @@ public class AdminAperturaPlazoFijo {
 	             return xpath;
 	         }
 		}
+	}
+	
+	public static class TipoCuenta implements IDropDownList{
+		
+		private String id = "VA_9493EMREWQEQIQW_409581";
+		private Target target = Target.the("Tipo Cuenta").located(By.id(id));
+
+		@Override
+		public Target getTarget() {
+			return target;
+		}
+
+		@Override
+		public String getId() {
+			return id;
+		}
+		
 	}
 }
