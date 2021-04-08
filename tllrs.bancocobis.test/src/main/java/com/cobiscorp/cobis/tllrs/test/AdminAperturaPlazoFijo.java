@@ -74,6 +74,8 @@ public class AdminAperturaPlazoFijo {
 	public static class Buttons{
 		
 		public static final BotonNuevo nuevoCliente = Singleton.getInstance(BotonNuevo.class);
+		public static final BotonGridCliente botonGridCliente = Singleton.getInstance(BotonGridCliente.class);
+		public static final botonNuevoAsientoContable _1 = Singleton.getInstance(botonNuevoAsientoContable.class);
 		
 		public static class BotonNuevo implements IButton{
 			
@@ -89,7 +91,42 @@ public class AdminAperturaPlazoFijo {
 			public String getId() {
 				return rutaXPath;
 			}
+		}
+		
+		public static class BotonGridCliente implements IButton{
+			private String rutaXPath = "/html/body/div[1]/div[2]/div[2]/div/div[2]/div/div/table/tbody/tr/td[2]/div/div/button";
 			
+			private Target target = Target.the("BotonGridCliente").located(By.xpath(rutaXPath));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return rutaXPath;
+			}
+		}
+	
+		 public static class botonNuevoAsientoContable implements IButton {
+			 
+			 private String id = "/html/body/div[1]/div[2]/div[2]/div/div[2]/div/div/table/tbody/tr/td[2]/div/div/button";
+             private Target target = Target.the("botonNuevoAsientoContable").located(By.xpath(id));
+
+			
+
+             @Override
+             public Target getTarget() {
+                 return target;
+             }
+
+
+
+             @Override
+             public String getId() {
+                 return id;
+             }
 		}
 		
 	}

@@ -6,6 +6,7 @@ import org.openqa.selenium.Keys;
 
 import com.cobiscorp.cobis.serenity.actions.FormActions;
 import com.cobiscorp.cobis.tllrs.test.AdminAperturaPlazoFijo;
+import com.cobiscorp.cobis.tllrs.test.FBusquedaClienteForm;
 import com.cobiscorp.cobis.tllrs.test.TarjetaCredito;
 
 import io.cucumber.java.es.Cuando;
@@ -27,13 +28,14 @@ public class AperturaDepositoPlazoStepDefinitions {
 		//FormActions.clickOn(FVistaTitularesForm.ListaTitulares.BOTON_BUSCAR_CLIENTE);
 		//FormActions.clickOn(TarjetaCredito.Buttons.guardar_5rt);
 		//FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
-		System.out.println("******************************** Antes");
+		
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
-		System.out.println("******************************** Fin");
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonGridCliente);		
 	}
 
 	@Cuando("realiza la busqueda de un {string}")
 	public void realiza_la_busqueda_de_un_cliente(String string) {
+		//FormActions.EnterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_IDENTIFICACION, string);
 		// Solo Taller
 		//FormActions.clickOn(FVistaTitularesForm.GridListaTitulares.BOTON_NUEVO);
 		//FormActions.clickOn(FVistaTitularesForm.ListaTitulares.BOTON_BUSCAR_CLIENTE);
