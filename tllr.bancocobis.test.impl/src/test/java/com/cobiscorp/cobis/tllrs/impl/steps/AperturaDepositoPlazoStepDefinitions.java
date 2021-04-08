@@ -8,6 +8,8 @@ import com.cobiscorp.cobis.serenity.actions.FormActions;
 import com.cobiscorp.cobis.tllrs.test.AdminAperturaPlazoFijo;
 import com.cobiscorp.cobis.tllrs.test.AdminClientes;
 import com.cobiscorp.cobis.tllrs.test.FBusquedaClienteForm;
+import com.cobiscorp.cobis.tllrs.test.FVistaOperacionForm;
+import com.cobiscorp.cobis.tllrs.test.FormBienes;
 import com.cobiscorp.cobis.tllrs.test.TarjetaCredito;
 
 import io.cucumber.java.es.Cuando;
@@ -43,24 +45,15 @@ public class AperturaDepositoPlazoStepDefinitions {
 
 	@Cuando("realiza el registro de un nuevo DPF para un cliente")
 	public void realiza_el_registro_de_un_nuevo_DPF_para_un_cliente() {
-		/*
-		theActorInTheSpotlight().attemptsTo(DiligenciarFormulario.crearApertura());
-
-		FormActions.clickOn(FVistaOperacionForm.BOTON_ACEPTAR_MODAL);
-		FormActions.clickOn(FVistaOperacionForm.BOTON_SIGUIENTE_OPERACION);
-
-		// Completa los pasos faltantes
-		FormActions.clickOn(FVistaRecepcionForm.BOTON_NUEVO_RECEPFONDOS);
-		FormActions.clickOn(FRecepcionModalForm.ListaDetalleRecepcion.SELECT_FORMA_RECEPCION_CLIC);
-		FormActions.clickOn(FRecepcionModalForm.ListaDetalleRecepcion.SELECT_FORMA_RECEPCION);
-		FormActions.clickOn(FRecepcionModalForm.ListaDetalleRecepcion.MONTOCLIC_RECEPCION);
-
-		theActorInTheSpotlight().attemptsTo(WaitUntil.angularRequestsHaveFinished(),
-				Enter.theValue("30000").into(ListaDetalleRecepcion.MONTO_RECEPCION).thenHit(Keys.TAB));
-
-		FormActions.clickOn(FRecepcionModalForm.BOTON_ACEPTAR_MODAL_RECEPCION);
-		FormActions.clickOn(PaginaApertura.BOTON_GUARDAR);
-		*/
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.certificadoVIP, "CERTIFICADO VIP");
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.formaPago, "VENCIMIENTO");
+		//FormActions.selectByText(FVistaOperacionForm.Seleccion.fercuenciaPago, "SI");
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.categoria, "NOMINATIVO");
+		FormActions.enterText(FVistaOperacionForm.IngresarDatos.input_Monto, "12000");
+		FormActions.enterText(FVistaOperacionForm.IngresarDatos.input_Plazo, "35");
+		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSimular);
+		FormActions.clickOn(FVistaOperacionForm.Buttons.botonAceptarModal);
+		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSiguiente);
 	}
 
 	@Entonces("se debe mostrar la creacion de la Apertura al cliente previamente seleccionado")
