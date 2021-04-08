@@ -27,9 +27,8 @@ public class AperturaDepositoPlazoStepDefinitions {
 		//FormActions.clickOn(FVistaTitularesForm.ListaTitulares.BOTON_BUSCAR_CLIENTE);
 		//FormActions.clickOn(TarjetaCredito.Buttons.guardar_5rt);
 		//FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
-		System.out.println("******************************** Antes");
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
-		System.out.println("******************************** Fin");
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonBuscarCliente);
 	}
 
 	@Cuando("realiza la busqueda de un {string}")
