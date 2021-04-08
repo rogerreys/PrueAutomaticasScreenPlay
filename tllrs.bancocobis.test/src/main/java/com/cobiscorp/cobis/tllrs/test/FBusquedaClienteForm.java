@@ -13,6 +13,8 @@ public class FBusquedaClienteForm {
 
 	public static class FiltroBusquedaCliente {
 		public static final INPUT_IDENTIFICACION input_IDENTIFICACION = Singleton.getInstance(INPUT_IDENTIFICACION.class);
+		public static final INPUT_NOMBRE input_NOMBRE = Singleton.getInstance(INPUT_NOMBRE.class);
+		public static final INPUT_APELLIDO input_APELLIDO = Singleton.getInstance(INPUT_APELLIDO.class);
 		
 		public static class INPUT_IDENTIFICACION implements IInputValue {
 
@@ -28,6 +30,38 @@ public class FBusquedaClienteForm {
 			public String getId() {
 				return id;
 			}
+		}
+		
+		public static class INPUT_NOMBRE implements IInputValue{
+			
+			private String id = "VA_2WMXWFKWGXCJZWS_961587";
+			private Target target = Target.the("Nombre").located(By.id(id));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return id;
+			}			
+		}
+		
+		public static class INPUT_APELLIDO implements IInputValue{
+			
+			private String id = "VA_PRIMERAPELLIDDO_176587";
+			private Target target = Target.the("Apellido").located(By.id(id));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return id;
+			}			
 		}
 	}
 
