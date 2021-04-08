@@ -75,6 +75,7 @@ public class AdminAperturaPlazoFijo {
 		
 		public static final BotonNuevo nuevoCliente = Singleton.getInstance(BotonNuevo.class);
 		public static final BotonBuscarCliente botonBuscarCliente = Singleton.getInstance(BotonBuscarCliente.class);
+		public static final BotonSiguiente botonSiguiente = Singleton.getInstance(BotonSiguiente.class);
 		
 		public static class BotonNuevo implements IButton{
 			
@@ -108,6 +109,22 @@ public class AdminAperturaPlazoFijo {
 			}
 		}
 	
+		public static class BotonSiguiente implements IButton{
+			
+			private String rutaXPath = "//*[@id='CM_TPFPRTMQ_FFB']";
+			private Target target = Target.the("Botón Siguiente").located(By.xpath(rutaXPath));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return rutaXPath;
+			}
+		}		
+	
 		 public static class botonNuevoAsientoContable implements IButton {
 			 
 			 private String id = "/html/body/div[1]/div[2]/div[2]/div/div[2]/div/div/table/tbody/tr/td[2]/div/div/button";
@@ -130,4 +147,24 @@ public class AdminAperturaPlazoFijo {
 		
 	}
 
+	public static class ButtonsRow{
+		public static final ButtonsAcceptRow buttonsAcceptRow = Singleton.getInstance(ButtonsAcceptRow.class);
+		public static class ButtonsAcceptRow implements IButton {
+			private String xpath = "//tbody/tr[1]/td[5]/a[1]";
+			
+	        private Target target = Target.the("Botón Check Intgresar Cliente").located(By.xpath(xpath));
+		
+	         @Override
+	         public Target getTarget() {
+	             return target;
+	         }
+	
+	
+	
+	         @Override
+	         public String getId() {
+	             return xpath;
+	         }
+		}
+	}
 }
