@@ -11,7 +11,7 @@ Antecedentes:
   Dado que usuario:"admuser" realiza Login en COBIS con password:"Passw0rd2019*#" rol:"MENU POR PROCESOS" filial:"BANCO COBIS" oficina:"OFICINA MATRIZ" en la url:"http://www.demo1.cloud-cobiscorp.com/CWC/services/cobis/web/bank/views/commons/login.html"
 
   @featureAsientoContable
-	Escenario: 
+	Escenario: Realizar la creación de asiento contable  Mayorizado
   Dado que navega desde "Contabilidad>>Transacciones" hacia "Comprobantes Contables"
   Cuando el ingresa y selecciona los valores
   Y selecciona Checkbox Mayorizado

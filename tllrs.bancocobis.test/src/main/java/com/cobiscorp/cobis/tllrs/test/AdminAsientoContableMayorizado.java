@@ -19,7 +19,12 @@ import com.cobiscorp.cobis.tllrs.test.BusquedaClientes.Cliente.PrimerNombre;
 //import com.cobiscorp.cobis.tllrs.test.BusquedaClientes.Cliente.PrimerNombre;
 import com.cobiscorp.cobis.tllrs.test.BusquedaClientes.FiltroCliente.Apellido;
 //import com.cobiscorp.cobis.tllrs.test.BusquedaClientes.FiltroCliente.Identificacion;
-import com.cobiscorp.cobis.tllrs.test.BusquedaClientes.FiltroCliente.Buttons.VA_VAIMAGEBUTTONNN_843565;import com.cobiscorp.cobis.utils.base.Singleton;
+import com.cobiscorp.cobis.tllrs.test.BusquedaClientes.FiltroCliente.Buttons.VA_VAIMAGEBUTTONNN_843565;
+import com.cobiscorp.cobis.tllrs.test.FormBienes.Bien;
+import com.cobiscorp.cobis.tllrs.test.FormBienes.Bien.Avaluo;
+import com.cobiscorp.cobis.tllrs.test.FormBienes.Bien.Origen;
+import com.cobiscorp.cobis.tllrs.test.FormBienes.Bien.TipoBien;
+import com.cobiscorp.cobis.utils.base.Singleton;
 import com.cobiscorp.cobis.utils.controls.IButton;
 import com.cobiscorp.cobis.utils.controls.IComboBox;
 import com.cobiscorp.cobis.utils.controls.IControl;
@@ -47,6 +52,7 @@ public class AdminAsientoContableMayorizado {
 		public static final AreaOrigen areaOrigen = Singleton.getInstance(AreaOrigen.class);
 		public static final AreaOrigenGrid areaOrigenGrid = Singleton.getInstance(AreaOrigenGrid.class);
 		public static final Mayorizado mayorizado = Singleton.getInstance(Mayorizado.class);
+		public static final Check check = Singleton.getInstance(Check.class);
 		public static final FechaNacimiento fechaNacimiento = Singleton.getInstance(FechaNacimiento.class);
 		/*public static final PaisNac paisNac = Singleton.getInstance(PaisNac.class);
 		public static final ProvinciaNac provinciaNac = Singleton.getInstance(ProvinciaNac.class);
@@ -151,6 +157,22 @@ public class AdminAsientoContableMayorizado {
 		public static class Mayorizado implements IClickable {
 
 			private String xpath = "//input[@ng-class='vc.viewState.VA_6243FNMPMOCLYMJ_803628.style']";
+			private Target target = Target.the("Mayorizado").located(By.xpath(xpath));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return xpath;
+			}
+		}
+		
+		public static class Check implements IClickable {
+
+			private String xpath = "/html/body/div[1]/div[2]/div[2]/div/div[2]/div/div/div/div/div[3]/table/tbody/tr/td[14]/a[1]/span";
 			private Target target = Target.the("Mayorizado").located(By.xpath(xpath));
 
 			@Override
@@ -275,11 +297,13 @@ public class AdminAsientoContableMayorizado {
 
 	public static class FiltroNuevoAsiento implements IControl {
 
-		private String id = "G_FPLANILLLA_392628_VAL";
+		private String id = "QV_2194_82959";
 		private Target target = Target.the("FiltroCliente").located(By.id(id));
 
 		public static final Descripcion descripcion = Singleton.getInstance(Descripcion.class);
+		public static final Cuenta cuenta = Singleton.getInstance(Cuenta.class);
 		public static final Valor valor = Singleton.getInstance(Valor.class);
+		public static final Movimiento movimiento = Singleton.getInstance(Movimiento.class);
 
 		public static class Buttons {
 			public static final botonNuevoAsientoContable _1 = Singleton
@@ -293,6 +317,16 @@ public class AdminAsientoContableMayorizado {
 			
 			public static final botonTresLineas3 _4 = Singleton
 					.getInstance(botonTresLineas3.class);
+			
+			public static final botonCheck _5 = Singleton
+					.getInstance(botonCheck.class);
+			
+			public static final botonGuardar _6 = Singleton
+					.getInstance(botonGuardar.class);
+			
+			public static final botonRevisar _7 = Singleton
+					.getInstance(botonRevisar.class);
+			
 
 			
 			public static class botonNuevoAsientoContable implements IButton {
@@ -358,8 +392,88 @@ public class AdminAsientoContableMayorizado {
 					return id;
 				}
 			}
+			
+			public static class botonCheck implements IButton {
+
+				private String id = "//tbody/tr/td[14]/a[1]";
+				private Target target = Target.the("botonTresLineas3").located(By.xpath(id));
+
+				@Override
+				public Target getTarget() {
+					return target;
+				}
+
+				@Override
+				public String getId() {
+					return id;
+				}
+			}
+			
+			public static class botonRevisar implements IButton {
+
+				private String id = "//tbody/tr/td[14]/a[1]";
+				private Target target = Target.the("botonTresLineas3").located(By.xpath(id));
+
+				@Override
+				public Target getTarget() {
+					return target;
+				}
+
+				@Override
+				public String getId() {
+					return id;
+				}
+			}
+			
+			public static class botonGuardar implements IButton {
+
+				private String id = "CM_TCNMNGDF_N1G";
+				private Target target = Target.the("botonTresLineas3").located(By.id(id));
+
+				@Override
+				public Target getTarget() {
+					return target;
+				}
+
+				@Override
+				public String getId() {
+					return id;
+				}
+			}
+			
+			public static class combo implements IButton {
+
+				private String id = "VA_COMBOBOXPRWSJVI_901628";
+				private Target target = Target.the("botonTresLineas3").located(By.id(id));
+
+				@Override
+				public Target getTarget() {
+					return target;
+				}
+
+				@Override
+				public String getId() {
+					return id;
+				}
+			}
+		
 		}
 		
+		public static class Movimiento implements IComboBox {
+
+			private String id = "VA_COMBOBOXPRWSJVI_901628";
+			private Target target = Target.the("Origen").located(By.id(id));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return id;
+			}
+		}
 		public static class Descripcion implements IInputValue {
 
 			private String id = "/html/body/div[1]/div[2]/div[2]/div/div[2]/div/div/div/div/div[3]/table/tbody/tr/td[8]/input";
@@ -375,11 +489,28 @@ public class AdminAsientoContableMayorizado {
 				return id;
 			}
 		}
-
+		
+		
 		public static class Valor implements IInputValue {
 
 			private String id = "VA_TEXTINPUTBOXPWT_281628";
-			private Target target = Target.the("Valor").located(By.id(id));
+			private Target target = Target.the("Identificacion").located(By.id(id));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return id;
+			}
+		}
+
+		public static class Cuenta implements IInputValue {
+
+			private String id = "/html/body/div[1]/div[2]/div[2]/div/div[2]/div/div/div/div/div[3]/table/tbody/tr[1]/td[2]/div/input";
+			private Target target = Target.the("Valor").located(By.xpath(id));
 
 			@Override
 			public Target getTarget() {
@@ -667,6 +798,80 @@ public class AdminAsientoContableMayorizado {
 			return id;
 		}
 	}
+	
+	public static final Bien gridBien = Singleton.getInstance(Bien.class);
+
+	public static class Bien implements IGrid {
+
+			private String id = "QV_2194_82959";
+			private Target target = Target.the("GridQV_2850_68647").located(By.id(id));
+			
+			
+			public static final Origen origen = Singleton.getInstance(Origen.class);
+			public static final Avaluo avaluo = Singleton.getInstance(Avaluo.class);
+			public static final TipoBien tipoBien = Singleton.getInstance(TipoBien.class);
+
+			public static class Origen implements IComboBox {
+
+				private String id = "VA_COMBOBOXPRWSJVI_901628";
+				private Target target = Target.the("Origen").located(By.id(id));
+
+				@Override
+				public Target getTarget() {
+					return target;
+				}
+
+				@Override
+				public String getId() {
+					return id;
+				}
+			}
+
+			public static class Avaluo implements IInputValue {
+
+				private String id = "VA_TEXTINPUTBOXXYL_460723";
+				private Target target = Target.the("Avaluo").located(By.id(id));
+
+				@Override
+				public Target getTarget() {
+					return target;
+				}
+
+				@Override
+				public String getId() {
+					return id;
+				}
+			}
+
+			public static class TipoBien implements IComboBox {
+
+				private String id = "VA_COMBOBOXTWMQGCV_494723";
+				private Target target = Target.the("TipoBien").located(By.id(id));
+
+				@Override
+				public Target getTarget() {
+					return target;
+				}
+
+				@Override
+				public String getId() {
+					return id;
+				}
+
+			}
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return id;
+			}
+
+	}
+
 
 	
 

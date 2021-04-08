@@ -5,6 +5,7 @@ import com.cobiscorp.cobis.serenity.actions.GridActions;
 import com.cobiscorp.cobis.tllrs.test.AdminAsientoContableMayorizado;
 import com.cobiscorp.cobis.tllrs.test.AdminClientes;
 import com.cobiscorp.cobis.tllrs.test.BusquedaClientes;
+import com.cobiscorp.cobis.tllrs.test.FormBienes;
 
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Entonces;
@@ -14,7 +15,7 @@ public class AsientoContableMayorizadoStepDefinitions {
 	
 	@Cuando("el ingresa y selecciona los valores")
 	public void el_ingresa_y_selecciona_los_valores() {
-		FormActions.EnterDate(AdminAsientoContableMayorizado.Cliente.fechaNacimiento, "17092019");
+		FormActions.EnterDate(AdminAsientoContableMayorizado.Cliente.fechaNacimiento, "26122019");
 		FormActions.enterText(AdminAsientoContableMayorizado.Cliente.descripcion, "PRUEBA");
 		FormActions.clickOn(AdminAsientoContableMayorizado.Cliente.oficinaOrigen);
 		FormActions.clickOn(AdminAsientoContableMayorizado.Cliente.oficinaOrigen);
@@ -32,8 +33,7 @@ public class AsientoContableMayorizadoStepDefinitions {
 	public void realiza_el_ingreso_en_la_grilla_registro_de_Cuenta_Debito_por_un_valor_x() {
 		FormActions.scrollTotheEndOfThePage();
 		FormActions.clickOn(AdminAsientoContableMayorizado.FiltroNuevoAsiento.Buttons._1);
-		FormActions.clickOn(AdminAsientoContableMayorizado.FiltroNuevoAsiento.Buttons._2);
-		GridActions.selectRecord(AdminAsientoContableMayorizado.gridCliente , 3);
+		FormActions.enterTextAndTab(AdminAsientoContableMayorizado.FiltroNuevoAsiento.cuenta, "1311150");
 		FormActions.clickOn(AdminAsientoContableMayorizado.FiltroNuevoAsiento.Buttons._3);
 		GridActions.selectRecord(AdminAsientoContableMayorizado.gridCliente2 , 2);
 		FormActions.clickOn(AdminAsientoContableMayorizado.FiltroNuevoAsiento.Buttons._4);
@@ -41,16 +41,30 @@ public class AsientoContableMayorizadoStepDefinitions {
 		FormActions.enterText(AdminAsientoContableMayorizado.FiltroNuevoAsiento.descripcion, "PRUEBA");
 		GridActions.scrollToRight("QV_2194_82959");
 		GridActions.scrollToRight("QV_2194_82959");
-		FormActions.enterText(AdminAsientoContableMayorizado.FiltroNuevoAsiento.valor, "111");	
+		FormActions.enterText(AdminAsientoContableMayorizado.FiltroNuevoAsiento.valor, "1230");
+		FormActions.clickOn(AdminAsientoContableMayorizado.FiltroNuevoAsiento.Buttons._5);
+		
 	}
 
 	@Cuando("realiza el ingreso en la grilla, registro de Cuenta Credito por un valor x")
 	public void realiza_el_ingreso_en_la_grilla_registro_de_Cuenta_Credito_por_un_valor_x() {
-	   
+		FormActions.clickOn(AdminAsientoContableMayorizado.FiltroNuevoAsiento.Buttons._1);
+		FormActions.enterTextAndTab(AdminAsientoContableMayorizado.FiltroNuevoAsiento.cuenta, "1311150");
+		FormActions.selectByText(AdminAsientoContableMayorizado.Bien.origen, "CREDITO");
+		FormActions.clickOn(AdminAsientoContableMayorizado.FiltroNuevoAsiento.Buttons._3);
+		GridActions.selectRecord(AdminAsientoContableMayorizado.gridCliente2 , 2);
+		FormActions.clickOn(AdminAsientoContableMayorizado.FiltroNuevoAsiento.Buttons._4);
+		GridActions.selectRecord(AdminAsientoContableMayorizado.gridCliente3 , 1);
+		FormActions.enterText(AdminAsientoContableMayorizado.FiltroNuevoAsiento.descripcion, "PRUEBA");
+		GridActions.scrollToRight("QV_2194_82959");
+		GridActions.scrollToRight("QV_2194_82959");
+		FormActions.enterText(AdminAsientoContableMayorizado.FiltroNuevoAsiento.valor, "1230");
+		FormActions.clickOn(AdminAsientoContableMayorizado.FiltroNuevoAsiento.Buttons._5);
 	}
 
 	@Cuando("se hace click en el boton guardar")
 	public void se_hace_click_en_el_boton_guardar() {
+		FormActions.clickOn(AdminAsientoContableMayorizado.FiltroNuevoAsiento.Buttons._6);
 	   
 	}
 

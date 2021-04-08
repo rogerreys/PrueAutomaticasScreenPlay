@@ -11,7 +11,7 @@ Antecedentes:
   Dado que usuario:"abucheli" realiza Login en COBIS con password:"11111111" rol:"COBIS DESIGNER CWC" filial:"BANCO COBIS" oficina:"MATRIZ" en la url:"http://192.168.67.220:8282/CWC/services/cobis/web/bank/views/home/container.html"
 
   @Elements
-	Escenario: 
+	Escenario:Cualquiera
   Dado que navega desde "Pruebas Framework>>Aplicaciones" hacia "Banco Cobis"
   Cuando busca al cliente
   Y ingresa valores generales y laborales
