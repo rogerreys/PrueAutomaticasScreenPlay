@@ -30,4 +30,25 @@ public class FBusquedaClienteForm {
 			}
 		}
 	}
+
+	public static class Buttons{
+		
+		public static final BotonBuscarCliente botonBuscarCliente = Singleton.getInstance(BotonBuscarCliente.class);
+		public static class BotonBuscarCliente implements IButton{
+	
+			private String rutaXPath = "//*[@id='VA_VAIMAGEBUTTONNN_801587']";
+			private Target target = Target.the("BotonBuscarCliente").located(By.xpath(rutaXPath));
+	
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+	
+			@Override
+			public String getId() {
+				return rutaXPath;
+			}
+	
+		}
+	}
 }

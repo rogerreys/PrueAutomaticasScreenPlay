@@ -24,31 +24,14 @@ public class AperturaDepositoPlazoStepDefinitions {
 
 	@Cuando("abre la opcion cliente")
 	public void abre_la_opcion_cliente() {
-		//FormActions.clickOn(FVistaTitularesForm.GridListaTitulares.BOTON_NUEVO);
-		//FormActions.clickOn(FVistaTitularesForm.ListaTitulares.BOTON_BUSCAR_CLIENTE);
-		//FormActions.clickOn(TarjetaCredito.Buttons.guardar_5rt);
-		//FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
-		
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
-		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonGridCliente);		
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonBuscarCliente);	
 	}
 
 	@Cuando("realiza la busqueda de un {string}")
 	public void realiza_la_busqueda_de_un_cliente(String string) {
-		//FormActions.EnterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_IDENTIFICACION, string);
-		// Solo Taller
-		//FormActions.clickOn(FVistaTitularesForm.GridListaTitulares.BOTON_NUEVO);
-		//FormActions.clickOn(FVistaTitularesForm.ListaTitulares.BOTON_BUSCAR_CLIENTE);
-		// Fin
-		//FormActions.EnterText(FBusquedaClientesForm.FiltroBusquedaCliente.INPUT_IDENTIFICACION, string);
-		//FormActions.clickOn(FBusquedaClientesForm.FiltroBusquedaCliente.BOTON_BUSCAR);
-		//FormActions.clickOn(FBusquedaClientesForm.GridListaPNatural.PRIMER_CLIENTE);
-		// SOlo Taller
-		// FormActions.clickOn(FBusquedaClientesForm.GridListaPNatural.BOTON_ACCEPT_ROW);
-		// FormActions.clickOn(FVistaTitularesForm.BOTON_SIGUIENTE);
-		// Fin 
-		//Solo Taller 2//
-		//FormActions.clickOn(FBusquedaClientesForm.GridListaPNatural.BOTON_ACCEPT_ROW);
+		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_IDENTIFICACION, string);
+		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarCliente);
 	}
 
 	
