@@ -20,17 +20,14 @@ public class AsientoContableMayorizadoStepDefinitions {
 		FormActions.clickOn(AdminAsientoContableMayorizado.Cliente.oficinaOrigen);
 		FormActions.clickOn(AdminAsientoContableMayorizado.Cliente.oficinaOrigenGrid);
 		FormActions.clickOn(AdminAsientoContableMayorizado.Cliente.areaOrigen);
-		FormActions.clickOn(AdminAsientoContableMayorizado.Cliente.areaOrigenGrid);
-		
-		
+		FormActions.clickOn(AdminAsientoContableMayorizado.Cliente.areaOrigenGrid);	
 	}
 	
 	@Cuando("selecciona Checkbox Mayorizado")
 	public void selecciona_Checkbox_Mayorizado() {
 		FormActions.clickOn(AdminAsientoContableMayorizado.Cliente.mayorizado);
-		
-	  
 	}
+	
 	@Cuando("realiza el ingreso en la grilla, registro de Cuenta Debito por un valor x")
 	public void realiza_el_ingreso_en_la_grilla_registro_de_Cuenta_Debito_por_un_valor_x() {
 		FormActions.scrollTotheEndOfThePage();
@@ -44,7 +41,7 @@ public class AsientoContableMayorizadoStepDefinitions {
 		FormActions.enterText(AdminAsientoContableMayorizado.FiltroNuevoAsiento.descripcion, "PRUEBA");
 		GridActions.scrollToRight("QV_2194_82959");
 		GridActions.scrollToRight("QV_2194_82959");
-		FormActions.enterText(AdminAsientoContableMayorizado.FiltroNuevoAsiento.valor, "1,230.00");	
+		FormActions.enterText(AdminAsientoContableMayorizado.FiltroNuevoAsiento.valor, "111");	
 	}
 
 	@Cuando("realiza el ingreso en la grilla, registro de Cuenta Credito por un valor x")

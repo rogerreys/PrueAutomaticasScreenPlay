@@ -275,7 +275,7 @@ public class AdminAsientoContableMayorizado {
 
 	public static class FiltroNuevoAsiento implements IControl {
 
-		private String id = "G_BUSQUEDENT_111565";
+		private String id = "G_FPLANILLLA_392628_VAL";
 		private Target target = Target.the("FiltroCliente").located(By.id(id));
 
 		public static final Descripcion descripcion = Singleton.getInstance(Descripcion.class);
@@ -378,8 +378,8 @@ public class AdminAsientoContableMayorizado {
 
 		public static class Valor implements IInputValue {
 
-			private String id = "/html/body/div[1]/div[2]/div[2]/div/div[2]/div/div/div/div/div[3]/table/tbody/tr/td[9]/span/span/input[1]";
-			private Target target = Target.the("Valor").located(By.xpath(id));
+			private String id = "VA_TEXTINPUTBOXPWT_281628";
+			private Target target = Target.the("Valor").located(By.id(id));
 
 			@Override
 			public Target getTarget() {
