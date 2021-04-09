@@ -118,7 +118,13 @@ public class AperturaDepositoPlazoStepDefinitions {
 	
 	@Cuando("diligencia el formulario de recepción de fondos")
 	public void diligencia_el_formulario_de_recepción_de_fondos(){
-		
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonNuevo);
+		FormActions.selectByText(FRecepcionModalForm.Seleccion.formaRecepcion, "CONTABLE");
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
+		FormActions.enterText(FRecepcionModalForm.IngresarDatos.input_MontoRecepcion, "12000");
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonSeleccionRecepcion);
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonGuardarRecepcion);
 	}
 	
 	@Cuando("diligencia el formulario formas de pago")
