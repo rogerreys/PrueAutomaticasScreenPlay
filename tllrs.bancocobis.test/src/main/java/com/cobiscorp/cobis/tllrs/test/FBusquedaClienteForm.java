@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import com.cobiscorp.cobis.tllrs.test.AdminAperturaPlazoFijo.Buttons.BotonNuevo;
 import com.cobiscorp.cobis.utils.base.Singleton;
 import com.cobiscorp.cobis.utils.controls.IButton;
+import com.cobiscorp.cobis.utils.controls.IDropDownList;
 import com.cobiscorp.cobis.utils.controls.IInputValue;
 
 import net.serenitybdd.screenplay.targets.Target;
@@ -122,6 +123,27 @@ public class FBusquedaClienteForm {
 				return rutaXPath;
 			}
 	
+		}
+		
+	}
+
+	public static class Seleccion{
+		public static final TipoCliente tipoCliente = Singleton.getInstance(TipoCliente.class);
+		public static class TipoCliente implements IDropDownList {
+
+			private String id = "VA_1MSIGVMWPJRFCVV_705587";
+			
+			private Target target = Target.the("TipoCliente").located(By.id(id));
+	
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+	
+			@Override
+			public String getId() {
+				return id;
+			}
 		}
 		
 	}

@@ -18,16 +18,18 @@ public class FVistaOperacionForm {
 	
 	public static class Seleccion {
 
-		public static final CERTIFICADOVIP certificadoVIP = Singleton.getInstance(CERTIFICADOVIP.class);
+		public static final Producto producto = Singleton.getInstance(Producto.class);
 		public static final FormaPago formaPago = Singleton.getInstance(FormaPago.class);
 		public static final FercuenciaPago fercuenciaPago = Singleton.getInstance(FercuenciaPago.class);
+		public static final CapitalizaInteres capitalizaInteres = Singleton.getInstance(CapitalizaInteres.class);
 		public static final Categoria categoria = Singleton.getInstance(Categoria.class);
+		public static final Moneda moneda = Singleton.getInstance(Moneda.class);
 		
-		public static class CERTIFICADOVIP implements IDropDownList {
+		public static class Producto implements IDropDownList {
 
-			private String xpath = "VA_6382FCVFPQQZAQS_544483";
+			private String id = "VA_6382FCVFPQQZAQS_544483";
 			
-			private Target target = Target.the("CERTIFICADO VIP").located(By.id(xpath));
+			private Target target = Target.the("CERTIFICADO VIP").located(By.id(id));
 	
 			@Override
 			public Target getTarget() {
@@ -36,7 +38,7 @@ public class FVistaOperacionForm {
 	
 			@Override
 			public String getId() {
-				return xpath;
+				return id;
 			}
 		}
 	
@@ -79,6 +81,38 @@ public class FVistaOperacionForm {
 			private String id = "VA_9037ZLZRWQMOXVW_704483";
 			
 			private Target target = Target.the("Categoria").located(By.id(id));
+	
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+	
+			@Override
+			public String getId() {
+				return id;
+			}
+		}
+	
+		public static class CapitalizaInteres implements IDropDownList{
+			private String id = "VA_CAPITALIZAINSET_783483";
+			
+			private Target target = Target.the("CapitalizaInteres").located(By.id(id));
+	
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+	
+			@Override
+			public String getId() {
+				return id;
+			}
+		}
+
+		public static class Moneda implements IDropDownList{
+			private String id = "VA_8097QTIHKGCBQZH_796483";
+			
+			private Target target = Target.the("Moneda").located(By.id(id));
 	
 			@Override
 			public Target getTarget() {

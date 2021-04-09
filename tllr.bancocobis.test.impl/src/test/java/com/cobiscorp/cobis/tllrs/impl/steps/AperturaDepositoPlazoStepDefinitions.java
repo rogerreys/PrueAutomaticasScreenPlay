@@ -8,6 +8,7 @@ import com.cobiscorp.cobis.serenity.actions.FormActions;
 import com.cobiscorp.cobis.tllrs.test.AdminAperturaPlazoFijo;
 import com.cobiscorp.cobis.tllrs.test.AdminClientes;
 import com.cobiscorp.cobis.tllrs.test.FBusquedaClienteForm;
+import com.cobiscorp.cobis.tllrs.test.FRecepcionModalForm;
 import com.cobiscorp.cobis.tllrs.test.FVistaOperacionForm;
 import com.cobiscorp.cobis.tllrs.test.FormBienes;
 import com.cobiscorp.cobis.tllrs.test.TarjetaCredito;
@@ -33,6 +34,7 @@ public class AperturaDepositoPlazoStepDefinitions {
 
 	@Cuando("realiza la busqueda de un {string}")
 	public void realiza_la_busqueda_de_un_cliente(String string) {
+		FormActions.selectByText(FBusquedaClienteForm.Seleccion.tipoCliente, "PERSONA NATURAL");
 		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_IDENTIFICACION, string);
 		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarCliente);
 		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridPrimerCliente);
@@ -45,15 +47,27 @@ public class AperturaDepositoPlazoStepDefinitions {
 
 	@Cuando("realiza el registro de un nuevo DPF para un cliente")
 	public void realiza_el_registro_de_un_nuevo_DPF_para_un_cliente() {
-		FormActions.selectByText(FVistaOperacionForm.Seleccion.certificadoVIP, "CERTIFICADO VIP");
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.producto, "CERTIFICADO VIP");
 		FormActions.selectByText(FVistaOperacionForm.Seleccion.formaPago, "VENCIMIENTO");
-		//FormActions.selectByText(FVistaOperacionForm.Seleccion.fercuenciaPago, "SI");
+//		FormActions.selectByText(FVistaOperacionForm.Seleccion.fercuenciaPago, "MENSUAL");
+//		FormActions.selectByText(FVistaOperacionForm.Seleccion.capitalizaInteres, "SI");
 		FormActions.selectByText(FVistaOperacionForm.Seleccion.categoria, "NOMINATIVO");
 		FormActions.enterText(FVistaOperacionForm.IngresarDatos.input_Monto, "12000");
+//		FormActions.selectByText(FVistaOperacionForm.Seleccion.moneda, "DOLAR");
 		FormActions.enterText(FVistaOperacionForm.IngresarDatos.input_Plazo, "35");
 		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSimular);
 		FormActions.clickOn(FVistaOperacionForm.Buttons.botonAceptarModal);
 		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSiguiente);
+		
+		//Recepcion
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonNuevo);
+//		FormActions.enterText(FRecepcionModalForm.IngresarDatos.input_MontoRecepcion, "12000");
+		FormActions.selectByText(FRecepcionModalForm.Seleccion.formaRecepcion, "CONTABLE");
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
+		FormActions.enterText(FRecepcionModalForm.IngresarDatos.input_MontoRecepcion, "12000");
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonSeleccionRecepcion);
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonGuardarRecepcion);
 	}
 
 	@Entonces("se debe mostrar la creacion de la Apertura al cliente previamente seleccionado")
