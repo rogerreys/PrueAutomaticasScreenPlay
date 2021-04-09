@@ -23,15 +23,3 @@ Antecedentes: El usuario ingresa a cobis
      Ejemplos:
   | cliente      | 
   | '123456789'  |  
-  
-  @AperturaDepositoDos
-  Esquema del escenario: Apertura de un certificado de depósito Persona Natural_Periódico_pago mensual_Capitalizacion NO_con 2 titulares
-  Y realiza la busqueda de <cliente_persona_natural1>
-  Y nuevamente realiza la busqueda de un <cliente_persona_natural2> tipo conjunta
-  Y diligencia el formulario de Operación
-  Y diligencia el formulario de recepción de fondos
-  Y diligencia el formulario formas de pago
-	Entonces el Certificado de Depósito es creado desplegando la pantalla Detalle de la Operación en estado ING
-	Ejemplos:
-  | cliente_persona_natural1 | cliente_persona_natural2 |
-  | '123456789' 	     | '74489'                  |

@@ -17,7 +17,7 @@ import net.serenitybdd.screenplay.targets.Target;
 public class FVistaOperacionForm {
 	
 	public static class Seleccion {
-
+		
 		public static final CERTIFICADOVIP certificadoVIP = Singleton.getInstance(CERTIFICADOVIP.class);
 		public static final FormaPago formaPago = Singleton.getInstance(FormaPago.class);
 		public static final FercuenciaPago fercuenciaPago = Singleton.getInstance(FercuenciaPago.class);
@@ -25,9 +25,9 @@ public class FVistaOperacionForm {
 		
 		public static class CERTIFICADOVIP implements IDropDownList {
 
-			private String xpath = "VA_6382FCVFPQQZAQS_544483";
+			private String id = "VA_6382FCVFPQQZAQS_544483";
 			
-			private Target target = Target.the("CERTIFICADO VIP").located(By.id(xpath));
+			private Target target = Target.the("CERTIFICADO VIP").located(By.id(id));
 	
 			@Override
 			public Target getTarget() {
@@ -36,7 +36,7 @@ public class FVistaOperacionForm {
 	
 			@Override
 			public String getId() {
-				return xpath;
+				return id;
 			}
 		}
 	

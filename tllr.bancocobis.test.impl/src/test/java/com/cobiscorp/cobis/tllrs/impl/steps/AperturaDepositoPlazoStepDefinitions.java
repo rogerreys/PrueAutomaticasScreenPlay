@@ -8,6 +8,7 @@ import com.cobiscorp.cobis.serenity.actions.FormActions;
 import com.cobiscorp.cobis.tllrs.test.AdminAperturaPlazoFijo;
 import com.cobiscorp.cobis.tllrs.test.AdminClientes;
 import com.cobiscorp.cobis.tllrs.test.FBusquedaClienteForm;
+import com.cobiscorp.cobis.tllrs.test.FRecepcionModalForm;
 import com.cobiscorp.cobis.tllrs.test.FVistaOperacionForm;
 import com.cobiscorp.cobis.tllrs.test.FormBienes;
 import com.cobiscorp.cobis.tllrs.test.TarjetaCredito;
@@ -54,6 +55,15 @@ public class AperturaDepositoPlazoStepDefinitions {
 		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSimular);
 		FormActions.clickOn(FVistaOperacionForm.Buttons.botonAceptarModal);
 		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSiguiente);
+		
+		//Recepcion
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonNuevo);
+		FormActions.enterText(FRecepcionModalForm.IngresarDatos.input_MontoRecepcion, "12000");
+		FormActions.selectByText(FRecepcionModalForm.Seleccion.formaRecepcion, "CONTABLE");
+		FormActions.enterText(FRecepcionModalForm.IngresarDatos.input_MontoRecepcion, "12000");
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonSeleccionRecepcion);
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonGuardarRecepcion);
 	}
 
 	@Entonces("se debe mostrar la creacion de la Apertura al cliente previamente seleccionado")
@@ -65,49 +75,4 @@ public class AperturaDepositoPlazoStepDefinitions {
 		*/
 	}
 
-	
-	/*JCMA Apertura de un certificado de depósito Persona Natural_Periódico_pago mensual_Capitalizacion NO_con 2 titulares*/
-	
-	@Cuando("realiza la busqueda de {string}")
-	public void realiza_la_busqueda_de_cliente(String string){
-		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
-		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonBuscarCliente);	
-		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_IDENTIFICACION, string);
-		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarCliente);
-		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridPrimerCliente);
-		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);		
-	}
-	
-	@Cuando("nuevamente realiza la busqueda de un {string} tipo conjunta")
-	public void nuevamente_realiza_la_busqueda_de_un_cliente_tipo_conjunta(String string){
-		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
-		FormActions.selectByText(AdminAperturaPlazoFijo.tipoCuenta, "CONJUNTA");
-		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonBuscarCliente);
-		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_IDENTIFICACION, "74489");
-		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarCliente);
-		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridSegundoCliente);
-		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);
-		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonSiguiente);
-	}
-	
-	@Cuando("diligencia el formulario de Operación")
-	public void diligencia_el_formulario_de_operacion(){
-		
-	}
-	
-	@Cuando("diligencia el formulario de recepción de fondos")
-	public void diligencia_el_formulario_de_recepción_de_fondos(){
-		
-	}
-	
-	@Cuando("diligencia el formulario formas de pago")
-	public void diligencia_el_formulario_formas_de_pago(){
-		
-	}
-	
-	@Entonces("el Certificado de Depósito es creado desplegando la pantalla Detalle de la Operación en estado ING")
-	public void el_certificado_de_deposito_es_creado_desplegando_la_pantalla_detalle_de_la_operacion_en_estado_ing(){
-		
-	}
-	
 }
