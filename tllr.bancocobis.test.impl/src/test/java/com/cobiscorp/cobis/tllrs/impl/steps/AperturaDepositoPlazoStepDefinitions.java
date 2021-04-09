@@ -21,6 +21,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class AperturaDepositoPlazoStepDefinitions {
 
+	/*RSRM El usuario crea una Apertura Deposito a Plazo */
 	@Cuando("navega desde menu hacia Apertura")
 	public void navega_desde_menu_hacia_Apertura() {
 		//FormActions.selectMenuOption("Depósitos a Plazo>>Apertura");
@@ -42,8 +43,6 @@ public class AperturaDepositoPlazoStepDefinitions {
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonSiguiente);
 		
 	}
-
-	
 
 	@Cuando("realiza el registro de un nuevo DPF para un cliente")
 	public void realiza_el_registro_de_un_nuevo_DPF_para_un_cliente() {
@@ -99,7 +98,7 @@ public class AperturaDepositoPlazoStepDefinitions {
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonBuscarCliente);
 		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_IDENTIFICACION, "74489");
 		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarCliente);
-		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridSegundoCliente);
+		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridPrimerCliente);
 		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonSiguiente);
 	}
@@ -135,6 +134,44 @@ public class AperturaDepositoPlazoStepDefinitions {
 	@Entonces("el Certificado de Depósito es creado desplegando la pantalla Detalle de la Operación en estado ING")
 	public void el_certificado_de_deposito_es_creado_desplegando_la_pantalla_detalle_de_la_operacion_en_estado_ing(){
 		
+	}
+	
+	
+	/*RSRM Apertura de un certificado de depósito Persona Natural_Vencimiento_Capitaliza SI_2 formas de recepción*/
+	@Cuando("realiza la busqueda por nombre de {string}")
+	public void realiza_la_busqueda_por_nombre_de_cliente(String string){
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonBuscarCliente);	
+		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_NOMBRE, string);
+		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarCliente);
+		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridPrimerCliente);
+		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);		
+	}
+	
+	@Cuando("nuevamente realiza la busqueda de un {string} tipo indistinta")
+	public void nuevamente_realiza_la_busqueda_de_un_tipo_indistinta(String string) {
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
+		FormActions.selectByText(AdminAperturaPlazoFijo.tipoCuenta, "INDISTINTA");
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonBuscarCliente);
+		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_IDENTIFICACION, string);
+		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarCliente);
+		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridPrimerCliente);
+		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonSiguiente);
+	}
+
+	@Cuando("diligencia el formulario de recepción de fondos agregar las {int} formas de pago")
+	public void diligencia_el_formulario_de_recepción_de_fondos_agregar_las_formas_de_pago(Integer int1) {
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonNuevo);
+		FormActions.enterText(FRecepcionModalForm.IngresarDatos.input_MontoRecepcion, "12000");
+		FormActions.selectByText(FRecepcionModalForm.Seleccion.formaRecepcion, "CUENTA DE AHORROS");
+//		FormActions.selectByText(FRecepcionModalForm.Seleccion.cliente, "LORENA GARCIA");
+//		FormActions.clickOn(FRecepcionModalForm.Buttons.botonCuentaCliente);
+//		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
+//		FormActions.enterText(FRecepcionModalForm.IngresarDatos.input_MontoRecepcion, "12000");
+//		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
+//		FormActions.clickOn(FRecepcionModalForm.Buttons.botonSeleccionRecepcion);
+//		FormActions.clickOn(FRecepcionModalForm.Buttons.botonGuardarRecepcion);
 	}
 	
 }
