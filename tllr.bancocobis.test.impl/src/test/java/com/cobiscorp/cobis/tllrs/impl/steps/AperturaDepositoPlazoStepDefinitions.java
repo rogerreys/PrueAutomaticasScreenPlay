@@ -92,7 +92,14 @@ public class AperturaDepositoPlazoStepDefinitions {
 	
 	@Cuando("diligencia el formulario de Operación")
 	public void diligencia_el_formulario_de_operacion(){
-		
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.certificadoVIP, "CERTIFICADO VIP");
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.formaPago, "VENCIMIENTO");
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.categoria, "NOMINATIVO");
+		FormActions.enterText(FVistaOperacionForm.IngresarDatos.input_Monto, "12000");
+		FormActions.enterText(FVistaOperacionForm.IngresarDatos.input_Plazo, "35");
+		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSimular);
+		FormActions.clickOn(FVistaOperacionForm.Buttons.botonAceptarModal);
+		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSiguiente);
 	}
 	
 	@Cuando("diligencia el formulario de recepción de fondos")
