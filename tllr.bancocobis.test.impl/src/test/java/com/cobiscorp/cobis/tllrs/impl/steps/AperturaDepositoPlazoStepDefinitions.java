@@ -174,4 +174,31 @@ public class AperturaDepositoPlazoStepDefinitions {
 //		FormActions.clickOn(FRecepcionModalForm.Buttons.botonGuardarRecepcion);
 	}
 	
+	/*JCMA Apertura de un certificado de depósito Persona Natural_Periódico_pago mensual_Capitalizacion NO_con 2 titulares*/
+	@Cuando("realiza la busqueda de un solo {string}")
+	public void realiza_la_busqueda_de_un_solo_cliente(String string){
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonBuscarCliente);
+		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_IDENTIFICACION, string);
+		FormActions.selectByText(FBusquedaClienteForm.Seleccion.tipoCliente, "PERSONA NATURAL");
+		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarCliente);
+		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridPrimerCliente);
+		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonSiguiente);
+	}
+	
+	@Cuando("diligencia el formulario de Operación con moneda dolar")
+	public void diligencia_el_formulario_de_operacion_con_moneda_dolar(){
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.producto, "CERTIFICADO VIP");
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.formaPago, "VENCIMIENTO");
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.categoria, "NOMINATIVO");
+		//FormActions.selectByText(FVistaOperacionForm.Seleccion.categoria, "NOMINATIVO");
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.moneda, "DOLAR");
+		FormActions.enterText(FVistaOperacionForm.IngresarDatos.input_Monto, "12000");
+		FormActions.enterText(FVistaOperacionForm.IngresarDatos.input_Plazo, "35");
+		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSimular);
+		FormActions.clickOn(FVistaOperacionForm.Buttons.botonAceptarModal);
+		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSiguiente);
+	}
+	
 }

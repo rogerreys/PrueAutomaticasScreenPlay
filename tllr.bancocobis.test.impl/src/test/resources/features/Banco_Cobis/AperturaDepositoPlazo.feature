@@ -45,4 +45,15 @@ Antecedentes: El usuario ingresa a cobis
 	Entonces el Certificado de Depósito es creado desplegando la pantalla Detalle de la Operación en estado ING
 	Ejemplos:
   | cliente_persona_natural | cliente_persona_natural1 |
-  | 'SANDRA' 	     			| '74489'                   |
+  | 'SANDRA' 	     			| '74489'                   |  
+  @AperturaDepositoMonedaDolar
+	Esquema del escenario: Apertura de un certificado de depósito Persona Natural_Vencimiento_Capitalización SI_moneda dólar
+	Y realiza la busqueda de un solo <cliente_persona_natural>
+	Y diligencia el formulario de Operación con moneda dolar
+	Y diligencia el formulario formas de pago
+	Entonces el Certificado de Depósito es creado desplegando la pantalla Detalle de la Operación en estado ING
+	     Ejemplos:
+  | cliente_persona_natural      | 
+  | '123456789'                  | 
+  
+  
