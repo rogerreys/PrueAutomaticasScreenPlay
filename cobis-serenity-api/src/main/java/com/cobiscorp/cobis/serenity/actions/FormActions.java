@@ -2,6 +2,7 @@ package com.cobiscorp.cobis.serenity.actions;
 
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
+import net.serenitybdd.screenplay.actions.ScrollToTarget;
 import net.serenitybdd.screenplay.targets.Target;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import java.util.List;
@@ -9,6 +10,8 @@ import org.openqa.selenium.By;
 import com.cobiscorp.cobis.utils.controls.IAccordion;
 import com.cobiscorp.cobis.utils.controls.IComboBox;
 import com.cobiscorp.cobis.utils.controls.IControl;
+import com.cobiscorp.cobis.utils.controls.IDatePicker;
+import com.cobiscorp.cobis.utils.controls.IDateTimePicker;
 import com.cobiscorp.cobis.utils.controls.IDropDownList;
 import com.cobiscorp.cobis.utils.controls.ILayout;
 import com.cobiscorp.cobis.utils.controls.IMultiSelect;
@@ -16,6 +19,7 @@ import com.cobiscorp.cobis.utils.controls.IRadioButtonList;
 import com.cobiscorp.cobis.utils.controls.ISelectBased;
 import com.cobiscorp.cobis.utils.controls.ISingleSelectBased;
 import com.cobiscorp.cobis.utils.controls.ITab;
+import com.cobiscorp.cobis.utils.controls.ITimePicker;
 import com.cobiscorp.cobis.utils.controls.IVerticalTab;
 import com.cobiscorp.cobis.utils.events.IDigitable;
 
@@ -46,18 +50,6 @@ public class FormActions extends BaseActions{
 		}
 		ContainerActions.evaluateJavascriptWithTarget(iSelectBased, script, "coloca el valor: " + value  );
 	}
-	
-	/**
-	 * Setea el valor de un combobox por id.
-	 *
-	 * @param iSelectBased elemento a interactuar
-	 * @param value valor a colocar
-	 * @param withTab se establece true si se quiere agregar el comando por teclado tab despues de poner el valor.
-	 */
-	public static void selectByIdWithTab(ISelectBased iSelectBased, String value) {
-		selectById(iSelectBased, value);
-		BaseActions.enterTheKey(iSelectBased, "tab");
-	}
 
 	/**
 	 * Setea el texto del select por texto.
@@ -69,26 +61,20 @@ public class FormActions extends BaseActions{
 		ContainerActions.waitUntilCharge();
 		String script = "";
 		 if (iSingleSelectBased instanceof IComboBox) {
-				 script = "var comboBox = $('#" + iSingleSelectBased.getId() + "').data('kendoExtComboBox') || $('#"+iSingleSelectBased.getId()+"').data('kendoComboBox'); comboBox.text('" + text + "');";
-		 }else if(iSingleSelectBased instanceof IDropDownList){
+				Target target = Target.the("Text Button - " + iSingleSelectBased.getId()).located(By.xpath("//span[@aria-controls='"+ iSingleSelectBased.getId() +"_listbox']"));
+				Target target2 = Target.the("Text Button - " + iSingleSelectBased.getId()).located(By.xpath("//ul[@id='"+ iSingleSelectBased.getId() +"_listbox']//li[contains(.,'" + text+ "')]"));
+				ContainerActions.waitUntilCharge();
+				BaseActions.clickOn(target);
+				ContainerActions.waitUntilCharge();
+				BaseActions.clickOn(target2);
+				ContainerActions.waitUntilCharge();
+				}else if(iSingleSelectBased instanceof IDropDownList){
 				 script ="var selectElement = $('#" + iSingleSelectBased.getId() + "').data('kendoExtDropDownList'); selectElement.text('" + text
 						+ "'); selectElement.trigger('change');";
 		 }
 		 ContainerActions.evaluateJavascriptWithTarget(iSingleSelectBased, script, "Coloca el valor: "+ text );
 	}
 	
-	/**
-	 * Setea el texto del select por texto.
-	 *
-	 * @param iSelectBased elemento a interactuar
-	 * @param text texto a colocar.
-	 * @param withTab se establece true si se quiere agregar el comando por teclado tab despues de poner el valor.
-	 */
-	public static void selectByTextWithTab(ISingleSelectBased iSingleSelectBased, String value) {
-		selectByText(iSingleSelectBased, value);
-		BaseActions.enterTheKey(iSingleSelectBased,  "tab");
-	}
-		
 	/**
 	 * Selecciona un elemento por indice.
 	 *
@@ -104,19 +90,6 @@ public class FormActions extends BaseActions{
 	}
 	
 	/**
-	 * Selecciona un elemento por indice.
-	 *
-	 * @param id identificador del elemento
-	 * @param index indice a seleccionar
-	 * @param withTab se establece true si se quiere agregar el comando por teclado tab despues de poner el valor.
-	 */
-	public static void selectByIndexWithTab(IDropDownList iDropDownList, int index) {
-		selectByIndex(iDropDownList,  index) ;
-		BaseActions.enterTheKey(iDropDownList,  "tab");
-	}
-	
-	
-	/**
 	 * Presiona el boton contenido en el textobox.
 	 *
 	 * @param id identificador del elemento.
@@ -129,20 +102,14 @@ public class FormActions extends BaseActions{
 	/**
 	 * Coloca una fecha dado el id.
 	 *
-	 * @param control identificador del elemento.
+	 * @param iDatePicker identificador del elemento.
 	 * @param day dia a colocar.
 	 * @param month mes a colocar.
 	 * @param year año a colocar.
 	 */
-	public static void setDateById(IDigitable control, String day, String month, String year) {
-		ContainerActions.enterText(control, day + "/" + month + "/" + year);
+	public static void setDateById(IDatePicker iDatePicker, String day, String month, String year) {
+		ContainerActions.enterText(iDatePicker, day + "/" + month + "/" + year);
 	}
-	
-	public static void setDateById2(IDigitable control, String day, String month, String year) {
-		ContainerActions.EnterDate(control, day +month+ year);
-	}
-	
-	
 	
 	/**
 	 * Ingreso de fecha y hora por texto, formato DD/MM/YYYY HH:MM.
@@ -154,8 +121,19 @@ public class FormActions extends BaseActions{
 	 * @param hour hora a ingresar
 	 * @param minute minuto a ingresar
 	 */
-	public static void setDateTimeByText(IDigitable dateTimePicker, String day, String month, String year, String hour, String minute) {
+	public static void setDateTimeByText(IDateTimePicker dateTimePicker, String day, String month, String year, String hour, String minute) {
 		ContainerActions.enterText(dateTimePicker, day + "/" + month + "/" + year +" "+ hour + ":" + minute);
+	}
+	
+	/**
+	 * Ingreso de hora por texto, formato HH:MM.
+	 *
+	 * @param iTimePicker elemento a interactuar
+	 * @param hour hora a ingresar
+	 * @param minute minuto a ingresar
+	 */
+	public static void setTimeByText(ITimePicker iTimePicker, String hour, String minute) {
+		ContainerActions.enterText(iTimePicker, hour + ":" + minute);
 	}
 	
 	/**
@@ -278,6 +256,20 @@ public class FormActions extends BaseActions{
 		}
 		return result;
 		
+	}
+	
+	public static void searchDate(IDatePicker iDatePicker, String day, String month, String year) {
+		String date = year + "/" + month + "/" + day;
+		WebElementFacade datePicker =  BrowseTheWeb.as(theActorInTheSpotlight()).$(By.id(iDatePicker.getId()));
+//		WebElementFacade spanDate = datePicker.findElement(By.xpath("//parent::span[@class='k-picker-wrap k-state-default']"));
+//		spanDate.findElement(By.xpath(".//span[@role='button']")).click();
+//		List<WebElement> sections=findElementUsingWait(By.id(id+"_dateview")).findElements(By.tagName("td"));
+//		for (WebElement section : sections) {
+//			if (section.findElement(By.tagName("a")).getAttribute("data-value").equals(date)) {
+//				section.findElement(By.tagName("a")).click();
+//				break;
+//			}
+//		}
 	}
 	
 	private static class Header{

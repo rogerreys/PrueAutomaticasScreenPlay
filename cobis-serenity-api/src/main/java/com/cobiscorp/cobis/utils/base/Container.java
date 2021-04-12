@@ -1,6 +1,8 @@
 package com.cobiscorp.cobis.utils.base;
 
 import org.openqa.selenium.By;
+
+import com.cobiscorp.cobis.utils.controls.impl.COBISControl;
 import com.cobiscorp.cobis.utils.events.IClickable;
 import com.cobiscorp.cobis.utils.events.IDigitable;
 import net.serenitybdd.screenplay.targets.IFrame;
@@ -31,138 +33,64 @@ public class Container {
 		return OPCION_MENU;
 	}
 	
-	public static class Usuario implements IDigitable {
-		private static String id = "login";
-		private static Target target = Target.the("Input campo usuario").located(By.id("login"));
-
-		@Override
-		public Target getTarget() {
-			return target;
-		}
-		@Override
-		public String getId() {
-			return id;
+	public static class Usuario extends COBISControl implements IDigitable {
+		
+		public Usuario() {
+			this.init("login", "Input campo usuario");
 		}
 	}
 
-	public static class Clave implements IDigitable {
-		private static String id = "password";
-		private static Target target = Target.the("Input campo Password").located(By.id(id));
-
-		@Override
-		public Target getTarget() {
-			return target;
-		}
-		@Override
-		public String getId() {
-			return id;
+	public static class Clave extends COBISControl implements IDigitable {
+		public Clave() {
+			this.init("password", "Input campo Password");
 		}
 	}
 
-	public static class BotonLogin implements IClickable {
-		private static Target target = Target.the("Botón Inicio de Sesión")
-				.located(By.xpath("//button[@class='btn btn-primary btn-lg btn-block ng-scope']"));
-
-		@Override
-		public Target getTarget() {
-			return target;
-		}
-		@Override
-		public String getId() {
-			return null;
+	public static class BotonLogin extends COBISControl implements IClickable {
+		public BotonLogin() {
+			this.init(null, "Botón Inicio de Sesión", "//button[@class='btn btn-primary btn-lg btn-block ng-scope']");
 		}
 	}
 
-	public static class BotonIngresar implements IClickable {
-		private static Target target = Target.the("Botón Ingresar COBIS").located(By.id("btnAuthorization"));
-
-		@Override
-		public Target getTarget() {
-			return target;
-		}
-		@Override
-		public String getId() {
-			return null;
-		}
-
-	}
-	
-	public static class BotonLogout implements IClickable {
-		private static Target target = Target.the("Boton Logout").located(By.id("nav-logout"));
-
-		@Override
-		public Target getTarget() {
-			return target;
-		}
-		@Override
-		public String getId() {
-			return null;
-		}
-	}
-
-	public static class FinalizarSesion implements IClickable {
-		private static Target target = Target.the("Enlace para finalizar sesión").located(By.xpath("//a[@ng-click='onSelectionLogout()']"));
-
-		@Override
-		public Target getTarget() {
-			return target;
-		}
-		@Override
-		public String getId() {
-			return null;
+	public static class BotonIngresar extends COBISControl implements IClickable {
+		public BotonIngresar() {
+			this.init("btnAuthorization", "Botón Ingresar COBIS");
 		}
 	}
 	
-	public static class InputFilial implements IDigitable {
-		private static Target target =  Target.the("Selector buscador Filial").located(By.xpath("//input[@name='filial_input']"));
-
-		@Override
-		public Target getTarget() {
-			return target;
-		}
-		@Override
-		public String getId() {
-			return null;
-		}
-
-	}
-	
-	public static class InputOficina implements IDigitable {
-		private static Target target = Target.the("Selector buscador Oficina").located(By.xpath("//input[@name='office_input']"));
-
-		@Override
-		public Target getTarget() {
-			return target;
-		}
-		@Override
-		public String getId() {
-			return null;
+	public static class BotonLogout extends COBISControl implements IClickable {
+		public BotonLogout() {
+			this.init("nav-logout", "Boton Logout");		
 		}
 	}
 
-	public static class InputRol implements IDigitable {
-		private static Target target = Target.the("Selector buscador Rol").located(By.xpath("//input[@name='rol_input']"));
-
-		@Override
-		public Target getTarget() {
-			return target;
-		}
-		@Override
-		public String getId() {
-			return null;
+	public static class FinalizarSesion extends COBISControl implements IClickable {
+		public FinalizarSesion() {
+			this.init(null, "Enlace para finalizar sesión", "//a[@ng-click='onSelectionLogout()']");
 		}
 	}
 	
-	public static class Menu implements IClickable {
-		private static Target target = Target.the("Opción de Menu Cobis").located(By.xpath("//a[@title='Menú']"));
-
-		@Override
-		public Target getTarget() {
-			return target;
+	public static class InputFilial extends COBISControl implements IDigitable {
+		public InputFilial() {
+			this.init(null, "Selector buscador Filial", "//input[@name='filial_input']");
 		}
-		@Override
-		public String getId() {
-			return null;
+	}
+	
+	public static class InputOficina extends COBISControl implements IDigitable {
+		public InputOficina() {
+			this.init(null, "Selector buscador Oficina","//input[@name='office_input']");
+		}
+	}
+
+	public static class InputRol extends COBISControl implements IDigitable {
+		public InputRol() {
+			this.init(null, "Selector buscador Rol", "//input[@name='rol_input']");
+		}
+	}
+	
+	public static class Menu extends COBISControl implements IClickable {
+		public Menu() {
+			this.init(null, "Opción de Menu Cobis", "//a[@title='Menú']");
 		}
 	}
 	
