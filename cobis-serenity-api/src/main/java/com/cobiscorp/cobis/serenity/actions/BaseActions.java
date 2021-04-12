@@ -81,6 +81,17 @@ public class BaseActions extends BaseActionsTasks{
 	}
 	
 	/**
+	 * Ingresa una fecha en un elemento IDigitable
+	 * @param control Elemento en el cual se va a escribir
+	 * @param text Fecha a escribir
+	 */
+	public static void EnterDate(IDigitable control, String texto) {
+		waitUntilCharge();
+		theActorInTheSpotlight().attemptsTo(BaseActionsTasks.EnterDate.text(texto, control.getTarget()));
+	}
+	
+	
+	/**
 	 * Ingresa un texto en un elemento IDigitable y luego presiona la tecla Tabulador
 	 * @param control Elemento en el cual se va a escribir
 	 * @param text texto a escribir
