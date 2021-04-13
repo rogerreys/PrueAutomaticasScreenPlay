@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import com.cobiscorp.cobis.tllrs.test.AdminAperturaPlazoFijo.Buttons.BotonNuevo;
 import com.cobiscorp.cobis.utils.base.Singleton;
 import com.cobiscorp.cobis.utils.controls.IButton;
+import com.cobiscorp.cobis.utils.controls.IDropDownList;
 import com.cobiscorp.cobis.utils.controls.IInputValue;
 
 import net.serenitybdd.screenplay.targets.Target;
@@ -88,12 +89,11 @@ public class FBusquedaClienteForm {
 
 	public static class GridListaP{
 		public static final GridPrimerCliente gridPrimerCliente = Singleton.getInstance(GridPrimerCliente.class);
-		public static final GridSegundoCliente gridSegundoCliente = Singleton.getInstance(GridSegundoCliente.class);
 		
 		public static class GridPrimerCliente implements IButton{
 	
-			private String rutaXPath = "//span[contains(text(),'1366')]";
-			private Target target = Target.the("Primer Cliente").located(By.xpath(rutaXPath));
+			private String rutaXPath = "//*[@id='QV_6093_38584']/div[3]/table/tbody/tr";
+			private Target target = Target.the("gridPrimerCliente").located(By.xpath(rutaXPath));
 	
 			@Override
 			public Target getTarget() {
@@ -106,11 +106,15 @@ public class FBusquedaClienteForm {
 			}
 	
 		}
-		
-		public static class GridSegundoCliente implements IButton{
+	}
+
+	public static class Seleccion{
+		public static final TipoCliente tipoCliente = Singleton.getInstance(TipoCliente.class);
+		public static class TipoCliente implements IDropDownList {
+
+			private String id = "VA_1MSIGVMWPJRFCVV_705587";
 			
-			private String rutaXPath = "//span[contains(text(),'71')]";
-			private Target target = Target.the("Primer Cliente").located(By.xpath(rutaXPath));
+			private Target target = Target.the("TipoCliente").located(By.id(id));
 	
 			@Override
 			public Target getTarget() {
@@ -119,9 +123,8 @@ public class FBusquedaClienteForm {
 	
 			@Override
 			public String getId() {
-				return rutaXPath;
+				return id;
 			}
-	
 		}
 		
 	}

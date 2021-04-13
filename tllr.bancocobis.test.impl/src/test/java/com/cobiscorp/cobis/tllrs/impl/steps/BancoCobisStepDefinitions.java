@@ -23,7 +23,7 @@ public class BancoCobisStepDefinitions {
 
 	@Cuando("ingresa valores generales y laborales")
 	public void ingresa_valores_generales_y_laborales() {
-		FormActions.setDateById(AdminClientes.Cliente.fechaNacimiento, "17", "09", "2015");
+		//FormActions.setDateById(AdminClientes.Cliente.fechaNacimiento, "17", "09", "2015");
 		FormActions.selectById(AdminClientes.Cliente.paisNac, "170");
 		FormActions.selectById(AdminClientes.Cliente.ciudadNac, "12781");
 		FormActions.selectById(AdminClientes.Cliente.estadoCivil, "14124");
@@ -84,7 +84,7 @@ public class BancoCobisStepDefinitions {
 		GridActions.clickNewRecord(AdminClientes.gridTarjetaCredito);
 		FormActions.enterText(TarjetaCredito.numero, "5566778899");
 		FormActions.selectByText(TarjetaCredito.banco, "Produbanco");
-		FormActions.setDateById(TarjetaCredito.fechaVencimiento, "08", "10", "2023");
+		//FormActions.setDateById(TarjetaCredito.fechaVencimiento, "08", "10", "2023");
 		FormActions.clickOn(TarjetaCredito.Buttons.guardar_5rt);
 
 		GridActions.Pager.goLastPage(AdminClientes.gridTarjetaCredito);

@@ -7,6 +7,8 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
+
 import com.cobiscorp.cobis.utils.controls.IGrid;
 import com.cobiscorp.cobis.utils.events.IClickable;
 
@@ -288,6 +290,120 @@ public class GridActions {
 				.located(By.xpath("//div[@id='" + grid.getId() + "']//tbody//tr["+ row+"].//a[href='" + href + "']"));
 		ContainerActions.clickOn(collapseDetailRow);
 	}
+	
+	/**
+	 * Cambiar el tamaño de la columna.
+	 *
+	 * @param IGrid elemento a identificar.
+	 * @param columnIndex identificador de la columna.
+	 * @param pixelSize tamaño en pixeles a cambiar.
+	 */
+	public static void resizeColumnByIndex(IGrid IGrid, int columnIndex, int pixelSize) {
+		BaseActions.waitUntilCharge();
+		WebElementFacade column = BrowseTheWeb.as(theActorInTheSpotlight()).$(By.id(IGrid.getId())).thenFindAll(By.className("th")).get(columnIndex);
+		BrowseTheWeb.as(theActorInTheSpotlight()).withAction().moveToElement(column);
+		WebElementFacade resize = BrowseTheWeb.as(theActorInTheSpotlight()).$(By.id(IGrid.getId())).find(By.className("k-resize-handle-inner"));
+		BrowseTheWeb.as(theActorInTheSpotlight()).withAction().moveToElement(resize);
+		BrowseTheWeb.as(theActorInTheSpotlight()).withAction().clickAndHold(resize);
+		BrowseTheWeb.as(theActorInTheSpotlight()).withAction().moveByOffset(pixelSize, 0);
+		BrowseTheWeb.as(theActorInTheSpotlight()).withAction().release();
+	}
+	
+	
+	/**
+ * Selecciona un elemento del grid dado una columna y texto por id.
+ *
+ * @param iGrid identificador del elemento.
+ * @param column columna a seleccionar.
+ * @param text texto que contiene el elemento a seleccionar.
+ */
+public static void selectRecordByColumnAndText(IGrid iGrid, int column, String text) {
+	final int originalColumn = column;
+	column++;
+	List<WebElementFacade> rows =  BrowseTheWeb.as(theActorInTheSpotlight()).$(By.id(iGrid.getId())).thenFindAll(By.cssSelector("tbody > tr"));
+
+	if (!rows.isEmpty()) {
+		WebElementFacade row = null;
+		for (WebElementFacade rowAux : rows) {
+			if (text.equals(rowAux.findElement(By.cssSelector("td:nth-of-type(" + column + ")")).getText())) {
+				row = rowAux;
+				break;
+			}
+		}
+		if (row != null) {
+			ContainerActions.clickOn(row, iGrid);
+		}
+	}
+}
+
+/**
+ * Hace click en el boton de modificar registro por columna y texto.
+ *
+ * @param grid identificador del elemento.
+ * @param column columna que contiene el boton a seleccionar.
+ * @param text texto perteneciente al elemento donde se quiere seleccionar el boton.
+ */
+public static void clickEditRecordByColumnAndText(IGrid grid, final int column, String text) {
+	int columnT = column;
+	columnT++;
+	List<WebElementFacade> rows = BrowseTheWeb.as(theActorInTheSpotlight()).$(By.id(grid.getId())).thenFindAll(By.cssSelector("tbody > tr"));
+	if (!rows.isEmpty()) {
+		WebElementFacade row = null;
+		for (WebElementFacade rowAux : rows) {
+			if (text.equals(rowAux.find(By.cssSelector("td:nth-of-type(" + columnT + ")")).getText())) {
+				row = rowAux;
+				break;
+			}
+		}
+		if (row != null) {
+			ContainerActions.clickOn(row.find(By.xpath(".//a[@title='Edit' or @title='Editar']")), grid);
+		}
+	}
+}
+
+/**
+ * Seleccionar un elemento del grid dado un indice.
+ *
+ * @param grid identificador del elemento
+ * @param indexRow indice del grid en el que esta el elemento a seleccionar
+ * @param commandId identificador del elemento a seleccionar.
+ */
+public static void clickRowCommandByIndex(IGrid grid, int indexRow, String commandId) {
+	List<WebElementFacade> rows = BrowseTheWeb.as(theActorInTheSpotlight()).$(By.id(grid.getId())).find(By.tagName("tbody"))
+			.thenFindAll(By.tagName("tr"));
+	WebElementFacade rowButton = rows.get(indexRow)
+			.find(By.xpath(".//a[contains(@data-ng-click,'" + commandId + "')]"));
+	if (rowButton != null) {
+		ContainerActions.clickOn(rowButton, grid);
+	}
+}
+
+/**
+ * Selecciona el boton de eliminar por columna y texto.
+ *
+ * @param grid identificador del elemento.
+ * @param column columna que contiene el elemento con el boton.
+ * @param text texto que es contenido por el elemento con el boton.
+ */
+public static void clickDeleteRowByColumnAndText(IGrid grid, int column, String text) {
+	column++;
+	List<WebElementFacade> rows = BrowseTheWeb.as(theActorInTheSpotlight()).$(By.id(grid.getId()))
+			.thenFindAll(By.cssSelector("tbody > tr"));
+	if (!rows.isEmpty()) {
+		WebElementFacade row = null;
+		for (WebElementFacade rowAux : rows) {
+			if (text.equals(rowAux.find(By.cssSelector("td:nth-of-type(" + column + ")")).getText())) {
+				row = rowAux;
+				break;
+			}
+		}
+		if (row != null) {
+			ContainerActions.clickOn(BrowseTheWeb.as(theActorInTheSpotlight())
+					.$(By.xpath(".//a[@title='Eliminar' or @title='Delete']")), grid);
+		}
+	}
+}
+
 	
 	public static class Pager{
 		/**

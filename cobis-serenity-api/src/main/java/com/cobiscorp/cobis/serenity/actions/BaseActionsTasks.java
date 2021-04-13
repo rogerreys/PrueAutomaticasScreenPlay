@@ -8,7 +8,6 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 
 import com.cobiscorp.cobis.utils.questions.CobisText;
-import com.openhtmltopdf.pdfboxout.PdfBoxForm.Control;
 
 import io.cucumber.java.Before;
 import net.serenitybdd.core.annotations.findby.By;
@@ -217,6 +216,7 @@ class BaseActionsTasks {
 			return Instrumented.instanceOf(EnterDate.class).withProperties(target, text);
 		}
 	}
+
 	public static class EnterThe implements Task {
 
 		private String key;
