@@ -66,7 +66,7 @@ Antecedentes: El usuario ingresa a cobis
   Cuando realiza la busqueda de <cliente_persona_juridica> cliente juridico
 	Y nuevamente realiza la busqueda por nombre de un <cliente_persona_natural1> tipo indistinta
 	Y diligencia el formulario de Operación
-	Y diligencia el formulario de recepción de fondos
+	Y diligencia el formulario de recepción de fondos a persona juridica
 	Y diligencia el formulario de forma de pago
 	Entonces el Certificado de Depósito es creado desplegando la pantalla Detalle de la Operación en estado ING
 	Ejemplos:

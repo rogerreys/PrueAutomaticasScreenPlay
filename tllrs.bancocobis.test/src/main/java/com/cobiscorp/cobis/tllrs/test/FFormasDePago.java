@@ -46,7 +46,7 @@ public class FFormasDePago {
 
 			private String id = "VA_6153GLOUJHFTGTN_748373";
 
-			private Target target = Target.the("FormaPago").located(By.xpath(id));
+			private Target target = Target.the("FormaPago").located(By.id(id));
 
 			@Override
 			public Target getTarget() {
@@ -63,7 +63,7 @@ public class FFormasDePago {
 
 			private String id = "VA_CLIENTETAHDVAHD_570373";
 
-			private Target target = Target.the("Beneficiario").located(By.xpath(id));
+			private Target target = Target.the("Beneficiario").located(By.id(id));
 
 			@Override
 			public Target getTarget() {
