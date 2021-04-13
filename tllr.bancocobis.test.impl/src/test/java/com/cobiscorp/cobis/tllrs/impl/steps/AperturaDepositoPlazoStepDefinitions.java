@@ -13,6 +13,7 @@ import com.cobiscorp.cobis.tllrs.test.AdminClientes;
 import com.cobiscorp.cobis.tllrs.test.CabeceraCliente;
 import com.cobiscorp.cobis.tllrs.test.FBusquedaClienteForm;
 import com.cobiscorp.cobis.tllrs.test.FDetalleOperacionApertura;
+import com.cobiscorp.cobis.tllrs.test.FFormasDePago;
 import com.cobiscorp.cobis.tllrs.test.FRecepcionModalForm;
 import com.cobiscorp.cobis.tllrs.test.FVistaOperacionForm;
 import com.cobiscorp.cobis.tllrs.test.FormBienes;
@@ -47,7 +48,8 @@ public class AperturaDepositoPlazoStepDefinitions {
 	@Cuando("diligencia el formulario de Operación")
 	public void diligencia_el_formulario_de_Operación() {
 		FormActions.selectByText(FVistaOperacionForm.Seleccion.producto, "CERTIFICADO VIP");
-		FormActions.selectByText(FVistaOperacionForm.Seleccion.formaPago, "VENCIMIENTO");
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.formaPago, "PERIODICA");
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.frecuenciaPago, "MENSUAL");
 		FormActions.selectByText(FVistaOperacionForm.Seleccion.categoria, "NOMINATIVO");
 		FormActions.enterText(FVistaOperacionForm.IngresarDatos.input_Monto, "12000");
 		FormActions.enterText(FVistaOperacionForm.IngresarDatos.input_Plazo, "35");
@@ -79,7 +81,7 @@ public class AperturaDepositoPlazoStepDefinitions {
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
 		FormActions.selectByText(AdminAperturaPlazoFijo.tipoCuenta, "CONJUNTA");
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonBuscarCliente);
-		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_IDENTIFICACION, "74489");
+		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_IDENTIFICACION, string);
 		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarCliente);
 		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridPrimerCliente);
 		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);
@@ -90,22 +92,22 @@ public class AperturaDepositoPlazoStepDefinitions {
 	public void diligencia_el_formulario_de_recepción_de_fondos(){
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonNuevo);
 		FormActions.selectByText(FRecepcionModalForm.Seleccion.formaRecepcion, "CONTABLE");
-		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
+		//FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
 		FormActions.enterText(FRecepcionModalForm.IngresarDatos.input_MontoRecepcion, "12000");
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonSeleccionRecepcion);
-		FormActions.clickOn(FRecepcionModalForm.Buttons.botonGuardarRecepcion);
+		//FormActions.clickOn(FRecepcionModalForm.Buttons.botonGuardarRecepcion);
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonSiguienteRecepcion);
 	}
 	
 	@Cuando("diligencia el formulario formas de pago")
 	public void diligencia_el_formulario_formas_de_pago(){
-		FormActions.clickOn(FRecepcionModalForm.Buttons.botonNuevo);
-		FormActions.selectByText(FRecepcionModalForm.Seleccion.formaRecepcion, "CONTABLE");
-		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
-		FormActions.enterText(FRecepcionModalForm.IngresarDatos.input_MontoRecepcion, "12000");
-		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
-		//FormActions.clickOn(FRecepcionModalForm.Buttons.botonSeleccionRecepcion);
-		FormActions.clickOn(FRecepcionModalForm.Buttons.botonGuardarRecepcion);
+		FormActions.clickOn(FFormasDePago.Buttons.botonNuevo);
+		FormActions.selectByText(FFormasDePago.Seleccion.formaRecepcion, "CONTABLE");
+		FormActions.enterText(FFormasDePago.IngresarDatos.input_MontoRecepcion, "70.60");
+		FormActions.selectByText(FFormasDePago.Seleccion.beneficiario, "LORENA GARCIA ");
+		FormActions.clickOn(FFormasDePago.Buttons.botonAceptarPago);
+		FormActions.clickOn(FFormasDePago.Buttons.botonGuardar);
 	}
 	
 	

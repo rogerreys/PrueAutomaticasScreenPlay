@@ -118,6 +118,7 @@ public class FRecepcionModalForm {
 		public static final BotonSeleccionRecepcion botonSeleccionRecepcion = Singleton.getInstance(BotonSeleccionRecepcion.class);
 		public static final BotonCuentaCliente botonCuentaCliente = Singleton.getInstance(BotonCuentaCliente.class);
 		public static final BotonFormaRecepcion botonFormaRecepcion = Singleton.getInstance(BotonFormaRecepcion.class);
+		public static final BotonSiguienteRecepcion botonSiguienteRecepcion = Singleton.getInstance(BotonSiguienteRecepcion.class);
 		
 		public static class BotonSeleccionRecepcion implements IButton{
 			
@@ -178,6 +179,24 @@ public class FRecepcionModalForm {
 			private String id = "CM_TPFPRTXU_7OV";
 			
 			private Target target = Target.the("BotonGuardarRecepcion").located(By.id(id));
+	
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+	
+			@Override
+			public String getId() {
+				return id;
+			}
+	
+		}
+		
+		public static class BotonSiguienteRecepcion implements IButton{
+			
+			private String id = "CM_TPFPRTXU_HPX";
+			
+			private Target target = Target.the("BotonSiguienteRecepcion").located(By.id(id));
 	
 			@Override
 			public Target getTarget() {
