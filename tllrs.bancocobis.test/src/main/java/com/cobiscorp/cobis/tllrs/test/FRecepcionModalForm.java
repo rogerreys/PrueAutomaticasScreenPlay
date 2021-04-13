@@ -250,8 +250,8 @@ public class FRecepcionModalForm {
 	
 	public static final Grid grid = Singleton.getInstance(Grid.class);
 	
-	public static class Grid implements ILayout {
-		private String id = "QV_9795_86035"; // //span[contains(text(),'SUCURSAL 1001')]
+	public static class Grid implements IGrid {
+		private String id = "QV_9795_86035";
 		private Target target = Target.the("QV_9795_86035").located(By.id(id));
 		
 		public static final GridPrimerCliente gridPrimerCliente = Singleton.getInstance(GridPrimerCliente.class);

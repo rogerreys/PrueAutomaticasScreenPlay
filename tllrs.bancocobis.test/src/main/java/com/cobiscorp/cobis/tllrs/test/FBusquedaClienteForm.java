@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import com.cobiscorp.cobis.tllrs.test.AdminAperturaPlazoFijo.Buttons.BotonNuevo;
 import com.cobiscorp.cobis.utils.base.Singleton;
 import com.cobiscorp.cobis.utils.controls.IButton;
+import com.cobiscorp.cobis.utils.controls.IComboBox;
 import com.cobiscorp.cobis.utils.controls.IDropDownList;
 import com.cobiscorp.cobis.utils.controls.IInputValue;
 
@@ -69,9 +70,11 @@ public class FBusquedaClienteForm {
 	public static class Buttons{
 		
 		public static final BotonBuscarCliente botonBuscarCliente = Singleton.getInstance(BotonBuscarCliente.class);
+		
 		public static class BotonBuscarCliente implements IButton{
 	
 			private String rutaXPath = "//*[@id='VA_VAIMAGEBUTTONNN_801587']";
+			
 			private Target target = Target.the("BotonBuscarCliente").located(By.xpath(rutaXPath));
 	
 			@Override
@@ -89,6 +92,7 @@ public class FBusquedaClienteForm {
 
 	public static class GridListaP{
 		public static final GridPrimerCliente gridPrimerCliente = Singleton.getInstance(GridPrimerCliente.class);
+		public static final GridPrimerClienteJuridico gridPrimerClienteJuridico = Singleton.getInstance(GridPrimerClienteJuridico.class);
 		
 		public static class GridPrimerCliente implements IButton{
 	
@@ -105,6 +109,23 @@ public class FBusquedaClienteForm {
 				return rutaXPath;
 			}
 	
+		}
+
+		public static class GridPrimerClienteJuridico implements IButton{
+			
+			private String rutaXPath = "//*[@id='QV_6632_39941']/div[3]/table/tbody/tr[1]";
+			private Target target = Target.the("gridPrimerCliente").located(By.xpath(rutaXPath));
+	
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+	
+			@Override
+			public String getId() {
+				return rutaXPath;
+			}
+			
 		}
 	}
 

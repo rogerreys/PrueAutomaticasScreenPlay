@@ -43,7 +43,7 @@ Antecedentes: El usuario ingresa a cobis
 	Y realiza la busqueda por nombre de <cliente_persona_natural>
 	Y nuevamente realiza la busqueda por nombre de un <cliente_persona_natural1> tipo indistinta
 	Y diligencia el formulario de Operación con capitaliza
-	Y diligencia el formulario de recepción de fondos agregar las 2 formas de pago
+	Y diligencia el formulario de recepción de fondos agregar las dos formas de pago de <cliente_persona_natural> y <cliente_persona_natural1>
 	Entonces el Certificado de Depósito es creado desplegando la pantalla Detalle de la Operación en estado ING
 	Ejemplos:
   | cliente_persona_natural | cliente_persona_natural1 |
@@ -60,4 +60,16 @@ Antecedentes: El usuario ingresa a cobis
   | cliente_persona_natural      | 
   | '123456789'                  | 
   
+
+    @AperturaDepositoPersonaJuridica
+  Esquema del escenario: Apertura de un certificado de depósito Persona Jurídica al Vencimiento 2 titulares(Indistinta)_Capitalizable NO_pesos
+  Cuando realiza la busqueda de <cliente_persona_juridica> cliente juridico
+	Y nuevamente realiza la busqueda por nombre de un <cliente_persona_natural1> tipo indistinta
+	Y diligencia el formulario de Operación
+	Y diligencia el formulario de recepción de fondos
+	Y diligencia el formulario de forma de pago
+	Entonces el Certificado de Depósito es creado desplegando la pantalla Detalle de la Operación en estado ING
+	Ejemplos:
+  | cliente_persona_juridica | cliente_persona_natural1 |
+  | 'BANCO' 	     					 | 'EVELIN'               	|
   

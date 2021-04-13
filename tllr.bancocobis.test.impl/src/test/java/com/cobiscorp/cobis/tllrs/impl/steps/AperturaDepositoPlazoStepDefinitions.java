@@ -148,28 +148,26 @@ public class AperturaDepositoPlazoStepDefinitions {
 		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSiguiente);
 	}
 
-	@Cuando("diligencia el formulario de recepción de fondos agregar las {int} formas de pago")
-	public void diligencia_el_formulario_de_recepción_de_fondos_agregar_las_formas_de_pago(Integer int1) {
+	@Cuando("diligencia el formulario de recepción de fondos agregar las dos formas de pago de {string} y {string}")
+	public void diligencia_el_formulario_de_recepción_de_fondos_agregar_las_dos_formas_de_pago_de_y(String string, String string2) {
+		//Cliente1
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonNuevo);
-//		FormActions.selectByText(FRecepcionModalForm.Seleccion.formaRecepcion, "CONTABLE");
 		FormActions.selectByText(FRecepcionModalForm.Seleccion.formaRecepcion, "CUENTA DE AHORROS");
 		FormActions.enterText(FRecepcionModalForm.IngresarDatos.input_MontoRecepcion, "6000");
-		FormActions.selectByText(FRecepcionModalForm.Seleccion.cliente, "EVELIN");
+		FormActions.selectByText(FRecepcionModalForm.Seleccion.cliente, string);
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonCuentaCliente);
-		FormActions.enterTextAndEnter(FRecepcionModalForm.IngresarDatos.inputprimerCliente, "EVELIN");
-//		GridActions.clickNewRecord(FRecepcionModalForm.grid);
-		FormActions.clickOn(FRecepcionModalForm.Grid.gridPrimerCliente);
+		FormActions.enterTextAndEnter(FRecepcionModalForm.IngresarDatos.inputprimerCliente, string);
+		GridActions.selectRecord(FRecepcionModalForm.grid, 1); 
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
 
 //Cliente2
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonNuevo);
 		FormActions.selectByText(FRecepcionModalForm.Seleccion.formaRecepcion, "CUENTA DE AHORROS");
 		FormActions.enterText(FRecepcionModalForm.IngresarDatos.input_MontoRecepcion, "6000");
-		FormActions.selectByText(FRecepcionModalForm.Seleccion.cliente, "ITALIA");
+		FormActions.selectByText(FRecepcionModalForm.Seleccion.cliente, string2);
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonCuentaCliente);
-		FormActions.enterTextAndEnter(FRecepcionModalForm.IngresarDatos.inputprimerCliente, "ITALIA");
-//		GridActions.clickNewRecord(FRecepcionModalForm.grid);
-		FormActions.clickOn(FRecepcionModalForm.Grid.gridPrimerCliente);		
+		FormActions.enterTextAndEnter(FRecepcionModalForm.IngresarDatos.inputprimerCliente, string2);
+		GridActions.selectRecord(FRecepcionModalForm.grid, 1); 		
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
 		
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonSeleccionRecepcion);
@@ -201,6 +199,37 @@ public class AperturaDepositoPlazoStepDefinitions {
 		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSimular);
 		FormActions.clickOn(FVistaOperacionForm.Buttons.botonAceptarModal);
 		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSiguiente);
+	}
+	
+	
+	/*RSRM Apertura de un certificado de depósito Persona Jurídica al Vencimiento 2 titulares(Indistinta)_Capitalizable NO_pesos*/
+	@Cuando("realiza la busqueda de {string} cliente juridico")
+	public void realiza_la_busqueda_de_un_cliente_juridico(String string) {
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonBuscarCliente);	
+		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_NOMBRE, string);
+		FormActions.selectByText(FBusquedaClienteForm.Seleccion.tipoCliente, "PERSONA JURIDICA");
+		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarCliente);
+		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridPrimerClienteJuridico);
+		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);
+	}
+
+	@Cuando("nuevamente realiza la busqueda de un {string} tipo indistinta")
+	public void nuevamente_realiza_la_busqueda_de_un_tipo_indistinta(String string) {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Cuando("diligencia el formulario de forma de pago")
+	public void diligencia_el_formulario_de_forma_de_pago() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Entonces("es creado Certificado de Depósito desplegando la pantalla Detalle de la Operación en estado ING")
+	public void es_creado_Certificado_de_Depósito_desplegando_la_pantalla_Detalle_de_la_Operación_en_estado_ING() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
 	}
 	
 }
