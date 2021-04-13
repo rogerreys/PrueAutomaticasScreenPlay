@@ -146,6 +146,19 @@ public class AperturaDepositoPlazoStepDefinitions {
 		FormActions.clickOn(FVistaOperacionForm.Buttons.botonAceptarModal);
 		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSiguiente);
 	}
+	@Cuando("diligencia el formulario de Operación {string},{string},{string},{string},{string}")
+	public void diligencia_el_formulario_de_Operación(String producto, String forma_pago, String capitaliza, String categoria, String moneda) {
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.producto, producto);
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.formaPago, forma_pago);
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.capitalizaInteres, capitaliza);
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.categoria, categoria);
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.moneda, moneda);
+		FormActions.enterText(FVistaOperacionForm.IngresarDatos.input_Monto, "12000");
+		FormActions.enterText(FVistaOperacionForm.IngresarDatos.input_Plazo, "35");
+		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSimular);
+		FormActions.clickOn(FVistaOperacionForm.Buttons.botonAceptarModal);
+		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSiguiente);
+	}
 
 	@Cuando("diligencia el formulario de recepción de fondos agregar las dos formas de pago de {string} y {string}")
 	public void diligencia_el_formulario_de_recepción_de_fondos_agregar_las_dos_formas_de_pago_de_y(String string, String string2) {
@@ -223,6 +236,33 @@ public class AperturaDepositoPlazoStepDefinitions {
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonSiguienteRecepcion);
 	}
 
+//	@Entonces("es creado Certificado de Depósito desplegando la pantalla Detalle de la Operación en estado ING")
+//	public void es_creado_Certificado_de_Depósito_desplegando_la_pantalla_Detalle_de_la_Operación_en_estado_ING() {
+//	    // Write code here that turns the phrase above into concrete actions
+//	    throw new io.cucumber.java.PendingException();
+//	}
+	
+	
+	/*RSRM  Apertura de un certificado de depósito Persona Jurídica_ Periódico_1 titular(indistinta)_Pago mensual_Capitalizable SI_dólares (multimoneda)*/
+	@Cuando("diligencia el formulario de Operación {string},{string},{string},{string},{string},{string}")
+	public void diligencia_el_formulario_de_Operación(String producto, String forma_pago, String frecu_pago, String capitaliza, String categoria, String moneda) {
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.producto, producto);
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.formaPago, forma_pago);
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.frecuenciaPago, frecu_pago);
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.capitalizaInteres, capitaliza);
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.categoria, categoria);
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.moneda, moneda);
+		FormActions.enterText(FVistaOperacionForm.IngresarDatos.input_Monto, "12000");
+		FormActions.enterText(FVistaOperacionForm.IngresarDatos.input_Plazo, "35");
+		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSimular);
+		FormActions.clickOn(FVistaOperacionForm.Buttons.botonAceptarModal);
+		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSiguiente);
+	}
+	
+	@Cuando("diligencia el formulario de recepción de fondos a {string}")
+	public void diligencia_el_formulario_de_recepción_de_fondos_a(String formaRecepcion) {
+	   
+	}
 	@Cuando("diligencia el formulario de forma de pago")
 	public void diligencia_el_formulario_de_forma_de_pago() {
 		FormActions.clickOn(FFormasDePago.Buttons.botonNuevo);
@@ -231,12 +271,6 @@ public class AperturaDepositoPlazoStepDefinitions {
 		FormActions.selectByText(FFormasDePago.Seleccion.beneficiario, "BANCO TE CREEMOS");
 		FormActions.clickOn(FFormasDePago.Buttons.botonAceptarPago);
 		FormActions.clickOn(FFormasDePago.Buttons.botonGuardar);
-	}
-
-//	@Entonces("es creado Certificado de Depósito desplegando la pantalla Detalle de la Operación en estado ING")
-//	public void es_creado_Certificado_de_Depósito_desplegando_la_pantalla_Detalle_de_la_Operación_en_estado_ING() {
-//	    // Write code here that turns the phrase above into concrete actions
-//	    throw new io.cucumber.java.PendingException();
-//	}
+	}	
 	
 }

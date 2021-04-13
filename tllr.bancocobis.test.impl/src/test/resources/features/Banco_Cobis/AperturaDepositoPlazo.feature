@@ -13,7 +13,7 @@ Antecedentes: El usuario ingresa a cobis
     Dado que usuario:"admuser" realiza Login en COBIS con password:"Passw0rd2019*#" rol:"MENU POR PROCESOS" filial:"BANCO COBIS" oficina:"OFICINA MATRIZ" en la url:"http://www.demo1.cloud-cobiscorp.com/CWC/services/cobis/web/bank/views/commons/login.html"
     Dado que navega desde "Depósitos a Plazo" hacia "Apertura"
  
-
+	#QA-S450331
   @AperturaDeposito
   Esquema del escenario: El usuario crea una Apertura Deposito a Plazo
   Cuando realiza la busqueda de un <cliente_persona_natural>
@@ -61,15 +61,30 @@ Antecedentes: El usuario ingresa a cobis
   | '123456789'                  | 
   
 
+	#QA-S461780
   @AperturaDepositoPersonaJuridica
   Esquema del escenario: Apertura de un certificado de depósito Persona Jurídica al Vencimiento 2 titulares(Indistinta)_Capitalizable NO_pesos
   Cuando realiza la busqueda de <cliente_persona_juridica> cliente juridico
 	Y nuevamente realiza la busqueda por nombre de un <cliente_persona_natural1> tipo indistinta
-	Y diligencia el formulario de Operación
+	Y diligencia el formulario de Operación <producto>,<forma_pago>,<capitaliza>,<categoria>,<moneda>
 	Y diligencia el formulario de recepción de fondos a persona juridica
+	Entonces el Certificado de Depósito es creado desplegando la pantalla Detalle de la Operación en estado ING
+	Ejemplos:
+  | cliente_persona_juridica | cliente_persona_natural1 | producto 				| forma_pago	 |capitaliza|categoria 	 |moneda 					 |
+  | 'BANCO' 	     					 | 'EVELIN'               	|'CERTIFICADO VIP'| 'VENCIMIENTO'|'NO'			|'NOMINATIVO'|'PESO COLOMBIANO'|
+  
+  
+  
+  #QA-S461850
+  @AperturaDepositoPersonaJuridicaPeriodico
+  Esquema del escenario: Apertura de un certificado de depósito Persona Jurídica_ Periódico_1 titular(indistinta)_Pago mensual_Capitalizable SI_dólares (multimoneda)
+	Cuando realiza la busqueda de <cliente_persona_juridica> cliente juridico
+	Y nuevamente realiza la busqueda por nombre de un <cliente_persona_natural> tipo indistinta
+	Y diligencia el formulario de Operación <producto>,<forma_pago>,<frecu_pago>,<capitaliza>,<categoria>,<moneda>
+	Y diligencia el formulario de recepción de fondos a <formaRecepcion>
 	Y diligencia el formulario de forma de pago
 	Entonces el Certificado de Depósito es creado desplegando la pantalla Detalle de la Operación en estado ING
 	Ejemplos:
-  | cliente_persona_juridica | cliente_persona_natural1 |
-  | 'BANCO' 	     					 | 'EVELIN'               	|
+  | cliente_persona_juridica | cliente_persona_natural | producto 					| forma_pago	|frecu_pago 		| capitaliza | categoria 	 |moneda | formaRecepcion	|
+  | 'BANCO COBIS' 	     		 | 'FERNANDA'              | 'CERTIFICADO VIP' 	| 'PERIODICA'	|'MENSUAL'			|	'SI'			 | 'NOMINATIVO'|'DOLAR'| 'CONTABLE'			|
   
