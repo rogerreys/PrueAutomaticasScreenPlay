@@ -15,8 +15,11 @@ public class FDetalleOperacionApertura {
 
 		public static final BotonOpcionesApertura botonOpcionesApertura = Singleton
 				.getInstance(BotonOpcionesApertura.class);
-		public static final BotonActivar botonActivar = Singleton.getInstance(BotonActivar.class);
 		public static final BotonAceptar botonAceptar = Singleton.getInstance(BotonAceptar.class);
+		public static final ComprobanteApertura comprobanteApertura = Singleton.getInstance(ComprobanteApertura.class);
+		public static final BotonModificacion botonModificacion = Singleton.getInstance(BotonModificacion.class);
+		public static final BotonActivar botonActivar = Singleton.getInstance(BotonActivar.class);
+		public static final BotonAnular botonAnular = Singleton.getInstance(BotonAnular.class);
 
 		public static class BotonOpcionesApertura implements IButton {
 
@@ -40,6 +43,60 @@ public class FDetalleOperacionApertura {
 			private String id = "HVA_ACTIONS_2";
 
 			private Target target = Target.the("BotonActivar").located(By.id(id));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return id;
+			}
+
+		}
+		
+		public static class ComprobanteApertura implements IButton {
+
+			private String id = "HVA_ACTIONS_0";
+
+			private Target target = Target.the("ComprobanteApertura").located(By.id(id));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return id;
+			}
+
+		}
+		
+		public static class BotonModificacion implements IButton {
+
+			private String id = "HVA_ACTIONS_1";
+
+			private Target target = Target.the("BotonModificacion").located(By.id(id));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return id;
+			}
+
+		}
+		
+		public static class BotonAnular implements IButton {
+
+			private String id = "HVA_ACTIONS_3";
+
+			private Target target = Target.the("BotonAnular").located(By.id(id));
 
 			@Override
 			public Target getTarget() {

@@ -41,8 +41,7 @@ public class AperturaDepositoPlazoStepDefinitions {
 		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarCliente);
 		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridPrimerCliente);
 		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);
-		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonSiguiente);
-		
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonSiguiente);		
 	}
 
 	@Cuando("diligencia el formulario de Operación")
