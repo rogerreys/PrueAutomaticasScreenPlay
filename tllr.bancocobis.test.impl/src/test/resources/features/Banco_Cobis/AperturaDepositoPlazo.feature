@@ -16,13 +16,14 @@ Antecedentes: El usuario ingresa a cobis
 
   @AperturaDeposito
   Esquema del escenario: El usuario crea una Apertura Deposito a Plazo
-  Cuando abre la opcion cliente
-  Y realiza la busqueda de un <cliente>
-  Y realiza el registro de un nuevo DPF para un cliente 
-  Entonces se debe mostrar la creacion de la Apertura al cliente previamente seleccionado
+  Cuando realiza la busqueda de un <cliente_persona_natural>
+  Y diligencia el formulario de Operación
+	Y diligencia el formulario de recepción de fondos
+  Entonces el Certificado de Depósito es creado desplegando la pantalla Detalle de la Operación en estado ING
      Ejemplos:
-  | cliente      | 
+  | cliente_persona_natural | 
   | '123456789'  |  
+  
   
   @AperturaDepositoDos
   Esquema del escenario: Apertura de un certificado de depósito Persona Natural_Periódico_pago mensual_Capitalizacion NO_con 2 titulares
@@ -36,6 +37,7 @@ Antecedentes: El usuario ingresa a cobis
   | cliente_persona_natural1 | cliente_persona_natural2 |
   | '123456789' 	     | '74489'                  |
 
+ 
   @AperturaDepositoTres
 	Esquema del escenario: Apertura de un certificado de depósito Persona Natural_Vencimiento_Capitaliza SI_2 formas de recepción
 	Y realiza la busqueda por nombre de <cliente_persona_natural>
@@ -46,6 +48,8 @@ Antecedentes: El usuario ingresa a cobis
 	Ejemplos:
   | cliente_persona_natural | cliente_persona_natural1 |
   | 'ITALIA' 	     					| 'EVELIN'               	 |
+ 
+ 
   @AperturaDepositoMonedaDolar
 	Esquema del escenario: Apertura de un certificado de depósito Persona Natural_Vencimiento_Capitalización SI_moneda dólar
 	Y realiza la busqueda de un solo <cliente_persona_natural>

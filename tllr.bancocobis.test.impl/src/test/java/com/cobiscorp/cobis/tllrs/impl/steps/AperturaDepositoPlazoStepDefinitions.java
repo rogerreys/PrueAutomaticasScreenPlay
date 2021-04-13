@@ -6,9 +6,11 @@ import org.openqa.selenium.Keys;
 
 import com.cobiscorp.cobis.serenity.actions.FormActions;
 import com.cobiscorp.cobis.serenity.actions.GridActions;
+import com.cobiscorp.cobis.serenity.actions.ValidationActions;
 import com.cobiscorp.cobis.tllrs.test.AdminAperturaPlazoFijo;
 import com.cobiscorp.cobis.tllrs.test.AdminAsientoContableMayorizado;
 import com.cobiscorp.cobis.tllrs.test.AdminClientes;
+import com.cobiscorp.cobis.tllrs.test.CabeceraCliente;
 import com.cobiscorp.cobis.tllrs.test.FBusquedaClienteForm;
 import com.cobiscorp.cobis.tllrs.test.FDetalleOperacionApertura;
 import com.cobiscorp.cobis.tllrs.test.FRecepcionModalForm;
@@ -30,15 +32,10 @@ public class AperturaDepositoPlazoStepDefinitions {
 		//FormActions.selectMenuOption("Depósitos a Plazo>>Apertura");
 	}
 
-	@Cuando("abre la opcion cliente")
-	public void abre_la_opcion_cliente() {
-		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
-		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonBuscarCliente);	
-	}
-
 	@Cuando("realiza la busqueda de un {string}")
 	public void realiza_la_busqueda_de_un_cliente(String string) {
-		FormActions.selectByText(FBusquedaClienteForm.Seleccion.tipoCliente, "PERSONA NATURAL");
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonBuscarCliente);	
 		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_IDENTIFICACION, string);
 		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarCliente);
 		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridPrimerCliente);
@@ -47,37 +44,21 @@ public class AperturaDepositoPlazoStepDefinitions {
 		
 	}
 
-	@Cuando("realiza el registro de un nuevo DPF para un cliente")
-	public void realiza_el_registro_de_un_nuevo_DPF_para_un_cliente() {
+	@Cuando("diligencia el formulario de Operación")
+	public void diligencia_el_formulario_de_Operación() {
 		FormActions.selectByText(FVistaOperacionForm.Seleccion.producto, "CERTIFICADO VIP");
 		FormActions.selectByText(FVistaOperacionForm.Seleccion.formaPago, "VENCIMIENTO");
-//		FormActions.selectByText(FVistaOperacionForm.Seleccion.fercuenciaPago, "MENSUAL");
-//		FormActions.selectByText(FVistaOperacionForm.Seleccion.capitalizaInteres, "SI");
 		FormActions.selectByText(FVistaOperacionForm.Seleccion.categoria, "NOMINATIVO");
 		FormActions.enterText(FVistaOperacionForm.IngresarDatos.input_Monto, "12000");
-//		FormActions.selectByText(FVistaOperacionForm.Seleccion.moneda, "DOLAR");
 		FormActions.enterText(FVistaOperacionForm.IngresarDatos.input_Plazo, "35");
 		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSimular);
 		FormActions.clickOn(FVistaOperacionForm.Buttons.botonAceptarModal);
 		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSiguiente);
-		
-		//Recepcion
-		FormActions.clickOn(FRecepcionModalForm.Buttons.botonNuevo);
-//		FormActions.enterTextAndEnter(FRecepcionModalForm.IngresarDatos.inputFormaRecepcion, "CONTABLE");
-		FormActions.selectByText(FRecepcionModalForm.Seleccion.formaRecepcion, "CONTABLE");
-		FormActions.enterText(FRecepcionModalForm.IngresarDatos.input_MontoRecepcion, "12000");
-		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
-		FormActions.clickOn(FRecepcionModalForm.Buttons.botonSeleccionRecepcion);
-		FormActions.clickOn(FRecepcionModalForm.Buttons.botonGuardarRecepcion);
 	}
 
-	@Entonces("se debe mostrar la creacion de la Apertura al cliente previamente seleccionado")
-	public void se_debe_mostrar_la_creacion_de_la_Apertura_al_cliente_previamente_seleccionado() {
-		/*
-		FormActions.clickOn(DesignerHeader.BOTON_DROPDOWN);
-		FormActions.clickOn(DesignerHeader.ACTIVAR);
-		FormActions.clickOn(DesignerHeader.BOTON_ACEPTAR_MODAL_ACTIVAR);
-		*/
+	@Entonces("el Certificado de Depósito es creado desplegando la pantalla Detalle de la Operación en estado ING")
+	public void el_certificado_de_deposito_es_creado_desplegando_la_pantalla_detalle_de_la_operacion_en_estado_ing(){
+		ValidationActions.isEquals(FDetalleOperacionApertura.CabeceraInformacion.estadoApertura, "ING");
 	}
 
 	
@@ -105,18 +86,6 @@ public class AperturaDepositoPlazoStepDefinitions {
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonSiguiente);
 	}
 	
-	@Cuando("diligencia el formulario de Operación")
-	public void diligencia_el_formulario_de_operacion(){
-		FormActions.selectByText(FVistaOperacionForm.Seleccion.producto, "CERTIFICADO VIP");
-		FormActions.selectByText(FVistaOperacionForm.Seleccion.formaPago, "VENCIMIENTO");
-		FormActions.selectByText(FVistaOperacionForm.Seleccion.categoria, "NOMINATIVO");
-		FormActions.enterText(FVistaOperacionForm.IngresarDatos.input_Monto, "12000");
-		FormActions.enterText(FVistaOperacionForm.IngresarDatos.input_Plazo, "35");
-		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSimular);
-		FormActions.clickOn(FVistaOperacionForm.Buttons.botonAceptarModal);
-		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSiguiente);
-	}
-	
 	@Cuando("diligencia el formulario de recepción de fondos")
 	public void diligencia_el_formulario_de_recepción_de_fondos(){
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonNuevo);
@@ -137,13 +106,6 @@ public class AperturaDepositoPlazoStepDefinitions {
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
 		//FormActions.clickOn(FRecepcionModalForm.Buttons.botonSeleccionRecepcion);
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonGuardarRecepcion);
-	}
-	
-	@Entonces("el Certificado de Depósito es creado desplegando la pantalla Detalle de la Operación en estado ING")
-	public void el_certificado_de_deposito_es_creado_desplegando_la_pantalla_detalle_de_la_operacion_en_estado_ing(){
-		FormActions.clickOn(FDetalleOperacionApertura.Buttons.botonOpcionesApertura);
-		FormActions.clickOn(FDetalleOperacionApertura.Buttons.botonActivar);
-		FormActions.clickOn(FDetalleOperacionApertura.Buttons.botonAceptar);
 	}
 	
 	
