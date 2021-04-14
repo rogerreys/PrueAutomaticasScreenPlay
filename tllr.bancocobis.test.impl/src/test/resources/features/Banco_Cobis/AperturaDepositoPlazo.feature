@@ -52,12 +52,13 @@ Antecedentes: El usuario ingresa a cobis
   @AperturaDepositoMonedaDolar
 	Esquema del escenario: Apertura de un certificado de depósito Persona Natural_Vencimiento_Capitalización SI_moneda dólar
 	Y realiza la busqueda de un solo <cliente_persona_natural>
-	Y diligencia el formulario de Operación con moneda dolar
-	Y diligencia el formulario formas de pago
+	#Y diligencia el formulario de Operación con moneda dolar
+	Y diligencia el formulario de Operación <producto>,<forma_pago>,<capitaliza>,<categoria>,<moneda>
+	Y diligencia el formulario de recepción de fondos
 	Entonces el Certificado de Depósito es creado desplegando la pantalla Detalle de la Operación en estado ING
 	     Ejemplos:
-  | cliente_persona_natural      | 
-  | '123456789'                  | 
+  | cliente_persona_natural    | producto 				| forma_pago	 |capitaliza|  categoria 	   |  moneda  |
+  | '123456789'                | 'CERTIFICADO VIP'| 'VENCIMIENTO'|   'SI'		|  'NOMINATIVO'  | 'DOLAR'  |
   
 
 	#QA-S461780
