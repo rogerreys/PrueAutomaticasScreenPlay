@@ -69,7 +69,13 @@ public class FormActions extends BaseActions{
 		ContainerActions.waitUntilCharge();
 		String script = "";
 		 if (iSingleSelectBased instanceof IComboBox) {
-				 script = "var comboBox = $('#" + iSingleSelectBased.getId() + "').data('kendoExtComboBox') || $('#"+iSingleSelectBased.getId()+"').data('kendoComboBox'); comboBox.text('" + text + "');";
+				Target target = Target.the("Text Button - " + iSingleSelectBased.getId()).located(By.xpath("//span[@aria-controls='"+ iSingleSelectBased.getId() +"_listbox']"));
+				Target target2 = Target.the("Text Button - " + iSingleSelectBased.getId()).located(By.xpath("//ul[@id='"+ iSingleSelectBased.getId() +"_listbox']//li[contains(.,'" + text+ "')]"));
+				ContainerActions.waitUntilCharge();
+				BaseActions.clickOn(target);
+				ContainerActions.waitUntilCharge();
+				BaseActions.clickOn(target2);
+				ContainerActions.waitUntilCharge();
 		 }else if(iSingleSelectBased instanceof IDropDownList){
 				 script ="var selectElement = $('#" + iSingleSelectBased.getId() + "').data('kendoExtDropDownList'); selectElement.text('" + text
 						+ "'); selectElement.trigger('change');";

@@ -20,7 +20,7 @@ public class FVistaOperacionForm {
 
 		public static final Producto producto = Singleton.getInstance(Producto.class);
 		public static final FormaPago formaPago = Singleton.getInstance(FormaPago.class);
-		public static final FercuenciaPago fercuenciaPago = Singleton.getInstance(FercuenciaPago.class);
+		public static final FercuenciaPago frecuenciaPago = Singleton.getInstance(FercuenciaPago.class);
 		public static final CapitalizaInteres capitalizaInteres = Singleton.getInstance(CapitalizaInteres.class);
 		public static final Categoria categoria = Singleton.getInstance(Categoria.class);
 		public static final Moneda moneda = Singleton.getInstance(Moneda.class);

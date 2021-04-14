@@ -39,6 +39,7 @@ public class FSearchResult {
 		public Usuario() {
 			this.init("login", "Input campo usuario");
 		}
+		
 	}
 
 	public static class Clave extends COBISControl implements IDigitable {
