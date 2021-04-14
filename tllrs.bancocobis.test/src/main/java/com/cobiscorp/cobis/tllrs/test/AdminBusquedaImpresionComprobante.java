@@ -37,6 +37,9 @@ public class AdminBusquedaImpresionComprobante {
 			public static final CM_TCNMNGDF_M1F _M1F = Singleton
 					.getInstance(CM_TCNMNGDF_M1F.class);
 			
+			public static final CM_TCNMNGDF_FM5 _FM5 = Singleton
+					.getInstance(CM_TCNMNGDF_FM5.class);
+			
 			public static final clickTextInputButtonVA_5609AIODAUITOAG_915628 _915628 = Singleton
 					.getInstance(clickTextInputButtonVA_5609AIODAUITOAG_915628.class);
 			
@@ -95,6 +98,22 @@ public class AdminBusquedaImpresionComprobante {
 
 				private String id = "CM_TCNMNGDF_M1F";
 				private Target target = Target.the("CM_TCNMNGDF_M1F").located(By.id(id));
+
+				@Override
+				public Target getTarget() {
+					return target;
+				}
+
+				@Override
+				public String getId() {
+					return id;
+				}
+			}
+			
+			public static class CM_TCNMNGDF_FM5 implements IButton {
+
+				private String id = "CM_TCNMNGDF_FM5";
+				private Target target = Target.the("CM_TCNMNGDF_FM5").located(By.id(id));
 
 				@Override
 				public Target getTarget() {
@@ -225,23 +244,23 @@ public class AdminBusquedaImpresionComprobante {
 		private String id = "QV_4420_87124";
 		private Target target = Target.the("GridQV_4420_87124").located(By.id(id));
 
-		/*public static final Identificacion identificacion = Singleton.getInstance(Identificacion.class);
-		
-		public static class Identificacion implements IInputValue {
+		@Override
+		public Target getTarget() {
+			return target;
+		}
 
-			private String id = "VA_TEXTINPUTBOXEEJ_319565";
-			private Target target = Target.the("Identificacion").located(By.id(id));
+		@Override
+		public String getId() {
+			return id;
+		}
+	}
+	
+	public static final SeleccionarComprobanteGrid SELECCIONARCOMPROBANTE= Singleton.getInstance(SeleccionarComprobanteGrid.class);
 
-			@Override
-			public Target getTarget() {
-				return target;
-			}
+	public static class SeleccionarComprobanteGrid implements IGrid {
 
-			@Override
-			public String getId() {
-				return id;
-			}
-		}*/
+		private String id = "QV_6676_44631";
+		private Target target = Target.the("GridQV_6676_44631").located(By.id(id));
 
 		@Override
 		public Target getTarget() {
