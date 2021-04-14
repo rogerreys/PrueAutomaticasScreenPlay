@@ -14,7 +14,7 @@ import net.serenitybdd.core.annotations.findby.By;
 public class AsientoContableMayorizadoStepDefinitions {
 	
 	@Cuando("el ingresa y selecciona los valores")
-	public void el_ingresa_y_selecciona_los_valores() {
+	public static void el_ingresa_y_selecciona_los_valores() {
 		FormActions.EnterDate(AdminAsientoContableMayorizado.Cliente.fechaNacimiento, "26122019");
 		FormActions.enterText(AdminAsientoContableMayorizado.Cliente.descripcion, "PRUEBA");
 		FormActions.clickOn(AdminAsientoContableMayorizado.Cliente.oficinaOrigen);
@@ -25,7 +25,7 @@ public class AsientoContableMayorizadoStepDefinitions {
 	}
 	
 	@Cuando("selecciona Checkbox Mayorizado")
-	public void selecciona_Checkbox_Mayorizado() {
+	public static void selecciona_Checkbox_Mayorizado() {
 		FormActions.clickOn(AdminAsientoContableMayorizado.Cliente.mayorizado);
 	}
 	

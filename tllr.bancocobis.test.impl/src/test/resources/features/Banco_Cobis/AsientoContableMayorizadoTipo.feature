@@ -21,3 +21,4 @@ Antecedentes:
   Y en la sección “Comprobante contables” se muestran los campos como no editables
   Entonces se carga la Cabecera de Comprobante Contable Tipo
   
+
