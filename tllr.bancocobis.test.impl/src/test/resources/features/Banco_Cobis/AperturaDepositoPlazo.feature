@@ -17,12 +17,12 @@ Antecedentes: El usuario ingresa a cobis
   @AperturaDeposito
   Esquema del escenario: El usuario crea una Apertura Deposito a Plazo
   Cuando realiza la busqueda de un <cliente_persona_natural>
-  Y diligencia el formulario de Operación
+  Y diligencia el formulario de Operación <producto>,<forma_pago>,<capitaliza>,<categoria>,<moneda>
 	Y diligencia el formulario de recepción de fondos
   Entonces el Certificado de Depósito es creado desplegando la pantalla Detalle de la Operación en estado ING
      Ejemplos:
-  | cliente_persona_natural | 
-  | '123456789'  |  
+  | cliente_persona_natural |  producto 				| forma_pago	 |capitaliza|categoria 	 |moneda 					 |
+  | '123456789'  						|  'CERTIFICADO VIP'| 'VENCIMIENTO'|'SI'			|'NOMINATIVO'|'PESO COLOMBIANO'|
   
   
   @AperturaDepositoDos
@@ -71,7 +71,6 @@ Antecedentes: El usuario ingresa a cobis
 	Ejemplos:
   | cliente_persona_juridica | cliente_persona_natural1 | producto 				| forma_pago	 |capitaliza|categoria 	 |moneda 					 |
   | 'BANCO' 	     					 | 'EVELIN'               	|'CERTIFICADO VIP'| 'VENCIMIENTO'|'NO'			|'NOMINATIVO'|'PESO COLOMBIANO'|
-  
   
   
   #QA-S461850
