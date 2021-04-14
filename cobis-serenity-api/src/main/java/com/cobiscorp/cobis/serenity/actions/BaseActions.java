@@ -1,7 +1,10 @@
 package com.cobiscorp.cobis.serenity.actions;
 
 import net.serenitybdd.core.pages.WebElementFacade;
+import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
+import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
+import net.serenitybdd.screenplay.questions.WebElementQuestion;
 import net.serenitybdd.screenplay.targets.Target;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -13,6 +16,7 @@ import com.cobiscorp.cobis.utils.events.IValueReadable;
 
 public class BaseActions extends BaseActionsTasks{
 
+	
 	/**
 	 * Espera la carga de componentes de manera dinamica
 	 *

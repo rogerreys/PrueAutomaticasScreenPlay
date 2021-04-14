@@ -1,8 +1,11 @@
 package com.cobiscorp.cobis.serenity.actions;
 
 import net.serenitybdd.core.pages.WebElementFacade;
+import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actions.ScrollToTarget;
+import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
+import net.serenitybdd.screenplay.questions.WebElementQuestion;
 import net.serenitybdd.screenplay.targets.Target;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import java.util.List;
@@ -24,7 +27,12 @@ import com.cobiscorp.cobis.utils.controls.IVerticalTab;
 import com.cobiscorp.cobis.utils.events.IDigitable;
 
 public class FormActions extends BaseActions{
-
+	
+	
+	public static void validateMessage(Target element) {
+		ContainerActions.waitUntilCharge();
+		theActorInTheSpotlight().should(GivenWhenThen.seeThat(WebElementQuestion.the(element),WebElementStateMatchers.isVisible()));
+	}
 	/**
 	 * Setea el valor de un combobox por id.
 	 *
@@ -61,14 +69,8 @@ public class FormActions extends BaseActions{
 		ContainerActions.waitUntilCharge();
 		String script = "";
 		 if (iSingleSelectBased instanceof IComboBox) {
-				Target target = Target.the("Text Button - " + iSingleSelectBased.getId()).located(By.xpath("//span[@aria-controls='"+ iSingleSelectBased.getId() +"_listbox']"));
-				Target target2 = Target.the("Text Button - " + iSingleSelectBased.getId()).located(By.xpath("//ul[@id='"+ iSingleSelectBased.getId() +"_listbox']//li[contains(.,'" + text+ "')]"));
-				ContainerActions.waitUntilCharge();
-				BaseActions.clickOn(target);
-				ContainerActions.waitUntilCharge();
-				BaseActions.clickOn(target2);
-				ContainerActions.waitUntilCharge();
-				}else if(iSingleSelectBased instanceof IDropDownList){
+				 script = "var comboBox = $('#" + iSingleSelectBased.getId() + "').data('kendoExtComboBox') || $('#"+iSingleSelectBased.getId()+"').data('kendoComboBox'); comboBox.text('" + text + "');";
+		 }else if(iSingleSelectBased instanceof IDropDownList){
 				 script ="var selectElement = $('#" + iSingleSelectBased.getId() + "').data('kendoExtDropDownList'); selectElement.text('" + text
 						+ "'); selectElement.trigger('change');";
 		 }
