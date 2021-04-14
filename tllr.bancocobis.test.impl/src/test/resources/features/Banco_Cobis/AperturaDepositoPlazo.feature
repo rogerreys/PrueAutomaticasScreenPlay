@@ -29,14 +29,13 @@ Antecedentes: El usuario ingresa a cobis
   Esquema del escenario: Apertura de un certificado de depósito Persona Natural_Periódico_pago mensual_Capitalizacion NO_con 2 titulares
   Y realiza la busqueda de <cliente_persona_natural1>
   Y nuevamente realiza la busqueda de un <cliente_persona_natural2> tipo conjunta
-  Y diligencia el formulario de Operación
+  Y diligencia el formulario de Operación periodico <producto>,<forma_pago>,<frecuencia>,<capitaliza>,<categoria>,<moneda>
   Y diligencia el formulario de recepción de fondos
   Y diligencia el formulario formas de pago
 	Entonces el Certificado de Depósito es creado desplegando la pantalla Detalle de la Operación en estado ING
 	Ejemplos:
-  | cliente_persona_natural1 | cliente_persona_natural2 |
-  | '123456789' 	     | '74489'                  |
-
+  | cliente_persona_natural1 | cliente_persona_natural2 |producto 				| forma_pago	 |  frecuencia  |capitaliza|categoria 	 |moneda 					 |
+  | '123456789' 	           | '74489'                  |'CERTIFICADO VIP'| 'PERIODICA'  |  'MENSUAL'   | 'NO'		 |'NOMINATIVO' |'PESO COLOMBIANO'|
  
   @AperturaDepositoTres
 	Esquema del escenario: Apertura de un certificado de depósito Persona Natural_Vencimiento_Capitaliza SI_2 formas de recepción
@@ -80,11 +79,11 @@ Antecedentes: El usuario ingresa a cobis
   Esquema del escenario: Apertura de un certificado de depósito Persona Jurídica_ Periódico_1 titular(indistinta)_Pago mensual_Capitalizable SI_dólares (multimoneda)
 	Cuando realiza la busqueda de <cliente_persona_juridica> cliente juridico
 	Y nuevamente realiza la busqueda por nombre de un <cliente_persona_natural> tipo indistinta
-	Y diligencia el formulario de Operación <producto>,<forma_pago>,<frecu_pago>,<capitaliza>,<categoria>,<moneda>
+ 	Y diligencia el formulario de Operación periodico <producto>,<forma_pago>,<frecuencia>,<capitaliza>,<categoria>,<moneda>
 	Y diligencia el formulario de recepción de fondos a <formaRecepcion>
 	Y diligencia el formulario de forma de pago
 	Entonces el Certificado de Depósito es creado desplegando la pantalla Detalle de la Operación en estado ING
 	Ejemplos:
-  | cliente_persona_juridica | cliente_persona_natural | producto 					| forma_pago	|frecu_pago 		| capitaliza | categoria 	 |moneda | formaRecepcion	|
+  | cliente_persona_juridica | cliente_persona_natural | producto 					| forma_pago	|frecuencia 		| capitaliza | categoria 	 |moneda | formaRecepcion	|
   | 'BANCO COBIS' 	     		 | 'FERNANDA'              | 'CERTIFICADO VIP' 	| 'PERIODICA'	|'MENSUAL'			|	'SI'			 | 'NOMINATIVO'|'DOLAR'| 'CONTABLE'			|
   

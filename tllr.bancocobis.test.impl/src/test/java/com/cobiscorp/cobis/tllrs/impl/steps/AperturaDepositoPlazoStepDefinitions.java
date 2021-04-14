@@ -244,20 +244,6 @@ public class AperturaDepositoPlazoStepDefinitions {
 	
 	
 	/*RSRM  Apertura de un certificado de depósito Persona Jurídica_ Periódico_1 titular(indistinta)_Pago mensual_Capitalizable SI_dólares (multimoneda)*/
-	@Cuando("diligencia el formulario de Operación {string},{string},{string},{string},{string},{string}")
-	public void diligencia_el_formulario_de_Operación(String producto, String forma_pago, String frecu_pago, String capitaliza, String categoria, String moneda) {
-		FormActions.selectByText(FVistaOperacionForm.Seleccion.producto, producto);
-		FormActions.selectByText(FVistaOperacionForm.Seleccion.formaPago, forma_pago);
-		FormActions.selectByText(FVistaOperacionForm.Seleccion.frecuenciaPago, frecu_pago);
-		FormActions.selectByText(FVistaOperacionForm.Seleccion.capitalizaInteres, capitaliza);
-		FormActions.selectByText(FVistaOperacionForm.Seleccion.categoria, categoria);
-		FormActions.selectByText(FVistaOperacionForm.Seleccion.moneda, moneda);
-		FormActions.enterText(FVistaOperacionForm.IngresarDatos.input_Monto, "12000");
-		FormActions.enterText(FVistaOperacionForm.IngresarDatos.input_Plazo, "35");
-		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSimular);
-		FormActions.clickOn(FVistaOperacionForm.Buttons.botonAceptarModal);
-		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSiguiente);
-	}
 	
 	@Cuando("diligencia el formulario de recepción de fondos a {string}")
 	public void diligencia_el_formulario_de_recepción_de_fondos_a(String formaRecepcion) {
@@ -272,5 +258,21 @@ public class AperturaDepositoPlazoStepDefinitions {
 		FormActions.clickOn(FFormasDePago.Buttons.botonAceptarPago);
 		FormActions.clickOn(FFormasDePago.Buttons.botonGuardar);
 	}	
+	
+
+	@Cuando("diligencia el formulario de Operación periodico {string},{string},{string},{string},{string},{string}")
+	public void diligencia_el_formulario_de_operacion_periodico(String producto, String forma_pago, String frecuencia, String capitaliza, String categoria, String moneda) {
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.producto, producto);
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.formaPago, forma_pago);
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.frecuenciaPago, frecuencia);
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.capitalizaInteres, capitaliza);
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.categoria, categoria);
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.moneda, moneda);
+		FormActions.enterText(FVistaOperacionForm.IngresarDatos.input_Monto, "12000");
+		FormActions.enterText(FVistaOperacionForm.IngresarDatos.input_Plazo, "35");
+		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSimular);
+		FormActions.clickOn(FVistaOperacionForm.Buttons.botonAceptarModal);
+		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSiguiente);
+	}
 	
 }
