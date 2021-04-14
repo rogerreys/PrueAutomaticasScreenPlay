@@ -8,6 +8,7 @@ import com.cobiscorp.cobis.serenity.actions.FormActions;
 import com.cobiscorp.cobis.tllrs.test.AdminAperturaPlazoFijo;
 import com.cobiscorp.cobis.tllrs.test.AdminClientes;
 import com.cobiscorp.cobis.tllrs.test.FBusquedaClienteForm;
+import com.cobiscorp.cobis.tllrs.test.FDetalleOperacionApertura;
 import com.cobiscorp.cobis.tllrs.test.FRecepcionModalForm;
 import com.cobiscorp.cobis.tllrs.test.FVistaOperacionForm;
 import com.cobiscorp.cobis.tllrs.test.FormBienes;
@@ -128,12 +129,20 @@ public class AperturaDepositoPlazoStepDefinitions {
 	
 	@Cuando("diligencia el formulario formas de pago")
 	public void diligencia_el_formulario_formas_de_pago(){
-		
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonNuevo);
+		FormActions.selectByText(FRecepcionModalForm.Seleccion.formaRecepcion, "CONTABLE");
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
+		FormActions.enterText(FRecepcionModalForm.IngresarDatos.input_MontoRecepcion, "12000");
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
+		//FormActions.clickOn(FRecepcionModalForm.Buttons.botonSeleccionRecepcion);
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonGuardarRecepcion);
 	}
 	
 	@Entonces("el Certificado de Depósito es creado desplegando la pantalla Detalle de la Operación en estado ING")
 	public void el_certificado_de_deposito_es_creado_desplegando_la_pantalla_detalle_de_la_operacion_en_estado_ing(){
-		
+		FormActions.clickOn(FDetalleOperacionApertura.Buttons.botonOpcionesApertura);
+		FormActions.clickOn(FDetalleOperacionApertura.Buttons.botonActivar);
+		FormActions.clickOn(FDetalleOperacionApertura.Buttons.botonAceptar);
 	}
 	
 	

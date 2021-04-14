@@ -84,7 +84,11 @@ public class BancoCobisStepDefinitions {
 		GridActions.clickNewRecord(AdminClientes.gridTarjetaCredito);
 		FormActions.enterText(TarjetaCredito.numero, "5566778899");
 		FormActions.selectByText(TarjetaCredito.banco, "Produbanco");
+<<<<<<< HEAD
 	//	FormActions.setDateById(TarjetaCredito.fechaVencimiento, "08", "10", "2023");
+=======
+		//FormActions.setDateById(TarjetaCredito.fechaVencimiento, "08", "10", "2023");
+>>>>>>> ec9bee0f513413cdd38f51c363f6af3b28828a88
 		FormActions.clickOn(TarjetaCredito.Buttons.guardar_5rt);
 
 		GridActions.Pager.goLastPage(AdminClientes.gridTarjetaCredito);
