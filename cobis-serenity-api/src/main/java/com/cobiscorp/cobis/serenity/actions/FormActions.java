@@ -1,8 +1,11 @@
 package com.cobiscorp.cobis.serenity.actions;
 
 import net.serenitybdd.core.pages.WebElementFacade;
+import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actions.ScrollToTarget;
+import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
+import net.serenitybdd.screenplay.questions.WebElementQuestion;
 import net.serenitybdd.screenplay.targets.Target;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import java.util.List;
@@ -25,6 +28,11 @@ import com.cobiscorp.cobis.utils.events.IDigitable;
 
 public class FormActions extends BaseActions{
 
+	
+	public static void validateMessage(Target element) {
+		ContainerActions.waitUntilCharge();
+		theActorInTheSpotlight().should(GivenWhenThen.seeThat(WebElementQuestion.the(element),WebElementStateMatchers.isVisible()));
+	}
 	/**
 	 * Setea el valor de un combobox por id.
 	 *
