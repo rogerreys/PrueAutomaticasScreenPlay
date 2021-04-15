@@ -36,7 +36,7 @@ Antecedentes: El usuario ingresa a cobis
 	Ejemplos:
   | cliente_persona_natural1 | cliente_persona_natural2 |producto 				| forma_pago	 |  frecuencia  |capitaliza|categoria 	 |moneda 					 |
   | '123456789' 	           | '74489'                  |'CERTIFICADO VIP'| 'PERIODICA'  |  'MENSUAL'   | 'NO'		 |'NOMINATIVO' |'PESO COLOMBIANO'|
- 
+
 
 	#QA-S459582
   @AperturaDepositoDosNaturales
@@ -54,7 +54,6 @@ Antecedentes: El usuario ingresa a cobis
   @AperturaDepositoMonedaDolar
 	Esquema del escenario: Apertura de un certificado de depósito Persona Natural_Vencimiento_Capitalización SI_moneda dólar
 	Y realiza la busqueda de un solo <cliente_persona_natural>
-	#Y diligencia el formulario de Operación con moneda dolar
 	Y diligencia el formulario de Operación <producto>,<forma_pago>,<capitaliza>,<categoria>,<moneda>
 	Y diligencia el formulario de recepción de fondos
 	Entonces el Certificado de Depósito es creado desplegando la pantalla Detalle de la Operación en estado ING
@@ -113,5 +112,19 @@ Antecedentes: El usuario ingresa a cobis
 	Ejemplos:
   | cliente_persona_natural  | producto 		        | forma_pago	        | capitaliza  | categoria 	    |moneda           | formaRecepcionFC	        |  nombre_cliente            |
   | '1713115'  	     		     | 'CERTIFICADO PYME'   | 'VENCIMIENTO'	  		|	'SI'			  | 'NOMINATIVO'    |'PESO COLOMBIANO'| 'CUENTA DE AHORROS'			  | 'Laura Chacon '                 |
+ 
+ 
+
+ 	@AperturaDepositoUnJuridicoDosNaturales
+ 	Esquema del escenario: Apertura de un certificado de depósito Persona Jurídica_ al Vencimiento_3 titulares(Conjunta)_Capitalizable SI_pesos
+	Cuando realiza la busqueda de <cliente_persona_juridica> cliente juridico
+	Y nuevamente realiza la busqueda de un <cliente_persona_natural1> tipo indistinta
+	Y nuevamente realiza la busqueda de otro <cliente_persona_natural2> tipo indistinta
+	Y diligencia el formulario de Operación <producto>,<forma_pago>,<capitaliza>,<categoria>,<moneda>
+	Y diligencia el formulario de recepción de fondos
+	Entonces el Certificado de Depósito es creado desplegando la pantalla Detalle de la Operación en estado ING
+	Ejemplos:
+  | cliente_persona_juridica | cliente_persona_natural1 |  cliente_persona_natural2  |  producto 					| forma_pago	  | capitaliza | categoria 	 |     moneda      | 
+  | 'BANCO COBIS' 	     		 | '123456789'              |            '74489'         | 'CERTIFICADO VIP' 	| 'VENCIMIENTO'	|	'SI'			 | 'NOMINATIVO'|'PESO COLOMBIANO'|
  
   

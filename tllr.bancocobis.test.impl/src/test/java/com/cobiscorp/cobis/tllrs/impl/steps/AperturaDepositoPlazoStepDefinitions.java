@@ -343,4 +343,38 @@ public class AperturaDepositoPlazoStepDefinitions {
 		ValidationActions.isEquals(FRecepcionModalForm.Notificaciones.InformacionCuenta, "Excepción de negocio: 16 - 141144 - [BL_disponible_ctas] No hay disponible en la cuenta");
 	}
 	
+	/********************** JCMA Apertura de un certificado de depósito Persona Jurídica_ al Vencimiento_3 titulares(Conjunta)_Capitalizable SI_pesos ********************/
+	@Cuando("nuevamente realiza la busqueda de un {string} tipo indistinta")
+	public void nuevamente_realiza_la_busqueda_de_un_cliente_persona_natural_tipo_indistinta(String string){
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
+		FormActions.selectByText(AdminAperturaPlazoFijo.tipoCuenta, "INDISTINTA");
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonBuscarCliente);
+		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_IDENTIFICACION, string);
+		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarCliente);
+		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridPrimerCliente);
+		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);
+	}
+	
+	@Cuando("nuevamente realiza la busqueda de otro {string} tipo indistinta")
+	public void nuevamente_realiza_la_busqueda_de_otro_cliente_persona_natural_tipo_indistinta(String string){
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
+		FormActions.selectByText(AdminAperturaPlazoFijo.tipoCuenta, "INDISTINTA");
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonBuscarCliente);
+		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_IDENTIFICACION, string);
+		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarCliente);
+		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridPrimerCliente);
+		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonSiguiente);
+	}
+	
+	@Cuando("diligencia el formulario de recepción de fondos periodico")
+	public void diligencia_el_formulario_de_recepción_de_fondos_periodico(){
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonNuevo);
+		FormActions.selectByText(FRecepcionModalForm.Seleccion.formaRecepcion, "CONTABLE");
+		FormActions.enterText(FRecepcionModalForm.IngresarDatos.input_MontoRecepcion, "12000");
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonSeleccionRecepcion);
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonSiguienteRecepcion);
+	}
+	
 }
