@@ -41,7 +41,7 @@ public class AperturaDepositoPlazoStepDefinitions {
 		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarCliente);
 		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridPrimerCliente);
 		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);
-		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonSiguiente);
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonSiguiente);		
 	}
 
 	@Cuando("diligencia el formulario de Operación")
@@ -129,8 +129,9 @@ public class AperturaDepositoPlazoStepDefinitions {
 		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridPrimerCliente);
 		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonSiguiente);
+		
 	}
-
+	
 	@Cuando("diligencia el formulario de Operación con capitaliza")
 	public void diligencia_el_formulario_de_operacion_con_capitaliza(){
 		FormActions.selectByText(FVistaOperacionForm.Seleccion.producto, "CERTIFICADO VIP");
@@ -270,6 +271,16 @@ public class AperturaDepositoPlazoStepDefinitions {
 		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSimular);
 		FormActions.clickOn(FVistaOperacionForm.Buttons.botonAceptarModal);
 		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSiguiente);
+	}
+	
+	@Cuando("diligencia el formulario de recepción de fondos periodico")
+	public void diligencia_el_formulario_de_recepción_de_fondos_periodico(){
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonNuevo);
+		FormActions.selectByText(FRecepcionModalForm.Seleccion.formaRecepcion, "CONTABLE");
+		FormActions.enterText(FRecepcionModalForm.IngresarDatos.input_MontoRecepcion, "12000");
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonSeleccionRecepcion);
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonSiguienteRecepcion);
 	}
 	
 	/*MAAV Apertura de un certificado de depósito Persona Natural_Periódico_pago trimestral_Capitalización NO_moneda pesos*/
