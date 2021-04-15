@@ -8,7 +8,7 @@ import com.cobiscorp.cobis.serenity.actions.FormActions;
 import com.cobiscorp.cobis.serenity.actions.GridActions;
 import com.cobiscorp.cobis.serenity.actions.ValidationActions;
 import com.cobiscorp.cobis.tllrs.test.AdminAperturaPlazoFijo;
-import com.cobiscorp.cobis.tllrs.test.AdminAsientoContableMayorizado;
+
 import com.cobiscorp.cobis.tllrs.test.AdminClientes;
 import com.cobiscorp.cobis.tllrs.test.CabeceraCliente;
 import com.cobiscorp.cobis.tllrs.test.FBusquedaClienteForm;
@@ -41,7 +41,7 @@ public class AperturaDepositoPlazoStepDefinitions {
 		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarCliente);
 		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridPrimerCliente);
 		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);
-		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonSiguiente);		
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonSiguiente);
 	}
 
 	@Cuando("diligencia el formulario de Operación")
@@ -129,9 +129,8 @@ public class AperturaDepositoPlazoStepDefinitions {
 		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridPrimerCliente);
 		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonSiguiente);
-		
 	}
-	
+
 	@Cuando("diligencia el formulario de Operación con capitaliza")
 	public void diligencia_el_formulario_de_operacion_con_capitaliza(){
 		FormActions.selectByText(FVistaOperacionForm.Seleccion.producto, "CERTIFICADO VIP");
@@ -273,14 +272,75 @@ public class AperturaDepositoPlazoStepDefinitions {
 		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSiguiente);
 	}
 	
-	@Cuando("diligencia el formulario de recepción de fondos periodico")
-	public void diligencia_el_formulario_de_recepción_de_fondos_periodico(){
+	/*MAAV Apertura de un certificado de depósito Persona Natural_Periódico_pago trimestral_Capitalización NO_moneda pesos*/
+
+	@Cuando("diligencia el formulario de Operación con moneda pesos {string},{string},{string},{string},{string},{string}")
+	public void diligencia_el_formulario_de_operacion_con_moneda_pesos(String producto, String forma_pago, String frecuencia, String capitaliza, String categoria, String moneda){
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.producto, producto);
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.formaPago, forma_pago);
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.frecuenciaPago, frecuencia);
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.capitalizaInteres, capitaliza);
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.categoria, categoria);
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.moneda, moneda);
+		FormActions.enterText(FVistaOperacionForm.IngresarDatos.input_Monto, "255000");
+		FormActions.enterText(FVistaOperacionForm.IngresarDatos.input_Plazo, "40");
+		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSimular);
+		FormActions.clickOn(FVistaOperacionForm.Buttons.botonAceptarModal);
+		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSiguiente);
+	}
+
+	@Cuando("diligencia el formulario de recepción de fondos pesos con {string}")
+	public void diligencia_el_formulario_de_recepción_de_fondos_pesos(String formaRecepcionFC){
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonNuevo);
-		FormActions.selectByText(FRecepcionModalForm.Seleccion.formaRecepcion, "CONTABLE");
-		FormActions.enterText(FRecepcionModalForm.IngresarDatos.input_MontoRecepcion, "12000");
+		FormActions.selectByText(FRecepcionModalForm.Seleccion.formaRecepcion, formaRecepcionFC);
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
-		FormActions.clickOn(FRecepcionModalForm.Buttons.botonSeleccionRecepcion);
+		FormActions.enterText(FRecepcionModalForm.IngresarDatos.input_MontoRecepcion, "255000");
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonSiguienteRecepcion);
+	}
+	
+	@Cuando("diligencia el formulario formas de pago pesos con {string},{string}")
+	public void diligencia_el_formulario_formas_de_pago_pesos(String formaRecepcionFP, String nombre_beneficiario){
+		FormActions.clickOn(FFormasDePago.Buttons.botonNuevo);
+		FormActions.selectByText(FFormasDePago.Seleccion.formaRecepcion, formaRecepcionFP);
+		FormActions.enterText(FFormasDePago.IngresarDatos.input_MontoRecepcion, "2283.67");
+		FormActions.selectByText(FFormasDePago.Seleccion.beneficiario, nombre_beneficiario);
+		FormActions.clickOn(FFormasDePago.Buttons.botonAceptarPago);
+		FormActions.clickOn(FFormasDePago.Buttons.botonGuardar);
+	}
+	
+	/*MAAV Apertura de un certificado de depósito Persona Natural_Vencimiento_Capitalización SI_moneda pesos_ND a una Cta. Sin fondos*/
+	
+	@Cuando("diligencia el formulario de Operación vencimiento con moneda pesos {string},{string},{string},{string},{string}")
+	public void diligencia_el_formulario_de_operacion_vencimiento_con_moneda_pesos(String producto, String forma_pago, String capitaliza, String categoria, String moneda){
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.producto, producto);
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.formaPago, forma_pago);
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.capitalizaInteres, capitaliza);
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.categoria, categoria);
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.moneda, moneda);
+		FormActions.enterText(FVistaOperacionForm.IngresarDatos.input_Monto, "255000");
+		FormActions.enterText(FVistaOperacionForm.IngresarDatos.input_Plazo, "40");
+		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSimular);
+		FormActions.clickOn(FVistaOperacionForm.Buttons.botonAceptarModal);
+		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSiguiente);
+	}
+	
+	@Cuando("diligencia el formulario de recepción de fondos cta con {string},{string}")
+	public void diligencia_el_formulario_de_recepción_de_fondos_cta(String formaRecepcionFC,String nombre_cliente){
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonNuevo);
+		FormActions.selectByText(FRecepcionModalForm.Seleccion.formaRecepcion, formaRecepcionFC);
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
+		FormActions.enterText(FRecepcionModalForm.IngresarDatos.input_MontoRecepcion, "255000");
+		FormActions.selectByText(FRecepcionModalForm.Seleccion.cliente, nombre_cliente);
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonCuentaCliente);
+		FormActions.clickOn(FRecepcionModalForm.Grid.gridPrimerCliente);
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
+		//FormActions.clickOn(FRecepcionModalForm.Buttons.botonSiguienteRecepcion);
+	}
+	
+	@Entonces("se despliega el mensaje No hay disponible en la cuenta")
+	public void se_despliega_el_mensaje_No_hay_disponible_en_la_cuenta(){
+		ValidationActions.isEquals(FRecepcionModalForm.Notificaciones.InformacionCuenta, "Excepción de negocio: 16 - 141144 - [BL_disponible_ctas] No hay disponible en la cuenta");
 	}
 	
 }

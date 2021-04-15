@@ -88,4 +88,30 @@ Antecedentes: El usuario ingresa a cobis
 	Ejemplos:
   | cliente_persona_juridica | cliente_persona_natural | producto 					| forma_pago	|frecuencia 		| capitaliza | categoria 	 |moneda | formaRecepcion	|
   | 'BANCO COBIS' 	     		 | 'FERNANDA'              | 'CERTIFICADO VIP' 	| 'PERIODICA'	|'MENSUAL'			|	'SI'			 | 'NOMINATIVO'|'DOLAR'| 'CONTABLE'			|
+
+      
+  #QA-S459614
+  @AperturaDepositoTriCapPesos
+	Esquema del escenario: Apertura de un certificado de depósito Persona Natural_Periódico_pago trimestral_Capitalización NO_moneda pesos
+	Y realiza la busqueda de un solo <cliente_persona_natural>
+	Y diligencia el formulario de Operación con moneda pesos <producto>,<forma_pago>,<frecuencia>,<capitaliza>,<categoria>,<moneda>
+	Y diligencia el formulario de recepción de fondos pesos con <formaRecepcionFC>
+	Y diligencia el formulario formas de pago pesos con <formaRecepcionFP>,<nombre_beneficiario>
+	Entonces el Certificado de Depósito es creado desplegando la pantalla Detalle de la Operación en estado ING
+	Ejemplos:
+  | cliente_persona_natural  | producto 		        | forma_pago	  |frecuencia     | capitaliza  | categoria 	    |moneda           | formaRecepcionFC	| formaRecepcionFP |  nombre_beneficiario         |
+  | '1713115'  	     		     | 'CERTIFICADO PYME'   | 'PERIODICA'	  |'TRIMESTRAL'		|	'NO'			  | 'NOMINATIVO'    |'PESO COLOMBIANO'| 'CONTABLE'			  |  'CONTABLE'      | 'Laura Chacon '                 |
+
+
+  #QA-S459615
+  @AperturaDepositoVencND
+	Esquema del escenario: Apertura de un certificado de depósito Persona Natural_Vencimiento_Capitalización SI_moneda pesos_ND a una Cta. Sin fondos
+	Y realiza la busqueda de un solo <cliente_persona_natural>
+	Y diligencia el formulario de Operación vencimiento con moneda pesos <producto>,<forma_pago>,<capitaliza>,<categoria>,<moneda>
+	Y diligencia el formulario de recepción de fondos cta con <formaRecepcionFC>,<nombre_cliente>
+	Entonces se despliega el mensaje No hay disponible en la cuenta
+	Ejemplos:
+  | cliente_persona_natural  | producto 		        | forma_pago	        | capitaliza  | categoria 	    |moneda           | formaRecepcionFC	        |  nombre_cliente            |
+  | '1713115'  	     		     | 'CERTIFICADO PYME'   | 'VENCIMIENTO'	  		|	'SI'			  | 'NOMINATIVO'    |'PESO COLOMBIANO'| 'CUENTA DE AHORROS'			  | 'Laura Chacon '                 |
+ 
   

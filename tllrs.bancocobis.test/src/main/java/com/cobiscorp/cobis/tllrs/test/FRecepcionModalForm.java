@@ -2,6 +2,7 @@ package com.cobiscorp.cobis.tllrs.test;
 
 import org.openqa.selenium.By;
 
+import com.cobiscorp.cobis.tllrs.test.FDetalleOperacionApertura.CabeceraInformacion.EstadoApertura;
 import com.cobiscorp.cobis.tllrs.test.FVistaOperacionForm.Buttons.BotonSimular;
 import com.cobiscorp.cobis.utils.base.Singleton;
 import com.cobiscorp.cobis.utils.controls.IButton;
@@ -11,6 +12,7 @@ import com.cobiscorp.cobis.utils.controls.IGrid;
 import com.cobiscorp.cobis.utils.controls.IInputValue;
 import com.cobiscorp.cobis.utils.controls.ILayout;
 import com.cobiscorp.cobis.utils.events.IClickable;
+import com.cobiscorp.cobis.utils.events.ITextReadable;
 
 import net.serenitybdd.screenplay.targets.Target;
 
@@ -191,7 +193,7 @@ public class FRecepcionModalForm {
 			}
 	
 		}
-		
+
 		public static class BotonSiguienteRecepcion implements IButton{
 			
 			private String id = "CM_TPFPRTXU_HPX";
@@ -212,10 +214,12 @@ public class FRecepcionModalForm {
 
 		public static class BotonCuentaCliente implements IButton{
 			
-			private String xpath = "//body/div[6]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[6]/div[1]/div[1]/div[1]/div[1]/button[1]";
+			//private String xpath = "//body/div[6]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[6]/div[1]/div[1]/div[1]/div[1]/button[1]";
+	
+            private String xpath = "//*[@id='VA_CUENTAREFEREAAA_719386_DIV']/div/div/div/button";
 			
 			private Target target = Target.the("BotonCuentaCliente").located(By.xpath(xpath));
-	
+			
 			@Override
 			public Target getTarget() {
 				return target;
@@ -283,4 +287,26 @@ public class FRecepcionModalForm {
 			return id;
 		}
 	}
+	
+	public static class Notificaciones {
+		public static final NotificacionInformacion InformacionCuenta = Singleton.getInstance(NotificacionInformacion.class);
+		
+		public static class NotificacionInformacion implements ITextReadable {
+
+			private String xpath = "//*[@ng-app='VC_FVISTATIEL_770518']/body/div[11]/div[1]/div[4]/div[1]";
+		
+			private Target target = Target.the("BotonCuentaCliente").located(By.xpath(xpath));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return xpath;
+			}
+		}
+	}
+	
 }
