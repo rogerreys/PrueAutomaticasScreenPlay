@@ -26,7 +26,7 @@ public class FRecepcionModalForm {
 
 			private String id = "VA_CODIGOAPAGOKIMV_550386";
 			
-			private Target target = Target.the("FormaRecepcion").located(By.xpath(id));
+			private Target target = Target.the("FormaRecepcion").located(By.id(id));
 	
 			@Override
 			public Target getTarget() {
@@ -214,8 +214,6 @@ public class FRecepcionModalForm {
 
 		public static class BotonCuentaCliente implements IButton{
 			
-			//private String xpath = "//body/div[6]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[6]/div[1]/div[1]/div[1]/div[1]/button[1]";
-	
             private String xpath = "//*[@id='VA_CUENTAREFEREAAA_719386_DIV']/div/div/div/button";
 			
 			private Target target = Target.the("BotonCuentaCliente").located(By.xpath(xpath));

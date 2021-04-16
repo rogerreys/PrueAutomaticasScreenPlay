@@ -20,6 +20,7 @@ public class FDetalleOperacionApertura {
 		public static final BotonModificacion botonModificacion = Singleton.getInstance(BotonModificacion.class);
 		public static final BotonActivar botonActivar = Singleton.getInstance(BotonActivar.class);
 		public static final BotonAnular botonAnular = Singleton.getInstance(BotonAnular.class);
+		public static final BotonCerrarMensajeExcepcion botonCerrarMensajeExcepcion  = Singleton.getInstance(BotonCerrarMensajeExcepcion.class);
 
 		public static class BotonOpcionesApertura implements IButton {
 
@@ -128,6 +129,23 @@ public class FDetalleOperacionApertura {
 
 		}
 
+		public static class BotonCerrarMensajeExcepcion implements IButton {
+
+			private String xpath = "/html/body/div[3]/div/div[2]/span";
+
+			private Target target = Target.the("BotonActivar").located(By.xpath(xpath));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return xpath;
+			}
+
+		}
 	}
 
 	public static class CabeceraInformacion {
@@ -146,6 +164,26 @@ public class FDetalleOperacionApertura {
 			@Override
 			public String getId() {
 				return id;
+			}
+		}
+	}
+	
+	public static class MensajeExcepcion{
+		public static final MensajeInformacion mensajeInformacion = Singleton.getInstance(MensajeInformacion.class);
+		
+		public static class MensajeInformacion implements ITextReadable {
+
+			private String xpath = "/html/body/div[3]/div/div[4]/div";
+			private Target target = Target.the("EstadoApertura").located(By.xpath(xpath));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return xpath;
 			}
 		}
 	}

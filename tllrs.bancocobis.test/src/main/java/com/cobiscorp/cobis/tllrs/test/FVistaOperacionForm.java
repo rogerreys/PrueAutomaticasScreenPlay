@@ -29,7 +29,7 @@ public class FVistaOperacionForm {
 
 			private String id = "VA_6382FCVFPQQZAQS_544483";
 			
-			private Target target = Target.the("CERTIFICADO VIP").located(By.id(id));
+			private Target target = Target.the("Producto").located(By.id(id));
 	
 			@Override
 			public Target getTarget() {

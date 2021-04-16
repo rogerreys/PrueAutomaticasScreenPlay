@@ -16,7 +16,6 @@ import com.cobiscorp.cobis.utils.events.IValueReadable;
 
 public class BaseActions extends BaseActionsTasks{
 
-	
 	/**
 	 * Espera la carga de componentes de manera dinamica
 	 *

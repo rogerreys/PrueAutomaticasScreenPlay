@@ -8,7 +8,7 @@ import com.cobiscorp.cobis.serenity.actions.FormActions;
 import com.cobiscorp.cobis.serenity.actions.GridActions;
 import com.cobiscorp.cobis.serenity.actions.ValidationActions;
 import com.cobiscorp.cobis.tllrs.test.AdminAperturaPlazoFijo;
-
+import com.cobiscorp.cobis.tllrs.test.AdminAsientoContableMayorizado;
 import com.cobiscorp.cobis.tllrs.test.AdminClientes;
 import com.cobiscorp.cobis.tllrs.test.CabeceraCliente;
 import com.cobiscorp.cobis.tllrs.test.FBusquedaClienteForm;
@@ -129,7 +129,6 @@ public class AperturaDepositoPlazoStepDefinitions {
 		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridPrimerCliente);
 		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonSiguiente);
-		
 	}
 	
 	@Cuando("diligencia el formulario de Operación con capitaliza")
@@ -157,30 +156,28 @@ public class AperturaDepositoPlazoStepDefinitions {
 		FormActions.clickOn(FVistaOperacionForm.Buttons.botonAceptarModal);
 		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSiguiente);
 	}
-
-	@Cuando("diligencia el formulario de recepción de fondos agregar las dos formas de pago de {string} y {string}")
-	public void diligencia_el_formulario_de_recepción_de_fondos_agregar_las_dos_formas_de_pago_de_y(String string, String string2) {
-		//Cliente1
+	@Dado("diligencia el formulario de recepción de fondos {string} a {string} con {string}")
+	public void diligencia_el_formulario_de_recepción_de_fondos_a_con(String formaRecepcion, String cliente_persona_natural, String mondo) {
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonNuevo);
-		FormActions.selectByText(FRecepcionModalForm.Seleccion.formaRecepcion, "CUENTA DE AHORROS");
-		FormActions.enterText(FRecepcionModalForm.IngresarDatos.input_MontoRecepcion, "6000");
-		FormActions.selectByText(FRecepcionModalForm.Seleccion.cliente, string);
+		FormActions.selectByText(FRecepcionModalForm.Seleccion.formaRecepcion, formaRecepcion);
+		FormActions.enterText(FRecepcionModalForm.IngresarDatos.input_MontoRecepcion, mondo);
+		FormActions.enterTextAndEnter(FRecepcionModalForm.IngresarDatos.inputprimerCliente, cliente_persona_natural);
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonCuentaCliente);
-		FormActions.enterTextAndEnter(FRecepcionModalForm.IngresarDatos.inputprimerCliente, string);
-		GridActions.selectRecord(FRecepcionModalForm.grid, 1); 
+		FormActions.clickOn(FRecepcionModalForm.Grid.gridPrimerCliente);
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
+	}
 
-//Cliente2
+	@Dado("diligencia el formulario de recepción de fondos {string} a {string} con {string} y guardar")
+	public void diligencia_el_formulario_de_recepción_de_fondos_a_con_y_guardar(String formaRecepcion, String cliente_persona_natural1, String mondo) {
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonNuevo);
-		FormActions.selectByText(FRecepcionModalForm.Seleccion.formaRecepcion, "CUENTA DE AHORROS");
-		FormActions.enterText(FRecepcionModalForm.IngresarDatos.input_MontoRecepcion, "6000");
-		FormActions.selectByText(FRecepcionModalForm.Seleccion.cliente, string2);
+		FormActions.enterTextAndTab(FRecepcionModalForm.IngresarDatos.inputFormaRecepcion, formaRecepcion);
+		FormActions.enterTextAndTab(FRecepcionModalForm.IngresarDatos.input_MontoRecepcion, mondo);
+		FormActions.enterTextAndEnter(FRecepcionModalForm.IngresarDatos.inputprimerCliente, cliente_persona_natural1);
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonCuentaCliente);
-		FormActions.enterTextAndEnter(FRecepcionModalForm.IngresarDatos.inputprimerCliente, string2);
-		GridActions.selectRecord(FRecepcionModalForm.grid, 1); 		
+		FormActions.clickOn(FRecepcionModalForm.Grid.gridPrimerCliente);
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
 		
-		FormActions.clickOn(FRecepcionModalForm.Buttons.botonSeleccionRecepcion);
+//		FormActions.clickOn(FRecepcionModalForm.Buttons.botonSeleccionRecepcion);
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonGuardarRecepcion);
 	}
 	
@@ -234,19 +231,33 @@ public class AperturaDepositoPlazoStepDefinitions {
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonSiguienteRecepcion);
 	}
 
-//	@Entonces("es creado Certificado de Depósito desplegando la pantalla Detalle de la Operación en estado ING")
-//	public void es_creado_Certificado_de_Depósito_desplegando_la_pantalla_Detalle_de_la_Operación_en_estado_ING() {
-//	    // Write code here that turns the phrase above into concrete actions
-//	    throw new io.cucumber.java.PendingException();
-//	}
-	
-	
 	/*RSRM  Apertura de un certificado de depósito Persona Jurídica_ Periódico_1 titular(indistinta)_Pago mensual_Capitalizable SI_dólares (multimoneda)*/
+	@Cuando("diligencia el formulario de recepción de fondos {string} a {string} y {string} con {int}")
+	public void diligencia_el_formulario_de_recepción_de_fondos_a_y_con(String formaRecepcion, String cliente_persona_juridica, String cliente_persona_natural, Integer mondo) {
+		//Cliente1
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonNuevo);
+		FormActions.selectByText(FRecepcionModalForm.Seleccion.formaRecepcion, formaRecepcion);
+		FormActions.enterText(FRecepcionModalForm.IngresarDatos.input_MontoRecepcion, mondo.toString());
+		FormActions.selectByText(FRecepcionModalForm.Seleccion.cliente, cliente_persona_juridica);
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonCuentaCliente);
+		FormActions.enterTextAndEnter(FRecepcionModalForm.IngresarDatos.inputprimerCliente, cliente_persona_juridica);
+		GridActions.selectRecord(FRecepcionModalForm.grid, 1); 
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
 	
-	@Cuando("diligencia el formulario de recepción de fondos a {string}")
-	public void diligencia_el_formulario_de_recepción_de_fondos_a(String formaRecepcion) {
+		//Cliente2
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonNuevo);
+		FormActions.selectByText(FRecepcionModalForm.Seleccion.formaRecepcion, formaRecepcion);
+		FormActions.enterText(FRecepcionModalForm.IngresarDatos.input_MontoRecepcion, mondo.toString());
+		FormActions.selectByText(FRecepcionModalForm.Seleccion.cliente, cliente_persona_natural);
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonCuentaCliente);
+		FormActions.enterTextAndEnter(FRecepcionModalForm.IngresarDatos.inputprimerCliente, cliente_persona_natural);
+		GridActions.selectRecord(FRecepcionModalForm.grid, 1); 		
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
 	   
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonSeleccionRecepcion);
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonSiguienteRecepcion);
 	}
+
 	@Cuando("diligencia el formulario de forma de pago")
 	public void diligencia_el_formulario_de_forma_de_pago() {
 		FormActions.clickOn(FFormasDePago.Buttons.botonNuevo);
@@ -378,14 +389,12 @@ public class AperturaDepositoPlazoStepDefinitions {
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonSiguiente);
 	}
 	
-	@Cuando("diligencia el formulario de recepción de fondos periodico")
-	public void diligencia_el_formulario_de_recepción_de_fondos_periodico(){
-		FormActions.clickOn(FRecepcionModalForm.Buttons.botonNuevo);
-		FormActions.selectByText(FRecepcionModalForm.Seleccion.formaRecepcion, "CONTABLE");
-		FormActions.enterText(FRecepcionModalForm.IngresarDatos.input_MontoRecepcion, "12000");
-		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
-		FormActions.clickOn(FRecepcionModalForm.Buttons.botonSeleccionRecepcion);
-		FormActions.clickOn(FRecepcionModalForm.Buttons.botonSiguienteRecepcion);
+	
+        /*RSRM  Apertura de un certificado de depósito Persona Jurídica_ Periódico_1 titular(indistinta)_Pago mensual_Capitalizable SI_dólares (multimoneda)*/
+	@Cuando("diligencia formulario ingresando las dos formas de pago {string} y {string} a {string} y {string} con {int}")
+	public void diligencia_formulario_ingresando_las_dos_formas_de_pago_y_a_y_con(String formaRecepcion, String formaRecepcion2, String cliente_persona_juridica, String cliente_persona_natural, Integer int1) {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
 	}
 	
 }
