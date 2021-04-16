@@ -37,15 +37,16 @@ Antecedentes: El usuario ingresa a cobis
 	 |numero_de_operacion  | numero 			|
 	 |'Numero de operación'| '70100012207'|
 	
-	 #QA-S465312
+   #QA-S465312
    @CancelaCuenta2FormasPago 
    Esquema del escenario: Verificar la Cancelación de un Certificado de Depósito con 2 Formas de Pago
 	 Cuando se busca el certificado de depósito por el <numero_de_operacion> con <numero_de_cuenta>
 	 Y se presiona el menú acciones, escogiendo la opción Cancelación Normal
 	 Y se presiona el botón siguiente
+	 Y se diligencia el formulario de Cancelación con el <numero_de_solicitante> y con <observacion>
 	 #Entonces el Certificado de Depósito se muestra un mensaje de excepcion <MensajeExcepcion> y se mantiene en estado <Estado>
 	 Ejemplos:
-	 |numero_de_operacion  | numero_de_cuenta 			|
-	 |'Numero de operación'| '70100012212'          |
+	 |numero_de_operacion  | numero_de_cuenta 			| numero_de_solicitante | observacion |
+	 |'Numero de operación'| '70100012212'          | 'DIANA LAURA SANCHEZ CHAVEZ' | 'PRUEBA CANCELACION' |
 	
 	 

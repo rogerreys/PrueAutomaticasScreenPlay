@@ -77,7 +77,14 @@ public class BusquedaDepositoStepDefinitions {
 	
 	@Cuando("se presiona el botón siguiente")
 	public void se_presiona_el_botón_siguiente() {
-		FormActions.clickOn(FCancelacionNormalForm.Buttons.botonSiguiente);
+		FormActions.clickOn(FCancelacionNormalForm.Buttons.botonSiguientecli);
+	}
+	
+	@Cuando("se diligencia el formulario de Cancelación con el {string} y con {string}")
+	public void se_diligencia_el_formulario_de_cancelacion_con_el_y_con(String numero_de_solicitante ,String observacion) {
+		FormActions.selectByText(FCancelacionNormalForm.Seleccion.solicitante,numero_de_solicitante);
+		FormActions.enterText(FCancelacionNormalForm.IngresarDatos.inputObservacion, observacion);
+		FormActions.clickOn(FCancelacionNormalForm.Buttons.botonSiguienteop);
 	}
 	
 }
