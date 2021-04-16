@@ -3,6 +3,7 @@ package com.cobiscorp.cobis.tllrs.impl.steps;
 import com.cobiscorp.cobis.serenity.actions.FormActions;
 import com.cobiscorp.cobis.serenity.actions.ValidationActions;
 import com.cobiscorp.cobis.tllrs.test.FBusquedaDepositoForm;
+import com.cobiscorp.cobis.tllrs.test.FCancelacionNormalForm;
 import com.cobiscorp.cobis.tllrs.test.FDetalleBusquedaDeposito;
 import com.cobiscorp.cobis.tllrs.test.FDetalleOperacionApertura;
 
@@ -45,11 +46,7 @@ public class BusquedaDepositoStepDefinitions {
 		FormActions.clickOn(FDetalleBusquedaDeposito.Buttons.botonCancelacionNormal);
 	}
 	
-	//JCMA QA-S465034
-	@Cuando("se presiona el botón siguientes")
-	public void se_presiona_el_boton_siguientes(){
-		
-	}
+	
 	
 	//JCMA QA-S465034
 	@Cuando("se diligencia el formulario de Cancelación")
@@ -65,6 +62,22 @@ public class BusquedaDepositoStepDefinitions {
 	@Entonces("el Certificado de Depósito se cancela cambiando el estado del mismo")
 	public void el_certificado_de_deposito_se_cancela_cambiando_el_estado_del_mismo(){
 		
+	}
+	
+/*MAAV Apertura de un certificado de depósito Persona Natural_Vencimiento_Capitalización SI_moneda pesos_ND a una Cta. Sin fondos*/
+	
+	@Cuando("se busca el certificado de depósito por el {string} con {string}")
+	public void se_busca_el_certificado_de_deposito_por_el_con(String numero_de_operacion, String numero_de_cuenta) {
+	    FormActions.selectByText(FBusquedaDepositoForm.Seleccion.buscarPor, numero_de_operacion);
+	    FormActions.enterText(FBusquedaDepositoForm.IngresarDatos.input_BuscarTodos, numero_de_cuenta);
+	    FormActions.clickOn(FBusquedaDepositoForm.Buttons.botonBuscar);
+	    FormActions.clickOn(FBusquedaDepositoForm.GridListaP.gridPrimerCliente);
+	}
+	
+	
+	@Cuando("se presiona el botón siguiente")
+	public void se_presiona_el_botón_siguiente() {
+		FormActions.clickOn(FCancelacionNormalForm.Buttons.botonSiguiente);
 	}
 	
 }
