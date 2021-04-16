@@ -3,8 +3,10 @@ package com.cobiscorp.cobis.tllrs.test;
 import org.openqa.selenium.By;
 
 import com.cobiscorp.cobis.tllrs.test.FDetalleOperacionApertura.Buttons.BotonOpcionesApertura;
+import com.cobiscorp.cobis.tllrs.test.FDetalleOperacionApertura.CabeceraInformacion.EstadoApertura;
 import com.cobiscorp.cobis.utils.base.Singleton;
 import com.cobiscorp.cobis.utils.controls.IButton;
+import com.cobiscorp.cobis.utils.events.ITextReadable;
 
 import net.serenitybdd.screenplay.targets.Target;
 
@@ -323,6 +325,27 @@ public class FDetalleBusquedaDeposito {
 		}
 		
 		
+	}
+	
+	public static class CabeceraInformacion {
+		
+		public static final EstadoApertura estadoApertura = Singleton.getInstance(EstadoApertura.class);
+		
+		public static class EstadoApertura implements ITextReadable {
+
+			private String id = "HVA_INFOATTRIBUTE_3";
+			private Target target = Target.the("EstadoApertura").located(By.id(id));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return id;
+			}
+		}
 	}
 	
 

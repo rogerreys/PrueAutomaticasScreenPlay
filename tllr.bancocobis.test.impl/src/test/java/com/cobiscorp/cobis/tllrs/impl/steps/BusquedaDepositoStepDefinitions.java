@@ -3,6 +3,7 @@ package com.cobiscorp.cobis.tllrs.impl.steps;
 import com.cobiscorp.cobis.serenity.actions.FormActions;
 import com.cobiscorp.cobis.serenity.actions.ValidationActions;
 import com.cobiscorp.cobis.tllrs.test.FBusquedaDepositoForm;
+import com.cobiscorp.cobis.tllrs.test.FDetalleBusquedaDeposito;
 import com.cobiscorp.cobis.tllrs.test.FDetalleOperacionApertura;
 
 import io.cucumber.java.es.Cuando;
@@ -40,8 +41,8 @@ public class BusquedaDepositoStepDefinitions {
 	//JCMA QA-S465034
 	@Cuando("se presiona el menú acciones, escogiendo la opción Cancelación Normal")
 	public void se_presiona_el_menu_acciones_escogiendo_la_opcion_cancelacion_normal(){
-		FormActions.clickOn(FDetalleOperacionApertura.Buttons.botonOpcionesApertura);
-		FormActions.clickOn(FDetalleOperacionApertura.Buttons.botonActivar);
+		FormActions.clickOn(FDetalleBusquedaDeposito.Buttons.botonOpcionesApertura);
+		FormActions.clickOn(FDetalleBusquedaDeposito.Buttons.botonCancelacionNormal);
 	}
 	
 	//JCMA QA-S465034
