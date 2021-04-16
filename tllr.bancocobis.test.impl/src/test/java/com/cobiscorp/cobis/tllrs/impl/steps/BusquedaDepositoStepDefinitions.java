@@ -36,4 +36,35 @@ public class BusquedaDepositoStepDefinitions {
 		ValidationActions.isEquals(FDetalleOperacionApertura.MensajeExcepcion.mensajeInformacion, mensajeExcepcion );
 		ValidationActions.isEquals(FDetalleOperacionApertura.CabeceraInformacion.estadoApertura, estado);
 	}
+	
+	//JCMA QA-S465034
+	@Cuando("se presiona el menú acciones, escogiendo la opción Cancelación Normal")
+	public void se_presiona_el_menu_acciones_escogiendo_la_opcion_cancelacion_normal(){
+		FormActions.clickOn(FDetalleOperacionApertura.Buttons.botonOpcionesApertura);
+		FormActions.clickOn(FDetalleOperacionApertura.Buttons.botonActivar);
+	}
+	
+	//JCMA QA-S465034
+	@Cuando("se presiona el botón siguientes")
+	public void se_presiona_el_boton_siguientes(){
+		
+	}
+	
+	//JCMA QA-S465034
+	@Cuando("se diligencia el formulario de Cancelación")
+	public void se_diligencia_el_formulario_de_cancelacion(){
+		
+	}
+	
+	@Cuando("se diligencia el formulario de forma de pago")
+	public void se_diligencia_el_formulario_de_forma_de_pago(){
+		
+	}
+	
+	@Entonces("el Certificado de Depósito se cancela cambiando el estado del mismo")
+	public void el_certificado_de_deposito_se_cancela_cambiando_el_estado_del_mismo(){
+		
+	}
+	
 }
+
