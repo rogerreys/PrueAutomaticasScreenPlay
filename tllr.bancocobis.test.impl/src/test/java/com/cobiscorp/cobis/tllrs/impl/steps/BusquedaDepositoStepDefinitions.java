@@ -51,7 +51,9 @@ public class BusquedaDepositoStepDefinitions {
 	//JCMA QA-S465034
 	@Cuando("se diligencia el formulario de Cancelación")
 	public void se_diligencia_el_formulario_de_cancelacion(){
-		
+		FormActions.selectByText(FCancelacionNormalForm.Seleccion.solicitante, "FERNANDA DIAZ DE LEON");
+		FormActions.enterText(FCancelacionNormalForm.IngresarDatos.inputObservacion, "Obervación de prueba");
+		FormActions.clickOn(FCancelacionNormalForm.Buttons.botonSiguienteop);
 	}
 	
 	@Cuando("se diligencia el formulario de forma de pago")
