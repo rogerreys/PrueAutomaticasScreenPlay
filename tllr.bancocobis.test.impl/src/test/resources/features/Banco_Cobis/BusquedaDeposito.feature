@@ -49,4 +49,17 @@ Antecedentes: El usuario ingresa a cobis
 	 |numero_de_operacion  | numero_de_cuenta 			| numero_de_solicitante | observacion |
 	 |'Numero de operación'| '70100012212'          | 'DIANA LAURA SANCHEZ CHAVEZ' | 'PRUEBA CANCELACION' |
 	
+	 #QA-S465407
+	 @CancelacionDepositoMultimoneda
+	 Esquema del escenario: Validar la cancelación de un Certificado de Depósito multimoneda
+	 Cuando se busca el certificado de depósito por el <numero_de_operacion> con <numero_de_cuenta>
+	 Y se presiona el menú acciones, escogiendo la opción Cancelación Normal
+	 Y se presiona el botón siguiente
+	 Y se diligencia el formulario de Cancelación con el <numero_de_solicitante> y con <observacion>
+	 Y se diligencia el formulario de forma de pago con <forma_recepcion> y <monto> y <numero_de_solicitante>
+	 Entonces el Certificado de Depósito se cancela cambiando el estado del mismo
+		Ejemplos: 
+		|numero_de_operacion  | numero_de_cuenta | numero_de_solicitante        | observacion          | forma_recepcion    | monto    |
+	  |'Numero de operación'|'70200012726'     | 'MARIANA  HERNANDEZ LOPEZ' | 'PRUEBA CANCELACION' | 'CUENTA DE AHORROS'| '6017.50'|
+	  
 	 

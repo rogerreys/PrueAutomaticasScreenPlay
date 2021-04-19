@@ -9,8 +9,10 @@ import com.cobiscorp.cobis.tllrs.test.FRecepcionModalForm.Seleccion.Cliente;
 import com.cobiscorp.cobis.tllrs.test.FRecepcionModalForm.Seleccion.FormaRecepcion;
 import com.cobiscorp.cobis.utils.base.Singleton;
 import com.cobiscorp.cobis.utils.controls.IButton;
+import com.cobiscorp.cobis.utils.controls.IGrid;
 import com.cobiscorp.cobis.utils.controls.IComboBox;
 import com.cobiscorp.cobis.utils.controls.IInputValue;
+import com.cobiscorp.cobis.utils.events.IClickable;
 
 import net.serenitybdd.screenplay.targets.Target;
 
@@ -80,6 +82,7 @@ public class FFormasDePago {
 	public static class Buttons {
 
 		public static final BotonNuevo botonNuevo = Singleton.getInstance(BotonNuevo.class);
+		public static final BotonCuentaCliente botonCuentaCliente = Singleton.getInstance(BotonCuentaCliente.class);
 		public static final BotonAceptarPago botonAceptarPago = Singleton.getInstance(BotonAceptarPago.class);
 		public static final BotonGuardar botonGuardar = Singleton.getInstance(BotonGuardar.class);
 
@@ -99,6 +102,24 @@ public class FFormasDePago {
 				return id;
 			}
 
+		}
+		
+		public static class BotonCuentaCliente implements IButton{
+			
+            private String xpath = "//*[@id='VA_CUENTAREFEREAAN_689373_DIV']/div/div/div/button";
+            
+			private Target target = Target.the("BotonCuentaCliente").located(By.xpath(xpath));
+			
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+	
+			@Override
+			public String getId() {
+				return xpath;
+			}
+	
 		}
 
 		public static class BotonAceptarPago implements IButton {
@@ -138,5 +159,40 @@ public class FFormasDePago {
 		}
 
 	}
+	
+	public static final Grid grid = Singleton.getInstance(Grid.class);
+	
+	public static class Grid implements IGrid {
+		private String id = "QV_9795_86035";
+		private Target target = Target.the("QV_9795_86035").located(By.id(id));
+		
+		public static final GridPrimerCliente gridPrimerCliente = Singleton.getInstance(GridPrimerCliente.class);
+		
+		public static class GridPrimerCliente implements IClickable{
+			
+			private String xpath = "//*[@id='QV_9795_86035']/table/tbody/tr/td[1]/span[1]";
+			private Target target = Target.the("GridPrimerCliente").located(By.xpath(xpath));
+	
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+	
+			@Override
+			public String getId() {
+				return xpath;
+			}
+	
+		}
+		
+		@Override
+		public Target getTarget() {
+			return target;
+		}
 
+		@Override
+		public String getId() {
+			return id;
+		}
+	}
 }

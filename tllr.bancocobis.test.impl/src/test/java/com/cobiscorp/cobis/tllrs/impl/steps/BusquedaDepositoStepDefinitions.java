@@ -100,5 +100,16 @@ public class BusquedaDepositoStepDefinitions {
 		FormActions.clickOn(FCancelacionNormalForm.Buttons.botonSiguienteop);
 	}
 	
+	@Cuando("se diligencia el formulario de forma de pago con {string} y {string} y {string}")
+	public void se_diligencia_el_formulario_de_forma_de_pago_multimoneda(String formaRecepcion,String monto, String solicitante){
+		FormActions.clickOn(FFormasDePago.Buttons.botonNuevo);
+		FormActions.selectByText(FFormasDePago.Seleccion.formaRecepcion, formaRecepcion);
+		FormActions.enterText(FFormasDePago.IngresarDatos.input_MontoRecepcion, monto);
+		FormActions.selectByText(FFormasDePago.Seleccion.beneficiario, solicitante);
+		FormActions.clickOn(FFormasDePago.Buttons.botonCuentaCliente);
+		FormActions.clickOn(FFormasDePago.Grid.gridPrimerCliente);
+		FormActions.clickOn(FFormasDePago.Buttons.botonAceptarPago);
+		FormActions.clickOn(FFormasDePago.Buttons.botonGuardar);
+	}
 }
 
