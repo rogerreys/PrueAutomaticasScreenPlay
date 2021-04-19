@@ -1,14 +1,18 @@
 package com.cobiscorp.cobis.tllrs.impl.steps;
 
+import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+
 import com.cobiscorp.cobis.serenity.actions.FormActions;
 import com.cobiscorp.cobis.serenity.actions.ValidationActions;
 import com.cobiscorp.cobis.tllrs.test.FBusquedaDepositoForm;
 import com.cobiscorp.cobis.tllrs.test.FCancelacionNormalForm;
 import com.cobiscorp.cobis.tllrs.test.FDetalleBusquedaDeposito;
 import com.cobiscorp.cobis.tllrs.test.FDetalleOperacionApertura;
+import com.cobiscorp.cobis.tllrs.test.FFormasDePago;
 
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Entonces;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class BusquedaDepositoStepDefinitions {
 
@@ -56,14 +60,21 @@ public class BusquedaDepositoStepDefinitions {
 		FormActions.clickOn(FCancelacionNormalForm.Buttons.botonSiguienteop);
 	}
 	
+	//JCMA QA-S465034
 	@Cuando("se diligencia el formulario de forma de pago")
 	public void se_diligencia_el_formulario_de_forma_de_pago(){
-		
+		FormActions.clickOn(FFormasDePago.Buttons.botonNuevo);
+		FormActions.selectByText(FFormasDePago.Seleccion.formaRecepcion, "CONTABLE");
+		FormActions.enterText(FFormasDePago.IngresarDatos.input_MontoRecepcion, "7048.32");
+		FormActions.selectByText(FFormasDePago.Seleccion.beneficiario, "FERNANDA DIAZ DE LEON");
+		FormActions.clickOn(FFormasDePago.Buttons.botonAceptarPago);
+		FormActions.clickOn(FFormasDePago.Buttons.botonGuardar);
 	}
 	
+	//JCMA QA-S465034
 	@Entonces("el Certificado de Depósito se cancela cambiando el estado del mismo")
 	public void el_certificado_de_deposito_se_cancela_cambiando_el_estado_del_mismo(){
-		
+		ValidationActions.isEquals(FDetalleOperacionApertura.CabeceraInformacion.estadoApertura, "CAN");
 	}
 	
 /*MAAV Apertura de un certificado de depósito Persona Natural_Vencimiento_Capitalización SI_moneda pesos_ND a una Cta. Sin fondos*/
