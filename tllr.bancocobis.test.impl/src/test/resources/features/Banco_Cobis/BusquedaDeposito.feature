@@ -23,9 +23,9 @@ Antecedentes: El usuario ingresa a cobis
 	 |numero_de_operacion  | numero 			| Estado | MensajeExcepcion|
 	 |'Numero de operación'| '70100002716'|'ING'	 | 'Excepción de negocio: 16 - 141153 - [BL_activa_deposito] Recuerde depositar los fondos en caja'|
 	
-	 #QA-S465034
-	 @CancelacionDeposito
-	 Esquema del escenario: Verificar la cancelación de un Certificado de Depósito con NC a cuenta
+    #QA-S465034
+    @CancelacionDeposito
+    Esquema del escenario: Verificar la cancelación de un Certificado de Depósito con NC a cuenta
 	 Cuando se busca el certificado de depósito por <numero_de_operacion> con <numero>
 	 Y presionar sobre el DPF en el grid de resultados
 	 Y se presiona el menú acciones, escogiendo la opción Cancelación Normal

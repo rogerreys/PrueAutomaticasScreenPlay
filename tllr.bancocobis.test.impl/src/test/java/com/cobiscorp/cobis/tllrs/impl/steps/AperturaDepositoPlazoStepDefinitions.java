@@ -4,6 +4,8 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 import org.openqa.selenium.Keys;
 
+import com.cobiscorp.cobis.serenity.actions.BaseActions;
+import com.cobiscorp.cobis.serenity.actions.ContainerActions;
 import com.cobiscorp.cobis.serenity.actions.FormActions;
 import com.cobiscorp.cobis.serenity.actions.GridActions;
 import com.cobiscorp.cobis.serenity.actions.ValidationActions;
@@ -26,6 +28,7 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class AperturaDepositoPlazoStepDefinitions {
+	String[] nombre = null;
 
 	/*RSRM El usuario crea una Apertura Deposito a Plazo */
 	@Cuando("navega desde menu hacia Apertura")
@@ -111,9 +114,10 @@ public class AperturaDepositoPlazoStepDefinitions {
 	/*RSRM Apertura de un certificado de depósito Persona Natural_Vencimiento_Capitaliza SI_2 formas de recepción*/
 	@Cuando("realiza la busqueda por nombre de {string}")
 	public void realiza_la_busqueda_por_nombre_de_cliente(String string){
+		nombre = string.split(" ");
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonBuscarCliente);	
-		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_NOMBRE, string);
+		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_NOMBRE, nombre[0]);
 		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarCliente);
 		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridPrimerCliente);
 		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);		
@@ -121,10 +125,11 @@ public class AperturaDepositoPlazoStepDefinitions {
 	
 	@Cuando("nuevamente realiza la busqueda por nombre de un {string} tipo indistinta")
 	public void nuevamente_realiza_la_busqueda_por_nombre_de_un_tipo_indistinta(String string) {
+		nombre = string.split(" ");
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
 		FormActions.selectByText(AdminAperturaPlazoFijo.tipoCuenta, "INDISTINTA");
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonBuscarCliente);
-		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_NOMBRE, string);
+		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_NOMBRE, nombre[0]);
 		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarCliente);
 		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridPrimerCliente);
 		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);
@@ -159,25 +164,26 @@ public class AperturaDepositoPlazoStepDefinitions {
 	@Dado("diligencia el formulario de recepción de fondos {string} a {string} con {string}")
 	public void diligencia_el_formulario_de_recepción_de_fondos_a_con(String formaRecepcion, String cliente_persona_natural, String mondo) {
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonNuevo);
-		FormActions.selectByText(FRecepcionModalForm.Seleccion.formaRecepcion, formaRecepcion);
-		FormActions.enterText(FRecepcionModalForm.IngresarDatos.input_MontoRecepcion, mondo);
-		FormActions.enterTextAndEnter(FRecepcionModalForm.IngresarDatos.inputprimerCliente, cliente_persona_natural);
+		FormActions.enterTextAndTab(FRecepcionModalForm.IngresarDatos.inputFormaRecepcion, formaRecepcion);
+		FormActions.enterTextAndTab(FRecepcionModalForm.IngresarDatos.input_MontoRecepcion, mondo);
+		FormActions.selectByText(FRecepcionModalForm.Seleccion.cliente, cliente_persona_natural);
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonCuentaCliente);
 		FormActions.clickOn(FRecepcionModalForm.Grid.gridPrimerCliente);
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonSeleccionRecepcion);
 	}
 
 	@Dado("diligencia el formulario de recepción de fondos {string} a {string} con {string} y guardar")
 	public void diligencia_el_formulario_de_recepción_de_fondos_a_con_y_guardar(String formaRecepcion, String cliente_persona_natural1, String mondo) {
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonNuevo);
 		FormActions.enterTextAndTab(FRecepcionModalForm.IngresarDatos.inputFormaRecepcion, formaRecepcion);
-		FormActions.enterTextAndTab(FRecepcionModalForm.IngresarDatos.input_MontoRecepcion, mondo);
+		FormActions.enterText(FRecepcionModalForm.IngresarDatos.input_MontoRecepcion, mondo);
 		FormActions.enterTextAndEnter(FRecepcionModalForm.IngresarDatos.inputprimerCliente, cliente_persona_natural1);
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonCuentaCliente);
 		FormActions.clickOn(FRecepcionModalForm.Grid.gridPrimerCliente);
+//		FormActions.clickOn(FRecepcionModalForm.Grid.gridSegundoCliente);
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
-		
-//		FormActions.clickOn(FRecepcionModalForm.Buttons.botonSeleccionRecepcion);
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonSeleccionRecepcion);
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonGuardarRecepcion);
 	}
 	

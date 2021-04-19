@@ -79,7 +79,6 @@ public class FRecepcionModalForm {
 			}
 		}
 		
-		
 		public static class Input_MontoRecepcion implements IInputValue {
 
 			private String id = "VA_MONTOIZNJERYLGS_823386";
@@ -98,8 +97,8 @@ public class FRecepcionModalForm {
 
 		public static class InputPrimerCliente implements IInputValue {
 
-			private String id = "VA_CLIENTESCJFYNZM_349386";
-			private Target target = Target.the("InputPrimerCliente").located(By.id(id));
+			private String xpath = "//*[@id='VA_CLIENTESCJFYNZM_349386_DIV']/div/span[1]/span/input";
+			private Target target = Target.the("InputPrimerCliente").located(By.xpath(xpath));
 
 			@Override
 			public Target getTarget() {
@@ -108,7 +107,7 @@ public class FRecepcionModalForm {
 
 			@Override
 			public String getId() {
-				return id;
+				return xpath;
 			}
 		}
 	}
@@ -257,6 +256,7 @@ public class FRecepcionModalForm {
 		private Target target = Target.the("QV_9795_86035").located(By.id(id));
 		
 		public static final GridPrimerCliente gridPrimerCliente = Singleton.getInstance(GridPrimerCliente.class);
+		public static final GridSegundoCliente gridSegundoCliente = Singleton.getInstance(GridSegundoCliente.class);
 		
 		public static class GridPrimerCliente implements IClickable{
 			
@@ -275,6 +275,22 @@ public class FRecepcionModalForm {
 	
 		}
 		
+		public static class GridSegundoCliente implements IClickable{
+			
+			private String xpath = "//*[@id='QV_9795_86035']/table/tbody/tr[2]/td[1]/span[1]"; 
+			private Target target = Target.the("GridPrimerCliente").located(By.xpath(xpath));
+	
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+	
+			@Override
+			public String getId() {
+				return xpath;
+			}
+	
+		}
 		@Override
 		public Target getTarget() {
 			return target;
