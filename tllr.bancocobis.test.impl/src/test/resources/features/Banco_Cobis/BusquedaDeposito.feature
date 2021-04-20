@@ -63,4 +63,29 @@ Antecedentes: El usuario ingresa a cobis
 		|numero_de_operacion  | numero_de_cuenta | numero_de_solicitante        | observacion          | forma_recepcion    | monto    |
 	  |'Numero de operación'|'70200012726'     | 'MARIANA  HERNANDEZ LOPEZ' | 'PRUEBA CANCELACION' | 'CUENTA DE AHORROS'| '6017.50'|
 	  
+	 #QA-S465709-Modificación de Certificados de Depósito-Parte 1
+	 @ActualizacionMontoDPF
+	 Esquema del escenario: Verificar la correcta actualización del monto de un Certificado de Depósito
+	 Cuando se busca el certificado de depósito por el <numero_de_operacion> con <numero_de_cuenta>
+	 Y se presiona el menú acciones escogiendo la opción Modificación
+	 Y se presiona el botón siguiente
+	 Y se diligencia el formulario de Operaciones modificando el <monto>
+	 Y se diligencia el formulario de forma de recepcion <monto>
+   Entonces se actualiza el <monto> del Certificado de Depósito
+	  Ejemplos:
+	 |numero_de_operacion  | numero_de_cuenta 			| monto     |
+	 |'Numero de operación'| '70200012930'          |'6,000.00' |
+	 
+	 #QA-S465709-Modificación de Certificados de Depósito-Parte 1
+	 @ActualizacionFormaDePagoDPF
+	 Esquema del escenario: Verificar la actualización de un Certificado de Depósito de Periódico a Vencimiento
+	 Cuando se busca el certificado de depósito por el <numero_de_operacion> con <numero_de_cuenta>
+	 Y se presiona el menú acciones escogiendo la opción Modificación
+	 Y se presiona el botón siguiente
+	 Y se diligencia el formulario de Operaciones modificando la forma de pago
+	 Y se diligencia el formulario forma de recepción
+	 Entonces se actualiza la forma de pago del Certificado de Depósito
+	 Ejemplos:
+	 |numero_de_operacion  | numero_de_cuenta 			| 
+	 |'Numero de operación'| '70100013352'          |
 	 

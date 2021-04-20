@@ -80,6 +80,7 @@ public class AdminAperturaPlazoFijo {
 		public static final BotonNuevo nuevoCliente = Singleton.getInstance(BotonNuevo.class);
 		public static final BotonBuscarCliente botonBuscarCliente = Singleton.getInstance(BotonBuscarCliente.class);
 		public static final BotonSiguiente botonSiguiente = Singleton.getInstance(BotonSiguiente.class);
+		public static final BotonAceptarEliminacion botonAceptarEliminacion = Singleton.getInstance(BotonAceptarEliminacion.class);
 		
 		public static class BotonNuevo implements IButton{
 			
@@ -127,7 +128,23 @@ public class AdminAperturaPlazoFijo {
 			public String getId() {
 				return rutaXPath;
 			}
-		}		
+		}	
+		
+		public static class BotonAceptarEliminacion implements IButton{
+			
+			private String rutaXPath = "/html/body/div[5]/div[2]/div[2]/nav/button[1]";
+			private Target target = Target.the("Botón Siguiente").located(By.xpath(rutaXPath));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return rutaXPath;
+			}
+		}
 	
 		 public static class botonNuevoAsientoContable implements IButton {
 			 
@@ -147,16 +164,37 @@ public class AdminAperturaPlazoFijo {
              public String getId() {
                  return id;
              }
+     
 		}
 		
 	}
 
 	public static class ButtonsRow{
 		public static final ButtonsAcceptRow buttonsAcceptRow = Singleton.getInstance(ButtonsAcceptRow.class);
+		public static final ButtonsDeleteRow buttonsDeleteRow = Singleton.getInstance(ButtonsDeleteRow.class);
+		
 		public static class ButtonsAcceptRow implements IButton {
 			private String xpath = "//tbody/tr[1]/td[5]/a[1]";
 			
 	        private Target target = Target.the("Botón Check Intgresar Cliente").located(By.xpath(xpath));
+		
+	         @Override
+	         public Target getTarget() {
+	             return target;
+	         }
+	
+	
+	
+	         @Override
+	         public String getId() {
+	             return xpath;
+	         }
+		}
+		
+		public static class ButtonsDeleteRow implements IButton {
+			private String xpath = "//tbody/tr[1]/td[7]/a[1]";
+			//private String xpath = "//*[@id='QV_6933_39827']/table/tbody/tr/td[7]/a";
+	        private Target target = Target.the("Botón eliminar fila").located(By.xpath(xpath));
 		
 	         @Override
 	         public Target getTarget() {

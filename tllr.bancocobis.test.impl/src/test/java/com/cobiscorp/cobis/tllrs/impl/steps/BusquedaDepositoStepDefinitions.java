@@ -4,11 +4,14 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 import com.cobiscorp.cobis.serenity.actions.FormActions;
 import com.cobiscorp.cobis.serenity.actions.ValidationActions;
+import com.cobiscorp.cobis.tllrs.test.AdminAperturaPlazoFijo;
 import com.cobiscorp.cobis.tllrs.test.FBusquedaDepositoForm;
 import com.cobiscorp.cobis.tllrs.test.FCancelacionNormalForm;
 import com.cobiscorp.cobis.tllrs.test.FDetalleBusquedaDeposito;
 import com.cobiscorp.cobis.tllrs.test.FDetalleOperacionApertura;
 import com.cobiscorp.cobis.tllrs.test.FFormasDePago;
+import com.cobiscorp.cobis.tllrs.test.FRecepcionModalForm;
+import com.cobiscorp.cobis.tllrs.test.FVistaOperacionForm;
 
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Entonces;
@@ -110,6 +113,55 @@ public class BusquedaDepositoStepDefinitions {
 		FormActions.clickOn(FFormasDePago.Grid.gridPrimerCliente);
 		FormActions.clickOn(FFormasDePago.Buttons.botonAceptarPago);
 		FormActions.clickOn(FFormasDePago.Buttons.botonGuardar);
+	}
+	
+	@Cuando("se presiona el menú acciones escogiendo la opción Modificación")
+	public void se_presiona_el_menu_acciones_escogiendo_la_opcion_modificacion(){
+		FormActions.clickOn(FDetalleOperacionApertura.Buttons.botonOpcionesApertura);
+		FormActions.clickOn(FDetalleOperacionApertura.Buttons.botonModificacion);
+	}
+	
+	@Cuando("se diligencia el formulario de Operaciones modificando el {string}")
+	public void se_diligencia_el_formulario_de_operaciones_modificando_el_monto(String monto){
+		FormActions.enterText(FVistaOperacionForm.IngresarDatos.input_Monto, monto);
+		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSimular);
+		FormActions.clickOn(FVistaOperacionForm.Buttons.botonAceptarModal);
+		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSiguiente);	
+	}
+	
+	@Cuando("se diligencia el formulario de forma de recepcion {string}")
+	public void se_diligencia_el_formulario_de_forma_de_recepcion(String monto){
+		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsDeleteRow);
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonAceptarEliminacion);
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonNuevo);
+		FormActions.selectByText(FRecepcionModalForm.Seleccion.formaRecepcion, "CONTABLE");
+		FormActions.enterText(FRecepcionModalForm.IngresarDatos.input_MontoRecepcion, monto);
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonSeleccionRecepcion);
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonGuardarRecepcion);
+		
+	}
+	
+	@Cuando("se actualiza el {string} del Certificado de Depósito")
+	public void se_actualiza_el_monto_del_certificado_de_deposito(String monto){
+		ValidationActions.isEquals(FDetalleOperacionApertura.CabeceraInformacion.montoApertura, monto);
+	}
+	
+	@Cuando("se diligencia el formulario de Operaciones modificando la forma de pago")
+	public void se_diligencia_el_formulario_de_operaciones_modificando_la_forma_de_pago(){
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.formaPago, "VENCIMIENTO");
+		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSimular);
+		FormActions.clickOn(FVistaOperacionForm.Buttons.botonAceptarModal);
+		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSiguiente);
+	}
+	@Cuando("se diligencia el formulario forma de recepción")
+	public void se_diligencia_el_formulario_forma_de_recepcion(){
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonGuardarRecepcion);
+	}
+	
+	@Cuando("se actualiza la forma de pago del Certificado de Depósito")
+	public void se_actualiza_la_forma_de_pago_del_certificado_de_deposito(){
+		
 	}
 }
 

@@ -150,11 +150,28 @@ public class FDetalleOperacionApertura {
 
 	public static class CabeceraInformacion {
 		public static final EstadoApertura estadoApertura = Singleton.getInstance(EstadoApertura.class);
+		public static final MontoApertura montoApertura = Singleton.getInstance(MontoApertura.class);
 		
 		public static class EstadoApertura implements ITextReadable {
 
 			private String id = "HVA_INFOATTRIBUTE_3";
 			private Target target = Target.the("EstadoApertura").located(By.id(id));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return id;
+			}
+		}
+		
+		public static class MontoApertura implements ITextReadable {
+
+			private String id = "HVA_INFOATTRIBUTE_0";
+			private Target target = Target.the("MontoApertura").located(By.id(id));
 
 			@Override
 			public Target getTarget() {
