@@ -61,12 +61,12 @@ public class BusquedaDepositoStepDefinitions {
 	}
 	
 	//JCMA QA-S465034
-	@Cuando("se diligencia el formulario de forma de pago")
-	public void se_diligencia_el_formulario_de_forma_de_pago(){
+	@Cuando("se diligencia el formulario de forma de pago de {string} con {string} el {string}")
+	public void se_diligencia_el_formulario_de_forma_de_pago(String nombre, String formaPago, String monto){ 
 		FormActions.clickOn(FFormasDePago.Buttons.botonNuevo);
-		FormActions.selectByText(FFormasDePago.Seleccion.formaRecepcion, "CONTABLE");
-		FormActions.enterText(FFormasDePago.IngresarDatos.input_MontoRecepcion, "7048.32");
-		FormActions.selectByText(FFormasDePago.Seleccion.beneficiario, "FERNANDA DIAZ DE LEON");
+		FormActions.selectByText(FFormasDePago.Seleccion.formaRecepcion, formaPago);
+		FormActions.enterText(FFormasDePago.IngresarDatos.input_MontoRecepcion, monto);
+		FormActions.selectByText(FFormasDePago.Seleccion.beneficiario, nombre);
 		FormActions.clickOn(FFormasDePago.Buttons.botonAceptarPago);
 		FormActions.clickOn(FFormasDePago.Buttons.botonGuardar);
 	}
