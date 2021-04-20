@@ -34,8 +34,25 @@ public class ComprobanteTipo {
 		this.areaOrigenStr = areaOrigen;
 	}
 
+	public static final GridMovimientos GridMovimientos = Singleton.getInstance(GridMovimientos.class);
 	
+	public static class GridMovimientos implements IGrid{
 	
+		private String id = "QV_1535_84617";
+		private Target target = Target.the("Grid Movimientos").located(By.id(id));
+
+		@Override
+		public Target getTarget() {
+			return target;
+		}
+
+		@Override
+		public String getId() {
+			return id;
+		}
+		
+		
+	}
 	public static final FormComprobanteTipo FORMCOMPROBANTETIPO = Singleton.getInstance(FormComprobanteTipo.class);
 	
 	public static class FormComprobanteTipo implements IControl {
@@ -59,6 +76,7 @@ public class ComprobanteTipo {
 		public static final Concepto concepto= Singleton.getInstance(Concepto.class);
 		public static final Valor valor= Singleton.getInstance(Valor.class);
 		public static final botonCheck botonCheck= Singleton.getInstance(botonCheck.class);
+		public static final botonUpdate botonUpdate= Singleton.getInstance(botonUpdate.class);
 		public static final TipoMovimiento tipoMovimiento = Singleton.getInstance(TipoMovimiento.class);
 		
 		public static class Buttons {
@@ -72,6 +90,29 @@ public class ComprobanteTipo {
 			
 			public static final botonCancelar BUTTON_CANCELAR = Singleton
 					.getInstance(botonCancelar.class);
+			
+			public static final botonAbrirCabecera BUTTON_ABRIR_CABECERA = Singleton
+					.getInstance(botonAbrirCabecera.class);
+			
+			public static final botonImprimir BUTTON_IMPRIMIR = Singleton
+					.getInstance(botonImprimir.class);
+			
+			public static class botonAbrirCabecera implements IButton {
+
+				private String id = "HVA_BUTTON_EXPAND";
+				private Target target = Target.the("botonAbrirCabecera").located(By.id(id));
+
+				@Override
+				public Target getTarget() {
+					return target;
+				}
+
+				@Override
+				public String getId() {
+					return id;
+				}
+			}
+			
 			
 			public static class botonNumeroComprobanteTipo implements IButton {
 
@@ -89,6 +130,21 @@ public class ComprobanteTipo {
 				}
 			}
 			
+			public static class botonImprimir implements IButton {
+
+				private String id = "CM_TCNMNGWT_2OW";
+				private Target target = Target.the("botonNumeroComprobanteTipo").located(By.id(id));
+
+				@Override
+				public Target getTarget() {
+					return target;
+				}
+
+				@Override
+				public String getId() {
+					return id;
+				}
+			}
 			public static class botonGuardar implements IButton {
 
 				private String id = "CM_TCNMNGWT_NGN";
@@ -143,6 +199,42 @@ public class ComprobanteTipo {
 
 			private String id = "VA_8851DRKSIWTWWRA_713896";
 			private Target target = Target.the("Descripción").located(By.id(id));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return id;
+			}
+		}
+		
+		public static final InputOficinaOrigen inputOficinaOrigen =  Singleton.getInstance(InputOficinaOrigen.class);
+		public static class InputOficinaOrigen implements IInputValue {
+
+			private String id = "VA_TEXTINPUTBOXZLA_126896";
+			private Target target = Target.the("Oficina Origen").located(By.xpath(id));
+
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return id;
+			}
+		}
+		
+		public static final InputAreaOrigen inputAreaOrigen =  Singleton.getInstance(InputAreaOrigen.class);
+		public static class InputAreaOrigen implements IInputValue {
+
+			private String id = "VA_TEXTINPUTBOXWVY_919896";
+			private Target target = Target.the("Oficina Origen").located(By.xpath(id));
+
 
 			@Override
 			public Target getTarget() {
@@ -248,6 +340,7 @@ public class ComprobanteTipo {
 				return id;
 			}
 		}
+
 
 		public static class InputCuenta implements IInputValue {
 
@@ -355,7 +448,52 @@ public class ComprobanteTipo {
 				return id;
 			}
 		}
+		public static class botonUpdate implements IButton {
 
+			private String id = ".//a[@class='btn btn-default k-grid-update cb-row-image-button']";
+			private Target target = Target.the("BotonActualizar").located(By.xpath(id));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return id;
+			}
+		}
+		public static final GrillaOficinaOrigen grillaOficinaOrigen = Singleton.getInstance(GrillaOficinaOrigen.class);
+		public static class GrillaOficinaOrigen implements IGrid {
+			private String id = "QV_4420_87124";
+			private Target target = Target.the("Grilla Oficina Origen").located(By.id(id));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return id;
+			}
+		}
+		
+		public static final GrillaAreaOrigen grillaAreaOrigen = Singleton.getInstance(GrillaAreaOrigen.class);
+		public static class GrillaAreaOrigen implements IGrid {
+			private String id = "QV_4420_87124";
+			private Target target = Target.the("Grilla Area Origen").located(By.id(id));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return id;
+			}
+		}
 		
 		//Comprobante tipo returns
 		@Override

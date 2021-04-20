@@ -396,11 +396,41 @@ public class AperturaDepositoPlazoStepDefinitions {
 	}
 	
 	
-        /*RSRM  Apertura de un certificado de depósito Persona Jurídica_ Periódico_1 titular(indistinta)_Pago mensual_Capitalizable SI_dólares (multimoneda)*/
-	@Cuando("diligencia formulario ingresando las dos formas de pago {string} y {string} a {string} y {string} con {int}")
-	public void diligencia_formulario_ingresando_las_dos_formas_de_pago_y_a_y_con(String formaRecepcion, String formaRecepcion2, String cliente_persona_juridica, String cliente_persona_natural, Integer int1) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+    /*RSRM  Apertura de un certificado de depósito para Persona Jurídica_con 1 titular(indistinta)_Periódico_con 2 formas de pago de interés*/
+	@Cuando("diligencia el formulario de recepción de fondos {string} a {string} con {string} y siguiente")
+	public void diligencia_el_formulario_de_recepción_de_fondos_a_con_y_siguiente(String formaRecepcion, String cliente_persona_natural, String monto) {
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonNuevo);
+		FormActions.enterTextAndTab(FRecepcionModalForm.IngresarDatos.inputFormaRecepcion, formaRecepcion);
+		FormActions.enterText(FRecepcionModalForm.IngresarDatos.input_MontoRecepcion, monto);
+		FormActions.enterTextAndEnter(FRecepcionModalForm.IngresarDatos.inputprimerCliente, cliente_persona_natural);
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonCuentaCliente);
+		FormActions.clickOn(FRecepcionModalForm.Grid.gridPrimerCliente);
+//		FormActions.clickOn(FRecepcionModalForm.Grid.gridSegundoCliente);
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonSeleccionRecepcion);
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonGuardarRecepcion);
+	}
+	
+	@Cuando("diligencia formulario ingresando las dos formas de pago {string} y {string} a {string} y {string} con {string}")
+	public void diligencia_formulario_ingresando_las_dos_formas_de_pago_y_a_y_con(String formaRecepcion, String formaRecepcion2, String cliente_persona_juridica, String cliente_persona_natural, String monto) {
+		FormActions.clickOn(FFormasDePago.Buttons.botonNuevo);
+		FormActions.selectByText(FFormasDePago.Seleccion.formaRecepcion, formaRecepcion);
+		FormActions.enterText(FFormasDePago.IngresarDatos.input_MontoRecepcion, monto);
+		FormActions.selectByText(FFormasDePago.Seleccion.beneficiario, cliente_persona_juridica);
+		FormActions.clickOn(FFormasDePago.Buttons.botonCuentaCliente);
+		FormActions.clickOn(FFormasDePago.Grid.gridPrimerCliente);
+		FormActions.clickOn(FFormasDePago.Buttons.botonAceptarPago);
+		
+		FormActions.clickOn(FFormasDePago.Buttons.botonNuevo);
+		FormActions.selectByText(FFormasDePago.Seleccion.formaRecepcion, formaRecepcion2);
+		FormActions.enterText(FFormasDePago.IngresarDatos.input_MontoRecepcion, monto);
+		FormActions.selectById(FFormasDePago.Seleccion.beneficiario, cliente_persona_natural);
+		if(formaRecepcion2 != "EFECTIVO"){
+			FormActions.clickOn(FFormasDePago.Buttons.botonCuentaCliente);
+			FormActions.clickOn(FFormasDePago.Grid.gridPrimerCliente);}
+		FormActions.clickOn(FFormasDePago.Buttons.botonAceptarPago);
+		
+		FormActions.clickOn(FFormasDePago.Buttons.botonGuardar);
 	}
 	
 }

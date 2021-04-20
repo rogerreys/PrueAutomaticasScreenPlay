@@ -164,7 +164,6 @@ public class AdminAperturaPlazoFijo {
              public String getId() {
                  return id;
              }
-     
 		}
 		
 	}
