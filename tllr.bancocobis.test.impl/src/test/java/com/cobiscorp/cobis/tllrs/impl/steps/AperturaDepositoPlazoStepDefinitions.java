@@ -220,9 +220,9 @@ public class AperturaDepositoPlazoStepDefinitions {
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonBuscarCliente);
 		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_IDENTIFICACION, string);
-		FormActions.selectByText(FBusquedaClienteForm.Seleccion.tipoCliente, "PERSONA NATURAL");
-		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarCliente);
-		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridPrimerCliente);
+		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscar);
+		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridClienteNatural);
+		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonSiguiente);
 		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonSiguiente);
 	}

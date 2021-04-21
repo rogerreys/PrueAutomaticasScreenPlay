@@ -307,7 +307,7 @@ public class FRecepcionModalForm {
 		
 		public static class NotificacionInformacion implements ITextReadable {
 
-			private String xpath = "//*[@ng-app='VC_FVISTATIEL_770518']/body/div[11]/div[1]/div[4]/div[1]";
+			private String xpath = "//*[@data-role='notification']/div[4]/div";
 		
 			private Target target = Target.the("BotonCuentaCliente").located(By.xpath(xpath));
 
