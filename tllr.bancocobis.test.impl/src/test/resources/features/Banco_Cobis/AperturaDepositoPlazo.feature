@@ -16,13 +16,13 @@ Antecedentes: El usuario ingresa a cobis
 	#QA-S450331
   @AperturaDeposito
   Esquema del escenario: El usuario crea una Apertura Deposito a Plazo
-  Cuando realiza la busqueda de un <cliente_persona_natural>
+  Cuando realiza la busqueda de <cliente_persona_natural> por <entidad>, <tipo>, <buscar_por> y siguiente
   Y diligencia el formulario de Operación <producto>,<forma_pago>,<capitaliza>,<categoria>,<moneda>
 	Y diligencia el formulario de recepción de fondos
   Entonces el Certificado de Depósito es creado desplegando la pantalla Detalle de la Operación en estado ING
      Ejemplos:
-  | cliente_persona_natural |  producto 				| forma_pago	 |capitaliza|categoria 	 |moneda 					 |
-  | '123456789'  						|  'CERTIFICADO VIP'| 'VENCIMIENTO'|'NO'			|'NOMINATIVO'|'PESO COLOMBIANO'|
+  | cliente_persona_natural |entidad	|tipo							|buscar_por				|  producto 				| forma_pago	 |capitaliza|categoria 	 |moneda 					 |
+  | '123456789'  						|"Cliente"|"Persona Natural"|"Identificacion"	|  'CERTIFICADO VIP'| 'VENCIMIENTO'|'NO'			|'NOMINATIVO'|'PESO COLOMBIANO'|
   
   #QA-S459574
   @AperturaDepositoDos
@@ -41,15 +41,15 @@ Antecedentes: El usuario ingresa a cobis
 	#QA-S459582
   @AperturaDepositoDosNaturales
 	Esquema del escenario: Apertura de un certificado de depósito Persona Natural_Vencimiento_Capitaliza SI_2 formas de recepción
-	Y realiza la busqueda por nombre de <cliente_persona_natural>
-	Y nuevamente realiza la busqueda por nombre de un <cliente_persona_natural1> tipo indistinta
+	Cuando realiza la busqueda de <cliente_persona_natural> por <entidad>, <tipo>, <buscar_por>
+	Y nuevamente realiza la busqueda de <cliente_persona_natural1> por <entidad>, <tipo>, <buscar_por> tipo <tipo_cuenta>
 	Y diligencia el formulario de Operación <producto>,<forma_pago>,<capitaliza>,<categoria>,<moneda>
 	Y diligencia el formulario de recepción de fondos <formaRecepcion> a <cliente_persona_natural> con <monto>
 	Y diligencia el formulario de recepción de fondos <formaRecepcion> a <cliente_persona_natural1> con <monto> y guardar
 	Entonces el Certificado de Depósito es creado desplegando la pantalla Detalle de la Operación en estado ING
 	Ejemplos:
-  | cliente_persona_natural 		 |cliente_persona_natural1 |producto 			   |forma_pago		|capitaliza |categoria 	 |moneda 					 |formaRecepcion	   | monto |
-  |'ITALIA VANESSA ORIO PENAFIEL'|'EVELIN PONCE MARTINEZ'  |'CERTIFICADO VIP'|'VENCIMIENTO' |'SI'		 	  |'NOMINATIVO'|'PESO COLOMBIANO'|'CUENTA DE AHORROS'| '6000' |
+  | cliente_persona_natural 		 |cliente_persona_natural1 |entidad	 |tipo						 |buscar_por|tipo_cuenta|producto 			   |forma_pago		|capitaliza |categoria 	 |moneda 					 |formaRecepcion	   | monto |
+  |'ITALIA VANESSA ORIO PENAFIEL'|'EVELIN PONCE MARTINEZ'  |"Cliente"|"Persona Natural"|"Nombre"	|"INDISTINTA"|'CERTIFICADO VIP'|'VENCIMIENTO' |'SI'		 	  |'NOMINATIVO'|'PESO COLOMBIANO'|'CUENTA DE AHORROS'| '6000' |
  
  
   #QA-S459585
@@ -67,26 +67,26 @@ Antecedentes: El usuario ingresa a cobis
 	#QA-S461780
   @AperturaDepositoPersonaJuridica
   Esquema del escenario: Apertura de un certificado de depósito Persona Jurídica al Vencimiento 2 titulares(Indistinta)_Capitalizable NO_pesos
-  Cuando realiza la busqueda de <cliente_persona_juridica> cliente juridico
-	Y nuevamente realiza la busqueda de <cliente_persona_natural> por <entidad>, <tipo>, <buscar_por> tipo <tipo_cuenta>
+  Cuando realiza la busqueda de <cliente_persona_juridica> por <entidad>, <tipo1>, <buscar_por>
+	Y nuevamente realiza la busqueda de <cliente_persona_natural> por <entidad>, <tipo2>, <buscar_por> tipo <tipo_cuenta>
 	Y diligencia el formulario de Operación <producto>,<forma_pago>,<capitaliza>,<categoria>,<moneda>
 	Y diligencia el formulario de recepción de fondos
 	Entonces el Certificado de Depósito es creado desplegando la pantalla Detalle de la Operación en estado ING
 	Ejemplos:
-  | cliente_persona_juridica | cliente_persona_natural |entidad	 |tipo						 |buscar_por|tipo_cuenta| producto 				| forma_pago	 |capitaliza|categoria 	 |moneda 					 |
-  | 'BANCO' 	     					 | 'EVELIN'                |"Cliente"|"Persona Natural"|"Nombre"	|"INDISTINTA"|'CERTIFICADO VIP'| 'VENCIMIENTO'|'NO'			|'NOMINATIVO'|'PESO COLOMBIANO'|
+  | cliente_persona_juridica | cliente_persona_natural |entidad	 |tipo1						 |tipo2						 |buscar_por|tipo_cuenta| producto 				| forma_pago	 |capitaliza|categoria 	 |moneda 					 |
+  | 'BANCO' 	     					 | 'EVELIN'                |"Cliente"|"Persona Jurídica"|"Persona Natural"|"Nombre"	|"INDISTINTA"|'CERTIFICADO VIP'| 'VENCIMIENTO'|'NO'			|'NOMINATIVO'|'PESO COLOMBIANO'|
   
   #QA-S461850-------------
   @AperturaDepositoPersonaJuridicaPeriodico
   Esquema del escenario: Apertura de un certificado de depósito Persona Jurídica_ Periódico_1 titular(indistinta)_Pago mensual_Capitalizable SI_dólares (multimoneda)
 	Cuando realiza la busqueda de <cliente_persona_juridica> por <entidad>, <tipo1>, <buscar_por>
-	Y nuevamente realiza la busqueda de <cliente_persona_natural> por <entidad>, <tipo2>, <buscar_por> tipo <tipo_cuenta>
+	Y nuevamente realiza la busqueda de <codigo_persona> por <entidad>, <tipo2>, <buscar_por1> tipo <tipo_cuenta>
  	Y diligencia el formulario de Operación periodico <producto>,<forma_pago>,<frecuencia>,<capitaliza>,<categoria>,<moneda>
- 	Y diligencia el formulario de recepción de fondos <formaRecepcion> a <cliente_persona_juridica> con <monto> y guardar
+ 	Y diligencia el formulario de recepción de fondos <formaRecepcion> a <cliente_persona_natural> con <monto> y guardar
 	Entonces el Certificado de Depósito es creado desplegando la pantalla Detalle de la Operación en estado ING
 	Ejemplos:
-  | cliente_persona_juridica |cliente_persona_natural 		 |entidad	 |tipo1						 	|tipo2						|buscar_por|tipo_cuenta |producto 				|forma_pago	|frecuencia|capitaliza| categoria 	|moneda |formaRecepcion	  	|monto |
-  | 'BANCO COBIS' 	     		 |'FERNANDA GONZALEZ RODRIGUEZ'|"Cliente"|"Persona Jurídica"|"Persona Natural"|"Nombre"	 |"INDISTINTA"|'CERTIFICADO VIP'|'PERIODICA'|'MENSUAL' |'SI'			| 'NOMINATIVO'|'DOLAR'|'CUENTA DE AHORROS'|'12000' |
+  | cliente_persona_juridica |codigo_persona|cliente_persona_natural  |entidad	 |tipo1						 	|tipo2				    |buscar_por|buscar_por1|tipo_cuenta |producto 				|forma_pago	|frecuencia|capitaliza| categoria 	|moneda |formaRecepcion	  	|monto |
+  | 'BANCO COBIS' 	     		 |"25"				  |'JESSICA CHAVEZ QUINTANA'|"Cliente"|"Persona Jurídica"|"Persona Natural"|"Nombre"	 |"Código"	 |"INDISTINTA"|'CERTIFICADO VIP'|'PERIODICA'|'MENSUAL' |'SI'			| 'NOMINATIVO'|'DOLAR'|'CUENTA DE AHORROS'|'12000' |
 
       
   #QA-S459614

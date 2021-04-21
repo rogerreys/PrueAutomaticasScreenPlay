@@ -20,7 +20,8 @@ public class FBusquedaClienteForm {
 		public static final INPUT_APELLIDO input_APELLIDO = Singleton.getInstance(INPUT_APELLIDO.class);
 		
 		public static final INPUT_BARRA_BUSCAR input_BARRA_BUSCAR = Singleton.getInstance(INPUT_BARRA_BUSCAR.class);
-		
+		public static final INPUT_BARRA_BUSCAR_CODIGO input_BARRA_BUSCAR_CODIGO = Singleton.getInstance(INPUT_BARRA_BUSCAR_CODIGO.class);
+		public static final INPUT_BARRA_BUSCAR_IDENTIFICACION input_BARRA_BUSCAR_IDENTIFICACION = Singleton.getInstance(INPUT_BARRA_BUSCAR_IDENTIFICACION.class);
 		
 		public static class INPUT_IDENTIFICACION implements IInputValue {
 
@@ -85,6 +86,38 @@ public class FBusquedaClienteForm {
 				return id;
 			}			
 		}
+		
+		public static class INPUT_BARRA_BUSCAR_CODIGO implements IInputValue{
+			
+			private String xpath = "//*[@id='secuencial']";
+			private Target target = Target.the("Apellido").located(By.xpath(xpath));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return xpath;
+			}			
+		}
+
+		public static class INPUT_BARRA_BUSCAR_IDENTIFICACION implements IInputValue{
+			
+			private String xpath = "//*[@id='organizer']/div/div/div[2]/div/div[1]/div/div[2]/div/div/input";
+			private Target target = Target.the("Apellido").located(By.xpath(xpath));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return xpath;
+			}			
+		}
 	}
 
 	public static class Buttons{
@@ -99,6 +132,7 @@ public class FBusquedaClienteForm {
 		public static final BotonTipoJuridico botonTipoJuridico = Singleton.getInstance(BotonTipoJuridico.class);
 		public static final BotonBuscarPor botonBuscarPor = Singleton.getInstance(BotonBuscarPor.class);
 		public static final BotonBuscarPorNombre botonBuscarPorNombre = Singleton.getInstance(BotonBuscarPorNombre.class);
+		public static final BotonBuscarPorCodigo botonBuscarPorCodigo = Singleton.getInstance(BotonBuscarPorCodigo.class);
 		public static final BotonBuscar botonBuscar = Singleton.getInstance(BotonBuscar.class);
 		public static final BotonSiguiente botonSiguiente = Singleton.getInstance(BotonSiguiente.class);
 		
@@ -241,6 +275,23 @@ public class FBusquedaClienteForm {
 		public static class BotonBuscarPorNombre implements IButton{
 			
 			private String rutaXPath = "//*[@id='filters']/div[4]/div/div/ul/li[2]";
+
+			private Target target = Target.the("BotonBuscarCliente").located(By.xpath(rutaXPath));
+	
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+	
+			@Override
+			public String getId() {
+				return rutaXPath;
+			}
+	
+		}
+		public static class BotonBuscarPorCodigo implements IButton{
+			
+			private String rutaXPath = "//*[@id='filters']/div[4]/div/div/ul/li[3]";
 
 			private Target target = Target.the("BotonBuscarCliente").located(By.xpath(rutaXPath));
 	
