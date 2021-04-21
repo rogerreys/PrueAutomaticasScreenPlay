@@ -5,6 +5,7 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import com.cobiscorp.cobis.serenity.actions.FormActions;
 import com.cobiscorp.cobis.serenity.actions.ValidationActions;
 import com.cobiscorp.cobis.tllrs.test.AdminAperturaPlazoFijo;
+import com.cobiscorp.cobis.tllrs.test.FBusquedaClienteForm;
 import com.cobiscorp.cobis.tllrs.test.FBusquedaDepositoForm;
 import com.cobiscorp.cobis.tllrs.test.FCancelacionNormalForm;
 import com.cobiscorp.cobis.tllrs.test.FDetalleBusquedaDeposito;
@@ -14,10 +15,12 @@ import com.cobiscorp.cobis.tllrs.test.FRecepcionModalForm;
 import com.cobiscorp.cobis.tllrs.test.FVistaOperacionForm;
 
 import io.cucumber.java.es.Cuando;
+import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class BusquedaDepositoStepDefinitions {
+	String[] nombre = null;
 
 	@Cuando("se busca el certificado de depósito por {string} con {string}")
 	public void se_busca_el_certificado_de_depósito_por_con(String numero_de_operacion, String numero) {

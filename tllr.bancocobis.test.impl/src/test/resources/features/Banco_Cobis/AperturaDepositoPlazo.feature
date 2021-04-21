@@ -68,26 +68,25 @@ Antecedentes: El usuario ingresa a cobis
   @AperturaDepositoPersonaJuridica
   Esquema del escenario: Apertura de un certificado de depósito Persona Jurídica al Vencimiento 2 titulares(Indistinta)_Capitalizable NO_pesos
   Cuando realiza la busqueda de <cliente_persona_juridica> cliente juridico
-	Y nuevamente realiza la busqueda por nombre de un <cliente_persona_natural1> tipo indistinta
+	Y nuevamente realiza la busqueda de <cliente_persona_natural> por <entidad>, <tipo>, <buscar_por> tipo <tipo_cuenta>
 	Y diligencia el formulario de Operación <producto>,<forma_pago>,<capitaliza>,<categoria>,<moneda>
 	Y diligencia el formulario de recepción de fondos
 	Entonces el Certificado de Depósito es creado desplegando la pantalla Detalle de la Operación en estado ING
 	Ejemplos:
-  | cliente_persona_juridica | cliente_persona_natural1 | producto 				| forma_pago	 |capitaliza|categoria 	 |moneda 					 |
-  | 'BANCO' 	     					 | 'EVELIN'               	|'CERTIFICADO VIP'| 'VENCIMIENTO'|'NO'			|'NOMINATIVO'|'PESO COLOMBIANO'|
+  | cliente_persona_juridica | cliente_persona_natural |entidad	 |tipo						 |buscar_por|tipo_cuenta| producto 				| forma_pago	 |capitaliza|categoria 	 |moneda 					 |
+  | 'BANCO' 	     					 | 'EVELIN'                |"Cliente"|"Persona Natural"|"Nombre"	|"INDISTINTA"|'CERTIFICADO VIP'| 'VENCIMIENTO'|'NO'			|'NOMINATIVO'|'PESO COLOMBIANO'|
   
-  
-  #QA-S461850----------------------
+  #QA-S461850-------------
   @AperturaDepositoPersonaJuridicaPeriodico
   Esquema del escenario: Apertura de un certificado de depósito Persona Jurídica_ Periódico_1 titular(indistinta)_Pago mensual_Capitalizable SI_dólares (multimoneda)
-	Cuando realiza la busqueda de <cliente_persona_juridica> cliente juridico
-	Y nuevamente realiza la busqueda por nombre de un <cliente_persona_natural> tipo indistinta
+	Cuando realiza la busqueda de <cliente_persona_juridica> por <entidad>, <tipo1>, <buscar_por>
+	Y nuevamente realiza la busqueda de <cliente_persona_natural> por <entidad>, <tipo2>, <buscar_por> tipo <tipo_cuenta>
  	Y diligencia el formulario de Operación periodico <producto>,<forma_pago>,<frecuencia>,<capitaliza>,<categoria>,<moneda>
- 	Y diligencia el formulario de recepción de fondos <formaRecepcion> a <cliente_persona_natural> con <monto> y guardar
+ 	Y diligencia el formulario de recepción de fondos <formaRecepcion> a <cliente_persona_juridica> con <monto> y guardar
 	Entonces el Certificado de Depósito es creado desplegando la pantalla Detalle de la Operación en estado ING
 	Ejemplos:
-  | cliente_persona_juridica |cliente_persona_natural 		 | producto 					| forma_pago	|frecuencia 		| capitaliza | categoria 	 |moneda | formaRecepcion	  | monto |
-  | 'BANCO COBIS' 	     		 |'FERNANDA GONZALEZ RODRIGUEZ'| 'CERTIFICADO VIP' 	| 'PERIODICA'	|'MENSUAL'			|	'SI'			 | 'NOMINATIVO'|'DOLAR'| 'CUENTA DE AHORROS'|	'5000' |
+  | cliente_persona_juridica |cliente_persona_natural 		 |entidad	 |tipo1						 	|tipo2						|buscar_por|tipo_cuenta |producto 				|forma_pago	|frecuencia|capitaliza| categoria 	|moneda |formaRecepcion	  	|monto |
+  | 'BANCO COBIS' 	     		 |'FERNANDA GONZALEZ RODRIGUEZ'|"Cliente"|"Persona Jurídica"|"Persona Natural"|"Nombre"	 |"INDISTINTA"|'CERTIFICADO VIP'|'PERIODICA'|'MENSUAL' |'SI'			| 'NOMINATIVO'|'DOLAR'|'CUENTA DE AHORROS'|'12000' |
 
       
   #QA-S459614
@@ -157,13 +156,13 @@ Antecedentes: El usuario ingresa a cobis
   #QA-S462099-----------------------------------------------
   @AperturaDepositoDosFormasPago
   Esquema del escenario: Apertura de un certificado de depósito para Persona Jurídica_con 1 titular(indistinta)_Periódico_con 2 formas de pago de interés
-  Cuando realiza la busqueda de <cliente_persona_juridica> cliente juridico
-	Y nuevamente realiza la busqueda por nombre de un <cliente_persona_natural> tipo indistinta
+  Cuando realiza la busqueda de <cliente_persona_juridica> por <entidad>, <tipo1>, <buscar_por>
+  Y nuevamente realiza la busqueda de <cliente_persona_natural> por <entidad>, <tipo2>, <buscar_por> tipo <tipo_cuenta>
 	Y diligencia el formulario de Operación periodico <producto>,<forma_pago>,<frecuencia>,<capitaliza>,<categoria>,<moneda>
 	Y diligencia el formulario de recepción de fondos a persona juridica
 	Y diligencia formulario ingresando las dos formas de pago <formaRecepcion> y <formaRecepcion2> a <cliente_persona_juridica> y <cliente_persona_natural> con <monto>
 	Entonces el Certificado de Depósito es creado desplegando la pantalla Detalle de la Operación en estado ING
 	Ejemplos:
-  |cliente_persona_juridica|cliente_persona_natural 		 |producto 				 |forma_pago	|frecuencia |capitaliza|categoria 	 |moneda |formaRecepcion	   |formaRecepcion2|monto  |
-  |'BANCO COBIS' 	     		 |'FERNANDA GONZALEZ RODRIGUEZ'|'CERTIFICADO VIP' |'PERIODICA'	|'MENSUAL'	|'NO'			 |'NOMINATIVO' |'DOLAR'|'CUENTA DE AHORROS'|'EFECTIVO' 		 |'10.75'|
+  |cliente_persona_juridica|cliente_persona_natural 		 |entidad	 |tipo1						 	|tipo2						|buscar_por|tipo_cuenta |producto 				 |forma_pago	|frecuencia |capitaliza|categoria 	 |moneda |formaRecepcion	   |formaRecepcion2|monto  |
+  |'BANCO COBIS' 	     		 |'FERNANDA GONZALEZ RODRIGUEZ'|"Cliente"|"Persona Jurídica"|"Persona Natural"|"Nombre"	 |"INDISTINTA"|'CERTIFICADO VIP' |'PERIODICA'	|'MENSUAL'	|'NO'			 |'NOMINATIVO' |'DOLAR'|'CUENTA DE AHORROS'|'EFECTIVO' 		 |'10.75'|
 	#'EFECTIVO

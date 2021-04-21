@@ -2,6 +2,9 @@ package com.cobiscorp.cobis.tllrs.impl.steps;
 
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import org.openqa.selenium.Keys;
 
 import com.cobiscorp.cobis.serenity.actions.BaseActions;
@@ -14,6 +17,7 @@ import com.cobiscorp.cobis.tllrs.test.AdminAsientoContableMayorizado;
 import com.cobiscorp.cobis.tllrs.test.AdminClientes;
 import com.cobiscorp.cobis.tllrs.test.CabeceraCliente;
 import com.cobiscorp.cobis.tllrs.test.FBusquedaClienteForm;
+import com.cobiscorp.cobis.tllrs.test.FBusquedaDepositoForm;
 import com.cobiscorp.cobis.tllrs.test.FDetalleOperacionApertura;
 import com.cobiscorp.cobis.tllrs.test.FFormasDePago;
 import com.cobiscorp.cobis.tllrs.test.FRecepcionModalForm;
@@ -28,14 +32,9 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class AperturaDepositoPlazoStepDefinitions {
-	String[] nombre = null;
+	ArrayList<String> nombre  = new ArrayList<String>();
 
 	/*RSRM El usuario crea una Apertura Deposito a Plazo */
-	@Cuando("navega desde menu hacia Apertura")
-	public void navega_desde_menu_hacia_Apertura() {
-		//FormActions.selectMenuOption("Depósitos a Plazo>>Apertura");
-	}
-
 	@Cuando("realiza la busqueda de un {string}")
 	public void realiza_la_busqueda_de_un_cliente(String string) {
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
@@ -113,28 +112,28 @@ public class AperturaDepositoPlazoStepDefinitions {
 	
 	/*RSRM Apertura de un certificado de depósito Persona Natural_Vencimiento_Capitaliza SI_2 formas de recepción*/
 	@Cuando("realiza la busqueda por nombre de {string}")
-	public void realiza_la_busqueda_por_nombre_de_cliente(String string){
-		nombre = string.split(" ");
+	public void realiza_la_busqueda_por_nombre_de_cliente(String cliente){
+		nombre.addAll(Arrays.asList( cliente.split(" "))); 
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonBuscarCliente);	
-		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_NOMBRE, nombre[0]);
+		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_NOMBRE, nombre.get(0));
 		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarCliente);
 		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridPrimerCliente);
 		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);		
 	}
 	
-	@Cuando("nuevamente realiza la busqueda por nombre de un {string} tipo indistinta")
-	public void nuevamente_realiza_la_busqueda_por_nombre_de_un_tipo_indistinta(String string) {
-		nombre = string.split(" ");
-		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
-		FormActions.selectByText(AdminAperturaPlazoFijo.tipoCuenta, "INDISTINTA");
-		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonBuscarCliente);
-		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_NOMBRE, nombre[0]);
-		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarCliente);
-		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridPrimerCliente);
-		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);
-		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonSiguiente);
-	}
+//	@Cuando("nuevamente realiza la busqueda por nombre de un {string} tipo indistinta")
+//	public void nuevamente_realiza_la_busqueda_por_nombre_de_un_tipo_indistinta(String string) {
+//		nombre = string.split(" ");
+//		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
+//		FormActions.selectByText(AdminAperturaPlazoFijo.tipoCuenta, "INDISTINTA");
+//		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonBuscarCliente);
+//		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_NOMBRE, nombre[0]);
+//		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarCliente);
+//		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridPrimerCliente);
+//		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);
+//		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonSiguiente);
+//	}
 	
 	@Cuando("diligencia el formulario de Operación con capitaliza")
 	public void diligencia_el_formulario_de_operacion_con_capitaliza(){
@@ -216,6 +215,65 @@ public class AperturaDepositoPlazoStepDefinitions {
 	
 	
 	/*RSRM Apertura de un certificado de depósito Persona Jurídica al Vencimiento 2 titulares(Indistinta)_Capitalizable NO_pesos*/
+	@Cuando("realiza la busqueda de {string} por {string}, {string}, {string}")
+	public void realiza_la_busqueda_de_por(String cliente, String entidad, String tipo, String buscar_por) {
+		if(tipo.equals("Persona Natural")){ nombre.addAll(Arrays.asList( cliente.split(" "))); }
+		else{ nombre.add(cliente); }
+		
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonBuscarCliente);
+		if(entidad!=null){
+			FormActions.clickOn(FBusquedaClienteForm.Buttons.botonEntidad);
+			if(entidad.equals("Cliente")){ FormActions.clickOn(FBusquedaClienteForm.Buttons.botonEntidadCliente); }
+		}
+		if(tipo!=null){
+			FormActions.clickOn(FBusquedaClienteForm.Buttons.botonTipo);
+			if(tipo.equals("Persona Natural")){ FormActions.clickOn(FBusquedaClienteForm.Buttons.botonTipoNatural); }
+			else{ FormActions.clickOn(FBusquedaClienteForm.Buttons.botonTipoJuridico); }
+		}
+		if(buscar_por!=null){
+			FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarPor);
+			if(buscar_por.equals("Nombre")){ FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarPorNombre); }
+		}
+		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_BARRA_BUSCAR, nombre.get(0));
+		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscar);
+		if(tipo.equals("Persona Natural")){ FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridClienteNatural); }
+		else{ FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridClienteJuridico); }
+		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonSiguiente);
+		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);
+		nombre.clear();
+	}
+
+	@Cuando("nuevamente realiza la busqueda de {string} por {string}, {string}, {string} tipo {string}")
+	public void nuevamente_realiza_la_busqueda_de_por_tipo(String cliente, String entidad, String tipo, String buscar_por, String tipoCuenta) {
+		if(tipo.equals("Persona Natural")){ nombre.addAll(Arrays.asList( cliente.split(" "))); }
+		else{ nombre.add(cliente); }
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonBuscarCliente);
+		FormActions.selectByText(AdminAperturaPlazoFijo.tipoCuenta, tipoCuenta);
+		if(entidad!=null){
+			FormActions.clickOn(FBusquedaClienteForm.Buttons.botonEntidad);
+			if(entidad.equals("Cliente")){ FormActions.clickOn(FBusquedaClienteForm.Buttons.botonEntidadCliente); }
+		}
+		if(tipo!=null){
+			FormActions.clickOn(FBusquedaClienteForm.Buttons.botonTipo);
+			if(tipo.equals("Persona Natural")){ FormActions.clickOn(FBusquedaClienteForm.Buttons.botonTipoNatural); }
+			else{ FormActions.clickOn(FBusquedaClienteForm.Buttons.botonTipoJuridico); }
+		}
+		if(buscar_por!=null){
+			FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarPor);
+			if(buscar_por.equals("Nombre")){ FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarPorNombre); }
+		}
+		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_BARRA_BUSCAR, nombre.get(0) );
+		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscar);
+		if(tipo.equals("Persona Natural")){ FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridClienteNatural); }
+		else{ FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridClienteJuridico); }
+		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonSiguiente);
+		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);
+		nombre.clear();
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonSiguiente);
+	}
+
 	@Cuando("realiza la busqueda de {string} cliente juridico")
 	public void realiza_la_busqueda_de_un_cliente_juridico(String string) {
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);

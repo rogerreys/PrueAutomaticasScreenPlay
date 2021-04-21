@@ -100,7 +100,7 @@ public class AdminAperturaPlazoFijo {
 		
 		public static class BotonBuscarCliente implements IButton{
 			
-			private String rutaXPath = "/html/body/div[1]/div[2]/div[2]/div/div[2]/div/div/table/tbody/tr/td[2]/div/div/button";
+			private String rutaXPath = "//*[@id='QV_3754_56204']/table/tbody/tr[1]/td[2]/div/div/button";
 			private Target target = Target.the("BotonBuscarCliente").located(By.xpath(rutaXPath));
 
 			@Override
