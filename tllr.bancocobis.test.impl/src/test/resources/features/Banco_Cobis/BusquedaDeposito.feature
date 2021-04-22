@@ -35,7 +35,7 @@ Antecedentes: El usuario ingresa a cobis
 	 Entonces el Certificado de Depósito se cancela cambiando el estado del mismo
 	  Ejemplos:
 	 |numero_de_operacion  | numero 			|   nombre_de_solicitante   |      observacion       |   forma_pago  |  monto    |
-	 |'Numero de operación'| '70100013310'|  'FERNANDA DIAZ DE LEON'  | 'Obervación de prueba' |  "CONTABLE"   | "7048.32" |
+	 |'Numero de operación'| '70100014210'|  'FERNANDA DIAZ DE LEON'  | 'Obervación de prueba' |  "CONTABLE"   | "7048.32" |
 
 	
    #QA-S465312
