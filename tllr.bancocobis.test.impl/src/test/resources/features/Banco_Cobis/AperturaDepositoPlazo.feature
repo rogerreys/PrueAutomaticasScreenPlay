@@ -139,7 +139,7 @@ Antecedentes: El usuario ingresa a cobis
   | 'BANCO TE CREEMOS' 	   	 | '123456789'              | 'CERTIFICADO VIP' 	| 'PERIODICA'	|'TRIMESTRAL'		|	'NO'			 | 'NOMINATIVO'|'PESO COLOMBIANO'|
   
  
-
+	#QA-S461814
  	@AperturaDepositoUnJuridicoDosNaturales
  	Esquema del escenario: Apertura de un certificado de depósito Persona Jurídica_ al Vencimiento_3 titulares(Conjunta)_Capitalizable SI_pesos
 	Cuando realiza la busqueda de <cliente_persona_juridica> cliente juridico
