@@ -329,11 +329,15 @@ public class AperturaDepositoPlazoStepDefinitions {
 	public void realiza_la_busqueda_de_un_cliente_juridico(String string) {
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonBuscarCliente);	
-		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_NOMBRE, string);
-		FormActions.selectByText(FBusquedaClienteForm.Seleccion.tipoCliente, "PERSONA JURIDICA");
-		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarCliente);
-		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridPrimerClienteJuridico);
-		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);
+		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonTipo);
+		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonTipoJuridico);
+		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarPor);
+		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarPorNombre);
+		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_BARRA_BUSCAR, string);
+		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscar);
+		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridClienteJuridico);
+		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonSiguiente);
+		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);	
 	}
 
 	@Cuando("diligencia el formulario de recepción de fondos a persona juridica")
@@ -486,9 +490,10 @@ public class AperturaDepositoPlazoStepDefinitions {
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
 		FormActions.selectByText(AdminAperturaPlazoFijo.tipoCuenta, "INDISTINTA");
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonBuscarCliente);
-		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_IDENTIFICACION, string);
-		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarCliente);
-		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridPrimerCliente);
+		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_BARRA_BUSCAR_IDENTIFICACION, string);
+		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscar);
+		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridClienteNatural);
+		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonSiguiente);
 		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);
 	}
 	
@@ -497,9 +502,10 @@ public class AperturaDepositoPlazoStepDefinitions {
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
 		FormActions.selectByText(AdminAperturaPlazoFijo.tipoCuenta, "INDISTINTA");
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonBuscarCliente);
-		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_IDENTIFICACION, string);
-		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarCliente);
-		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridPrimerCliente);
+		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_BARRA_BUSCAR_IDENTIFICACION, string);
+		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscar);
+		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridClienteNatural);
+		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonSiguiente);
 		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonSiguiente);
 	}
