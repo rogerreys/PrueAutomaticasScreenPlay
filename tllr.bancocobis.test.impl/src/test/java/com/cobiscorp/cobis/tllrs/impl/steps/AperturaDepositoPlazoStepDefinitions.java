@@ -221,7 +221,7 @@ public class AperturaDepositoPlazoStepDefinitions {
 	public void realiza_la_busqueda_de_un_solo_cliente(String string){
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonBuscarCliente);
-		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_IDENTIFICACION, string);
+		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_BARRA_BUSCAR_IDENTIFICACION, string);
 		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscar);
 		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridClienteNatural);
 		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonSiguiente);
