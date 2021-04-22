@@ -494,6 +494,7 @@ public class AperturaDepositoPlazoStepDefinitions {
 		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridClienteNatural);
 		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonSiguiente);
 		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonSiguiente);
 	}
 	
 	@Cuando("nuevamente realiza la busqueda de otro {string} tipo indistinta")
