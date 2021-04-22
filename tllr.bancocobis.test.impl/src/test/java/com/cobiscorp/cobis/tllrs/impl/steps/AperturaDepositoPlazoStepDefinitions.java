@@ -586,4 +586,13 @@ public class AperturaDepositoPlazoStepDefinitions {
 		nombre.clear();
 	}
 	
+	@Cuando("diligencia el formulario de forma de pago juridico")
+	public void diligencia_el_formulario_de_forma_de_pago_juridico() {
+		FormActions.clickOn(FFormasDePago.Buttons.botonNuevo);
+		FormActions.selectByText(FFormasDePago.Seleccion.formaRecepcion, "CONTABLE");
+		FormActions.enterText(FFormasDePago.IngresarDatos.input_MontoRecepcion, "82.72");
+		FormActions.selectByText(FFormasDePago.Seleccion.beneficiario, "BANCO TE CREEMOS");
+		FormActions.clickOn(FFormasDePago.Buttons.botonAceptarPago);
+		FormActions.clickOn(FFormasDePago.Buttons.botonGuardar);
+	}
 }

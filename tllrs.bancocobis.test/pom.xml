@@ -41,7 +41,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.cobiscorp</groupId>
-			<artifactId>cobis-serenity-api</artifactId>
+			<artifactId>cobis-serenity-actions-api</artifactId>
 			<version>1.0.0</version>
 		</dependency>
 	</dependencies>
