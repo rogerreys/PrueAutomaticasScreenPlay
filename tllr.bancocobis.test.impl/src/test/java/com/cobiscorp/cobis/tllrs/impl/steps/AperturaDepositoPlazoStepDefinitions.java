@@ -276,7 +276,6 @@ public class AperturaDepositoPlazoStepDefinitions {
 			}
 		}
 		
-		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_BARRA_BUSCAR, nombre.get(0));
 		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscar);
 		if(tipo.equals("Persona Natural")){ FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridClienteNatural); }
 		else{ FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridClienteJuridico); }

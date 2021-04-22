@@ -340,7 +340,6 @@ public class FBusquedaClienteForm {
 			}
 	
 		}
-
 	}
 
 	public static class GridListaP{

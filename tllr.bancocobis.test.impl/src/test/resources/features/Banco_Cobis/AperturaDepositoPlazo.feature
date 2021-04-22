@@ -82,7 +82,7 @@ Antecedentes: El usuario ingresa a cobis
 	Cuando realiza la busqueda de <cliente_persona_juridica> por <entidad>, <tipo1>, <buscar_por>
 	Y nuevamente realiza la busqueda de <codigo_persona> por <entidad>, <tipo2>, <buscar_por1> tipo <tipo_cuenta>
  	Y diligencia el formulario de Operación periodico <producto>,<forma_pago>,<frecuencia>,<capitaliza>,<categoria>,<moneda>
- 	Y diligencia el formulario de recepción de fondos <formaRecepcion> a <cliente_persona_natural> con <monto> y guardar
+ 	Y diligencia el formulario de recepción de fondos <formaRecepcion> a <cliente_persona_juridica> con <monto> y guardar
 	Entonces el Certificado de Depósito es creado desplegando la pantalla Detalle de la Operación en estado ING
 	Ejemplos:
   | cliente_persona_juridica |codigo_persona|cliente_persona_natural  |entidad	 |tipo1						 	|tipo2				    |buscar_por|buscar_por1|tipo_cuenta |producto 				|forma_pago	|frecuencia|capitaliza| categoria 	|moneda |formaRecepcion	  	|monto |
@@ -124,6 +124,7 @@ Antecedentes: El usuario ingresa a cobis
 	Ejemplos:
   | cliente_persona_natural1 | cliente_persona_natural2 | producto 					| forma_pago	 | capitaliza | categoria 	| moneda          |
   | '123456789' 	     	  	 | '74489'                  | 'CERTIFICADO VIP' | 'VENCIMIENTO'|	'SI'	  	| 'NOMINATIVO'|'PESO COLOMBIANO'|
+  
   
   #QA-S462044 
   @AperturaDepositoPersonaJuridicaTrimestral
