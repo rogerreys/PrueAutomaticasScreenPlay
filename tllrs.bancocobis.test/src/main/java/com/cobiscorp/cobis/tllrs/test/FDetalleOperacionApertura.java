@@ -128,6 +128,7 @@ public class FDetalleOperacionApertura {
 			}
 
 		}
+		
 
 		public static class BotonCerrarMensajeExcepcion implements IButton {
 
@@ -183,6 +184,27 @@ public class FDetalleOperacionApertura {
 				return id;
 			}
 		}
+	}
+	
+	public static class BarraOpciones{
+		public static final PestañaOperacion pestañaOperacion = Singleton.getInstance(PestañaOperacion.class);
+		
+		public static class PestañaOperacion implements IButton {
+
+			private String xpath = "//*[@id='G_FDETALLEPC_184841_tab']/span[2]";
+			private Target target = Target.the("Operacion").located(By.xpath(xpath));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return xpath;
+			}
+		}
+		
 	}
 	
 	public static class MensajeExcepcion{

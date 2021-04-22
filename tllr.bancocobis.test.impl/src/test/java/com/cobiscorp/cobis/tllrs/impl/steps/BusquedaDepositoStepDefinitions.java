@@ -121,8 +121,8 @@ public class BusquedaDepositoStepDefinitions {
 	
 	@Cuando("se presiona el menú acciones escogiendo la opción Modificación")
 	public void se_presiona_el_menu_acciones_escogiendo_la_opcion_modificacion(){
-		FormActions.clickOn(FDetalleOperacionApertura.Buttons.botonOpcionesApertura);
-		FormActions.clickOn(FDetalleOperacionApertura.Buttons.botonModificacion);
+		HeaderActions.clickAction(FDetalleOperacionApertura.Buttons.botonOpcionesApertura);
+		HeaderActions.clickAction(FDetalleOperacionApertura.Buttons.botonModificacion);
 	}
 	
 	@Cuando("se diligencia el formulario de Operaciones modificando el {string}")
@@ -165,7 +165,8 @@ public class BusquedaDepositoStepDefinitions {
 	
 	@Cuando("se actualiza la forma de pago del Certificado de Depósito")
 	public void se_actualiza_la_forma_de_pago_del_certificado_de_deposito(){
-		
+		FormActions.clickOn(FDetalleOperacionApertura.BarraOpciones.pestañaOperacion);
+		ValidationActions.isEquals(FVistaOperacionForm.Seleccion.validarFormaPago, "VENCIMIENTO");
 	}
 }
 

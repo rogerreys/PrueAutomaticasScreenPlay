@@ -20,6 +20,7 @@ public class FVistaOperacionForm {
 
 		public static final Producto producto = Singleton.getInstance(Producto.class);
 		public static final FormaPago formaPago = Singleton.getInstance(FormaPago.class);
+		public static final ValidarFormaPago validarFormaPago = Singleton.getInstance(ValidarFormaPago.class);
 		public static final FercuenciaPago frecuenciaPago = Singleton.getInstance(FercuenciaPago.class);
 		public static final CapitalizaInteres capitalizaInteres = Singleton.getInstance(CapitalizaInteres.class);
 		public static final Categoria categoria = Singleton.getInstance(Categoria.class);
@@ -56,6 +57,23 @@ public class FVistaOperacionForm {
 			@Override
 			public String getId() {
 				return id;
+			}
+		}
+		
+		public static class ValidarFormaPago implements IDropDownList {
+
+			private String xpath = "//*[@id='VA_CODIGOAPAGOKDMY_947483_DIV']/div/span/span/span[1]";
+
+			private Target target = Target.the("Forma de pago").located(By.xpath(xpath));
+
+			@Override
+			public Target getTarget() {
+			return target;
+			}
+
+			@Override
+			public String getId() {
+			return xpath;
 			}
 		}
 	
