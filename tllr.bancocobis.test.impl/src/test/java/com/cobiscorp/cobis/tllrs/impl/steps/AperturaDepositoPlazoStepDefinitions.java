@@ -548,4 +548,43 @@ public class AperturaDepositoPlazoStepDefinitions {
 		FormActions.clickOn(FFormasDePago.Buttons.botonGuardar);
 	}
 	
+	@Cuando("nuevamente realiza la busqueda de un {string} por {string}, {string}, {string} tipo {string}")
+	public void nuevamente_realiza_la_busqueda_de_un_cliente_por_tipo(String cliente, String entidad, String tipo, String buscar_por, String tipoCuenta) {
+		if(tipo.equals("Persona Natural")){ nombre.addAll(Arrays.asList( cliente.split(" "))); }
+		else{ nombre.add(cliente); }
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonBuscarCliente);
+		FormActions.selectByText(AdminAperturaPlazoFijo.tipoCuenta, tipoCuenta);
+		if(entidad!=null){
+			FormActions.clickOn(FBusquedaClienteForm.Buttons.botonEntidad);
+			if(entidad.equals("Cliente")){ FormActions.clickOn(FBusquedaClienteForm.Buttons.botonEntidadCliente); }
+		}
+		if(tipo!=null){
+			FormActions.clickOn(FBusquedaClienteForm.Buttons.botonTipo);
+			if(tipo.equals("Persona Natural")){ FormActions.clickOn(FBusquedaClienteForm.Buttons.botonTipoNatural); }
+			else{ FormActions.clickOn(FBusquedaClienteForm.Buttons.botonTipoJuridico); }
+		}
+		if(buscar_por!=null){
+			FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarPor);
+			if(buscar_por.equals("Nombre")){ 
+				FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarPorNombre);
+		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_BARRA_BUSCAR, nombre.get(0) );
+			}
+			else if(buscar_por.equals("Código")){ 
+				FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarPorCodigo);
+				FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_BARRA_BUSCAR_CODIGO, nombre.get(0) );
+			}
+			else{
+				FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_BARRA_BUSCAR_IDENTIFICACION, nombre.get(0) );
+			}
+		}
+		
+		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscar);
+		if(tipo.equals("Persona Natural")){ FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridClienteNatural); }
+		else{ FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridClienteJuridico); }
+		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonSiguiente);
+		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);
+		nombre.clear();
+	}
+	
 }
