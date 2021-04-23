@@ -89,8 +89,8 @@ Antecedentes: El usuario ingresa a cobis
 	 |numero_de_operacion  | numero_de_cuenta 			| 
 	 |'Numero de operación'| '70100013352'          |
 	 
-	 	 #QA-S465778-Modificación de Certificados de Depósito
-	 @ModificacionCertificadosDeposito
+	 #QA-S465778-Modificación de Certificados de Depósito - Verificar un Certificado de Depósito adicionando un Cliente 
+	 @ModificacionCertificadosDepositoNuevoCliente
 	 Esquema del escenario: Verificar la actualización de un Certificado de Depósito adicionando un Cliente con firma indistinta
 	 Cuando se busca el certificado de depósito por <numero_de_operacion> con <numero>
 	 Y presionar sobre el DPF en el grid de resultados
@@ -98,7 +98,23 @@ Antecedentes: El usuario ingresa a cobis
 	 Y en el formulario realiza la busqueda por <cliente_persona_natural1> por <entidad>, <tipo>, <buscar_por> tipo <tipo_cuenta>
 	 Y diligencia el formulario de Operación <producto>,<forma_pago>,<capitaliza>,<categoria>,<moneda>,<monto>,<plazo>
 	 Y diligencia el formulario de Recepción de fondos <formaRecepcion> a <cliente_persona_natural1> con <monto> y guardar
-	 Entonces se actualiza el Certificado de Depósito con el nuevo Cliente <cliente_persona_natural1>
+	 Entonces se actualiza el Certificado de Depósito con el nuevo Cliente <cliente_persona_natural1> y se mantiene en estado <estado>
 	 Ejemplos:
-	 |numero_de_operacion  | numero 			|cliente_persona_natural1 	 |entidad	 |tipo						 |buscar_por|tipo_cuenta |producto |forma_pago|capitaliza|categoria|moneda|monto|plazo|formaRecepcion|
-	 |'Numero de operación'| '70100002700'|"DIANA LAURA SANCHEZ CHAVEZ"|"Cliente"|"Persona Natural"|"Nombre"	|'INDISTINTA'|''			 |''				|   ''		 |  ''  	 | ''   |''		|''		|""|
+	 |numero_de_operacion  |numero 			 |cliente_persona_natural1 	 |entidad	 |tipo						 |buscar_por|tipo_cuenta |producto |forma_pago|capitaliza|categoria|moneda|monto|plazo|formaRecepcion|estado|
+	 |'Numero de operación'|'70100002700'|"DIANA LAURA SANCHEZ CHAVEZ"|"Cliente"|"Persona Natural"|"Nombre"	|'INDISTINTA'|''			 |''				|   ''		 |  ''  	 | ''   |''		|''		|""|'ING'|
+	 
+	 #QA-S465778-Modificación de Certificados de Depósito - Verificar un Certificado de Depósito adicionando un forma de recepción  
+	 @ModificacionCertificadosNuevoFormaRecepcion
+	 Esquema del escenario: Verificar la actualización de un Certificado de Depósito agregar un forma de recepción adicional
+	 Cuando se busca el certificado de depósito por <numero_de_operacion> con <numero>
+	 Y presionar sobre el DPF en el grid de resultados
+	 Y se presiona el menú acciones escogiendo la opción Modificación
+	 Y en el formulario realiza la busqueda por <cliente> por <entidad>, <tipo>, <buscar_por> tipo <tipo_cuenta>
+	 Y diligencia el formulario de Operación <producto>,<forma_pago>,<capitaliza>,<categoria>,<moneda>,<monto>,<plazo>
+	 Y agregar una nueva forma de recepción eliminar la creada
+	 Y diligencia el formulario de Recepción de fondos <formaRecepcion> a <cliente> con <monto2> y guardar
+	 Entonces se actualiza el Certificado de Depósito con el Certificado de Depósito y se mantiene en estado <estado>
+	 Ejemplos:
+	 |numero_de_operacion  |numero 			 |cliente |entidad|tipo|buscar_por|tipo_cuenta |producto |forma_pago|capitaliza|categoria|moneda|monto|monto2	 |plazo|formaRecepcion|estado|
+	 |'Numero de operación'|'70100002700'|""			|""		  |""	 |""   		  |''					 |''			 |''				|   ''		 |  ''  	 | ''   |''		|'100000'|	''	  |	'EFECTIVO'	 |'ING'	|	
+	 

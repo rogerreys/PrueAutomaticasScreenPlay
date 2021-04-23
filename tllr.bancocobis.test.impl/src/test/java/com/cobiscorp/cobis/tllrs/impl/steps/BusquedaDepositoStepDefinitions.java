@@ -130,6 +130,7 @@ public class BusquedaDepositoStepDefinitions {
 	}
 	@Cuando("en el formulario realiza la busqueda por {string} por {string}, {string}, {string} tipo {string}")
 	public void en_el_formulario_realiza_la_busqueda_por_por_tipo(String cliente, String entidad, String tipo, String buscar_por, String tipoCuenta) {
+		if(cliente.length()>0){
 		if(tipo.equals("Persona Natural")){ nombre.addAll(Arrays.asList( cliente.split(" "))); }
 		else{ nombre.add(cliente); }
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
@@ -165,6 +166,7 @@ public class BusquedaDepositoStepDefinitions {
 		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonSiguiente);
 		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);
 		nombre.clear();
+		}
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonSiguiente);
 	}
 	
@@ -212,7 +214,7 @@ public class BusquedaDepositoStepDefinitions {
 		ValidationActions.isEquals(FVistaOperacionForm.Seleccion.validarFormaPago, "VENCIMIENTO");
 	}
 	
-	//RSRM - QA-S465778-Modificación de Certificados de Depósito
+	//RSRM - QA-S465778-Modificación de Certificados de Depósito - Verificar un Certificado de Depósito adicionando un Cliente
 	@Cuando("diligencia el formulario de Operación {string},{string},{string},{string},{string},{string},{string}")
 	public void diligencia_el_formulario_de_Operación(String producto, String forma_pago, String capitaliza, String categoria, String moneda, String monto, String plazo) {
 		if(producto.length()>0){FormActions.selectByText(FVistaOperacionForm.Seleccion.producto, producto); } 
@@ -230,6 +232,7 @@ public class BusquedaDepositoStepDefinitions {
 	@Dado("diligencia el formulario de Recepción de fondos {string} a {string} con {string} y guardar")
 	public void diligencia_el_formulario_de_Recepción_de_fondos_a_con_y_guardar(String formaRecepcion, String cliente, String mondo) {
 		if(formaRecepcion.length()>0 && cliente.length()>0 && mondo.length()>0){FormActions.clickOn(FRecepcionModalForm.Buttons.botonNuevo); }
+		if(formaRecepcion.length()>0 && mondo.length()>0){FormActions.clickOn(FRecepcionModalForm.Buttons.botonNuevo); }
 		if(formaRecepcion.length()>0){FormActions.enterTextAndTab(FRecepcionModalForm.IngresarDatos.inputFormaRecepcion, formaRecepcion); }
 		if(mondo.length()>0){FormActions.enterText(FRecepcionModalForm.IngresarDatos.input_MontoRecepcion, mondo);}
 		if(cliente.length()>0  && mondo.length()>0){FormActions.enterTextAndEnter(FRecepcionModalForm.IngresarDatos.inputprimerCliente, cliente);}
@@ -238,15 +241,32 @@ public class BusquedaDepositoStepDefinitions {
 			FormActions.clickOn(FRecepcionModalForm.Grid.gridPrimerCliente);
 			FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
 		}	
+		if(formaRecepcion.length()>0 && mondo.length()>0){FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion); }
+		
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonSeleccionRecepcion);
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonGuardarRecepcion);
 	}
 
-	@Entonces("se actualiza el Certificado de Depósito con el nuevo Cliente {string}")
-	public void se_actualiza_el_Certificado_de_Depósito_con_el_nuevo_Cliente(String cliente) {
-		ValidationActions.isEquals(FDetalleOperacionApertura.CabeceraInformacion.estadoApertura, "ING");
-//		HeaderActions.clickAction(FDetalleOperacionApertura.Buttons.botonEtiquetaTitulares);
-//		ValidationActions.isEquals(FDetalleOperacionApertura.GridTitulares.gridTitularesNombre, cliente);
+	@Entonces("se actualiza el Certificado de Depósito con el nuevo Cliente {string} y se mantiene en estado {string}")
+	public void se_actualiza_el_Certificado_de_Depósito_con_el_nuevo_Cliente_y_se_mantiene_en_estado(String cliente, String estado) {
+		FormActions.clickOn(FDetalleOperacionApertura.Buttons.botonEtiquetaTitulares);
+		FormActions.clickOn(FDetalleOperacionApertura.GridTitulares.gridTitularesPrimerNombre);
+		ValidationActions.isEquals(FDetalleOperacionApertura.CabeceraInformacion.estadoApertura, estado);
+		
 	}
+	
+	//RSRM - QA-S465778-Modificación de Certificados de Depósito - Verificar un Certificado de Depósito adicionando un forma de recepción
+	@Cuando("agregar una nueva forma de recepción eliminar la creada")
+	public void agregar_una_nueva_forma_de_recepción_eliminar_la_creada() {
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonBorrarRecepcion);
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarBorrarRecepcion);
+	}
+	@Entonces("se actualiza el Certificado de Depósito con el Certificado de Depósito y se mantiene en estado {string}")
+	public void se_actualiza_el_Certificado_de_Depósito_con_el_Certificado_de_Depósito_y_se_mantiene_en_estado(String estado) {
+		FormActions.clickOn(FDetalleOperacionApertura.Buttons.botonEtiquetaRecepcionFondos);
+		FormActions.clickOn(FDetalleOperacionApertura.GridTitulares.gridPrimerRecepcionFondos);
+		ValidationActions.isEquals(FDetalleOperacionApertura.CabeceraInformacion.estadoApertura, estado);
+	}
+
 }
 

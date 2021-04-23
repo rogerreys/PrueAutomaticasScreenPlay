@@ -120,6 +120,8 @@ public class FRecepcionModalForm {
 		public static final BotonCuentaCliente botonCuentaCliente = Singleton.getInstance(BotonCuentaCliente.class);
 		public static final BotonFormaRecepcion botonFormaRecepcion = Singleton.getInstance(BotonFormaRecepcion.class);
 		public static final BotonSiguienteRecepcion botonSiguienteRecepcion = Singleton.getInstance(BotonSiguienteRecepcion.class);
+		public static final BotonBorrarRecepcion botonBorrarRecepcion = Singleton.getInstance(BotonBorrarRecepcion.class);
+		public static final BotonAceptarBorrarRecepcion botonAceptarBorrarRecepcion = Singleton.getInstance(BotonAceptarBorrarRecepcion.class);
 		
 		public static class BotonSeleccionRecepcion implements IButton{
 			
@@ -234,6 +236,42 @@ public class FRecepcionModalForm {
 			private String xpath = "//*[@id='VA_CODIGOAPAGOKIMV_550386_DIV']/div/span/span/span/span";
 			
 			private Target target = Target.the("BotonCuentaCliente").located(By.xpath(xpath));
+	
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+	
+			@Override
+			public String getId() {
+				return xpath;
+			}
+	
+		}
+		
+		public static class BotonBorrarRecepcion implements IButton{
+			
+			private String xpath = "//*[@id='QV_6933_39827']/table/tbody/tr/td[7]/a";
+			
+			private Target target = Target.the("BotonBorrarRecepcion").located(By.xpath(xpath));
+	
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+	
+			@Override
+			public String getId() {
+				return xpath;
+			}
+	
+		}
+
+		public static class BotonAceptarBorrarRecepcion implements IButton{
+			
+			private String xpath = "/html/body/div[5]/div[2]/div[2]/nav/button[1]";
+			
+			private Target target = Target.the("BotonAceptarBorrarRecepcion").located(By.xpath(xpath));
 	
 			@Override
 			public Target getTarget() {

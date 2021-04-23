@@ -167,7 +167,7 @@ Antecedentes: El usuario ingresa a cobis
   
  
 
-  #QA-S462099-----------------------------------------------
+  #QA-S462099
   @AperturaDepositoDosFormasPago
   Esquema del escenario: Apertura de un certificado de depósito para Persona Jurídica_con 1 titular(indistinta)_Periódico_con 2 formas de pago de interés
   Cuando realiza la busqueda de <cliente_persona_juridica> por <entidad>, <tipo1>, <buscar_por>
@@ -178,5 +178,4 @@ Antecedentes: El usuario ingresa a cobis
 	Entonces el Certificado de Depósito es creado desplegando la pantalla Detalle de la Operación en estado ING
 	Ejemplos:
   |cliente_persona_juridica|cliente_persona_natural 		 |entidad	 |tipo1						 	|tipo2						|buscar_por|tipo_cuenta |producto 				 |forma_pago	|frecuencia |capitaliza|categoria 	 |moneda |formaRecepcion	   |formaRecepcion2|monto  |
-  |'BANCO COBIS' 	     		 |'FERNANDA GONZALEZ RODRIGUEZ'|"Cliente"|"Persona Jurídica"|"Persona Natural"|"Nombre"	 |"INDISTINTA"|'CERTIFICADO VIP' |'PERIODICA'	|'MENSUAL'	|'NO'			 |'NOMINATIVO' |'DOLAR'|'CUENTA DE AHORROS'|'EFECTIVO' 		 |'10.75'|
-	#'EFECTIVO
+  |'BANCO COBIS' 	   			 |'EVELIN PONCE MARTINEZ' |"Cliente"|"Persona Jurídica"|"Persona Natural"|"Nombre"	 |"INDISTINTA"|'CERTIFICADO VIP' |'PERIODICA'	|'MENSUAL'	|'NO'			 |'NOMINATIVO' |'PESO COLOMBIANO'|'CONTABLE'		|'EFECTIVO' 		 |'10.75'|

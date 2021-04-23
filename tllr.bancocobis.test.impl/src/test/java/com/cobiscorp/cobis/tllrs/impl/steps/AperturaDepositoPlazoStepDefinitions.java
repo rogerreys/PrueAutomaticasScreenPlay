@@ -139,6 +139,7 @@ public class AperturaDepositoPlazoStepDefinitions {
         FormActions.clickOn(FFormasDePago.Buttons.botonGuardar);
     }
 	
+	
 	/*RSRM Apertura de un certificado de depósito Persona Natural_Vencimiento_Capitaliza SI_2 formas de recepción*/
 	@Cuando("realiza la busqueda por nombre de {string}")
 	public void realiza_la_busqueda_por_nombre_de_cliente(String cliente){
@@ -518,15 +519,16 @@ public class AperturaDepositoPlazoStepDefinitions {
 		FormActions.selectByText(FFormasDePago.Seleccion.formaRecepcion, formaRecepcion);
 		FormActions.enterText(FFormasDePago.IngresarDatos.input_MontoRecepcion, monto);
 		FormActions.selectByText(FFormasDePago.Seleccion.beneficiario, cliente_persona_juridica);
+		if(formaRecepcion.equals("CUENTA DE AHORROS")){
 		FormActions.clickOn(FFormasDePago.Buttons.botonCuentaCliente);
-		FormActions.clickOn(FFormasDePago.Grid.gridPrimerCliente);
+			FormActions.clickOn(FFormasDePago.Grid.gridPrimerCliente);}
 		FormActions.clickOn(FFormasDePago.Buttons.botonAceptarPago);
 		
 		FormActions.clickOn(FFormasDePago.Buttons.botonNuevo);
 		FormActions.selectByText(FFormasDePago.Seleccion.formaRecepcion, formaRecepcion2);
 		FormActions.enterText(FFormasDePago.IngresarDatos.input_MontoRecepcion, monto);
 		FormActions.selectById(FFormasDePago.Seleccion.beneficiario, cliente_persona_natural);
-		if(formaRecepcion2 != "EFECTIVO"){
+		if(formaRecepcion2.equals("CUENTA DE AHORROS")){
 			FormActions.clickOn(FFormasDePago.Buttons.botonCuentaCliente);
 			FormActions.clickOn(FFormasDePago.Grid.gridPrimerCliente);}
 		FormActions.clickOn(FFormasDePago.Buttons.botonAceptarPago);

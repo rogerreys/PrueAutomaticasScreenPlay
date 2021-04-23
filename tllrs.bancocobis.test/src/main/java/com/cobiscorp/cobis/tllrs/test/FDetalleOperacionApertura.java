@@ -23,6 +23,7 @@ public class FDetalleOperacionApertura {
 		public static final BotonAnular botonAnular = Singleton.getInstance(BotonAnular.class);
 		public static final BotonCerrarMensajeExcepcion botonCerrarMensajeExcepcion  = Singleton.getInstance(BotonCerrarMensajeExcepcion.class);
 		public static final BotonEtiquetaTitulares botonEtiquetaTitulares  = Singleton.getInstance(BotonEtiquetaTitulares.class);
+		public static final BotonEtiquetaRecepcionFondos botonEtiquetaRecepcionFondos  = Singleton.getInstance(BotonEtiquetaRecepcionFondos.class);
 
 		public static class BotonOpcionesApertura implements IButton {
 
@@ -166,6 +167,24 @@ public class FDetalleOperacionApertura {
 			}
 
 		}
+		
+		public static class BotonEtiquetaRecepcionFondos implements IButton {
+			
+			private String id = "//*[@id='G_FDETALLPNR_812841_tab']/span[2]";
+
+			private Target target = Target.the("BotonEtiquetaTitulares").located(By.id(id));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return id;
+			}
+
+		}
 	}
 
 	public static class CabeceraInformacion {
@@ -250,12 +269,29 @@ public class FDetalleOperacionApertura {
 		private String id = "G_FTITULAEES_465581";
 		private Target target = Target.the("GridTitularesNombre").located(By.id(id));
 		
-		public static final GridTitularesNombre gridTitularesNombre = Singleton.getInstance(GridTitularesNombre.class);
+		public static final GridTitularesPrimerNombre gridTitularesPrimerNombre = Singleton.getInstance(GridTitularesPrimerNombre.class);
+		public static final GridPrimerRecepcionFondos gridPrimerRecepcionFondos = Singleton.getInstance(GridPrimerRecepcionFondos.class);
 		
-		public static class GridTitularesNombre implements ITextReadable {
-					///html/body/div[1]/div[2]/div/div/div/div[2]/div/div/div/div/div[2]/div/div/table/tbody/tr[2]/td[3]/span
-			private String xpath = "//*[@id='QV_3754_56204']/table/tbody/tr[2]/td[3]/span";
+		
+		public static class GridTitularesPrimerNombre implements IButton {
+					
+			private String xpath = "//*[@id='QV_3754_56204']/table/tbody/tr[1]";
 			private Target target = Target.the("GridTitularesNombre").located(By.xpath(xpath));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return xpath;
+			}
+		}
+		public static class GridPrimerRecepcionFondos implements IButton {
+			
+			private String xpath = "//*[@id='QV_6933_39827']/table/tbody/tr";
+			private Target target = Target.the("GridPrimerRecepcionFondos").located(By.xpath(xpath));
 
 			@Override
 			public Target getTarget() {
