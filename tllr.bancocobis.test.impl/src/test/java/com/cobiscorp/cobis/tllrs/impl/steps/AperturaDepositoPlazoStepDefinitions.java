@@ -452,15 +452,15 @@ public class AperturaDepositoPlazoStepDefinitions {
 		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSiguiente);
 	}
 	
-	@Cuando("diligencia el formulario de recepción de fondos cta con {string},{string}")
-	public void diligencia_el_formulario_de_recepción_de_fondos_cta(String formaRecepcionFC,String nombre_cliente){
+	@Cuando("diligencia el formulario de recepción de fondos cta con {string},{string},{string}")
+	public void diligencia_el_formulario_de_recepción_de_fondos_cta(String formaRecepcionFC,String nombre_cliente,String cuenta){
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonNuevo);
 		FormActions.selectByText(FRecepcionModalForm.Seleccion.formaRecepcion, formaRecepcionFC);
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
 		FormActions.enterText(FRecepcionModalForm.IngresarDatos.input_MontoRecepcion, "255000");
 		FormActions.selectByText(FRecepcionModalForm.Seleccion.cliente, nombre_cliente);
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonCuentaCliente);
-		FormActions.clickOn(FRecepcionModalForm.Grid.gridPrimerCliente);
+		GridActions.selectRecord(FRecepcionModalForm.grid,Integer.parseInt(cuenta) ); 
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
 		//FormActions.clickOn(FRecepcionModalForm.Buttons.botonSiguienteRecepcion);
 	}
@@ -468,6 +468,11 @@ public class AperturaDepositoPlazoStepDefinitions {
 	@Entonces("se despliega el mensaje No hay disponible en la cuenta")
 	public void se_despliega_el_mensaje_No_hay_disponible_en_la_cuenta(){
 		ValidationActions.isEquals(FRecepcionModalForm.Notificaciones.InformacionCuenta, "Excepción de negocio: 16 - 141144 - [BL_disponible_ctas] No hay disponible en la cuenta");
+        }
+	
+	@Entonces("se despliega el mensaje cuenta bloqueada contra retiro o debito")
+	public void se_despliega_el_mensaje_cuenta_bloqueada_contra_retiro_o_debito(){
+		 ValidationActions.isEquals(FRecepcionModalForm.Notificaciones.InformacionCuenta, "Excepción de negocio: 16 - 201008 - [BL_disponible_ctas] Cuenta bloqueada CONTRA RETIRO O DEBITO");
 	}
 	
 	/********************** JCMA Apertura de un certificado de depósito Persona Jurídica_ al Vencimiento_3 titulares(Conjunta)_Capitalizable SI_pesos ********************/
