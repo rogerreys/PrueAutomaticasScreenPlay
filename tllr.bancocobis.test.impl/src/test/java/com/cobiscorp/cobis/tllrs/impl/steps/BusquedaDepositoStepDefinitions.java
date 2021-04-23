@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import com.cobiscorp.cobis.serenity.actions.FormActions;
+import com.cobiscorp.cobis.serenity.actions.GridActions;
 import com.cobiscorp.cobis.serenity.actions.HeaderActions;
 import com.cobiscorp.cobis.serenity.actions.ValidationActions;
 import com.cobiscorp.cobis.tllrs.test.AdminAperturaPlazoFijo;
@@ -88,7 +89,7 @@ public class BusquedaDepositoStepDefinitions {
 		ValidationActions.isEquals(FDetalleOperacionApertura.CabeceraInformacion.estadoApertura, "CAN");
 	}
 	
-/*MAAV Apertura de un certificado de depósito Persona Natural_Vencimiento_Capitalización SI_moneda pesos_ND a una Cta. Sin fondos*/
+	/*MAAV Verificar la Cancelación de un Certificado de Depósito con 2 Formas de Pago*/
 	
 	@Cuando("se busca el certificado de depósito por el {string} con {string}")
 	public void se_busca_el_certificado_de_deposito_por_el_con(String numero_de_operacion, String numero_de_cuenta) {
@@ -105,10 +106,92 @@ public class BusquedaDepositoStepDefinitions {
 	}
 	
 	@Cuando("se diligencia el formulario de Cancelación con el {string} y con {string}")
-	public void se_diligencia_el_formulario_de_cancelacion_con_el_y_con(String numero_de_solicitante ,String observacion) {
-		FormActions.selectByText(FCancelacionNormalForm.Seleccion.solicitante,numero_de_solicitante);
+	public void se_diligencia_el_formulario_de_cancelacion_con_el_y_con(String nombre_solicitante ,String observacion) {
+		FormActions.selectByText(FCancelacionNormalForm.Seleccion.solicitante,nombre_solicitante);
 		FormActions.enterText(FCancelacionNormalForm.IngresarDatos.inputObservacion, observacion);
 		FormActions.clickOn(FCancelacionNormalForm.Buttons.botonSiguienteop);
+	}
+	
+	@Cuando("se diligencia el formulario de forma de pago con {string},{string} y {string}")
+	public void se_diligencia_el_formulario_de_forma_de_pago_y(String formaRecepcionFP, String nombre_beneficiario,String formaRecepcionFP2) {
+		FormActions.clickOn(FFormasDePago.Buttons.botonNuevo);
+		FormActions.selectByText(FFormasDePago.Seleccion.formaRecepcion, formaRecepcionFP);
+		FormActions.enterText(FFormasDePago.IngresarDatos.input_MontoRecepcion, "460000.47");
+		FormActions.selectByText(FFormasDePago.Seleccion.beneficiario, nombre_beneficiario);
+		FormActions.clickOn(FFormasDePago.Buttons.botonAceptarPago);
+		FormActions.clickOn(FFormasDePago.Buttons.botonNuevo);
+		FormActions.selectByText(FFormasDePago.Seleccion.formaRecepcion, formaRecepcionFP2);
+		FormActions.enterText(FFormasDePago.IngresarDatos.input_MontoRecepcion, "418");
+		FormActions.selectByText(FFormasDePago.Seleccion.beneficiario, nombre_beneficiario);
+		FormActions.clickOn(FFormasDePago.Buttons.botonAceptarPago);	
+		FormActions.clickOn(FFormasDePago.Buttons.botonGuardar);
+	}
+	
+	@Cuando("se diligencia el formulario de forma de pago con cuenta {string},{string},{string},{string}")
+	public void se_diligencia_el_formulario_de_forma_de_pago_con_cuenta(String formaRecepcionFP, String nombre_beneficiario,String formaRecepcionFP2,String cuenta) {
+		FormActions.clickOn(FFormasDePago.Buttons.botonNuevo);
+		FormActions.selectByText(FFormasDePago.Seleccion.formaRecepcion, formaRecepcionFP);
+		FormActions.enterText(FFormasDePago.IngresarDatos.input_MontoRecepcion, "200000");
+		FormActions.selectByText(FFormasDePago.Seleccion.beneficiario, nombre_beneficiario);
+		FormActions.clickOn(FFormasDePago.Buttons.botonCuentaCliente);
+		GridActions.selectRecord(FRecepcionModalForm.grid,Integer.parseInt(cuenta) ); 
+		FormActions.clickOn(FFormasDePago.Buttons.botonAceptarPago);
+		FormActions.clickOn(FFormasDePago.Buttons.botonNuevo);
+		FormActions.selectByText(FFormasDePago.Seleccion.formaRecepcion, formaRecepcionFP2);
+		FormActions.enterText(FFormasDePago.IngresarDatos.input_MontoRecepcion, "260418.47");
+		FormActions.selectByText(FFormasDePago.Seleccion.beneficiario, nombre_beneficiario);
+		FormActions.clickOn(FFormasDePago.Buttons.botonAceptarPago);	
+		FormActions.clickOn(FFormasDePago.Buttons.botonGuardar);
+	}
+	
+	
+	/*MAAV Modificación de Certificados de Depósito-Parte 3*/
+	
+	
+	@Cuando("en el formulario de clientes agregar un {string} y con tipo {string}")
+	public void en_el_formulario_de_clientes_agregar_y_con_tipo(String cliente_persona_natural, String tipo_cuenta){
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
+		FormActions.selectByText(AdminAperturaPlazoFijo.tipoCuenta, tipo_cuenta);
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonBuscarCliente);
+		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_BARRA_BUSCAR_IDENTIFICACION, cliente_persona_natural);
+		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscar);
+		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridClienteNatural);
+		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonSiguiente);
+		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonSiguiente);
+	}
+	
+	@Cuando("se diligencia el formulario de Operaciones con {string} y {string}")
+	public void se_diligencia_el_formulario_de_operaciones_modificando_la_forma_de_pago(String forma_de_pago , String frecuencia){
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.formaPago, forma_de_pago);
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.frecuenciaPago, frecuencia);
+		FormActions.enterText(FVistaOperacionForm.IngresarDatos.input_Plazo, "30");
+		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSimular);
+		FormActions.clickOn(FVistaOperacionForm.Buttons.botonAceptarModal);
+		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSiguiente);
+	}
+	
+	@Cuando("se diligencia el formulario de forma de recepción siguiente")
+	public void se_diligencia_el_formulario_de_forma_de_recepcion_siguiente(){
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonSiguienteRecepcion);
+	}
+	
+	@Cuando("se diligencia el formulario de forma de pago modificacion con {string},{string}")
+	public void se_diligencia_el_formulario_de_forma_de_pago_modificacion_con(String formaRecepcionFP, String nombre_beneficiario){
+		FormActions.clickOn(FFormasDePago.Buttons.botonNuevo);
+		FormActions.selectByText(FFormasDePago.Seleccion.formaRecepcion, formaRecepcionFP);
+		FormActions.enterText(FFormasDePago.IngresarDatos.input_MontoRecepcion, "2683.82");
+		FormActions.selectByText(FFormasDePago.Seleccion.beneficiario, nombre_beneficiario);
+		FormActions.clickOn(FFormasDePago.Buttons.botonAceptarPago);
+		FormActions.clickOn(FFormasDePago.Buttons.botonGuardar);
+		
+	}
+	
+	@Cuando("se actualiza la forma de pago del Certificado de Depósito con {string}")
+	public void se_actualiza_la_forma_de_pago_del_certificado_de_deposito(String forma_de_pago) throws InterruptedException{
+		FormActions.clickOn(FDetalleOperacionApertura.BarraOpciones.pestañaOperacion);
+		Thread.sleep(5000);
+		ValidationActions.isEquals(FVistaOperacionForm.Seleccion.validarFormaPago, forma_de_pago);
 	}
 	
 	@Cuando("se diligencia el formulario de forma de pago con {string} y {string} y {string}")
