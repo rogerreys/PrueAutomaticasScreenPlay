@@ -129,16 +129,15 @@ public class AperturaDepositoPlazoStepDefinitions {
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonGuardarRecepcion);
 	}
 	
-	@Cuando("diligencia el formulario formas de pago")
-	public void diligencia_el_formulario_formas_de_pago(){
-		FormActions.clickOn(FFormasDePago.Buttons.botonNuevo);
-		FormActions.selectByText(FFormasDePago.Seleccion.formaRecepcion, "CONTABLE");
-		FormActions.enterText(FFormasDePago.IngresarDatos.input_MontoRecepcion, "70.60");
-		FormActions.selectByText(FFormasDePago.Seleccion.beneficiario, "LORENA GARCIA ");
-		FormActions.clickOn(FFormasDePago.Buttons.botonAceptarPago);
-		FormActions.clickOn(FFormasDePago.Buttons.botonGuardar);
-	}
-	
+    @Cuando("diligencia el formulario formas de pago al {string}")
+    public void diligencia_el_formulario_formas_de_pago_al_titular(String titular){
+        FormActions.clickOn(FFormasDePago.Buttons.botonNuevo);
+        FormActions.selectByText(FFormasDePago.Seleccion.formaRecepcion, "CONTABLE");
+        FormActions.enterText(FFormasDePago.IngresarDatos.input_MontoRecepcion, "70.60");
+        FormActions.selectByText(FFormasDePago.Seleccion.beneficiario, titular);
+        FormActions.clickOn(FFormasDePago.Buttons.botonAceptarPago);
+        FormActions.clickOn(FFormasDePago.Buttons.botonGuardar);
+    }
 	
 	/*RSRM Apertura de un certificado de depósito Persona Natural_Vencimiento_Capitaliza SI_2 formas de recepción*/
 	@Cuando("realiza la busqueda por nombre de {string}")

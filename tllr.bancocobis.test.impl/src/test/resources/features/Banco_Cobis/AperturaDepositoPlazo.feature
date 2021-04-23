@@ -31,12 +31,11 @@ Antecedentes: El usuario ingresa a cobis
   Y nuevamente realiza la busqueda de un <cliente_persona_natural2> tipo conjunta
   Y diligencia el formulario de Operación periodico <producto>,<forma_pago>,<frecuencia>,<capitaliza>,<categoria>,<moneda>
   Y diligencia el formulario de recepción de fondos periodico
-  Y diligencia el formulario formas de pago
-	Entonces el Certificado de Depósito es creado desplegando la pantalla Detalle de la Operación en estado ING
-	Ejemplos:
-  | cliente_persona_natural1 | cliente_persona_natural2 |producto 				| forma_pago	 |  frecuencia  |capitaliza|categoria 	 |moneda 					 |
-  | '123456789' 	           | '74489'                  |'CERTIFICADO VIP'| 'PERIODICA'  |  'MENSUAL'   | 'NO'		 |'NOMINATIVO' |'PESO COLOMBIANO'|
-
+  Y diligencia el formulario formas de pago al <nombre_titular>
+  Entonces el Certificado de Depósito es creado desplegando la pantalla Detalle de la Operación en estado ING
+    Ejemplos:
+  | cliente_persona_natural1 | cliente_persona_natural2 |producto         | forma_pago   |  frecuencia  |capitaliza    |categoria    |moneda           | nombre_titular |
+  | 'GOXA840615HCCNXN06'     | 'SIXN601212MASLXD07'     |'CERTIFICADO VIP'| 'PERIODICA'  |  'MENSUAL'   | 'NO'         |'NOMINATIVO' |'PESO COLOMBIANO'| 'NIDIA SILVA ' |
 
 	#QA-S459582
   @AperturaDepositoDosNaturales
