@@ -89,3 +89,16 @@ Antecedentes: El usuario ingresa a cobis
 	 |numero_de_operacion  | numero_de_cuenta 			| 
 	 |'Numero de operación'| '70100013352'          |
 	 
+	 	 #QA-S465778-Modificación de Certificados de Depósito
+	 @ModificacionCertificadosDeposito
+	 Esquema del escenario: Verificar la actualización de un Certificado de Depósito adicionando un Cliente con firma indistinta
+	 Cuando se busca el certificado de depósito por <numero_de_operacion> con <numero>
+	 Y presionar sobre el DPF en el grid de resultados
+	 Y se presiona el menú acciones escogiendo la opción Modificación
+	 Y en el formulario realiza la busqueda por <cliente_persona_natural1> por <entidad>, <tipo>, <buscar_por> tipo <tipo_cuenta>
+	 Y diligencia el formulario de Operación <producto>,<forma_pago>,<capitaliza>,<categoria>,<moneda>,<monto>,<plazo>
+	 Y diligencia el formulario de Recepción de fondos <formaRecepcion> a <cliente_persona_natural1> con <monto> y guardar
+	 Entonces se actualiza el Certificado de Depósito con el nuevo Cliente <cliente_persona_natural1>
+	 Ejemplos:
+	 |numero_de_operacion  | numero 			|cliente_persona_natural1 	 |entidad	 |tipo						 |buscar_por|tipo_cuenta |producto |forma_pago|capitaliza|categoria|moneda|monto|plazo|formaRecepcion|
+	 |'Numero de operación'| '70100002700'|"DIANA LAURA SANCHEZ CHAVEZ"|"Cliente"|"Persona Natural"|"Nombre"	|'INDISTINTA'|''			 |''				|   ''		 |  ''  	 | ''   |''		|''		|""|

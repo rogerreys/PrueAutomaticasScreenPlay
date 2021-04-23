@@ -155,7 +155,7 @@ public class FBusquedaClienteForm {
 		}
 		public static class BotonEntidad implements IButton{
 			
-			private String rutaXPath = "/html/body/div[6]/div/div/div[2]/div/div/form/div/fieldset/div/div/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/button";
+			private String rutaXPath = "//*[@id='dropdown-']";
 
 			private Target target = Target.the("BotonBuscarCliente").located(By.xpath(rutaXPath));
 	
@@ -172,7 +172,7 @@ public class FBusquedaClienteForm {
 		}
 		public static class BotonEntidadCliente implements IButton{
 			
-			private String rutaXPath = "/html/body/div[6]/div/div/div[2]/div/div/form/div/fieldset/div/div/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/ul/li[1]";
+			private String rutaXPath = "//*[@id='drop-cliente']/ul/li[1]";
 			
 			private Target target = Target.the("BotonBuscarCliente").located(By.xpath(rutaXPath));
 	
@@ -189,7 +189,7 @@ public class FBusquedaClienteForm {
 		}
 		public static class BotonEntidadProspecto implements IButton{
 			
-			private String rutaXPath = "/html/body/div[6]/div/div/div[2]/div/div/form/div/fieldset/div/div/div[2]/div/div[2]/div/div[2]/div[1]/div[2]/div/ul/li[2]";
+			private String rutaXPath = "//*[@id='drop-cliente']/ul/li[2]";
 			
 			private Target target = Target.the("BotonBuscarCliente").located(By.xpath(rutaXPath));
 	

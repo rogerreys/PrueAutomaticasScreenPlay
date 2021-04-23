@@ -152,19 +152,6 @@ public class AperturaDepositoPlazoStepDefinitions {
 		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);		
 	}
 	
-//	@Cuando("nuevamente realiza la busqueda por nombre de un {string} tipo indistinta")
-//	public void nuevamente_realiza_la_busqueda_por_nombre_de_un_tipo_indistinta(String string) {
-//		nombre = string.split(" ");
-//		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
-//		FormActions.selectByText(AdminAperturaPlazoFijo.tipoCuenta, "INDISTINTA");
-//		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonBuscarCliente);
-//		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_NOMBRE, nombre[0]);
-//		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarCliente);
-//		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridPrimerCliente);
-//		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);
-//		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonSiguiente);
-//	}
-	
 	@Cuando("diligencia el formulario de Operación con capitaliza")
 	public void diligencia_el_formulario_de_operacion_con_capitaliza(){
 		FormActions.selectByText(FVistaOperacionForm.Seleccion.producto, "CERTIFICADO VIP");

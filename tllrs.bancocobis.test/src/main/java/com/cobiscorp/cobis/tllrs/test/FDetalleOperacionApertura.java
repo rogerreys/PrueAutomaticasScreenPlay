@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import com.cobiscorp.cobis.utils.base.Singleton;
 import com.cobiscorp.cobis.utils.controls.IButton;
 import com.cobiscorp.cobis.utils.controls.IControl;
+import com.cobiscorp.cobis.utils.controls.IGrid;
 import com.cobiscorp.cobis.utils.events.ITextReadable;
 
 import net.serenitybdd.screenplay.targets.Target;
@@ -21,6 +22,7 @@ public class FDetalleOperacionApertura {
 		public static final BotonActivar botonActivar = Singleton.getInstance(BotonActivar.class);
 		public static final BotonAnular botonAnular = Singleton.getInstance(BotonAnular.class);
 		public static final BotonCerrarMensajeExcepcion botonCerrarMensajeExcepcion  = Singleton.getInstance(BotonCerrarMensajeExcepcion.class);
+		public static final BotonEtiquetaTitulares botonEtiquetaTitulares  = Singleton.getInstance(BotonEtiquetaTitulares.class);
 
 		public static class BotonOpcionesApertura implements IButton {
 
@@ -129,7 +131,6 @@ public class FDetalleOperacionApertura {
 
 		}
 		
-
 		public static class BotonCerrarMensajeExcepcion implements IButton {
 
 			private String xpath = "/html/body/div[3]/div/div[2]/span";
@@ -144,6 +145,24 @@ public class FDetalleOperacionApertura {
 			@Override
 			public String getId() {
 				return xpath;
+			}
+
+		}
+
+		public static class BotonEtiquetaTitulares implements IButton {
+
+			private String id = "G_FDETALLECP_908841_tab";
+
+			private Target target = Target.the("BotonEtiquetaTitulares").located(By.id(id));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return id;
 			}
 
 		}
@@ -226,4 +245,38 @@ public class FDetalleOperacionApertura {
 			}
 		}
 	}
+
+	public static class GridTitulares implements IGrid{
+		private String id = "G_FTITULAEES_465581";
+		private Target target = Target.the("GridTitularesNombre").located(By.id(id));
+		
+		public static final GridTitularesNombre gridTitularesNombre = Singleton.getInstance(GridTitularesNombre.class);
+		
+		public static class GridTitularesNombre implements ITextReadable {
+					///html/body/div[1]/div[2]/div/div/div/div[2]/div/div/div/div/div[2]/div/div/table/tbody/tr[2]/td[3]/span
+			private String xpath = "//*[@id='QV_3754_56204']/table/tbody/tr[2]/td[3]/span";
+			private Target target = Target.the("GridTitularesNombre").located(By.xpath(xpath));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return xpath;
+			}
+		}
+	
+		@Override
+		public Target getTarget() {
+			return target;
+		}
+
+		@Override
+		public String getId() {
+			return id;
+		}
+	}
+	
 }
