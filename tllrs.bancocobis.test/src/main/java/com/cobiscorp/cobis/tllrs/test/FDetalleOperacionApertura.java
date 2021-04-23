@@ -170,9 +170,9 @@ public class FDetalleOperacionApertura {
 		
 		public static class BotonEtiquetaRecepcionFondos implements IButton {
 			
-			private String id = "//*[@id='G_FDETALLPNR_812841_tab']/span[2]";
+			private String xpath = "//*[@id='G_FDETALLPNR_812841_tab']/span[2]";
 
-			private Target target = Target.the("BotonEtiquetaTitulares").located(By.id(id));
+			private Target target = Target.the("BotonEtiquetaTitulares").located(By.xpath(xpath));
 
 			@Override
 			public Target getTarget() {
@@ -181,7 +181,7 @@ public class FDetalleOperacionApertura {
 
 			@Override
 			public String getId() {
-				return id;
+				return xpath;
 			}
 
 		}

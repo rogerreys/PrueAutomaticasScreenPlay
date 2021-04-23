@@ -131,8 +131,6 @@ public class BusquedaDepositoStepDefinitions {
 	@Cuando("en el formulario realiza la busqueda por {string} por {string}, {string}, {string} tipo {string}")
 	public void en_el_formulario_realiza_la_busqueda_por_por_tipo(String cliente, String entidad, String tipo, String buscar_por, String tipoCuenta) {
 		if(cliente.length()>0){
-		if(tipo.equals("Persona Natural")){ nombre.addAll(Arrays.asList( cliente.split(" "))); }
-		else{ nombre.add(cliente); }
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonBuscarCliente);
 		FormActions.selectByText(AdminAperturaPlazoFijo.tipoCuenta, tipoCuenta);
@@ -149,14 +147,14 @@ public class BusquedaDepositoStepDefinitions {
 			FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarPor);
 			if(buscar_por.equals("Nombre")){ 
 				FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarPorNombre);
-				FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_BARRA_BUSCAR, nombre.get(0) );
+					FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_BARRA_BUSCAR, cliente );
 			}
 			else if(buscar_por.equals("Código")){ 
 				FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarPorCodigo);
-				FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_BARRA_BUSCAR_CODIGO, nombre.get(0) );
+					FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_BARRA_BUSCAR_CODIGO, cliente );
 			}
 			else{
-				FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_BARRA_BUSCAR_IDENTIFICACION, nombre.get(0) );
+					FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_BARRA_BUSCAR_IDENTIFICACION, cliente );
 			}
 		}
 		
@@ -165,7 +163,6 @@ public class BusquedaDepositoStepDefinitions {
 		else{ FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridClienteJuridico); }
 		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonSiguiente);
 		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);
-		nombre.clear();
 		}
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonSiguiente);
 	}

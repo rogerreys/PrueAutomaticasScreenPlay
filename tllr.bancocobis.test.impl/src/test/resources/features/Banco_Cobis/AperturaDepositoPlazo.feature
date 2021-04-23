@@ -48,7 +48,7 @@ Antecedentes: El usuario ingresa a cobis
 	Entonces el Certificado de Depósito es creado desplegando la pantalla Detalle de la Operación en estado ING
 	Ejemplos:
   | cliente_persona_natural 		 |cliente_persona_natural1 |entidad	 |tipo						 |buscar_por|tipo_cuenta|producto 			   |forma_pago		|capitaliza |categoria 	 |moneda 					 |formaRecepcion	   | monto |
-  |'ITALIA VANESSA ORIO PENAFIEL'|'EVELIN PONCE MARTINEZ'  |"Cliente"|"Persona Natural"|"Nombre"	|"INDISTINTA"|'CERTIFICADO VIP'|'VENCIMIENTO' |'SI'		 	  |'NOMINATIVO'|'PESO COLOMBIANO'|'CUENTA DE AHORROS'| '6000' |
+  |'JESSICA DURAN DIAZ'|'EVELIN PONCE MARTINEZ'  |"Cliente"|"Persona Natural"|"Nombre"	|"INDISTINTA"|'CERTIFICADO VIP'|'VENCIMIENTO' |'SI'		 	  |'NOMINATIVO'|'PESO COLOMBIANO'|'CUENTA DE AHORROS'| '6000' |
  
  
   #QA-S459585

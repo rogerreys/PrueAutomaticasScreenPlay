@@ -37,8 +37,7 @@ public class AperturaDepositoPlazoStepDefinitions {
 	/*RSRM El usuario crea una Apertura Deposito a Plazo */
 	@Cuando("realiza la busqueda de {string} por {string}, {string}, {string} y siguiente")
 	public void realiza_la_busqueda_de_por_y_siguiente(String cliente, String entidad, String tipo, String buscar_por) {
-		if(tipo.equals("Persona Natural")){ nombre.addAll(Arrays.asList( cliente.split(" "))); }
-		else{ nombre.add(cliente); }
+		
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonBuscarCliente);	
 		if(entidad!=null){
@@ -54,14 +53,14 @@ public class AperturaDepositoPlazoStepDefinitions {
 			FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarPor);
 			if(buscar_por.equals("Nombre")){ 
 				FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarPorNombre);
-				FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_BARRA_BUSCAR, nombre.get(0) );
+				FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_BARRA_BUSCAR, cliente );
 			}
 			else if(buscar_por.equals("Código")){ 
 				FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarPorCodigo);
-				FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_BARRA_BUSCAR_CODIGO, nombre.get(0) );
+				FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_BARRA_BUSCAR_CODIGO, cliente );
 			}
 			else{
-				FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_BARRA_BUSCAR_IDENTIFICACION, nombre.get(0) );
+				FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_BARRA_BUSCAR_IDENTIFICACION, cliente );
 			}
 		}
 		
@@ -70,7 +69,7 @@ public class AperturaDepositoPlazoStepDefinitions {
 		else{ FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridClienteJuridico); }
 		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonSiguiente);
 		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);
-		nombre.clear();
+		
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonSiguiente);		
 	}
 
@@ -143,10 +142,10 @@ public class AperturaDepositoPlazoStepDefinitions {
 	/*RSRM Apertura de un certificado de depósito Persona Natural_Vencimiento_Capitaliza SI_2 formas de recepción*/
 	@Cuando("realiza la busqueda por nombre de {string}")
 	public void realiza_la_busqueda_por_nombre_de_cliente(String cliente){
-		nombre.addAll(Arrays.asList( cliente.split(" "))); 
+		
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonBuscarCliente);	
-		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_NOMBRE, nombre.get(0));
+		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_NOMBRE, cliente);
 		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarCliente);
 		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridPrimerCliente);
 		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);		
@@ -234,8 +233,6 @@ public class AperturaDepositoPlazoStepDefinitions {
 	/*RSRM Apertura de un certificado de depósito Persona Jurídica al Vencimiento 2 titulares(Indistinta)_Capitalizable NO_pesos*/
 	@Cuando("realiza la busqueda de {string} por {string}, {string}, {string}")
 	public void realiza_la_busqueda_de_por(String cliente, String entidad, String tipo, String buscar_por) {
-		if(tipo.equals("Persona Natural")){ nombre.addAll(Arrays.asList( cliente.split(" "))); }
-		else{ nombre.add(cliente); }
 		
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonBuscarCliente);
@@ -252,14 +249,14 @@ public class AperturaDepositoPlazoStepDefinitions {
 			FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarPor);
 			if(buscar_por.equals("Nombre")){ 
 				FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarPorNombre);
-				FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_BARRA_BUSCAR, nombre.get(0) );
+				FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_BARRA_BUSCAR, cliente );
 			}
 			else if(buscar_por.equals("Código")){ 
 				FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarPorCodigo);
-				FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_BARRA_BUSCAR_CODIGO, nombre.get(0) );
+				FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_BARRA_BUSCAR_CODIGO, cliente );
 		}
 			else{
-				FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_BARRA_BUSCAR_IDENTIFICACION, nombre.get(0) );
+				FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_BARRA_BUSCAR_IDENTIFICACION, cliente );
 			}
 		}
 		
@@ -268,13 +265,10 @@ public class AperturaDepositoPlazoStepDefinitions {
 		else{ FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridClienteJuridico); }
 		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonSiguiente);
 		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);
-		nombre.clear();
 	}
 
 	@Cuando("nuevamente realiza la busqueda de {string} por {string}, {string}, {string} tipo {string}")
 	public void nuevamente_realiza_la_busqueda_de_por_tipo(String cliente, String entidad, String tipo, String buscar_por, String tipoCuenta) {
-		if(tipo.equals("Persona Natural")){ nombre.addAll(Arrays.asList( cliente.split(" "))); }
-		else{ nombre.add(cliente); }
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonBuscarCliente);
 		FormActions.selectByText(AdminAperturaPlazoFijo.tipoCuenta, tipoCuenta);
@@ -291,14 +285,14 @@ public class AperturaDepositoPlazoStepDefinitions {
 			FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarPor);
 			if(buscar_por.equals("Nombre")){ 
 				FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarPorNombre);
-		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_BARRA_BUSCAR, nombre.get(0) );
+				FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_BARRA_BUSCAR, cliente );
 			}
 			else if(buscar_por.equals("Código")){ 
 				FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscarPorCodigo);
-				FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_BARRA_BUSCAR_CODIGO, nombre.get(0) );
+				FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_BARRA_BUSCAR_CODIGO, cliente );
 			}
 			else{
-				FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_BARRA_BUSCAR_IDENTIFICACION, nombre.get(0) );
+				FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_BARRA_BUSCAR_IDENTIFICACION, cliente );
 			}
 		}
 		
@@ -307,7 +301,6 @@ public class AperturaDepositoPlazoStepDefinitions {
 		else{ FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridClienteJuridico); }
 		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonSiguiente);
 		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);
-		nombre.clear();
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonSiguiente);
 	}
 
