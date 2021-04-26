@@ -347,6 +347,26 @@ public class BusquedaDepositoStepDefinitions {
 		FormActions.clickOn(FDetalleOperacionApertura.GridTitulares.gridPrimerRecepcionFondos);
 		ValidationActions.isEquals(FDetalleOperacionApertura.CabeceraInformacion.estadoApertura, estado);
 	}
+	
+	//JCMA QA-S467398
+	@Cuando("se presiona el menú acciones, escoger la opción Anulación")
+	public void se_presiona_el_menu_acciones_escoger_la_opcion_anulacion (){
+		HeaderActions.clickAction(FDetalleOperacionApertura.Buttons.botonOpcionesApertura);
+		HeaderActions.clickAction(FDetalleOperacionApertura.Buttons.botonAnular);
+	}
+	
+	//JCMA AQ-S467398
+	@Cuando("se ingresa una Observación en la pantalla Anular {string}")
+	public void se_ingresa_una_Observacion_en_la_pantalla_Anular(String observacion){
+		FormActions.enterText(FDetalleOperacionApertura.IngresarDatos.input_Observaciones, observacion);
+		FormActions.clickOn(FDetalleOperacionApertura.Buttons.botonAceptarObservacion);
+		FormActions.clickOn(FDetalleOperacionApertura.Buttons.botonAceptarObservacionMensaje);
+	}
+	
+	@Cuando("el Certificado de Depósito es anulado, cambiando el estado en la pantalla Datos de Certificado")
+	public void el_Certificado_de_Depósito_es_anulado_cambiando_el_estado_en_la_pantalla_Datos_de_Certificado(){
+		ValidationActions.isEquals(FDetalleOperacionApertura.CabeceraInformacion.estadoApertura, "ANU");
+	}
 
 }
 

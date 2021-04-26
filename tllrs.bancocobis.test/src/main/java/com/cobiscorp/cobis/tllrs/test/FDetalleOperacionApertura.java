@@ -2,10 +2,12 @@ package com.cobiscorp.cobis.tllrs.test;
 
 import org.openqa.selenium.By;
 
+import com.cobiscorp.cobis.tllrs.test.FBusquedaDepositoForm.IngresarDatos.Input_BuscarTodos;
 import com.cobiscorp.cobis.utils.base.Singleton;
 import com.cobiscorp.cobis.utils.controls.IButton;
 import com.cobiscorp.cobis.utils.controls.IControl;
 import com.cobiscorp.cobis.utils.controls.IGrid;
+import com.cobiscorp.cobis.utils.controls.IInputValue;
 import com.cobiscorp.cobis.utils.events.ITextReadable;
 
 import net.serenitybdd.screenplay.targets.Target;
@@ -24,6 +26,9 @@ public class FDetalleOperacionApertura {
 		public static final BotonCerrarMensajeExcepcion botonCerrarMensajeExcepcion  = Singleton.getInstance(BotonCerrarMensajeExcepcion.class);
 		public static final BotonEtiquetaTitulares botonEtiquetaTitulares  = Singleton.getInstance(BotonEtiquetaTitulares.class);
 		public static final BotonEtiquetaRecepcionFondos botonEtiquetaRecepcionFondos  = Singleton.getInstance(BotonEtiquetaRecepcionFondos.class);
+		
+		public static final BotonAceptarObservacion botonAceptarObservacion  = Singleton.getInstance(BotonAceptarObservacion.class);
+		public static final BotonAceptarObservacionMensaje botonAceptarObservacionMensaje  = Singleton.getInstance(BotonAceptarObservacionMensaje.class);
 
 		public static class BotonOpcionesApertura implements IButton {
 
@@ -185,6 +190,40 @@ public class FDetalleOperacionApertura {
 			}
 
 		}
+		
+		public static class BotonAceptarObservacion implements IButton {
+
+			private String id = "CM_TPFPRTWW_RTW";
+
+			private Target target = Target.the("BotonAceptarObservacion").located(By.id(id));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return id;
+			}
+		}
+		
+		public static class BotonAceptarObservacionMensaje implements IButton {
+
+			private String xPath = "/html/body/div[8]/div[2]/div[2]/nav/button[1]";
+
+			private Target target = Target.the("BotonAceptarObservacion").located(By.xpath(xPath));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return xPath;
+			}
+		}
 	}
 
 	public static class CabeceraInformacion {
@@ -312,6 +351,26 @@ public class FDetalleOperacionApertura {
 		@Override
 		public String getId() {
 			return id;
+		}
+	}
+	
+	public static class IngresarDatos{
+		public static final Input_Observaciones input_Observaciones = Singleton.getInstance(Input_Observaciones.class);
+		
+		public static class Input_Observaciones implements IInputValue {
+
+			private String id = "VA_OBSERVACIONTIRI_509640";
+			private Target target = Target.the("Input_Observaciones").located(By.id(id));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return id;
+			}
 		}
 	}
 	
