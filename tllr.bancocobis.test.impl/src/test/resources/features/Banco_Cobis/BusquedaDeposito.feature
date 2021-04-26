@@ -134,4 +134,9 @@ Antecedentes: El usuario ingresa a cobis
 	 |numero_de_operacion  |numero 			 |cliente |entidad|tipo|buscar_por|tipo_cuenta |producto |forma_pago|capitaliza|categoria|moneda|monto|monto2	 |plazo|formaRecepcion|estado|
 	 |'Numero de operación'|'70100002700'|""			|""		  |""	 |""   		  |''					 |''			 |''				|   ''		 |  ''  	 | ''   |''		|'100000'|	''	  |	'EFECTIVO'	 |'ING'	|	
 	 
-	 
+	 #QA-S467398
+	 Esquema del escenario: Verificar la anulación de un Certificado de Depósito al Vencimiento
+	 Cuando se busca el certificado de depósito por <numero_de_operacion> con <numero>
+	 Y se presiona el menú acciones, escoger la opción Anulación
+   Y se ingresa una Observación en la pantalla Anular
+   Entonces el Certificado de Depósito es anulado, cambiando el estado en la pantalla Datos de Certificado.
