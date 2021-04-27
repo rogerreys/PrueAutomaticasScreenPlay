@@ -34,7 +34,7 @@ public class BusquedaDepositoStepDefinitions {
 	    FormActions.selectByText(FBusquedaDepositoForm.Seleccion.buscarPor, numero_de_operacion);
 	    FormActions.enterText(FBusquedaDepositoForm.IngresarDatos.input_BuscarTodos, numero);
 	    FormActions.clickOn(FBusquedaDepositoForm.Buttons.botonBuscar);
-		 FormActions.clickOn(FBusquedaDepositoForm.GridListaP.gridPrimerCliente);
+		FormActions.clickOn(FBusquedaDepositoForm.GridListaP.gridPrimerCliente);
 	}
 
 

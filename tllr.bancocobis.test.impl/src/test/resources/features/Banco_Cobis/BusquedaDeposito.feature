@@ -133,7 +133,6 @@ Antecedentes: El usuario ingresa a cobis
 	 @AnulacionCertificado
 	 Esquema del escenario: Verificar la anulación de un Certificado de Depósito al Vencimiento
 	 Cuando se busca el certificado de depósito por <numero_de_operacion> con <numero>
-	 Y presionar sobre el DPF en el grid de resultados
 	 Y se presiona el menú acciones, escoger la opción Anulación
    Y se ingresa una Observación en la pantalla Anular <observacion>
    Entonces el Certificado de Depósito es anulado, cambiando el estado en la pantalla Datos de Certificado
