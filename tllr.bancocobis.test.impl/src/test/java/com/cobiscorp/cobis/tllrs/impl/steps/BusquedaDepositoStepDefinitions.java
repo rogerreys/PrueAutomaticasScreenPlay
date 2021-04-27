@@ -5,6 +5,7 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import com.cobiscorp.cobis.serenity.actions.BaseActions;
 import com.cobiscorp.cobis.serenity.actions.FormActions;
 import com.cobiscorp.cobis.serenity.actions.GridActions;
 import com.cobiscorp.cobis.serenity.actions.HeaderActions;
@@ -33,12 +34,9 @@ public class BusquedaDepositoStepDefinitions {
 	    FormActions.selectByText(FBusquedaDepositoForm.Seleccion.buscarPor, numero_de_operacion);
 	    FormActions.enterText(FBusquedaDepositoForm.IngresarDatos.input_BuscarTodos, numero);
 	    FormActions.clickOn(FBusquedaDepositoForm.Buttons.botonBuscar);
-	}
-
-	@Cuando("presionar sobre el DPF en el grid de resultados")
-	public void presionar_sobre_el_DPF_en_el_grid_de_resultados() {
 		 FormActions.clickOn(FBusquedaDepositoForm.GridListaP.gridPrimerCliente);
 	}
+
 
 	@Cuando("se abre el menú de acciones escoger la opción Activar")
 	public void se_abre_el_menú_de_acciones_escoger_la_opción_Activar() {
@@ -291,6 +289,7 @@ public class BusquedaDepositoStepDefinitions {
 	@Cuando("se actualiza la forma de pago del Certificado de Depósito")
 	public void se_actualiza_la_forma_de_pago_del_certificado_de_deposito(){
 		FormActions.clickOn(FDetalleOperacionApertura.BarraOpciones.pestañaOperacion);
+		BaseActions.getValue(FVistaOperacionForm.Seleccion.formaPago);
 		ValidationActions.isEquals(FVistaOperacionForm.Seleccion.validarFormaPago, "VENCIMIENTO");
 	}
 	
@@ -311,6 +310,8 @@ public class BusquedaDepositoStepDefinitions {
 
 	@Dado("diligencia el formulario de Recepción de fondos {string} a {string} con {string} y guardar")
 	public void diligencia_el_formulario_de_Recepción_de_fondos_a_con_y_guardar(String formaRecepcion, String cliente, String mondo) {
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonBorrarRecepcion);
+		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarBorrarRecepcion);
 		if(formaRecepcion.length()>0 && cliente.length()>0 && mondo.length()>0){FormActions.clickOn(FRecepcionModalForm.Buttons.botonNuevo); }
 		if(formaRecepcion.length()>0 && mondo.length()>0){FormActions.clickOn(FRecepcionModalForm.Buttons.botonNuevo); }
 		if(formaRecepcion.length()>0){FormActions.enterTextAndTab(FRecepcionModalForm.IngresarDatos.inputFormaRecepcion, formaRecepcion); }
@@ -336,11 +337,7 @@ public class BusquedaDepositoStepDefinitions {
 	}
 	
 	//RSRM - QA-S465778-Modificación de Certificados de Depósito - Verificar un Certificado de Depósito adicionando un forma de recepción
-	@Cuando("agregar una nueva forma de recepción eliminar la creada")
-	public void agregar_una_nueva_forma_de_recepción_eliminar_la_creada() {
-		FormActions.clickOn(FRecepcionModalForm.Buttons.botonBorrarRecepcion);
-		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarBorrarRecepcion);
-	}
+
 	@Entonces("se actualiza el Certificado de Depósito con el Certificado de Depósito y se mantiene en estado {string}")
 	public void se_actualiza_el_Certificado_de_Depósito_con_el_Certificado_de_Depósito_y_se_mantiene_en_estado(String estado) {
 		FormActions.clickOn(FDetalleOperacionApertura.Buttons.botonEtiquetaRecepcionFondos);

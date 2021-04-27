@@ -15,7 +15,6 @@ Antecedentes: El usuario ingresa a cobis
    @BusquedaDeposito
    Esquema del escenario: Verificar la activación de un Certificado de Depósito
 	 Cuando se busca el certificado de depósito por <numero_de_operacion> con <numero>
-	 Y presionar sobre el DPF en el grid de resultados
 	 Y se abre el menú de acciones escoger la opción Activar
 	 Y presiona el botón Aceptar
 	 Entonces el Certificado de Depósito se muestra un mensaje de excepcion <MensajeExcepcion> y se mantiene en estado <Estado>
@@ -27,7 +26,6 @@ Antecedentes: El usuario ingresa a cobis
    @CancelacionDeposito
    Esquema del escenario: Verificar la cancelación de un Certificado de Depósito con NC a cuenta
 	 Cuando se busca el certificado de depósito por <numero_de_operacion> con <numero>
-	 Y presionar sobre el DPF en el grid de resultados
 	 Y se presiona el menú acciones, escogiendo la opción Cancelación Normal
 	 Y se presiona el botón siguiente
 	 Y se diligencia el formulario de Cancelación con el <nombre_de_solicitante> y con <observacion>
@@ -109,7 +107,6 @@ Antecedentes: El usuario ingresa a cobis
 	 @ModificacionCertificadosDepositoNuevoCliente
 	 Esquema del escenario: Verificar la actualización de un Certificado de Depósito adicionando un Cliente con firma indistinta
 	 Cuando se busca el certificado de depósito por <numero_de_operacion> con <numero>
-	 Y presionar sobre el DPF en el grid de resultados
 	 Y se presiona el menú acciones escogiendo la opción Modificación
 	 Y en el formulario realiza la busqueda por <cliente_persona_natural1> por <entidad>, <tipo>, <buscar_por> tipo <tipo_cuenta>
 	 Y diligencia el formulario de Operación <producto>,<forma_pago>,<capitaliza>,<categoria>,<moneda>,<monto>,<plazo>
@@ -123,11 +120,9 @@ Antecedentes: El usuario ingresa a cobis
 	 @ModificacionCertificadosNuevoFormaRecepcion
 	 Esquema del escenario: Verificar la actualización de un Certificado de Depósito agregar un forma de recepción adicional
 	 Cuando se busca el certificado de depósito por <numero_de_operacion> con <numero>
-	 Y presionar sobre el DPF en el grid de resultados
 	 Y se presiona el menú acciones escogiendo la opción Modificación
 	 Y en el formulario realiza la busqueda por <cliente> por <entidad>, <tipo>, <buscar_por> tipo <tipo_cuenta>
 	 Y diligencia el formulario de Operación <producto>,<forma_pago>,<capitaliza>,<categoria>,<moneda>,<monto>,<plazo>
-	 Y agregar una nueva forma de recepción eliminar la creada
 	 Y diligencia el formulario de Recepción de fondos <formaRecepcion> a <cliente> con <monto2> y guardar
 	 Entonces se actualiza el Certificado de Depósito con el Certificado de Depósito y se mantiene en estado <estado>
 	 Ejemplos:
