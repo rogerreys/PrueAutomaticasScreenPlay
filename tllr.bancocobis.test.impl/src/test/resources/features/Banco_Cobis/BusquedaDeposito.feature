@@ -144,6 +144,6 @@ Antecedentes: El usuario ingresa a cobis
    Entonces el Certificado de Depósito es anulado, cambiando el estado en la pantalla Datos de Certificado
    Ejemplos:
    |    numero_de_operacion   |  numero       |     observacion       |
-   |   'Numero de operación'  | '70100015020' | "ANULAR VENCIMIENTO"  |				
-   
+   |   'Numero de operación'  | '70100015035' | "ANULAR VENCIMIENTO"  |				
+   |   'Numero de operación'  | '70100015040' | "ANULAR PERIODICO"    |
    
