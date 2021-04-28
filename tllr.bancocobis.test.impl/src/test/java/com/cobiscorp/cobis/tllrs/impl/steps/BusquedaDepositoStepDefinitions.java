@@ -167,10 +167,6 @@ public class BusquedaDepositoStepDefinitions {
 		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSimular);
 		FormActions.clickOn(FVistaOperacionForm.Buttons.botonAceptarModal);
 		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSiguiente);
-	}
-	
-	@Cuando("se diligencia el formulario de forma de recepción siguiente")
-	public void se_diligencia_el_formulario_de_forma_de_recepcion_siguiente(){
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonSiguienteRecepcion);
 	}
 	

@@ -56,7 +56,6 @@ Antecedentes: El usuario ingresa a cobis
 	 Y se presiona el menú acciones escogiendo la opción Modificación
 	 Y en el formulario de clientes agregar un <cliente_persona_natural> y con tipo <tipo_cuenta>
 	 Y se diligencia el formulario de Operaciones con <forma_de_pago> y <frecuencia>
-	 Y se diligencia el formulario de forma de recepción siguiente
 	 Y se diligencia el formulario de forma de pago modificacion con <formaRecepcionFP>,<nombre_beneficiario>
 	 Entonces se actualiza la forma de pago del Certificado de Depósito con <forma_de_pago>
 	 Ejemplos:
