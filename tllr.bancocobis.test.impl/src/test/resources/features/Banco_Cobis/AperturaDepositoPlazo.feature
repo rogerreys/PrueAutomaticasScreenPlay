@@ -27,8 +27,7 @@ Antecedentes: El usuario ingresa a cobis
   #QA-S459574
   @AperturaDepositoDos
   Esquema del escenario: Apertura de un certificado de depósito Persona Natural_Periódico_pago mensual_Capitalizacion NO_con 2 titulares
-  Y realiza la busqueda de <cliente_persona_natural1>
-  Y nuevamente realiza la busqueda de un <cliente_persona_natural2> tipo conjunta
+  Cuando realiza la busqueda de <cliente_persona_natural1> y <cliente_persona_natural2>
   Y diligencia el formulario de Operación periodico <producto>,<forma_pago>,<frecuencia>,<capitaliza>,<categoria>,<moneda>
   Y diligencia el formulario de recepción de fondos periodico
   Y diligencia el formulario formas de pago al <nombre_titular>

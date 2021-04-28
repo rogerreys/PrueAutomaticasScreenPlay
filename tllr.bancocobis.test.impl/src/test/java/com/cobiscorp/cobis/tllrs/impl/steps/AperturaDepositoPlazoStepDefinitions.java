@@ -582,4 +582,26 @@ public class AperturaDepositoPlazoStepDefinitions {
 		FormActions.clickOn(FFormasDePago.Buttons.botonAceptarPago);
 		FormActions.clickOn(FFormasDePago.Buttons.botonGuardar);
 	}
+	
+	@Cuando("realiza la busqueda de {string} y {string}")
+	public void realiza_la_busqueda_de_cliente_uno_y_cliente_dos(String clienteUno, String clienteDos){
+		//Cliente uno
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonBuscarCliente);
+		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_BARRA_BUSCAR_IDENTIFICACION, clienteUno);
+		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscar);
+		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridClienteNatural);
+		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonSiguiente);
+		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);
+		//Cliente dos
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.nuevoCliente);
+		FormActions.selectByText(AdminAperturaPlazoFijo.tipoCuenta, "CONJUNTA");
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonBuscarCliente);
+		FormActions.enterText(FBusquedaClienteForm.FiltroBusquedaCliente.input_BARRA_BUSCAR_IDENTIFICACION, clienteDos);
+		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonBuscar);
+		FormActions.clickOn(FBusquedaClienteForm.GridListaP.gridClienteNatural);
+		FormActions.clickOn(FBusquedaClienteForm.Buttons.botonSiguiente);
+		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsAcceptRow);
+		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonSiguiente);
+	}
 }
