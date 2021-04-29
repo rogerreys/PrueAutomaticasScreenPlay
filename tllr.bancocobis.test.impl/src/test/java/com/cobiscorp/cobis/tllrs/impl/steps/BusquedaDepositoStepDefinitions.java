@@ -84,7 +84,10 @@ public class BusquedaDepositoStepDefinitions {
 	//JCMA QA-S465034
 	@Entonces("el Certificado de Depósito se cancela cambiando el estado del mismo")
 	public void el_certificado_de_deposito_se_cancela_cambiando_el_estado_del_mismo(){
-		ValidationActions.isEquals(FDetalleOperacionApertura.CabeceraInformacion.estadoApertura, "CAN");
+		ContainerActions.closeActiveTabContainer();
+		ContainerActions.changeToIframe("shellTab");
+		ContainerActions.activeIframe();
+		ValidationActions.isEquals(FDetalleOperacionApertura.CabeceraInformacion.estadoApertura, "CAN");	
 	}
 	
 	/*MAAV Verificar la Cancelación de un Certificado de Depósito con 2 Formas de Pago*/
