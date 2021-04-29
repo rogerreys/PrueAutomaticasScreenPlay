@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import com.cobiscorp.cobis.serenity.actions.BaseActions;
+import com.cobiscorp.cobis.serenity.actions.ContainerActions;
 import com.cobiscorp.cobis.serenity.actions.FormActions;
 import com.cobiscorp.cobis.serenity.actions.GridActions;
 import com.cobiscorp.cobis.serenity.actions.HeaderActions;
