@@ -65,3 +65,18 @@ Antecedentes: El usuario ingresa a cobis
 	 |'Numero de operación'|'70100002700'|""			|""		  |""	 |""   		  |''					 |''			 |''				|   ''		 |  ''  	 | ''   |''		|'100000'|	''	  |	'EFECTIVO'	 |'ING'	|	
 	 
 	 
+	 #QA-S465820
+   @ActualizacionFormaDePagoDPFP3
+   Esquema del escenario: Verificar la actualización de un Certificado de Depósito de Vencimiento a Periódico
+	 Cuando se busca el certificado de depósito por el <numero_de_operacion> con <numero_de_cuenta>
+	 Y se presiona el menú acciones escogiendo la opción Modificación
+	 Y en el formulario de clientes agregar un <cliente_persona_natural> y con tipo <tipo_cuenta>
+	 Y se diligencia el formulario de Operaciones con <forma_de_pago> y <frecuencia>
+	 Y se diligencia el formulario de forma de pago modificacion con <formaRecepcionFP>,<nombre_beneficiario>
+	 Entonces se actualiza la forma de pago del Certificado de Depósito con <forma_de_pago>
+	 Ejemplos:
+	 |numero_de_operacion  | numero_de_cuenta 			| cliente_persona_natural| tipo_cuenta |forma_de_pago|frecuencia  |formaRecepcionFP | nombre_beneficiario|
+	 |'Numero de operación'| '70100013504'          |'123456789'             | 'INDISTINTA'|'PERIODICA'  |'MENSUAL'   |'EFECTIVO'       | 'Manuel Gonzalez B'|
+	
+	 
+	 

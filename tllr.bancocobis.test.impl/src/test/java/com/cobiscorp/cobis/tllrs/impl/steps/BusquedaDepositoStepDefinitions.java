@@ -88,6 +88,7 @@ public class BusquedaDepositoStepDefinitions {
 		ContainerActions.closeActiveTabContainer();
 		ContainerActions.changeToIframe("shellTab");
 		ContainerActions.activeIframe();
+		BaseActions.takeScreenshot();
 		ValidationActions.isEquals(FDetalleOperacionApertura.CabeceraInformacion.estadoApertura, "CAN");	
 	}
 	
@@ -133,14 +134,14 @@ public class BusquedaDepositoStepDefinitions {
 	public void se_diligencia_el_formulario_de_forma_de_pago_con_cuenta(String formaRecepcionFP, String nombre_beneficiario,String formaRecepcionFP2,String cuenta) {
 		FormActions.clickOn(FFormasDePago.Buttons.botonNuevo);
 		FormActions.selectByText(FFormasDePago.Seleccion.formaRecepcion, formaRecepcionFP);
-		FormActions.enterText(FFormasDePago.IngresarDatos.input_MontoRecepcion, "200000");
+		FormActions.enterText(FFormasDePago.IngresarDatos.input_MontoRecepcion, "460000.47");
 		FormActions.selectByText(FFormasDePago.Seleccion.beneficiario, nombre_beneficiario);
 		FormActions.clickOn(FFormasDePago.Buttons.botonCuentaCliente);
 		GridActions.selectRecord(FRecepcionModalForm.grid,Integer.parseInt(cuenta) ); 
 		FormActions.clickOn(FFormasDePago.Buttons.botonAceptarPago);
 		FormActions.clickOn(FFormasDePago.Buttons.botonNuevo);
 		FormActions.selectByText(FFormasDePago.Seleccion.formaRecepcion, formaRecepcionFP2);
-		FormActions.enterText(FFormasDePago.IngresarDatos.input_MontoRecepcion, "260418.47");
+		FormActions.enterText(FFormasDePago.IngresarDatos.input_MontoRecepcion, "418");
 		FormActions.selectByText(FFormasDePago.Seleccion.beneficiario, nombre_beneficiario);
 		FormActions.clickOn(FFormasDePago.Buttons.botonAceptarPago);	
 		FormActions.clickOn(FFormasDePago.Buttons.botonGuardar);
@@ -188,8 +189,9 @@ public class BusquedaDepositoStepDefinitions {
 	@Cuando("se actualiza la forma de pago del Certificado de Depósito con {string}")
 	public void se_actualiza_la_forma_de_pago_del_certificado_de_deposito(String forma_de_pago) throws InterruptedException{
 		FormActions.clickOn(FDetalleOperacionApertura.BarraOpciones.pestañaOperacion);
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		ValidationActions.isEquals(FVistaOperacionForm.Seleccion.validarFormaPago, forma_de_pago);
+		BaseActions.takeScreenshot();
 	}
 	
 	@Cuando("se diligencia el formulario de forma de pago con {string} y {string} y {string}")

@@ -35,21 +35,21 @@ Antecedentes: El usuario ingresa a cobis
 	 Entonces el Certificado de Depósito se cancela cambiando el estado del mismo
 	 Ejemplos:
 	 |numero_de_operacion  | numero_de_cuenta 			| nombre_solicitante           | observacion          | formaRecepcionFP | nombre_beneficiario         | formaRecepcionFP2| 
-	 |'Numero de operación'| '70100014932'          | 'DIANA LAURA SANCHEZ CHAVEZ' | 'PRUEBA CANCELACION' |  'EFECTIVO'      | 'DIANA LAURA SANCHEZ CHAVEZ'|'CONTABLE'        | 
+	 |'Numero de operación'| '70100015847'          | 'DIANA LAURA SANCHEZ CHAVEZ' | 'PRUEBA CANCELACION' |  'EFECTIVO'      | 'DIANA LAURA SANCHEZ CHAVEZ'|'CONTABLE'        | 
 	
-	 #QA-S465820
-   @ActualizacionFormaDePagoDPFP3
+	 @CancelaCuenta2FormasPagoNCCont
    Esquema del escenario: Verificar la Cancelación de un Certificado de Depósito con 2 Formas de Pago
 	 Cuando se busca el certificado de depósito por el <numero_de_operacion> con <numero_de_cuenta>
-	 Y se presiona el menú acciones escogiendo la opción Modificación
-	 Y en el formulario de clientes agregar un <cliente_persona_natural> y con tipo <tipo_cuenta>
-	 Y se diligencia el formulario de Operaciones con <forma_de_pago> y <frecuencia>
-	 Y se diligencia el formulario de forma de pago modificacion con <formaRecepcionFP>,<nombre_beneficiario>
-	 Entonces se actualiza la forma de pago del Certificado de Depósito con <forma_de_pago>
+	 Y se presiona el menú acciones, escogiendo la opción Cancelación Normal
+	 Y se presiona el botón siguiente
+	 Y se diligencia el formulario de Cancelación con el <nombre_solicitante> y con <observacion>
+	 Y se diligencia el formulario de forma de pago con cuenta <formaRecepcionFP>,<nombre_beneficiario>,<formaRecepcionFP2>,<cuenta>
+	 Entonces el Certificado de Depósito se cancela cambiando el estado del mismo
 	 Ejemplos:
-	 |numero_de_operacion  | numero_de_cuenta 			| cliente_persona_natural| tipo_cuenta |forma_de_pago|frecuencia  |formaRecepcionFP | nombre_beneficiario|
-	 |'Numero de operación'| '70100013504'          |'123456789'             | 'INDISTINTA'|'PERIODICA'  |'MENSUAL'   |'EFECTIVO'       | 'Manuel Gonzalez B'|
+	 |numero_de_operacion  | numero_de_cuenta 			| nombre_solicitante        | observacion          | formaRecepcionFP          |cuenta| nombre_beneficiario         | formaRecepcionFP2| 
+	 |'Numero de operación'| '70100015852'          | 'NAYARA  PONS CARRASCO'    | 'PRUEBA CANCELACION' |  'CUENTA DE AHORROS'      |'1'   | 'NAYARA  PONS CARRASCO'    |'CONTABLE'        | 
 	 
+
 	 #QA-S465407
 	 @CancelacionDepositoMultimoneda
 	 Esquema del escenario: Validar la cancelación de un Certificado de Depósito multimoneda
