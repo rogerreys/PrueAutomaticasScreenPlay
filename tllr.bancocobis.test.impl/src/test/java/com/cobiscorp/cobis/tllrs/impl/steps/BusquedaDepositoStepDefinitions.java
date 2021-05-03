@@ -315,7 +315,7 @@ public class BusquedaDepositoStepDefinitions {
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonBorrarRecepcion);
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarBorrarRecepcion);
 		if(formaRecepcion.length()>0 && cliente.length()>0 && mondo.length()>0){FormActions.clickOn(FRecepcionModalForm.Buttons.botonNuevo); }
-		if(formaRecepcion.length()>0 && mondo.length()>0){FormActions.clickOn(FRecepcionModalForm.Buttons.botonNuevo); }
+		else if(formaRecepcion.length()>0 && mondo.length()>0){FormActions.clickOn(FRecepcionModalForm.Buttons.botonNuevo); }
 		if(formaRecepcion.length()>0){FormActions.enterTextAndTab(FRecepcionModalForm.IngresarDatos.inputFormaRecepcion, formaRecepcion); }
 		if(mondo.length()>0){FormActions.enterText(FRecepcionModalForm.IngresarDatos.input_MontoRecepcion, mondo);}
 		if(cliente.length()>0  && mondo.length()>0){FormActions.enterTextAndEnter(FRecepcionModalForm.IngresarDatos.inputprimerCliente, cliente);}
@@ -324,7 +324,7 @@ public class BusquedaDepositoStepDefinitions {
 			FormActions.clickOn(FRecepcionModalForm.Grid.gridPrimerCliente);
 			FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
 		}	
-		if(formaRecepcion.length()>0 && mondo.length()>0){FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion); }
+		else if(formaRecepcion.length()>0 && mondo.length()>0){FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion); }
 		
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonSeleccionRecepcion);
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonGuardarRecepcion);
