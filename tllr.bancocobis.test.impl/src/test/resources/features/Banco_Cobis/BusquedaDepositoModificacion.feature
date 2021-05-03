@@ -22,7 +22,7 @@ Antecedentes: El usuario ingresa a cobis
    Entonces se actualiza el <monto> del Certificado de Depósito
 	  Ejemplos:
 	 |numero_de_operacion  | numero_de_cuenta 			| monto     |    tipo    |
-	 |'Numero de operación'| '70200012930'          |'6,000.00' | "CONTABLE" |
+	 |'Numero de operación'| '70200012930'          |'7,000.00' | "CONTABLE" |
 
 	 #QA-S465709-Modificación de Certificados de Depósito-Parte 1
 	 @ActualizacionFormaDePagoDPF

@@ -115,33 +115,33 @@ public class BusquedaDepositoStepDefinitions {
 		FormActions.clickOn(FCancelacionNormalForm.Buttons.botonSiguienteop);
 	}
 	
-	@Cuando("se diligencia el formulario de forma de pago con {string},{string} y {string}")
-	public void se_diligencia_el_formulario_de_forma_de_pago_y(String formaRecepcionFP, String nombre_beneficiario,String formaRecepcionFP2) {
+	@Cuando("se diligencia el formulario de forma de pago con {string}, {string}, {string} y {string}, {string}")
+	public void se_diligencia_el_formulario_de_forma_de_pago_y(String formaRecepcionFP, String cantidad1, String nombre_beneficiario,String formaRecepcionFP2, String cantidad2) {
 		FormActions.clickOn(FFormasDePago.Buttons.botonNuevo);
 		FormActions.selectByText(FFormasDePago.Seleccion.formaRecepcion, formaRecepcionFP);
-		FormActions.enterText(FFormasDePago.IngresarDatos.input_MontoRecepcion, "460000.47");
+		FormActions.enterText(FFormasDePago.IngresarDatos.input_MontoRecepcion, cantidad1);
 		FormActions.selectByText(FFormasDePago.Seleccion.beneficiario, nombre_beneficiario);
 		FormActions.clickOn(FFormasDePago.Buttons.botonAceptarPago);
 		FormActions.clickOn(FFormasDePago.Buttons.botonNuevo);
 		FormActions.selectByText(FFormasDePago.Seleccion.formaRecepcion, formaRecepcionFP2);
-		FormActions.enterText(FFormasDePago.IngresarDatos.input_MontoRecepcion, "418");
+		FormActions.enterText(FFormasDePago.IngresarDatos.input_MontoRecepcion, cantidad2);
 		FormActions.selectByText(FFormasDePago.Seleccion.beneficiario, nombre_beneficiario);
 		FormActions.clickOn(FFormasDePago.Buttons.botonAceptarPago);	
 		FormActions.clickOn(FFormasDePago.Buttons.botonGuardar);
 	}
 	
-	@Cuando("se diligencia el formulario de forma de pago con cuenta {string},{string},{string},{string}")
-	public void se_diligencia_el_formulario_de_forma_de_pago_con_cuenta(String formaRecepcionFP, String nombre_beneficiario,String formaRecepcionFP2,String cuenta) {
+	@Cuando("se diligencia el formulario de forma de pago con cuenta {string}, {string}, {string}, {string}, {string}, {string}")
+	public void se_diligencia_el_formulario_de_forma_de_pago_con_cuenta(String formaRecepcionFP, String cantidad1, String nombre_beneficiario,String formaRecepcionFP2,String cantidad2, String cuenta) {
 		FormActions.clickOn(FFormasDePago.Buttons.botonNuevo);
 		FormActions.selectByText(FFormasDePago.Seleccion.formaRecepcion, formaRecepcionFP);
-		FormActions.enterText(FFormasDePago.IngresarDatos.input_MontoRecepcion, "460000.47");
+		FormActions.enterText(FFormasDePago.IngresarDatos.input_MontoRecepcion, cantidad1);
 		FormActions.selectByText(FFormasDePago.Seleccion.beneficiario, nombre_beneficiario);
 		FormActions.clickOn(FFormasDePago.Buttons.botonCuentaCliente);
 		GridActions.selectRecord(FRecepcionModalForm.grid,Integer.parseInt(cuenta) ); 
 		FormActions.clickOn(FFormasDePago.Buttons.botonAceptarPago);
 		FormActions.clickOn(FFormasDePago.Buttons.botonNuevo);
 		FormActions.selectByText(FFormasDePago.Seleccion.formaRecepcion, formaRecepcionFP2);
-		FormActions.enterText(FFormasDePago.IngresarDatos.input_MontoRecepcion, "418");
+		FormActions.enterText(FFormasDePago.IngresarDatos.input_MontoRecepcion, cantidad2);
 		FormActions.selectByText(FFormasDePago.Seleccion.beneficiario, nombre_beneficiario);
 		FormActions.clickOn(FFormasDePago.Buttons.botonAceptarPago);	
 		FormActions.clickOn(FFormasDePago.Buttons.botonGuardar);
