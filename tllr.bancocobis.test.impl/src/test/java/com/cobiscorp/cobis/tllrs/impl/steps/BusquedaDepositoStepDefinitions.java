@@ -83,13 +83,13 @@ public class BusquedaDepositoStepDefinitions {
 	}
 	
 	//JCMA QA-S465034
-	@Entonces("el Certificado de Depósito se cancela cambiando el estado del mismo")
-	public void el_certificado_de_deposito_se_cancela_cambiando_el_estado_del_mismo(){
+	@Entonces("el Certificado de Depósito se cancela cambiando el estado del mismo a {string}")
+	public void el_certificado_de_deposito_se_cancela_cambiando_el_estado_del_mismo(String estado){
 		ContainerActions.closeActiveTabContainer();
 		ContainerActions.changeToIframe("shellTab");
 		ContainerActions.activeIframe();
-		BaseActions.takeScreenshot();
-		ValidationActions.isEquals(FDetalleOperacionApertura.CabeceraInformacion.estadoApertura, "CAN");	
+		//BaseActions.takeScreenshot();
+		ValidationActions.isEquals(FDetalleOperacionApertura.CabeceraInformacion.estadoApertura, estado);	
 	}
 	
 	/*MAAV Verificar la Cancelación de un Certificado de Depósito con 2 Formas de Pago*/
@@ -164,11 +164,11 @@ public class BusquedaDepositoStepDefinitions {
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonSiguiente);
 	}
 	
-	@Cuando("se diligencia el formulario de Operaciones con {string} y {string}")
-	public void se_diligencia_el_formulario_de_operaciones_modificando_la_forma_de_pago(String forma_de_pago , String frecuencia){
+	@Cuando("se diligencia el formulario de Operaciones con {string} y {string} a {string}")
+	public void se_diligencia_el_formulario_de_operaciones_modificando_la_forma_de_pago(String forma_de_pago , String frecuencia, String plazo){
 		FormActions.selectByText(FVistaOperacionForm.Seleccion.formaPago, forma_de_pago);
 		FormActions.selectByText(FVistaOperacionForm.Seleccion.frecuenciaPago, frecuencia);
-		FormActions.enterText(FVistaOperacionForm.IngresarDatos.input_Plazo, "30");
+		FormActions.enterText(FVistaOperacionForm.IngresarDatos.input_Plazo, plazo);
 		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSimular);
 		FormActions.clickOn(FVistaOperacionForm.Buttons.botonAceptarModal);
 		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSiguiente);
@@ -191,7 +191,7 @@ public class BusquedaDepositoStepDefinitions {
 		FormActions.clickOn(FDetalleOperacionApertura.BarraOpciones.pestañaOperacion);
 		Thread.sleep(2000);
 		ValidationActions.isEquals(FVistaOperacionForm.Seleccion.validarFormaPago, forma_de_pago);
-		BaseActions.takeScreenshot();
+		//BaseActions.takeScreenshot();
 	}
 	
 	@Cuando("se diligencia el formulario de forma de pago con {string} y {string} y {string}")
@@ -258,12 +258,12 @@ public class BusquedaDepositoStepDefinitions {
 		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSiguiente);	
 	}
 	
-	@Cuando("se diligencia el formulario de forma de recepcion {string}")
-	public void se_diligencia_el_formulario_de_forma_de_recepcion(String monto){
+	@Cuando("se diligencia el formulario de forma de recepcion {string} con {string}")
+	public void se_diligencia_el_formulario_de_forma_de_recepcion(String monto, String tipo){
 		FormActions.clickOn(AdminAperturaPlazoFijo.ButtonsRow.buttonsDeleteRow);
 		FormActions.clickOn(AdminAperturaPlazoFijo.Buttons.botonAceptarEliminacion);
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonNuevo);
-		FormActions.selectByText(FRecepcionModalForm.Seleccion.formaRecepcion, "CONTABLE");
+		FormActions.selectByText(FRecepcionModalForm.Seleccion.formaRecepcion, tipo);
 		FormActions.enterText(FRecepcionModalForm.IngresarDatos.input_MontoRecepcion, monto);
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonAceptarRecepcion);
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonSeleccionRecepcion);
@@ -276,9 +276,9 @@ public class BusquedaDepositoStepDefinitions {
 		ValidationActions.isEquals(FDetalleOperacionApertura.CabeceraInformacion.montoApertura, monto);
 	}
 	
-	@Cuando("se diligencia el formulario de Operaciones modificando la forma de pago")
-	public void se_diligencia_el_formulario_de_operaciones_modificando_la_forma_de_pago(){
-		FormActions.selectByText(FVistaOperacionForm.Seleccion.formaPago, "VENCIMIENTO");
+	@Cuando("se diligencia el formulario de Operaciones modificando la forma de pago con {string}")
+	public void se_diligencia_el_formulario_de_operaciones_modificando_la_forma_de_pago(String tipo){
+		FormActions.selectByText(FVistaOperacionForm.Seleccion.formaPago, tipo);
 		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSimular);
 		FormActions.clickOn(FVistaOperacionForm.Buttons.botonAceptarModal);
 		FormActions.clickOn(FVistaOperacionForm.Buttons.botonSiguiente);
@@ -288,11 +288,11 @@ public class BusquedaDepositoStepDefinitions {
 		FormActions.clickOn(FRecepcionModalForm.Buttons.botonGuardarRecepcion);
 	}
 	
-	@Cuando("se actualiza la forma de pago del Certificado de Depósito")
-	public void se_actualiza_la_forma_de_pago_del_certificado_de_deposito(){
+	@Cuando("se actualiza la forma de pago del Certificado de Depósito a {string}")
+	public void se_actualiza_la_forma_de_pago_del_certificado_de_deposito_a(String estado){
 		FormActions.clickOn(FDetalleOperacionApertura.BarraOpciones.pestañaOperacion);
 		BaseActions.getValue(FVistaOperacionForm.Seleccion.formaPago);
-		ValidationActions.isEquals(FVistaOperacionForm.Seleccion.validarFormaPago, "VENCIMIENTO");
+		ValidationActions.isEquals(FVistaOperacionForm.Seleccion.validarFormaPago, estado);
 	}
 	
 	//RSRM - QA-S465778-Modificación de Certificados de Depósito - Verificar un Certificado de Depósito adicionando un Cliente
@@ -362,9 +362,9 @@ public class BusquedaDepositoStepDefinitions {
 		FormActions.clickOn(FDetalleOperacionApertura.Buttons.botonAceptarObservacionMensaje);
 	}
 	
-	@Cuando("el Certificado de Depósito es anulado, cambiando el estado en la pantalla Datos de Certificado")
-	public void el_Certificado_de_Depósito_es_anulado_cambiando_el_estado_en_la_pantalla_Datos_de_Certificado(){
-		ValidationActions.isEquals(FDetalleOperacionApertura.CabeceraInformacion.estadoApertura, "ANU");
+	@Cuando("el Certificado de Depósito es anulado, cambiando el estado en la pantalla Datos de Certificado a {string}")
+	public void el_Certificado_de_Depósito_es_anulado_cambiando_el_estado_en_la_pantalla_Datos_de_Certificado(String estado){
+		ValidationActions.isEquals(FDetalleOperacionApertura.CabeceraInformacion.estadoApertura, estado);
 	}
 
 }

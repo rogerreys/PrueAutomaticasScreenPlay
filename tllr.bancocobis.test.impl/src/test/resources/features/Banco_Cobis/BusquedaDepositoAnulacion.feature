@@ -17,8 +17,8 @@ Antecedentes: El usuario ingresa a cobis
 	 Cuando se busca el certificado de depósito por <numero_de_operacion> con <numero>
 	 Y se presiona el menú acciones, escoger la opción Anulación
    Y se ingresa una Observación en la pantalla Anular <observacion>
-   Entonces el Certificado de Depósito es anulado, cambiando el estado en la pantalla Datos de Certificado
+   Entonces el Certificado de Depósito es anulado, cambiando el estado en la pantalla Datos de Certificado a <estado>
    Ejemplos:
-   |    numero_de_operacion   |  numero       |     observacion       |
-   |   'Numero de operación'  | '70100015035' | "ANULAR VENCIMIENTO"  |				
-   |   'Numero de operación'  | '70100015040' | "ANULAR PERIODICO"    |
+   |    numero_de_operacion   |  numero       |     observacion       |	estado  |
+   |   'Numero de operación'  | '70100015035' | "ANULAR VENCIMIENTO"  |	"ANU"   |			
+   |   'Numero de operación'  | '70100015040' | "ANULAR PERIODICO"    | "ANU"   |

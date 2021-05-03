@@ -18,11 +18,11 @@ Antecedentes: El usuario ingresa a cobis
 	 Y se presiona el menú acciones escogiendo la opción Modificación
 	 Y se presiona el botón siguiente
 	 Y se diligencia el formulario de Operaciones modificando el <monto>
-	 Y se diligencia el formulario de forma de recepcion <monto>
+	 Y se diligencia el formulario de forma de recepcion <monto> con <tipo>
    Entonces se actualiza el <monto> del Certificado de Depósito
 	  Ejemplos:
-	 |numero_de_operacion  | numero_de_cuenta 			| monto     |
-	 |'Numero de operación'| '70200012930'          |'6,000.00' |
+	 |numero_de_operacion  | numero_de_cuenta 			| monto     |    tipo    |
+	 |'Numero de operación'| '70200012930'          |'6,000.00' | "CONTABLE" |
 
 	 #QA-S465709-Modificación de Certificados de Depósito-Parte 1
 	 @ActualizacionFormaDePagoDPF
@@ -30,12 +30,12 @@ Antecedentes: El usuario ingresa a cobis
 	 Cuando se busca el certificado de depósito por el <numero_de_operacion> con <numero_de_cuenta>
 	 Y se presiona el menú acciones escogiendo la opción Modificación
 	 Y se presiona el botón siguiente
-	 Y se diligencia el formulario de Operaciones modificando la forma de pago
+	 Y se diligencia el formulario de Operaciones modificando la forma de pago con <tipo>
 	 Y se diligencia el formulario forma de recepción
-	 Entonces se actualiza la forma de pago del Certificado de Depósito
+	 Entonces se actualiza la forma de pago del Certificado de Depósito a <estado>
 	 Ejemplos:
-	 |numero_de_operacion  | numero_de_cuenta 			| 
-	 |'Numero de operación'| '70100013352'          |
+	 |numero_de_operacion  | numero_de_cuenta 			|    tipo        |     estado    |
+	 |'Numero de operación'| '70100013352'          |  "VENCIMIENTO" | "VENCIMIENTO" |
 	 
 	 #QA-S465778-Modificación de Certificados de Depósito - Verificar un Certificado de Depósito adicionando un Cliente 
 	 @ModificacionCertificadosDepositoNuevoCliente
@@ -71,12 +71,12 @@ Antecedentes: El usuario ingresa a cobis
 	 Cuando se busca el certificado de depósito por el <numero_de_operacion> con <numero_de_cuenta>
 	 Y se presiona el menú acciones escogiendo la opción Modificación
 	 Y en el formulario de clientes agregar un <cliente_persona_natural> y con tipo <tipo_cuenta>
-	 Y se diligencia el formulario de Operaciones con <forma_de_pago> y <frecuencia>
+	 Y se diligencia el formulario de Operaciones con <forma_de_pago> y <frecuencia> a <plazo>
 	 Y se diligencia el formulario de forma de pago modificacion con <formaRecepcionFP>,<nombre_beneficiario>
 	 Entonces se actualiza la forma de pago del Certificado de Depósito con <forma_de_pago>
 	 Ejemplos:
-	 |numero_de_operacion  | numero_de_cuenta 			| cliente_persona_natural| tipo_cuenta |forma_de_pago|frecuencia  |formaRecepcionFP | nombre_beneficiario|
-	 |'Numero de operación'| '70100013504'          |'123456789'             | 'INDISTINTA'|'PERIODICA'  |'MENSUAL'   |'EFECTIVO'       | 'Manuel Gonzalez B'|
+	 |numero_de_operacion  | numero_de_cuenta 			| cliente_persona_natural| tipo_cuenta |forma_de_pago|frecuencia  |formaRecepcionFP | nombre_beneficiario|   plazo   |
+	 |'Numero de operación'| '70100013504'          |'123456789'             | 'INDISTINTA'|'PERIODICA'  |'MENSUAL'   |'EFECTIVO'       | 'Manuel Gonzalez B'|   "30"    |
 	
 	 
 	 
