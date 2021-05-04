@@ -371,14 +371,16 @@ public class BusquedaDepositoStepDefinitions {
 	//#QA-S471520
 	@Cuando("se presiona el menú acciones, escoger la opción Bloqueos")
 	public void se_presiona_el_menu_acciones_escoger_la_opcion_Bloqueos(){
-		HeaderActions.clickAction(FDetalleBusquedaDeposito.Buttons.botonOpcionesApertura);
+		//HeaderActions.clickAction(FDetalleBusquedaDeposito.Buttons.botonOpcionesApertura);
 		HeaderActions.clickAction(FDetalleBusquedaDeposito.Buttons.botonBloqueos);
 		//ValidationActions.isEquals(GBloquear.TextoDetalleOperacion.porcentajeBloqueo, "Disponible - 100.00 %");
 	}
 	
 	//#QA-S471520
-	@Cuando("se debe ingresar los datos en el formulario Bloqueo, presionar el botón Nuevo llenar los campos {string}, {string}, {string} \\(total)")
-	public void se_debe_ingresar_los_datos_en_el_formulario_Bloqueo_presionar_el_boton_Nuevo_llenar_los_campos_motivo_observacion_monto_total(String motivo, String observacion, String monto){
+	@Cuando("se debe ingresar los datos en el formulario Bloqueo, presionar el botón Nuevo llenar los campos {string}, {string}, {string}, {string}")	
+	public void se_debe_ingresar_los_datos_en_el_formulario_Bloqueo_presionar_el_boton_Nuevo_llenar_los_campos_motivo_observacion_monto_total(String motivo, String observacion, String monto, String porcentaje){
+		double montoNumerico = 0;
+		
 		FormActions.clickOn(GBloquear.Buttons.botonNuevo);
 		FormActions.clickOn(GBloquear.Buttons.botonCatalogo);
 		
@@ -399,16 +401,44 @@ public class BusquedaDepositoStepDefinitions {
 			FormActions.clickOn(GBloquear.Buttons.botonOpcionRobo);
 			break;
 		}
+		
 		FormActions.enterText(GBloquear.InputText.inputObservacion, observacion);
-		FormActions.enterText(GBloquear.InputText.inputMonto, monto);
-		FormActions.clickOn(GBloquear.Buttons.botonAceptarMotivo);
-		FormActions.clickOn(GBloquear.Buttons.botonCerrarBloqueo);
+		
+		switch (porcentaje) {
+		case "total":
+			FormActions.enterText(GBloquear.InputText.inputMonto, monto);
+			FormActions.clickOn(GBloquear.Buttons.botonAceptarMotivo);
+			FormActions.clickOn(GBloquear.Buttons.botonCerrarBloqueo);
+			break;
+		case "parcial":			
+			montoNumerico = Double.parseDouble(monto) * 0.8; 
+			FormActions.enterText(GBloquear.InputText.inputMonto, String.valueOf(montoNumerico));
+			FormActions.clickOn(GBloquear.Buttons.botonAceptarMotivo);
+			FormActions.clickOn(GBloquear.Buttons.botonCerrarBloqueo);
+			break;
+		case "superior":
+			montoNumerico = Double.parseDouble(monto) * 1.2; 
+			FormActions.enterText(GBloquear.InputText.inputMonto, String.valueOf(montoNumerico));
+			FormActions.clickOn(GBloquear.Buttons.botonAceptarMotivo);
+			break;
+		}
 	}
 	
 	//#QA-S471520
-	@Cuando("se genera el bloqueo del Certificado de Depósito por el monto total")
-	public void se_genera_el_bloqueo_del_Certificado_de_Deposito_por_el_monto_total(){
-		
+	@Cuando("se genera el bloqueo del Certificado de Depósito por el monto {string}")
+	public void se_genera_el_bloqueo_del_Certificado_de_Deposito_por_el_monto_total(String porcentaje){
+		switch (porcentaje) {
+		case "total":
+			ValidationActions.isEquals(GBloquear.TextoDetalleOperacion.porcentajeBloqueo, "Disponible - 100.00 %");
+			break;
+		case "parcial":			
+			ValidationActions.isEquals(GBloquear.TextoDetalleOperacion.porcentajeBloqueo, "Disponible - 100.00 %");
+			break;
+		case "superior":
+			ValidationActions.isEquals(GBloquear.MensajeExcepcion.mensajeInformacion, "Excepción de negocio: 16 - 141069 - [BL_retencion] Monto a bloquear mayor que monto del plazo fijo");
+			break;
+		}
 	}
+
 }
 

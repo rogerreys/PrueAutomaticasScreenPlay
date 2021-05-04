@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 
 import com.cobiscorp.cobis.tllrs.test.FBusquedaClienteForm.FiltroBusquedaCliente.INPUT_BARRA_BUSCAR;
 import com.cobiscorp.cobis.tllrs.test.FDetalleOperacionApertura.CabeceraInformacion.EstadoApertura;
+import com.cobiscorp.cobis.tllrs.test.FDetalleOperacionApertura.MensajeExcepcion.MensajeInformacion;
 import com.cobiscorp.cobis.utils.base.Singleton;
 import com.cobiscorp.cobis.utils.controls.IButton;
 import com.cobiscorp.cobis.utils.controls.IInputValue;
@@ -240,6 +241,27 @@ public class GBloquear {
 			}
 		}
 		
+	}
+	
+	public static class MensajeExcepcion{
+		
+		public static final MensajeInformacion mensajeInformacion = Singleton.getInstance(MensajeInformacion.class);
+		
+		public static class MensajeInformacion implements ITextReadable {
+
+			private String xPath = "/html/body/div[5]/div/div[4]/div";
+			private Target target = Target.the("EstadoApertura").located(By.xpath(xPath));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return xPath;
+			}
+		}
 	}
 
 }

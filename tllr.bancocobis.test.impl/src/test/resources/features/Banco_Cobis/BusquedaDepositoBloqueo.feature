@@ -11,12 +11,13 @@ Antecedentes: El usuario ingresa a cobis
    Dado que navega desde "Depósitos a Plazo" hacia "Búsqueda de Depósitos"
 
    #QA-S471520
-   @BloqueoDeposito
-   Esquema del escenario: Verificar la cancelación de un Certificado de Depósito con NC a cuenta
+   @BloqueoDepositoUno
+   Esquema del escenario:  Validar el correcto bloqueo del valor total de  un certificado de Depósito
 	 Cuando se busca el certificado de depósito por <numero_de_operacion> con <numero>
 	 Y se presiona el menú acciones, escoger la opción Bloqueos
-	 Y se debe ingresar los datos en el formulario Bloqueo, presionar el botón Nuevo llenar los campos <motivo>, <observacion>, <monto> (total)
-	 Entonces se genera el bloqueo del Certificado de Depósito por el monto total
+	 Y se debe ingresar los datos en el formulario Bloqueo, presionar el botón Nuevo llenar los campos <motivo>, <observacion>, <monto>, <porcentaje>
+	 Entonces se genera el bloqueo del Certificado de Depósito por el monto <porcentaje>
 	  Ejemplos:
-	 |numero_de_operacion  |    numero		 |   motivo    |   observacion   |   monto  |
-	 |'Numero de operación'| '70100016196' | 'DETERIORO' | 'Text Bloqueo'  |  '7000'  |
+	 |numero_de_operacion  |    numero		 |   motivo    |   observacion   |   monto  |  porcentaje   |
+	 |'Numero de operación'| '70100016243' | 'DETERIORO' | 'Text Bloqueo'  |  '7000'  |  "superior"   |  
+	 
