@@ -21,6 +21,7 @@ import com.cobiscorp.cobis.tllrs.test.FDetalleOperacionApertura;
 import com.cobiscorp.cobis.tllrs.test.FFormasDePago;
 import com.cobiscorp.cobis.tllrs.test.FRecepcionModalForm;
 import com.cobiscorp.cobis.tllrs.test.FVistaOperacionForm;
+import com.cobiscorp.cobis.tllrs.test.GBloquear;
 
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;
@@ -366,6 +367,48 @@ public class BusquedaDepositoStepDefinitions {
 	public void el_Certificado_de_Depósito_es_anulado_cambiando_el_estado_en_la_pantalla_Datos_de_Certificado(String estado){
 		ValidationActions.isEquals(FDetalleOperacionApertura.CabeceraInformacion.estadoApertura, estado);
 	}
-
+	
+	//#QA-S471520
+	@Cuando("se presiona el menú acciones, escoger la opción Bloqueos")
+	public void se_presiona_el_menu_acciones_escoger_la_opcion_Bloqueos(){
+		HeaderActions.clickAction(FDetalleBusquedaDeposito.Buttons.botonOpcionesApertura);
+		HeaderActions.clickAction(FDetalleBusquedaDeposito.Buttons.botonBloqueos);
+		//ValidationActions.isEquals(GBloquear.TextoDetalleOperacion.porcentajeBloqueo, "Disponible - 100.00 %");
+	}
+	
+	//#QA-S471520
+	@Cuando("se debe ingresar los datos en el formulario Bloqueo, presionar el botón Nuevo llenar los campos {string}, {string}, {string} \\(total)")
+	public void se_debe_ingresar_los_datos_en_el_formulario_Bloqueo_presionar_el_boton_Nuevo_llenar_los_campos_motivo_observacion_monto_total(String motivo, String observacion, String monto){
+		FormActions.clickOn(GBloquear.Buttons.botonNuevo);
+		FormActions.clickOn(GBloquear.Buttons.botonCatalogo);
+		
+		switch (motivo) {
+		case "DETERIORO":
+			FormActions.clickOn(GBloquear.Buttons.botonOpcionDeterioro);
+			break;
+		case "REQUERIMIENTO JUDICIAL":
+			FormActions.clickOn(GBloquear.Buttons.botonOpcionRequerimientoJudicial);
+			break;
+		case "MIGRACION":
+			FormActions.clickOn(GBloquear.Buttons.botonOpcionMigracion);
+			break;
+		case "PERDIDA":
+			FormActions.clickOn(GBloquear.Buttons.botonOpcionPerdida);
+			break;
+		case "ROBO":
+			FormActions.clickOn(GBloquear.Buttons.botonOpcionRobo);
+			break;
+		}
+		FormActions.enterText(GBloquear.InputText.inputObservacion, observacion);
+		FormActions.enterText(GBloquear.InputText.inputMonto, monto);
+		FormActions.clickOn(GBloquear.Buttons.botonAceptarMotivo);
+		FormActions.clickOn(GBloquear.Buttons.botonCerrarBloqueo);
+	}
+	
+	//#QA-S471520
+	@Cuando("se genera el bloqueo del Certificado de Depósito por el monto total")
+	public void se_genera_el_bloqueo_del_Certificado_de_Deposito_por_el_monto_total(){
+		
+	}
 }
 
