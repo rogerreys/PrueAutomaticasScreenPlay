@@ -1,1 +1,79 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Cancelacion de Certificado de Deposito" skipped="0" tests="1" time="62.0" timestamp="2021-05-05 04:24:22"><testcase name="Verificar la cancelación de un Certificado de Deposito con NC a una cuenta aho/cte bloqueada contra depósito"/></testsuite>
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="3" failures="0" name="Cancelacion de Certificado de Deposito" skipped="0" tests="3" time="14.84" timestamp="2021-05-06 10:16:09"><testcase name="Verificar la cancelación de un Certificado de Deposito con NC a una cuenta aho/cte bloqueada contra depósito"><error message="no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=90.0.4430.93)&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'PC01EXT146', ip: '192.168.1.111', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 90.0.4430.93, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: C:\Users\JMARCH~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:53177}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 111149395c4edb593c4d497d74cd43b8&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'PC01EXT146', ip: '192.168.1.111', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'&#10;Driver info: driver.version: NgWebDriver" type="org.openqa.selenium.NoSuchWindowException">no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=90.0.4430.93)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PC01EXT146', ip: '192.168.1.111', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 90.0.4430.93, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: C:\Users\JMARCH~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:53177}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 111149395c4edb593c4d497d74cd43b8
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PC01EXT146', ip: '192.168.1.111', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
+Driver info: driver.version: NgWebDriver</error><system-err>no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=90.0.4430.93)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PC01EXT146', ip: '192.168.1.111', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 90.0.4430.93, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: C:\Users\JMARCH~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:53177}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 111149395c4edb593c4d497d74cd43b8
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PC01EXT146', ip: '192.168.1.111', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
+Driver info: driver.version: NgWebDriver&#13;
+com.paulhammant.ngwebdriver.NgWebDriver.waitForAngularRequestsToFinish(NgWebDriver.java:68)&#13;
+com.cobiscorp.cobis.serenity.actions.BaseActions.waitUntilCharge(BaseActions.java:23)&#13;
+com.cobiscorp.cobis.serenity.actions.ContainerActions.loginWith(ContainerActions.java:33)&#13;
+com.cobiscorp.cobis.pfprt.test.impl.steps.CommonStepDefinitions.que_usuario_realiza_login_en_el_sistema_cobis(CommonStepDefinitions.java:39)&#13;
+✽.que usuario realiza login en el sistema cobis(file:///C:/Users/jmarchesini/Desktop/Git%20Serenity/Git%20Hub/PrueAutomaticasScreenPlay/pfprt.pfioperation.test.impl/src/test/resources/features/Example/CancelacionCertificado.feature:11)&#13;
+</system-err></testcase><testcase name="Verificar la cancelación de un Certificado de Deposito con NC a una cuenta aho/cte inmovilizada"><error message="no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=90.0.4430.93)&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'PC01EXT146', ip: '192.168.1.111', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 90.0.4430.93, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: C:\Users\JMARCH~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:53199}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: f408d858f3f82624b3d98d16310d7fac&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'PC01EXT146', ip: '192.168.1.111', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'&#10;Driver info: driver.version: NgWebDriver" type="org.openqa.selenium.NoSuchWindowException">no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=90.0.4430.93)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PC01EXT146', ip: '192.168.1.111', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 90.0.4430.93, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: C:\Users\JMARCH~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:53199}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: f408d858f3f82624b3d98d16310d7fac
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PC01EXT146', ip: '192.168.1.111', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
+Driver info: driver.version: NgWebDriver</error><system-err>no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=90.0.4430.93)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PC01EXT146', ip: '192.168.1.111', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 90.0.4430.93, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: C:\Users\JMARCH~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:53199}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: f408d858f3f82624b3d98d16310d7fac
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PC01EXT146', ip: '192.168.1.111', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
+Driver info: driver.version: NgWebDriver&#13;
+com.paulhammant.ngwebdriver.NgWebDriver.waitForAngularRequestsToFinish(NgWebDriver.java:68)&#13;
+com.cobiscorp.cobis.serenity.actions.BaseActions.waitUntilCharge(BaseActions.java:23)&#13;
+com.cobiscorp.cobis.serenity.actions.ContainerActions.loginWith(ContainerActions.java:33)&#13;
+com.cobiscorp.cobis.pfprt.test.impl.steps.CommonStepDefinitions.que_usuario_realiza_login_en_el_sistema_cobis(CommonStepDefinitions.java:39)&#13;
+✽.que usuario realiza login en el sistema cobis(file:///C:/Users/jmarchesini/Desktop/Git%20Serenity/Git%20Hub/PrueAutomaticasScreenPlay/pfprt.pfioperation.test.impl/src/test/resources/features/Example/CancelacionCertificado.feature:11)&#13;
+</system-err></testcase><testcase name="Verificar la cancelación de un Certificado de Deposito con NC a una cuenta aho/cte cerrada"><error message="no such window: target window already closed&#10;from unknown error: web view not found&#10;  (Session info: chrome=90.0.4430.93)&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'PC01EXT146', ip: '192.168.1.111', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 90.0.4430.93, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: C:\Users\JMARCH~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:53225}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: cb6b997dd502719e38f4f47c000c5d77&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'PC01EXT146', ip: '192.168.1.111', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'&#10;Driver info: driver.version: NgWebDriver" type="org.openqa.selenium.NoSuchWindowException">no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=90.0.4430.93)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PC01EXT146', ip: '192.168.1.111', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 90.0.4430.93, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: C:\Users\JMARCH~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:53225}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: cb6b997dd502719e38f4f47c000c5d77
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PC01EXT146', ip: '192.168.1.111', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
+Driver info: driver.version: NgWebDriver</error><system-err>no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=90.0.4430.93)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PC01EXT146', ip: '192.168.1.111', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 90.0.4430.93, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: C:\Users\JMARCH~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:53225}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: cb6b997dd502719e38f4f47c000c5d77
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PC01EXT146', ip: '192.168.1.111', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
+Driver info: driver.version: NgWebDriver&#13;
+com.paulhammant.ngwebdriver.NgWebDriver.waitForAngularRequestsToFinish(NgWebDriver.java:68)&#13;
+com.cobiscorp.cobis.serenity.actions.BaseActions.waitUntilCharge(BaseActions.java:23)&#13;
+com.cobiscorp.cobis.serenity.actions.ContainerActions.loginWith(ContainerActions.java:33)&#13;
+com.cobiscorp.cobis.pfprt.test.impl.steps.CommonStepDefinitions.que_usuario_realiza_login_en_el_sistema_cobis(CommonStepDefinitions.java:39)&#13;
+✽.que usuario realiza login en el sistema cobis(file:///C:/Users/jmarchesini/Desktop/Git%20Serenity/Git%20Hub/PrueAutomaticasScreenPlay/pfprt.pfioperation.test.impl/src/test/resources/features/Example/CancelacionCertificado.feature:11)&#13;
+</system-err></testcase></testsuite>

@@ -112,4 +112,27 @@ public class FDetalleOperacionForm{
 			}
 		}
 	}
+	
+	public static class ResumenInformacion{
+		
+		public static final MontoBloqueado montoBloqueado = Singleton.getInstance(MontoBloqueado.class);
+		
+		public static class MontoBloqueado implements ITextReadable {
+
+			private String xPath = "//*[@id='G_FDETALLORE_185841']/div/div/form/div/div[2]/div[4]/div[2]";
+			private Target target = Target.the("MontoBloqueado").located(By.xpath(xPath));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return xPath;
+			}
+		}
+		
+	}
+	
 }

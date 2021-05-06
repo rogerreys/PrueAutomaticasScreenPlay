@@ -9,8 +9,13 @@
  * o retencion y para perseguir penalmente a los autores de cualquier infraccion.
  */
 package com.cobiscorp.cobis.pfprt.oprtn.test;
+import org.openqa.selenium.By;
 import com.cobiscorp.cobis.utils.base.Singleton;
+import com.cobiscorp.cobis.utils.controls.IButton;
 import com.cobiscorp.cobis.utils.controls.impl.*;
+import com.cobiscorp.cobis.utils.events.ITextReadable;
+
+import net.serenitybdd.screenplay.targets.Target;
 
 public class FBloqueosForm{
 	public static final FiltroBusquedaBloqueo filtroBusquedaBloqueo = Singleton.getInstance(FiltroBusquedaBloqueo.class);
@@ -24,6 +29,26 @@ public class FBloqueosForm{
 			throw new IllegalStateException("Buttons is a utility class");
 		}
 
+		public static final BotonCatalogo botonCatalogo = Singleton.getInstance(BotonCatalogo.class);		
+		
+		public static class BotonCatalogo extends COBISButton{
+			
+			public BotonCatalogo(){
+				this.init("", "BotonCatalogo", "//*[@id='QV_3871_47610']/table/tbody/tr/td[1]/div/div/button");
+			}
+			
+		}
+		
+		public static final BotonCerrarBloqueo botonCerrarBloqueo = Singleton.getInstance(BotonCerrarBloqueo.class);
+		
+		public static class BotonCerrarBloqueo extends COBISButton{
+			
+			public BotonCerrarBloqueo(){
+				this.init("", "BotonCerrarBloqueo", "/html/body/div[4]/div/div/div[1]/button");
+			}
+			
+		}
+		
 	}
 	
 
@@ -104,4 +129,26 @@ public class FBloqueosForm{
 			}
 		}			
 	}
+	
+	public static class MensajeExcepcion{
+		
+		public static final MensajeInformacion mensajeInformacion = Singleton.getInstance(MensajeInformacion.class);
+		
+		public static class MensajeInformacion implements ITextReadable {
+
+			private String xPath = "/html/body/div[5]/div/div[4]/div";
+			private Target target = Target.the("MensajeInformacion").located(By.xpath(xPath));
+
+			@Override
+			public Target getTarget() {
+				return target;
+			}
+
+			@Override
+			public String getId() {
+				return xPath;
+			}
+		}
+	}
+	
 }
