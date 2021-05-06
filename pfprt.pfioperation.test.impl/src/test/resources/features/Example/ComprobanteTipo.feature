@@ -8,7 +8,7 @@ Característica: Comprobante Tipo
   PARA  evidenciar la creación correcta del asiento contable tipo
 
 Antecedentes:
-  Dado que usuario:"admuser" realiza Login en COBIS con password:"Passw0rd2019*#" rol:"MENU POR PROCESOS" filial:"BANCO COBIS" oficina:"OFICINA MATRIZ" en la url:"http://www.demo1.cloud-cobiscorp.com/CWC/services/cobis/web/bank/views/commons/login.html"
+  Dado que usuario realiza login en el sistema cobis
 
 @ValidacionesComprobanteTipo
 Esquema del escenario: Realizar las validaciones de campos y acciones obligatorias al crear un comprobante tipo
