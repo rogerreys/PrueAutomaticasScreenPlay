@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: Cancelacion de Certificado de Deposito
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 62.404 s - in Cancelacion de Certificado de Deposito
