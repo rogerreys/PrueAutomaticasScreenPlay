@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Cancelacion de Certificado de Deposito" skipped="0" tests="1" time="62.0" timestamp="2021-05-05 04:24:22"><testcase name="Verificar la cancelación de un Certificado de Deposito con NC a una cuenta aho/cte bloqueada contra depósito"/></testsuite>

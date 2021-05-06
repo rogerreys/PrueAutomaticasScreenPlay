@@ -1,0 +1,200 @@
+<html ng-app="VC_FDETALLECO_640451" class="k-webkit k-webkit90 ng-scope"><head><style>@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style> 
+  <title>FDetalleOperacion</title> 
+  <script type="text/javascript">
+var params = {
+cn_pt: '/CWC/services', md_id: 'PFPRT', sb_id: 'OPRTN',
+ts_id: 'T_PFPRTUXSVJSIP_451' , ts_vr: '1.0.0',
+vc_id: 'VC_FDETALLECO_640451', releaseMode: 'true',
+minify: 'true', dsgnr_vrsn: '7.2.0',
+graphicSupport:'true',
+cobisPatterns: 1 , headerID: 'HD_UPCABECAE_908'
+};
+</script> 
+  <script id="CEN">
+function logOffFromCen(flagCen){
+clearInterval(keepAliveInterval);
+window.location.href = "/CWC/services/cobis/web/views/commons/cencontext.html?action=" + flagCen;
+}
+</script> 
+  <script src="/CWC/services/cobis/web/scripts/commons/cobis.censupport.js"></script> 
+  <script src="/CWC/services/cobis/web/scripts/commons/designer-commons-imports.min.js"></script><script src="/CWC/services/cobis/web/scripts/lib/jquery/jquery-3.5.1.min.js"></script><script src="/CWC/services/cobis/web/scripts/lib/jquery/jquery.blockUI.js"></script><script src="/CWC/services/cobis/web/scripts/lib/jquery/jquery.validate.min.js"></script><script src="/CWC/services/cobis/web/scripts/lib/angular/angular.min.js"></script><script src="/CWC/services/cobis/web/scripts/lib/angular/angular-resource.min.js"></script><script src="/CWC/services/cobis/web/scripts/lib/angular/angular-route.min.js"></script><script src="/CWC/services/cobis/web/scripts/lib/angular/angular-translate.min.js"></script><script src="/CWC/services/cobis/web/scripts/lib/angular/angular-translate-loader-partial.min.js"></script><script src="/CWC/services/cobis/web/scripts/lib/angular/angular-translate-storage-local.min.js"></script><script src="/CWC/services/cobis/web/scripts/lib/angular/angular-translate-storage-cookie.min.js"></script><script src="/CWC/services/cobis/web/scripts/lib/angular/ocLazyLoad.min.js"></script><script src="/CWC/services/cobis/web/scripts/lib/bootstrap/bootstrap.min.js"></script><script src="/CWC/services/cobis/web/scripts/lib/bootstrap/ui-bootstrap-tpls.min.js"></script><script src="/CWC/services/cobis/web/scripts/lib/kendo/kendo.all.min.js"></script> 
+  <script src="/CWC/services/cobis/web/scripts/commons/designer-imports.min.js"></script><script src="/CWC/services/cobis/web/scripts/lib/kendo/cultures/kendo.culture.es.min.js"></script><script src="/CWC/services/cobis/web/scripts/lib/kendo/lang/kendo.messages.es.min.js"></script><script src="/CWC/services/cobis/web/scripts/lib/kendo/kiui.min.js"></script><script src="/CWC/services/cobis/web/scripts/lib/kendo/jszip.min.js"></script> <script src="/CWC/services/cobis/web/scripts/lib/angular/angular-cookies.min.js"></script><script src="/CWC/services/cobis/web/scripts/lib/script/script.js"></script><script src="/CWC/services/cobis/web/scripts/extensions/kendo/cobisKendoExt.all.min.js"></script><script src="/CWC/services/cobis/web/scripts/commons/cwc.all.min.js"></script><script type="text/javascript" src="/CWC/services/cobis/web/scripts/lib/angular/angular-idle.min.js"></script><script src="/CWC/services/cobis/web/scripts/commons/designer.all.min.js"></script><script src="/CWC/services/cobis/web/views/PFPRT/assets/scripts/PFPRT.js"></script><script src="/CWC/services/cobis/web/views/PFPRT/OPRTN/T_PFPRTUXSVJSIP_451/1.0.0/VC_FDETALLECO_640451.min.js"></script><script src="/CWC/services/cobis/web/views/PFPRT/OPRTN/T_PFPRTUXSVJSIP_451/1.0.0/VC_FDETALLECO_640451_CUSTOM.js"></script><link href="/CWC/services/cobis/web/styles/theme.css" rel="stylesheet"><link href="/CWC/services/cobis/web/views/PFPRT/assets/styles/PFPRT.css" rel="stylesheet"><script src="/CWC/services/cobis/web/views/PFPRT/patterns/header-HD_UPCABECAE_908.js"></script> 
+  <script type="text/javascript">
+angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
+</script><base href="/CWC/services/cobis/web/views/PFPRT/OPRTN/T_PFPRTUXSVJSIP_451/1.0.0/VC_FDETALLECO_640451_TASK.html"><script src="/CWC/services/cobis/web/views/PFPRT/manual/ResumenOperacion/controllers/ResumenOperacionController.min.js" async=""></script> 
+ </head> 
+ <body ng-controller="VC_FDETALLECO_640451_MAIN_CTRL" class="ng-scope"> 
+  <!-- ngView: --><div id="validator" ng-view="" class="cb-view ng-scope" kendo-validator="validator" k-options="validatorOptions" data-role="validator"><!-- Designer Generator v 7.2.0 - SPR 2020-24 4/12/2020 -->
+
+ 
+ 
+  <!-- ngIf: !vc.isModal(this) && !vc.isDetailGrid(this) && !isDesignerInclude --><div id="bc_VC_FDETALLECO_640451" class="cb-breadcrumb ng-scope" ng-if="!vc.isModal(this) &amp;&amp; !vc.isDetailGrid(this) &amp;&amp; !isDesignerInclude" ng-class="vc.viewState.VC_FDETALLECO_640451.style"> 
+   <ol class="breadcrumb"> 
+    <li>Inicio</li> 
+    <!-- ngRepeat: breadcrumb in breadcrumbs.get() track by breadcrumb.path --><li ng-repeat="breadcrumb in breadcrumbs.get() track by breadcrumb.path" ng-class="{ active: !$last }" class="ng-binding ng-scope"> Detalle Operación </li><!-- end ngRepeat: breadcrumb in breadcrumbs.get() track by breadcrumb.path --> 
+   </ol> 
+  </div><!-- end ngIf: !vc.isModal(this) && !vc.isDetailGrid(this) && !isDesignerInclude --> 
+  <!-- Inicio item VW_FDETALLEAA_841--> 
+  <cobis-header data="vc.model" info="vc.info" behavior="vc.headerBehavior" actions="vc.headerActions" definition="vc.definition" on-dsg-click="vc.headerActionsEvents(action, vc)" viewstate="vc.viewState" idcobisheader="vc.idCobisHeader" class="ng-scope ng-isolate-scope"><div id="cb_head" class="cb-form-header cb-no-margin ng-scope">
+    <div class="cb-flex ng-scope" ng-class="{'cb-collapsed':behavior.collapsed}">
+        <div class="cb-grow">
+            <div class="cb-secondary-text">
+                <span id="HVA_SECUNDARYFIRST" ng-class="viewState[idCobisHeader]['secundaryText']['firstAttribute']['attrClass']" ng-bind="data.CabeceraOperacion.numeroOperacion" class="ng-binding">70100016259</span>
+                <span ng-class="viewState[idCobisHeader]['secundaryText']['firstAttribute']['iconClass']"></span>
+                <!-- ngIf: getSeparator(data.CabeceraOperacion.numeroOperacion, data.CabeceraOperacion.descripcion) --><span ng-if="getSeparator(data.CabeceraOperacion.numeroOperacion, data.CabeceraOperacion.descripcion)" style="padding:5px;" ng-bind="data.separator" class="ng-binding ng-scope"></span><!-- end ngIf: getSeparator(data.CabeceraOperacion.numeroOperacion, data.CabeceraOperacion.descripcion) -->
+                <span id="HVA_SECUNDARYSECOND" ng-class="viewState[idCobisHeader]['secundaryText']['secondAttribute']['attrClass']" ng-bind="data.CabeceraOperacion.producto" class="ng-binding">CERTIFICADO VIP</span>
+                <span ng-class="viewState[idCobisHeader]['secundaryText']['secondAttribute']['iconClass']"></span>
+			</div>
+            <div>
+                <button id="HVA_BUTTON_EXPAND" class="btn btn-default cb-caret" ng-click="behavior.collapsed = !behavior.collapsed" style="padding:5px; margin-left:-26px; margin-right:5px;" ng-show="behavior.visibleExpandOption">
+                    <span class="fa fa-angle-down"></span>
+                </button>
+                <span id="HVA_COLLAPSED_SECUNDARYFIRST" class="cb-primary-text cb-text-xl ng-binding ng-hide" ng-class="viewState[idCobisHeader]['secundaryText']['firstAttribute']['attrClass']" ng-bind="data.CabeceraOperacion.numeroOperacion" ng-show="behavior.collapsed">70100016259</span>
+                <span ng-class="viewState[idCobisHeader]['secundaryText']['firstAttribute']['iconClass']" ng-show="behavior.collapsed" class="ng-hide"></span>
+                <!-- ngIf: getSeparator(data.CabeceraOperacion.numeroOperacion, data.CabeceraOperacion.descripcion) --><span ng-if="getSeparator(data.CabeceraOperacion.numeroOperacion, data.CabeceraOperacion.descripcion)" style="padding:5px;" class="cb-primary-text cb-text-xl ng-binding ng-scope ng-hide" ng-bind="data.separator" ng-show="behavior.collapsed"></span><!-- end ngIf: getSeparator(data.CabeceraOperacion.numeroOperacion, data.CabeceraOperacion.descripcion) -->
+                <span id="HVA_COLLAPSED_SECUNDARYSECOND" class="cb-primary-text cb-text-xl ng-binding ng-hide" ng-bind="data.CabeceraOperacion.producto" ng-class="viewState[idCobisHeader]['secundaryText']['secondAttribute']['attrClass']" ng-show="behavior.collapsed">CERTIFICADO VIP</span>
+				<span ng-class="viewState[idCobisHeader]['secundaryText']['secondAttribute']['iconClass']" ng-show="behavior.collapsed" class="ng-hide"></span>
+                <!-- ngIf: getSeparator(data.CabeceraOperacion.numeroOperacion, data.CabeceraOperacion.descripcion) --><span ng-if="getSeparator(data.CabeceraOperacion.numeroOperacion, data.CabeceraOperacion.descripcion)" style="padding:5px;" class="cb-primary-text cb-text-xl ng-binding ng-scope ng-hide" ng-show="behavior.collapsed" ng-bind="separator">-</span><!-- end ngIf: getSeparator(data.CabeceraOperacion.numeroOperacion, data.CabeceraOperacion.descripcion) -->
+                <span id="HVA_PRIMARYFIRST" class="cb-primary-text cb-text-xl ng-binding" style="padding:5px;" ng-class="viewState[idCobisHeader]['primaryText']['firstAttribute']['attrClass']" ng-bind="data.CabeceraOperacion.descripcion">ANTONIO GONZALEZ</span>
+                <span ng-class="viewState[idCobisHeader]['primaryText']['firstAttribute']['iconClass']"></span>
+                <span></span>
+				<span></span>
+                <span id="HVA_PRIMARYSECOND" class="cb-primary-text cb-text-xl ng-binding" style="padding:5px;" ng-class="viewState[idCobisHeader]['primaryText']['secondAttribute']['attrClass']" ng-bind="data.null"></span>
+                <span ng-class="viewState[idCobisHeader]['primaryText']['secondAttribute']['iconClass']"></span>
+			</div>
+            <div class="cb-fields cb-flex cb-gutters">
+                <!-- ngRepeat: field in headInfoProduct | limitTo:4 --><!-- ngIf: displayAttrs(field.value) --><div ng-if="displayAttrs(field.value)" ng-repeat="field in headInfoProduct | limitTo:4" content="field" class="ng-scope">
+                    <div id="HVA_INFOATTRIBUTE_0" class="ng-binding" ng-bind="data.CabeceraOperacion.monto">15,000.00</div>
+                    <div id="HVA_INFOLABEL_0" class="small control-label ng-binding">Monto</div>
+                </div><!-- end ngIf: displayAttrs(field.value) --><!-- end ngRepeat: field in headInfoProduct | limitTo:4 --><!-- ngIf: displayAttrs(field.value) --><div ng-if="displayAttrs(field.value)" ng-repeat="field in headInfoProduct | limitTo:4" content="field" class="ng-scope">
+                    <div id="HVA_INFOATTRIBUTE_1" class="ng-binding" ng-bind="data.CabeceraOperacion.fechaIngreso">06/01/2020</div>
+                    <div id="HVA_INFOLABEL_1" class="small control-label ng-binding">Fecha de Ingreso</div>
+                </div><!-- end ngIf: displayAttrs(field.value) --><!-- end ngRepeat: field in headInfoProduct | limitTo:4 --><!-- ngIf: displayAttrs(field.value) --><div ng-if="displayAttrs(field.value)" ng-repeat="field in headInfoProduct | limitTo:4" content="field" class="ng-scope">
+                    <div id="HVA_INFOATTRIBUTE_2" class="ng-binding" ng-bind="data.CabeceraOperacion.fechaVencimiento">06/01/2020</div>
+                    <div id="HVA_INFOLABEL_2" class="small control-label ng-binding">Fecha de Vencimiento</div>
+                </div><!-- end ngIf: displayAttrs(field.value) --><!-- end ngRepeat: field in headInfoProduct | limitTo:4 --><!-- ngIf: displayAttrs(field.value) --><div ng-if="displayAttrs(field.value)" ng-repeat="field in headInfoProduct | limitTo:4" content="field" class="ng-scope">
+                    <div id="HVA_INFOATTRIBUTE_3" class="ng-binding" ng-bind="data.CabeceraOperacion.estado">CAN</div>
+                    <div id="HVA_INFOLABEL_3" class="small control-label ng-binding">Estado</div>
+                </div><!-- end ngIf: displayAttrs(field.value) --><!-- end ngRepeat: field in headInfoProduct | limitTo:4 -->
+            </div>
+        </div>
+        <div class="cb-actions cb-flex cb-top">
+            <!-- ngIf: behavior.showButtons.search -->
+            <!-- ngIf: behavior.showButtons.info && displayAttrs('button') -->
+            <!-- ngIf: behavior.showButtons.action && headerActions.length > 0 --><div ng-if="behavior.showButtons.action &amp;&amp; headerActions.length > 0" class="btn-group ng-scope open">
+                <button id="HVA_VABUTTON_ACTIONS" class="btn btn-default dropdown-toggle ng-scope" data-toggle="dropdown" aria-expanded="true">
+                    <span class="fa fa-ellipsis-v"></span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-right ng-scope">
+                    <!-- ngRepeat: action in headerActions --><li ng-class="{'divider' : action.typeAction === 'spacer'}" ng-repeat="action in headerActions" class="ng-scope">
+                        <a id="HVA_ACTIONS_0" ng-click="onDsgClick({action:action})" class="ng-binding">Reversar</a>
+                    </li><!-- end ngRepeat: action in headerActions -->
+                </ul>
+            </div><!-- end ngIf: behavior.showButtons.action && headerActions.length > 0 -->
+        </div>
+    </div>
+</div></cobis-header><div id="VC_FDETALLECO_640451" ng-keydown="vc.viewState.keyDown($event)" class="cb-view-container-root cb-view-container cb-group-layout ng-scope container-fluid" ng-class="{'container':!vc.isModal(this) &amp;&amp; !vc.isDetailGrid(this) &amp;&amp; !isDesignerInclude &amp;&amp; false, 'container-fluid':vc.isModal(this) || isDesignerInclude || true, 'cb-invisible': !vc.loaded}"> 
+   <div id="G_FDETALLOEA_798841" ng-class="vc.viewState.G_FDETALLOEA_798841.style" class="cb-group cb-group-tabbed-h"> 
+    <div class="k-tabstrip-wrapper"><div id="G_FDETALLOEA_798841_VAL" kendo-validator="G_FDETALLOEA_798841" k-options="validatorOptions" kendo-tab-strip="" k-animation="false" k-select="vc.changeGroup" data-role="validator" tabindex="0" class="k-widget k-header k-tabstrip k-floatwrap k-tabstrip-top" role="tablist"> 
+     <ul class="k-tabstrip-items k-reset"><li id="G_FDETALLORE_185841_tab" ng-class="vc.getCssClass('G_FDETALLORE_185841', vc.viewState.G_FDETALLORE_185841.style,{'k-state-disabled': vc.viewState.G_FDETALLORE_185841.disabled || vc.viewState.G_FDETALLORE_185841.disabledingroup, 'k-state-active': vc.activeContainer((vc.viewState.G_FDETALLORE_185841.disabled || vc.viewState.G_FDETALLORE_185841.disabledingroup),null)})" ng-disabled="vc.viewState.G_FDETALLORE_185841.disabled || vc.viewState.G_FDETALLORE_185841.disabledingroup" ng-show="vc.viewState.G_FDETALLORE_185841.visible" class="k-state-active k-item k-tab-on-top k-state-default k-first" role="tab" aria-selected="true" aria-controls="G_FDETALLOEA_798841_VAL-1"><span class="k-loading k-complete"></span> <span unselectable="on" class="k-link"><span class="cb-title ng-binding">Resumen</span><span ng-bind="vc.viewState.G_FDETALLORE_185841.statusStyle.numErrors" ng-class="{ 'cb-validation-success': vc.viewState.G_FDETALLORE_185841.statusStyle.success, 'cb-validation-fail': vc.viewState.G_FDETALLORE_185841.statusStyle.fail, 'cb-validation-none': vc.viewState.G_FDETALLORE_185841.statusStyle.none}" class="ng-binding cb-validation-none"></span></span>  </li><li id="G_FDETALLECP_908841_tab" ng-class="vc.getCssClass('G_FDETALLECP_908841', vc.viewState.G_FDETALLECP_908841.style,{'k-state-disabled': vc.viewState.G_FDETALLECP_908841.disabled || vc.viewState.G_FDETALLECP_908841.disabledingroup, 'k-state-active': vc.activeContainer((vc.viewState.G_FDETALLECP_908841.disabled || vc.viewState.G_FDETALLECP_908841.disabledingroup),'G_FDETALLORE_185841_tab')})" ng-disabled="vc.viewState.G_FDETALLECP_908841.disabled || vc.viewState.G_FDETALLECP_908841.disabledingroup" ng-show="vc.viewState.G_FDETALLECP_908841.visible" class="k-item k-state-default" role="tab" aria-controls="G_FDETALLOEA_798841_VAL-2"><span class="k-loading k-complete"></span> <span unselectable="on" class="k-link"><span class="cb-title ng-binding">Titulares</span><span ng-bind="vc.viewState.G_FDETALLECP_908841.statusStyle.numErrors" ng-class="{ 'cb-validation-success': vc.viewState.G_FDETALLECP_908841.statusStyle.success, 'cb-validation-fail': vc.viewState.G_FDETALLECP_908841.statusStyle.fail, 'cb-validation-none': vc.viewState.G_FDETALLECP_908841.statusStyle.none}" class="ng-binding cb-validation-none"></span></span>  </li><li id="G_FDETALLEPC_184841_tab" ng-class="vc.getCssClass('G_FDETALLEPC_184841', vc.viewState.G_FDETALLEPC_184841.style,{'k-state-disabled': vc.viewState.G_FDETALLEPC_184841.disabled || vc.viewState.G_FDETALLEPC_184841.disabledingroup, 'k-state-active': vc.activeContainer((vc.viewState.G_FDETALLEPC_184841.disabled || vc.viewState.G_FDETALLEPC_184841.disabledingroup),'G_FDETALLECP_908841_tab')})" ng-disabled="vc.viewState.G_FDETALLEPC_184841.disabled || vc.viewState.G_FDETALLEPC_184841.disabledingroup" ng-show="vc.viewState.G_FDETALLEPC_184841.visible" class="k-item k-state-default" role="tab" aria-controls="G_FDETALLOEA_798841_VAL-3"><span class="k-loading k-complete"></span> <span unselectable="on" class="k-link"><span class="cb-title ng-binding">Operación</span><span ng-bind="vc.viewState.G_FDETALLEPC_184841.statusStyle.numErrors" ng-class="{ 'cb-validation-success': vc.viewState.G_FDETALLEPC_184841.statusStyle.success, 'cb-validation-fail': vc.viewState.G_FDETALLEPC_184841.statusStyle.fail, 'cb-validation-none': vc.viewState.G_FDETALLEPC_184841.statusStyle.none}" class="ng-binding cb-validation-none"></span></span>  </li><li id="G_FDETALLPNR_812841_tab" ng-class="vc.getCssClass('G_FDETALLPNR_812841', vc.viewState.G_FDETALLPNR_812841.style,{'k-state-disabled': vc.viewState.G_FDETALLPNR_812841.disabled || vc.viewState.G_FDETALLPNR_812841.disabledingroup, 'k-state-active': vc.activeContainer((vc.viewState.G_FDETALLPNR_812841.disabled || vc.viewState.G_FDETALLPNR_812841.disabledingroup),'G_FDETALLEPC_184841_tab')})" ng-disabled="vc.viewState.G_FDETALLPNR_812841.disabled || vc.viewState.G_FDETALLPNR_812841.disabledingroup" ng-show="vc.viewState.G_FDETALLPNR_812841.visible" class="k-item k-state-default" role="tab" aria-controls="G_FDETALLOEA_798841_VAL-4"><span class="k-loading k-complete"></span> <span unselectable="on" class="k-link"><span class="cb-title ng-binding">Recepción de Fondos</span><span ng-bind="vc.viewState.G_FDETALLPNR_812841.statusStyle.numErrors" ng-class="{ 'cb-validation-success': vc.viewState.G_FDETALLPNR_812841.statusStyle.success, 'cb-validation-fail': vc.viewState.G_FDETALLPNR_812841.statusStyle.fail, 'cb-validation-none': vc.viewState.G_FDETALLPNR_812841.statusStyle.none}" class="ng-binding cb-validation-none"></span></span>  </li><li id="G_FDETALLORO_446841_tab" ng-class="vc.getCssClass('G_FDETALLORO_446841', vc.viewState.G_FDETALLORO_446841.style,{'k-state-disabled': vc.viewState.G_FDETALLORO_446841.disabled || vc.viewState.G_FDETALLORO_446841.disabledingroup, 'k-state-active': vc.activeContainer((vc.viewState.G_FDETALLORO_446841.disabled || vc.viewState.G_FDETALLORO_446841.disabledingroup),'G_FDETALLPNR_812841_tab')})" ng-disabled="vc.viewState.G_FDETALLORO_446841.disabled || vc.viewState.G_FDETALLORO_446841.disabledingroup" ng-show="vc.viewState.G_FDETALLORO_446841.visible" class="k-item k-state-default" role="tab" aria-controls="G_FDETALLOEA_798841_VAL-5"><span class="k-loading k-complete"></span> <span unselectable="on" class="k-link"><span class="cb-title ng-binding">Formas de Pago</span><span ng-bind="vc.viewState.G_FDETALLORO_446841.statusStyle.numErrors" ng-class="{ 'cb-validation-success': vc.viewState.G_FDETALLORO_446841.statusStyle.success, 'cb-validation-fail': vc.viewState.G_FDETALLORO_446841.statusStyle.fail, 'cb-validation-none': vc.viewState.G_FDETALLORO_446841.statusStyle.none}" class="ng-binding cb-validation-none"></span></span>  </li><li id="G_FDETALLROI_480841_tab" ng-class="vc.getCssClass('G_FDETALLROI_480841', vc.viewState.G_FDETALLROI_480841.style,{'k-state-disabled': vc.viewState.G_FDETALLROI_480841.disabled || vc.viewState.G_FDETALLROI_480841.disabledingroup, 'k-state-active': vc.activeContainer((vc.viewState.G_FDETALLROI_480841.disabled || vc.viewState.G_FDETALLROI_480841.disabledingroup),'G_FDETALLORO_446841_tab')})" ng-disabled="vc.viewState.G_FDETALLROI_480841.disabled || vc.viewState.G_FDETALLROI_480841.disabledingroup" ng-show="vc.viewState.G_FDETALLROI_480841.visible" class="k-item k-state-default" role="tab" aria-controls="G_FDETALLOEA_798841_VAL-6"><span class="k-loading k-complete"></span> <span unselectable="on" class="k-link"><span class="cb-title ng-binding">Movimientos Monetarios</span><span ng-bind="vc.viewState.G_FDETALLROI_480841.statusStyle.numErrors" ng-class="{ 'cb-validation-success': vc.viewState.G_FDETALLROI_480841.statusStyle.success, 'cb-validation-fail': vc.viewState.G_FDETALLROI_480841.statusStyle.fail, 'cb-validation-none': vc.viewState.G_FDETALLROI_480841.statusStyle.none}" class="ng-binding cb-validation-none"></span></span>  </li><li id="G_FDETALLPOE_246841_tab" ng-class="vc.getCssClass('G_FDETALLPOE_246841', vc.viewState.G_FDETALLPOE_246841.style,{'k-state-disabled': vc.viewState.G_FDETALLPOE_246841.disabled || vc.viewState.G_FDETALLPOE_246841.disabledingroup, 'k-state-active': vc.activeContainer((vc.viewState.G_FDETALLPOE_246841.disabled || vc.viewState.G_FDETALLPOE_246841.disabledingroup),'G_FDETALLROI_480841_tab')})" ng-disabled="vc.viewState.G_FDETALLPOE_246841.disabled || vc.viewState.G_FDETALLPOE_246841.disabledingroup" ng-show="vc.viewState.G_FDETALLPOE_246841.visible" class="k-item k-state-default k-last" role="tab" aria-controls="G_FDETALLOEA_798841_VAL-7"><span class="k-loading k-complete"></span> <span unselectable="on" class="k-link"><span class="cb-title ng-binding">Historia</span><span ng-bind="vc.viewState.G_FDETALLPOE_246841.statusStyle.numErrors" ng-class="{ 'cb-validation-success': vc.viewState.G_FDETALLPOE_246841.statusStyle.success, 'cb-validation-fail': vc.viewState.G_FDETALLPOE_246841.statusStyle.fail, 'cb-validation-none': vc.viewState.G_FDETALLPOE_246841.statusStyle.none}" class="ng-binding cb-validation-none"></span></span>  </li></ul> 
+     <div class="k-content k-state-active" id="G_FDETALLOEA_798841_VAL-1" role="tabpanel" aria-expanded="true" style="display: block;"> 
+      <div id="G_FDETALLORE_185841" ng-class="vc.viewState.G_FDETALLORE_185841.style" class="cb-group cb-group-simple" ng-hide="(vc.viewState.G_FDETALLORE_185841.disabled || vc.viewState.G_FDETALLORE_185841.disabledingroup)==true || !vc.viewState.G_FDETALLORE_185841.visible"> 
+       <div designer-form-load="" form="vc.viewState.G_FDETALLORE_185841" class="cb-group cb-group-html-section ng-scope"><!-- ngInclude: '/CWC/services/cobis/web/views/PFPRT/manual/ResumenOperacion/views/resumen-operacion.html' --><div ng-include="'/CWC/services/cobis/web/views/PFPRT/manual/ResumenOperacion/views/resumen-operacion.html'" class="ng-scope"><form name="frmGeneratePage" class="ng-pristine ng-valid ng-scope">
+    <div class="container row ng-scope" ng-controller="ResumenOperacionController as ctrl">
+        <div class="chart-wrapper col-sm-7 k-chart" style="height: 350px; position: relative;" kendo-chart="" k-title="{text:'Disponibilidad', color:'#15cd9e'}" k-legend="{ position: 'bottom' }" k-series-defaults="{ type: 'donut', labels: {
+							template: '#= category # - #= kendo.format(\'{0:P}\', percentage)#',
+							position: 'outsideEnd',
+							visible: true,
+							background: 'transparent'
+						}}" k-series="[{field: 'value', categoryField: 'category', visibleInLegendField: 'visibleInLegend', padding: 35	 }]" k-data-source="ctrl.chartDataSource" k-tooltip="{visible: true, template: '#= category # - #= kendo.format(\'{0:P}\', percentage) #'}" data-role="chart"><svg style="width: 100%; height: 100%; overflow: hidden; left: 0px; top: -0.375px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><defs><radialGradient id="kdef1" cx="341" cy="177" r="99" gradientUnits="userSpaceOnUse"><stop offset="0.4285714285714286" style="stop-color:#fff;stop-opacity:0;"></stop><stop offset="0.7142857142857143" style="stop-color:#fff;stop-opacity:0.3;"></stop><stop offset="0.9942857142857143" style="stop-color:#fff;stop-opacity:0;"></stop></radialGradient></defs><g><path d="M0 0 L 682 0 682 350 0 350Z" stroke="none" fill="#fff"></path><path d="M0 0 L 0 0 0 0 0 0Z" stroke="none" fill="#fff" fill-opacity="0"></path><g><g></g></g><g><g><text style="font:16px Arial, Helvetica, sans-serif;white-space:pre;" x="291" y="30" stroke="none" fill="#15cd9e" fill-opacity="1">Disponibilidad</text></g></g><g></g><g><g><g transform="matrix(1,0,0,1,224,321)"><path d="M0 5.5 L 15 5.5 15 8.5 0 8.5Z" stroke="#ADD5E7" stroke-width="0" fill="#ADD5E7"></path><g><text style="font:12px Arial, Helvetica, sans-serif;white-space:pre;" x="21" y="11" stroke="none" fill="#232323" fill-opacity="1">Bloqueos</text></g><path style="cursor:pointer;" d="M0 0 L 71 0 71 14 0 14Z" stroke="none" fill="#fff" fill-opacity="0"></path></g><g transform="matrix(1,0,0,1,301,321)"><path d="M0 5.5 L 15 5.5 15 8.5 0 8.5Z" stroke="#00B0CC" stroke-width="0" fill="#00B0CC"></path><g><text style="font:12px Arial, Helvetica, sans-serif;white-space:pre;" x="21" y="11" stroke="none" fill="#232323" fill-opacity="1">Garantías</text></g><path style="cursor:pointer;" d="M0 0 L 74 0 74 14 0 14Z" stroke="none" fill="#fff" fill-opacity="0"></path></g><g transform="matrix(1,0,0,1,381,321)"><path d="M0 5.5 L 15 5.5 15 8.5 0 8.5Z" stroke="#F8A700" stroke-width="0" fill="#F8A700"></path><g><text style="font:12px Arial, Helvetica, sans-serif;white-space:pre;" x="21" y="11" stroke="none" fill="#232323" fill-opacity="1">Disponible</text></g><path style="cursor:pointer;" d="M0 0 L 77 0 77 14 0 14Z" stroke="none" fill="#fff" fill-opacity="0"></path></g></g></g><g><g><path d="M341 284 L 341 306 386.17 306" stroke="#939393" stroke-width="2" fill="none"></path><g transform="matrix(1,0,0,1,0,0)"><path d="M341 78 C 366.918 78 392.677 88.67 411.004 106.996 429.33 125.323 440 151.082 440 177 440 202.918 429.33 228.677 411.004 247.004 392.677 265.33 366.918 276 341 276 315.082 276 289.323 265.33 270.996 247.004 252.67 228.677 242 202.918 242 177 242 151.082 252.67 125.323 270.996 106.996 289.323 88.67 315.082 78 341 78 L 341 134.571 C 329.892 134.571 318.853 139.144 310.998 146.998 303.144 154.853 298.571 165.892 298.571 177 298.571 188.108 303.144 199.147 310.998 207.002 318.853 214.856 329.892 219.429 341 219.429 352.108 219.429 363.147 214.856 371.002 207.002 378.856 199.147 383.429 188.108 383.429 177 383.429 165.892 378.856 154.853 371.002 146.998 363.147 139.144 352.108 134.571 341 134.571Z" stroke="none" fill="#F8A700"></path><path d="M341 78 C 366.918 78 392.677 88.67 411.004 106.996 429.33 125.323 440 151.082 440 177 440 202.918 429.33 228.677 411.004 247.004 392.677 265.33 366.918 276 341 276 315.082 276 289.323 265.33 270.996 247.004 252.67 228.677 242 202.918 242 177 242 151.082 252.67 125.323 270.996 106.996 289.323 88.67 315.082 78 341 78 L 341 134.571 C 329.892 134.571 318.853 139.144 310.998 146.998 303.144 154.853 298.571 165.892 298.571 177 298.571 188.108 303.144 199.147 310.998 207.002 318.853 214.856 329.892 219.429 341 219.429 352.108 219.429 363.147 214.856 371.002 207.002 378.856 199.147 383.429 188.108 383.429 177 383.429 165.892 378.856 154.853 371.002 146.998 363.147 139.144 352.108 134.571 341 134.571Z" stroke="none" fill="url(http://www.demo1.cloud-cobiscorp.com/CWC/services/cobis/web/views/PFPRT/OPRTN/T_PFPRTUXSVJSIP_451/1.0.0/VC_FDETALLECO_640451?headerID=HD_UPCABECAE_908&amp;numeroOperacion=70100016259&amp;descripcion=ANTONIO%20GONZALEZ&amp;estado=CAN#kdef1)"></path></g><g opacity="1"><path d="M394.67 300 L 502.67 300 502.67 312 394.67 312Z" stroke="#000" stroke-width="0" stroke-opacity="0.5" fill="none"></path><text style="font:11px Arial, Helvetica, sans-serif;white-space:pre;" x="394.66954015223376" y="310" stroke="none" fill="#000" fill-opacity="1">Disponible - 100.00 %</text></g></g></g></g></svg></div>
+	
+        <div class="col-sm-5">
+            <h4 style="color:#15cd9e; text-align: center; font-size:16px" class="ng-binding">Resumen</h4>
+            <!-- ngRepeat: item in ctrl.summaryList --><div ng-repeat="item in ctrl.summaryList" class="list-group-item cb-flex ng-scope">
+                <div class="cb-grow ng-binding" style="font-weight:bold;">Moneda</div>
+                <div class="ng-binding">PESO COLOMBIANO</div>
+            </div><!-- end ngRepeat: item in ctrl.summaryList --><div ng-repeat="item in ctrl.summaryList" class="list-group-item cb-flex ng-scope">
+                <div class="cb-grow ng-binding" style="font-weight:bold;">Saldo capital</div>
+                <div class="ng-binding">15,000.00</div>
+            </div><!-- end ngRepeat: item in ctrl.summaryList --><div ng-repeat="item in ctrl.summaryList" class="list-group-item cb-flex ng-scope">
+                <div class="cb-grow ng-binding" style="font-weight:bold;">Monto pignorado</div>
+                <div class="ng-binding">0.00</div>
+            </div><!-- end ngRepeat: item in ctrl.summaryList --><div ng-repeat="item in ctrl.summaryList" class="list-group-item cb-flex ng-scope">
+                <div class="cb-grow ng-binding" style="font-weight:bold;">Monto bloqueado</div>
+                <div class="ng-binding">0.00</div>
+            </div><!-- end ngRepeat: item in ctrl.summaryList --><div ng-repeat="item in ctrl.summaryList" class="list-group-item cb-flex ng-scope">
+                <div class="cb-grow ng-binding" style="font-weight:bold;">Monto disponible</div>
+                <div class="ng-binding">15,000.00</div>
+            </div><!-- end ngRepeat: item in ctrl.summaryList --><div ng-repeat="item in ctrl.summaryList" class="list-group-item cb-flex ng-scope">
+                <div class="cb-grow ng-binding" style="font-weight:bold;">Plazo</div>
+                <div class="ng-binding">35</div>
+            </div><!-- end ngRepeat: item in ctrl.summaryList --><div ng-repeat="item in ctrl.summaryList" class="list-group-item cb-flex ng-scope">
+                <div class="cb-grow ng-binding" style="font-weight:bold;">Tasa interés</div>
+                <div class="ng-binding">7.1</div>
+            </div><!-- end ngRepeat: item in ctrl.summaryList --><div ng-repeat="item in ctrl.summaryList" class="list-group-item cb-flex ng-scope">
+                <div class="cb-grow ng-binding" style="font-weight:bold;">Interés ganado</div>
+                <div class="ng-binding">103.54</div>
+            </div><!-- end ngRepeat: item in ctrl.summaryList --><div ng-repeat="item in ctrl.summaryList" class="list-group-item cb-flex ng-scope">
+                <div class="cb-grow ng-binding" style="font-weight:bold;">Total interés</div>
+                <div class="ng-binding">103.54</div>
+            </div><!-- end ngRepeat: item in ctrl.summaryList --><div ng-repeat="item in ctrl.summaryList" class="list-group-item cb-flex ng-scope">
+                <div class="cb-grow ng-binding" style="font-weight:bold;">Fecha próximo pago</div>
+                <div class="ng-binding">06/01/2020</div>
+            </div><!-- end ngRepeat: item in ctrl.summaryList --><div ng-repeat="item in ctrl.summaryList" class="list-group-item cb-flex ng-scope">
+                <div class="cb-grow ng-binding" style="font-weight:bold;">Total interés pagado</div>
+                <div class="ng-binding">103.54</div>
+            </div><!-- end ngRepeat: item in ctrl.summaryList --><div ng-repeat="item in ctrl.summaryList" class="list-group-item cb-flex ng-scope">
+                <div class="cb-grow ng-binding" style="font-weight:bold;">Base cálculo</div>
+                <div class="ng-binding">360</div>
+            </div><!-- end ngRepeat: item in ctrl.summaryList --><div ng-repeat="item in ctrl.summaryList" class="list-group-item cb-flex ng-scope">
+                <div class="cb-grow ng-binding" style="font-weight:bold;">Días mes</div>
+                <div class="ng-binding">DIAS CALENDARIO</div>
+            </div><!-- end ngRepeat: item in ctrl.summaryList -->
+        </div>
+    </div>
+</form>
+</div></div> 
+      </div> 
+     </div> 
+     <div class="k-content" id="G_FDETALLOEA_798841_VAL-2" role="tabpanel" aria-hidden="true" aria-expanded="false"> 
+      <div id="G_FDETALLECP_908841" ng-class="vc.viewState.G_FDETALLECP_908841.style" class="cb-group cb-group-simple" ng-hide="(vc.viewState.G_FDETALLECP_908841.disabled || vc.viewState.G_FDETALLECP_908841.disabledingroup)==true || !vc.viewState.G_FDETALLECP_908841.visible"> 
+       <div designer-form-load="" form="vc.viewState.G_FDETALLECP_908841" class="cb-group cb-group-html-section ng-scope"></div> 
+      </div> 
+     </div> 
+     <div class="k-content" id="G_FDETALLOEA_798841_VAL-3" role="tabpanel" aria-hidden="true" aria-expanded="false"> 
+      <div id="G_FDETALLEPC_184841" ng-class="vc.viewState.G_FDETALLEPC_184841.style" class="cb-group cb-group-simple" ng-hide="(vc.viewState.G_FDETALLEPC_184841.disabled || vc.viewState.G_FDETALLEPC_184841.disabledingroup)==true || !vc.viewState.G_FDETALLEPC_184841.visible"> 
+       <div designer-form-load="" form="vc.viewState.G_FDETALLEPC_184841" class="cb-group cb-group-html-section ng-scope"></div> 
+      </div> 
+     </div> 
+     <div class="k-content" id="G_FDETALLOEA_798841_VAL-4" role="tabpanel" aria-hidden="true" aria-expanded="false"> 
+      <div id="G_FDETALLPNR_812841" ng-class="vc.viewState.G_FDETALLPNR_812841.style" class="cb-group cb-group-simple" ng-hide="(vc.viewState.G_FDETALLPNR_812841.disabled || vc.viewState.G_FDETALLPNR_812841.disabledingroup)==true || !vc.viewState.G_FDETALLPNR_812841.visible"> 
+       <div designer-form-load="" form="vc.viewState.G_FDETALLPNR_812841" class="cb-group cb-group-html-section ng-scope"></div> 
+      </div> 
+     </div> 
+     <div class="k-content" id="G_FDETALLOEA_798841_VAL-5" role="tabpanel" aria-hidden="true" aria-expanded="false"> 
+      <div id="G_FDETALLORO_446841" ng-class="vc.viewState.G_FDETALLORO_446841.style" class="cb-group cb-group-simple" ng-hide="(vc.viewState.G_FDETALLORO_446841.disabled || vc.viewState.G_FDETALLORO_446841.disabledingroup)==true || !vc.viewState.G_FDETALLORO_446841.visible"> 
+       <div designer-form-load="" form="vc.viewState.G_FDETALLORO_446841" class="cb-group cb-group-html-section ng-scope"></div> 
+      </div> 
+     </div> 
+     <div class="k-content" id="G_FDETALLOEA_798841_VAL-6" role="tabpanel" aria-hidden="true" aria-expanded="false"> 
+      <div id="G_FDETALLROI_480841" ng-class="vc.viewState.G_FDETALLROI_480841.style" class="cb-group cb-group-simple" ng-hide="(vc.viewState.G_FDETALLROI_480841.disabled || vc.viewState.G_FDETALLROI_480841.disabledingroup)==true || !vc.viewState.G_FDETALLROI_480841.visible"> 
+       <div designer-form-load="" form="vc.viewState.G_FDETALLROI_480841" class="cb-group cb-group-html-section ng-scope"></div> 
+      </div> 
+     </div> 
+     <div class="k-content" id="G_FDETALLOEA_798841_VAL-7" role="tabpanel" aria-hidden="true" aria-expanded="false"> 
+      <div id="G_FDETALLPOE_246841" ng-class="vc.viewState.G_FDETALLPOE_246841.style" class="cb-group cb-group-simple" ng-hide="(vc.viewState.G_FDETALLPOE_246841.disabled || vc.viewState.G_FDETALLPOE_246841.disabledingroup)==true || !vc.viewState.G_FDETALLPOE_246841.visible"> 
+       <div designer-form-load="" form="vc.viewState.G_FDETALLPOE_246841" class="cb-group cb-group-html-section ng-scope"></div> 
+      </div> 
+     </div> 
+    </div></div> 
+   </div> 
+  </div> 
+  <!-- Fin item VW_FDETALLEAA_841--> 
+   
+  <!-- ngIf: vc.childVc && vc.autoSyncNavigation -->
+ 
+</div> 
+   
+  <div ng-controller="keepAliveCen.Controller" class="ng-scope"></div>  
+ 
+</body><script type="text/javascript" src="/CWC/services/cobis/web/bank/views/home/controllers/container-ctrl-disable.min.js"></script></html>

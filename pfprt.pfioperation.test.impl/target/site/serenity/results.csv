@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Cancelacion de Certificado de Deposito","Verificar la cancelación de un Certificado de Deposito con NC a una cuenta aho/cte inmovilizada","ERROR","2021-05-05T10:22:03.533-05:00[America/Bogota]","0.0","13.82"
+"Cancelacion de Certificado de Deposito","Verificar la cancelación de un Certificado de Deposito con NC a una cuenta aho/cte cerrada","FAILURE","2021-05-05T12:48:01.91-05:00[America/Bogota]","0.0","53.51"
+"Cancelacion de Certificado de Deposito","Verificar la cancelación de un Certificado de Deposito con NC a una cuenta aho/cte bloqueada contra depósito","SUCCESS","2021-05-05T16:24:22.743-05:00[America/Bogota]","0.0","62.0"
+"Probar Banco Cobis","Ejemplo de pruebas con serenity","PENDING","2021-05-05T10:22:22.143-05:00[America/Bogota]","0.0","0.0"

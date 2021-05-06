@@ -1,0 +1,1428 @@
+# Created at 2021-05-05T12:47:42.461
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: DEFAULT
+java.io.EOFException
+	at java.io.DataInputStream.readInt(DataInputStream.java:392)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:391)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+# Created at 2021-05-05T12:47:43.166
+Unexpected IOException with stream: 12:47:43.165 [pool-1-thread-1] DEBUG n.s.core.photography.Darkroom - Closing darkroom
+
+
+# Created at 2021-05-05T12:47:43.174
+Unexpected IOException: I,1,sun.desktop,windows
+
+
+# Created at 2021-05-05T12:47:43.176
+Unexpected IOException: I,1,awt.toolkit,sun.awt.windows.WToolkit
+
+
+# Created at 2021-05-05T12:47:43.177
+Unexpected IOException: I,1,file.encoding.pkg,sun.io
+
+
+# Created at 2021-05-05T12:47:43.178
+Unexpected IOException: I,1,java.specification.version,1.8
+
+
+# Created at 2021-05-05T12:47:43.180
+Unexpected IOException: I,1,webdriver.chrome.driver,C:\005CUsers\005Crreyes\005CDesktop\005CPrograms\005CrepositoriosGIT\005CPruebasAutomaticas\005CPA_PC_V2\005CFront\005CPFIOperation\005Cbuild\005Ccobis\005Crel\005Cprojects\005Cpfprt.pfioperation.test.impl\005Csrc\005Ctest\005Cresources\005Cwebdriver\005Cwindows\005Cchromedriver.exe
+
+
+# Created at 2021-05-05T12:47:43.186
+Unexpected IOException: I,1,sun.cpu.isalist,amd64
+
+
+# Created at 2021-05-05T12:47:43.189
+Unexpected IOException: I,1,sun.jnu.encoding,Cp1252
+
+
+# Created at 2021-05-05T12:47:43.190
+Unexpected IOException: I,1,java.class.path,C:\005CUsers\005Crreyes\005CDesktop\005CPrograms\005CrepositoriosGIT\005CPruebasAutomaticas\005CPA_PC_V2\005CFront\005CPFIOperation\005Cbuild\005Ccobis\005Crel\005Cprojects\005Cpfprt.pfioperation.test.impl\005Ctarget\005Ctest-classes;C:\005CUsers\005Crreyes\005CDesktop\005CPrograms\005CrepositoriosGIT\005CPruebasAutomaticas\005CPA_PC_V2\005CFront\005CPFIOperation\005Cbuild\005Ccobis\005Crel\005Cprojects\005Cpfprt.pfioperation.test.impl\005Ctarget\005Cpfprt.pfioperation.test.impl-1.0.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Ccobiscorp\005Ccobis\005Cpfprt.pfioperation.test\005C1.0.0\005Cpfprt.pfioperation.test-1.0.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Ccobiscorp\005Ccobis-test-actions-api\005C1.0.0\005Ccobis-test-actions-api-1.0.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cch\005Cqos\005Clogback\005Clogback-classic\005C1.0.13\005Clogback-classic-1.0.13.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cch\005Cqos\005Clogback\005Clogback-core\005C1.0.13\005Clogback-core-1.0.13.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cslf4j\005Cslf4j-api\005C1.7.5\005Cslf4j-api-1.7.5.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cnet\005Cserenity-bdd\005Cserenity-core\005C2.2.0\005Cserenity-core-2.2.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cnet\005Cbytebuddy\005Cbyte-buddy\005C1.10.1\005Cbyte-buddy-1.10.1.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cnet\005Cbytebuddy\005Cbyte-buddy-agent\005C1.10.1\005Cbyte-buddy-agent-1.10.1.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cgoogle\005Cguava\005Cguava\005C25.0-jre\005Cguava-25.0-jre.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cgoogle\005Ccode\005Cfindbugs\005Cjsr305\005C1.3.9\005Cjsr305-1.3.9.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Ccheckerframework\005Cchecker-compat-qual\005C2.0.0\005Cchecker-compat-qual-2.0.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cgoogle\005Cerrorprone\005Cerror_prone_annotations\005C2.1.3\005Cerror_prone_annotations-2.1.3.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cgoogle\005Cj2objc\005Cj2objc-annotations\005C1.1\005Cj2objc-annotations-1.1.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Ccodehaus\005Cmojo\005Canimal-sniffer-annotations\005C1.14\005Canimal-sniffer-annotations-1.14.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cgoogle\005Cinject\005Cguice\005C4.2.2\005Cguice-4.2.2.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cjavax\005Cinject\005Cjavax.inject\005C1\005Cjavax.inject-1.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Caopalliance\005Caopalliance\005C1.0\005Caopalliance-1.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cow2\005Casm\005Casm\005C7.2\005Casm-7.2.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccommons-codec\005Ccommons-codec\005C1.10\005Ccommons-codec-1.10.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cobjenesis\005Cobjenesis\005C3.0.1\005Cobjenesis-3.0.1.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cxml-apis\005Cxml-apis\005C1.4.01\005Cxml-apis-1.4.01.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cio\005Ccucumber\005Ccucumber-core\005C5.5.0\005Ccucumber-core-5.5.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cio\005Ccucumber\005Ccucumber-gherkin\005C5.5.0\005Ccucumber-gherkin-5.5.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cio\005Ccucumber\005Ccucumber-gherkin-vintage\005C5.5.0\005Ccucumber-gherkin-vintage-5.5.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cio\005Ccucumber\005Ctag-expressions\005C2.0.4\005Ctag-expressions-2.0.4.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cio\005Ccucumber\005Ccucumber-expressions\005C8.3.1\005Ccucumber-expressions-8.3.1.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cio\005Ccucumber\005Cdatatable\005C3.3.0\005Cdatatable-3.3.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cio\005Ccucumber\005Ccucumber-plugin\005C5.5.0\005Ccucumber-plugin-5.5.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cio\005Ccucumber\005Cdocstring\005C5.5.0\005Cdocstring-5.5.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cio\005Ccucumber\005Ccucumber-java\005C5.5.0\005Ccucumber-java-5.5.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccommons-logging\005Ccommons-logging\005C1.2\005Ccommons-logging-1.2.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cio\005Cvavr\005Cvavr\005C0.9.0\005Cvavr-0.9.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cio\005Cvavr\005Cvavr-match\005C0.9.0\005Cvavr-match-0.9.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cjavax\005Cxml\005Cbind\005Cjaxb-api\005C2.2.12\005Cjaxb-api-2.2.12.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Csun\005Cxml\005Cbind\005Cjaxb-core\005C2.3.0.1\005Cjaxb-core-2.3.0.1.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Csun\005Cxml\005Cbind\005Cjaxb-impl\005C2.3.0.1\005Cjaxb-impl-2.3.0.1.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cjavax\005Cactivation\005Cactivation\005C1.1.1\005Cactivation-1.1.1.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cmockito\005Cmockito-core\005C3.1.0\005Cmockito-core-3.1.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cnet\005Cserenity-bdd\005Cserenity-report-resources\005C2.2.0\005Cserenity-report-resources-2.2.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cnet\005Cserenity-bdd\005Cserenity-model\005C2.2.0\005Cserenity-model-2.2.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccommons-net\005Ccommons-net\005C3.6\005Ccommons-net-3.6.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Capache\005Ccommons\005Ccommons-text\005C1.6\005Ccommons-text-1.6.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ces\005Cnitaur\005Cmarkdown\005Ctxtmark\005C0.16\005Ctxtmark-0.16.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cnet\005Cserenity-bdd\005Cserenity-reports\005C2.2.0\005Cserenity-reports-2.2.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cnet\005Cserenity-bdd\005Cserenity-stats\005C2.2.0\005Cserenity-stats-2.2.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cjetbrains\005Ckotlin\005Ckotlin-stdlib\005C1.3.31\005Ckotlin-stdlib-1.3.31.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cjetbrains\005Ckotlin\005Ckotlin-stdlib-common\005C1.3.31\005Ckotlin-stdlib-common-1.3.31.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cjetbrains\005Cannotations\005C13.0\005Cannotations-13.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cgoogle\005Ccode\005Cgson\005Cgson\005C2.8.4\005Cgson-2.8.4.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccommons-io\005Ccommons-io\005C2.6\005Ccommons-io-2.6.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cseleniumhq\005Cselenium\005Cselenium-server\005C3.141.59\005Cselenium-server-3.141.59.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cseleniumhq\005Cselenium\005Cselenium-firefox-driver\005C3.141.59\005Cselenium-firefox-driver-3.141.59.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cseleniumhq\005Cselenium\005Cselenium-ie-driver\005C3.141.59\005Cselenium-ie-driver-3.141.59.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cbeust\005Cjcommander\005C1.72\005Cjcommander-1.72.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Capache\005Ccommons\005Ccommons-exec\005C1.3\005Ccommons-exec-1.3.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cnet\005Cjcip\005Cjcip-annotations\005C1.0\005Cjcip-annotations-1.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cseleniumhq\005Cselenium\005Cjetty-repacked\005C9.4.12.v20180830\005Cjetty-repacked-9.4.12.v20180830.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Csquareup\005Cokhttp3\005Cokhttp\005C3.11.0\005Cokhttp-3.11.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Csquareup\005Cokio\005Cokio\005C1.14.0\005Cokio-1.14.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cjavax\005Cservlet\005Cjavax.servlet-api\005C3.1.0\005Cjavax.servlet-api-3.1.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cyaml\005Csnakeyaml\005C1.19\005Csnakeyaml-1.19.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cseleniumhq\005Cselenium\005Cselenium-java\005C3.141.59\005Cselenium-java-3.141.59.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cseleniumhq\005Cselenium\005Cselenium-api\005C3.141.59\005Cselenium-api-3.141.59.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cseleniumhq\005Cselenium\005Cselenium-chrome-driver\005C3.141.59\005Cselenium-chrome-driver-3.141.59.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cseleniumhq\005Cselenium\005Cselenium-edge-driver\005C3.141.59\005Cselenium-edge-driver-3.141.59.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cseleniumhq\005Cselenium\005Cselenium-remote-driver\005C3.141.59\005Cselenium-remote-driver-3.141.59.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cseleniumhq\005Cselenium\005Cselenium-safari-driver\005C3.141.59\005Cselenium-safari-driver-3.141.59.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cseleniumhq\005Cselenium\005Cselenium-opera-driver\005C3.141.59\005Cselenium-opera-driver-3.141.59.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cseleniumhq\005Cselenium\005Cselenium-support\005C3.141.59\005Cselenium-support-3.141.59.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cpaulhammant\005Cngwebdriver\005C1.1.4\005Cngwebdriver-1.1.4.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cassertthat\005Cselenium-shutterbug\005C0.9.3\005Cselenium-shutterbug-0.9.3.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cprojectlombok\005Clombok\005C1.18.8\005Clombok-1.18.8.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cgithub\005Czafarkhaja\005Cjava-semver\005C0.9.0\005Cjava-semver-0.9.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Ccodeborne\005Cphantomjsdriver\005C1.4.4\005Cphantomjsdriver-1.4.4.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cseleniumhq\005Cselenium\005Chtmlunit-driver\005C2.37.0\005Chtmlunit-driver-2.37.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cio\005Cappium\005Cjava-client\005C7.3.0\005Cjava-client-7.3.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccommons-validator\005Ccommons-validator\005C1.6\005Ccommons-validator-1.6.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccommons-beanutils\005Ccommons-beanutils\005C1.9.2\005Ccommons-beanutils-1.9.2.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccommons-digester\005Ccommons-digester\005C1.8.1\005Ccommons-digester-1.8.1.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Caspectj\005Caspectjweaver\005C1.9.4\005Caspectjweaver-1.9.4.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-context-support\005C5.1.2.RELEASE\005Cspring-context-support-5.1.2.RELEASE.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-beans\005C5.1.2.RELEASE\005Cspring-beans-5.1.2.RELEASE.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-context\005C5.1.2.RELEASE\005Cspring-context-5.1.2.RELEASE.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-aop\005C5.1.2.RELEASE\005Cspring-aop-5.1.2.RELEASE.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-expression\005C5.1.2.RELEASE\005Cspring-expression-5.1.2.RELEASE.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-core\005C5.1.2.RELEASE\005Cspring-core-5.1.2.RELEASE.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-jcl\005C5.1.2.RELEASE\005Cspring-jcl-5.1.2.RELEASE.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Ccodehaus\005Cgroovy\005Cgroovy\005C2.5.5\005Cgroovy-2.5.5.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cnet\005Csf\005Copencsv\005Copencsv\005C2.0\005Copencsv-2.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccommons-beanutils\005Ccommons-beanutils-core\005C1.8.3\005Ccommons-beanutils-core-1.8.3.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cjoda-time\005Cjoda-time\005C2.7\005Cjoda-time-2.7.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cthoughtworks\005Cxstream\005Cxstream\005C1.4.9\005Cxstream-1.4.9.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cxmlpull\005Cxmlpull\005C1.1.3.1\005Cxmlpull-1.1.3.1.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cxpp3\005Cxpp3_min\005C1.1.4c\005Cxpp3_min-1.1.4c.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Capache\005Ccommons\005Ccommons-lang3\005C3.8.1\005Ccommons-lang3-3.8.1.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccommons-collections\005Ccommons-collections\005C3.2.2\005Ccommons-collections-3.2.2.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cfreemarker\005Cfreemarker\005C2.3.29\005Cfreemarker-2.3.29.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cnet\005Csourceforge\005Cjexcelapi\005Cjxl\005C2.6.12\005Cjxl-2.6.12.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Chamcrest\005Chamcrest-core\005C1.3\005Chamcrest-core-1.3.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Chamcrest\005Chamcrest-library\005C1.3\005Chamcrest-library-1.3.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cnet\005Csourceforge\005Chtmlunit\005Chtmlunit\005C2.37.0\005Chtmlunit-2.37.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cnet\005Csourceforge\005Chtmlunit\005Chtmlunit-core-js\005C2.37.0\005Chtmlunit-core-js-2.37.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cnet\005Csourceforge\005Chtmlunit\005Cneko-htmlunit\005C2.37.0\005Cneko-htmlunit-2.37.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cxerces\005CxercesImpl\005C2.12.0\005CxercesImpl-2.12.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cnet\005Csourceforge\005Chtmlunit\005Chtmlunit-cssparser\005C1.5.0\005Chtmlunit-cssparser-1.5.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cbrotli\005Cdec\005C0.1.2\005Cdec-0.1.2.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Ceclipse\005Cjetty\005Cwebsocket\005Cwebsocket-client\005C9.4.26.v20200117\005Cwebsocket-client-9.4.26.v20200117.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Ceclipse\005Cjetty\005Cjetty-client\005C9.4.26.v20200117\005Cjetty-client-9.4.26.v20200117.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Ceclipse\005Cjetty\005Cjetty-http\005C9.4.26.v20200117\005Cjetty-http-9.4.26.v20200117.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Ceclipse\005Cjetty\005Cjetty-xml\005C9.4.26.v20200117\005Cjetty-xml-9.4.26.v20200117.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Ceclipse\005Cjetty\005Cjetty-util\005C9.4.26.v20200117\005Cjetty-util-9.4.26.v20200117.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Ceclipse\005Cjetty\005Cjetty-io\005C9.4.26.v20200117\005Cjetty-io-9.4.26.v20200117.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Ceclipse\005Cjetty\005Cwebsocket\005Cwebsocket-common\005C9.4.26.v20200117\005Cwebsocket-common-9.4.26.v20200117.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Ceclipse\005Cjetty\005Cwebsocket\005Cwebsocket-api\005C9.4.26.v20200117\005Cwebsocket-api-9.4.26.v20200117.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Capache\005Chttpcomponents\005Chttpclient\005C4.5.5\005Chttpclient-4.5.5.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Capache\005Chttpcomponents\005Chttpcore\005C4.4.9\005Chttpcore-4.4.9.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Capache\005Chttpcomponents\005Chttpmime\005C4.5.5\005Chttpmime-4.5.5.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cfluentlenium\005Cfluentlenium-core\005C0.10.2\005Cfluentlenium-core-0.10.2.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cjhlabs\005Cfilters\005C2.0.235\005Cfilters-2.0.235.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Casciidoctor\005Casciidoctorj\005C1.5.6\005Casciidoctorj-1.5.6.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cjruby\005Cjruby-complete\005C1.7.26\005Cjruby-complete-1.7.26.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cimgscalr\005Cimgscalr-lib\005C4.2\005Cimgscalr-lib-4.2.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cjavax\005Cel\005Cjavax.el-api\005C2.2.4\005Cjavax.el-api-2.2.4.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cglassfish\005Cweb\005Cjavax.el\005C2.2.4\005Cjavax.el-2.2.4.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cxalan\005Cxalan\005C2.7.2\005Cxalan-2.7.2.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cxalan\005Cserializer\005C2.7.2\005Cserializer-2.7.2.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cawaitility\005Cawaitility\005C4.0.1\005Cawaitility-4.0.1.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Chamcrest\005Chamcrest\005C2.1\005Chamcrest-2.1.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Ctypesafe\005Cconfig\005C1.3.1\005Cconfig-1.3.1.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cjsoup\005Cjsoup\005C1.10.3\005Cjsoup-1.10.3.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cgoogle\005Cjimfs\005Cjimfs\005C1.1\005Cjimfs-1.1.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-all\005C0.34.30\005Cflexmark-all-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark\005C0.34.30\005Cflexmark-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-abbreviation\005C0.34.30\005Cflexmark-ext-abbreviation-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-admonition\005C0.34.30\005Cflexmark-ext-admonition-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-anchorlink\005C0.34.30\005Cflexmark-ext-anchorlink-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-aside\005C0.34.30\005Cflexmark-ext-aside-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-attributes\005C0.34.30\005Cflexmark-ext-attributes-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-autolink\005C0.34.30\005Cflexmark-ext-autolink-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cnibor\005Cautolink\005Cautolink\005C0.6.0\005Cautolink-0.6.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-definition\005C0.34.30\005Cflexmark-ext-definition-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-emoji\005C0.34.30\005Cflexmark-ext-emoji-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-enumerated-reference\005C0.34.30\005Cflexmark-ext-enumerated-reference-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-escaped-character\005C0.34.30\005Cflexmark-ext-escaped-character-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-footnotes\005C0.34.30\005Cflexmark-ext-footnotes-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-gfm-issues\005C0.34.30\005Cflexmark-ext-gfm-issues-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-gfm-strikethrough\005C0.34.30\005Cflexmark-ext-gfm-strikethrough-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-gfm-tables\005C0.34.30\005Cflexmark-ext-gfm-tables-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-gfm-tasklist\005C0.34.30\005Cflexmark-ext-gfm-tasklist-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-gfm-users\005C0.34.30\005Cflexmark-ext-gfm-users-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-gitlab\005C0.34.30\005Cflexmark-ext-gitlab-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-jekyll-front-matter\005C0.34.30\005Cflexmark-ext-jekyll-front-matter-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-jekyll-tag\005C0.34.30\005Cflexmark-ext-jekyll-tag-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-media-tags\005C0.34.30\005Cflexmark-ext-media-tags-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-test-util\005C0.34.30\005Cflexmark-test-util-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-ins\005C0.34.30\005Cflexmark-ext-ins-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-xwiki-macros\005C0.34.30\005Cflexmark-ext-xwiki-macros-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-superscript\005C0.34.30\005Cflexmark-ext-superscript-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-tables\005C0.34.30\005Cflexmark-ext-tables-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-toc\005C0.34.30\005Cflexmark-ext-toc-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-typographic\005C0.34.30\005Cflexmark-ext-typographic-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-wikilink\005C0.34.30\005Cflexmark-ext-wikilink-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-yaml-front-matter\005C0.34.30\005Cflexmark-ext-yaml-front-matter-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-youtube-embedded\005C0.34.30\005Cflexmark-ext-youtube-embedded-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-formatter\005C0.34.30\005Cflexmark-formatter-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-html-parser\005C0.34.30\005Cflexmark-html-parser-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-jira-converter\005C0.34.30\005Cflexmark-jira-converter-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-pdf-converter\005C0.34.30\005Cflexmark-pdf-converter-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Copenhtmltopdf\005Copenhtmltopdf-core\005C0.0.1-RC13\005Copenhtmltopdf-core-0.0.1-RC13.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Copenhtmltopdf\005Copenhtmltopdf-pdfbox\005C0.0.1-RC13\005Copenhtmltopdf-pdfbox-0.0.1-RC13.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Capache\005Cpdfbox\005Cpdfbox\005C2.0.8\005Cpdfbox-2.0.8.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Capache\005Cpdfbox\005Cfontbox\005C2.0.8\005Cfontbox-2.0.8.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Capache\005Cpdfbox\005Cxmpbox\005C2.0.8\005Cxmpbox-2.0.8.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cde\005Crototor\005Cpdfbox\005Cgraphics2d\005C0.12\005Cgraphics2d-0.12.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Copenhtmltopdf\005Copenhtmltopdf-rtl-support\005C0.0.1-RC13\005Copenhtmltopdf-rtl-support-0.0.1-RC13.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cibm\005Cicu\005Cicu4j\005C59.1\005Cicu4j-59.1.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Copenhtmltopdf\005Copenhtmltopdf-jsoup-dom-converter\005C0.0.1-RC13\005Copenhtmltopdf-jsoup-dom-converter-0.0.1-RC13.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-profile-pegdown\005C0.34.30\005Cflexmark-profile-pegdown-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-util\005C0.34.30\005Cflexmark-util-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-youtrack-converter\005C0.34.30\005Cflexmark-youtrack-converter-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cnet\005Cserenity-bdd\005Cserenity-junit\005C2.2.0\005Cserenity-junit-2.2.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cnet\005Cserenity-bdd\005Cserenity-screenplay\005C2.2.0\005Cserenity-screenplay-2.2.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cnet\005Cserenity-bdd\005Cserenity-cucumber5\005C2.2.0\005Cserenity-cucumber5-2.2.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cnet\005Cserenity-bdd\005Cserenity-screenplay-webdriver\005C2.2.0\005Cserenity-screenplay-webdriver-2.2.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cio\005Ccucumber\005Ccucumber-junit\005C5.5.0\005Ccucumber-junit-5.5.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Capiguardian\005Capiguardian-api\005C1.1.0\005Capiguardian-api-1.1.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cio\005Ccucumber\005Cdatatable-matchers\005C3.3.0\005Cdatatable-matchers-3.3.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Capache\005Ccommons\005Ccommons-csv\005C1.5\005Ccommons-csv-1.5.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cjunit\005Cjunit\005C4.12\005Cjunit-4.12.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cassertj\005Cassertj-core\005C3.6.2\005Cassertj-core-3.6.2.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Chamcrest\005Chamcrest-all\005C1.3\005Chamcrest-all-1.3.jar;
+
+
+# Created at 2021-05-05T12:47:43.190
+Unexpected IOException: I,1,java.vm.vendor,Oracle Corporation
+
+
+# Created at 2021-05-05T12:47:43.190
+Unexpected IOException: I,1,sun.arch.data.model,64
+
+
+# Created at 2021-05-05T12:47:43.190
+Unexpected IOException: I,1,user.variant,
+
+
+# Created at 2021-05-05T12:47:43.190
+Unexpected IOException: I,1,java.vendor.url,http://java.oracle.com/
+
+
+# Created at 2021-05-05T12:47:43.190
+Unexpected IOException: I,1,user.timezone,America/Bogota
+
+
+# Created at 2021-05-05T12:47:43.190
+Unexpected IOException: I,1,os.name,Windows 10
+
+
+# Created at 2021-05-05T12:47:43.206
+Unexpected IOException: I,1,java.vm.specification.version,1.8
+
+
+# Created at 2021-05-05T12:47:43.206
+Unexpected IOException: I,1,user.country,EC
+
+
+# Created at 2021-05-05T12:47:43.206
+Unexpected IOException: I,1,sun.java.launcher,SUN_STANDARD
+
+
+# Created at 2021-05-05T12:47:43.206
+Unexpected IOException: I,1,sun.boot.library.path,C:\005CProgram Files\005CJava\005Cjdk1.8.0_271\005Cjre\005Cbin
+
+
+# Created at 2021-05-05T12:47:43.206
+Unexpected IOException: I,1,sun.java.command,C:\005CUsers\005Crreyes\005CAppData\005CLocal\005CTemp\005Csurefire4947252774064284825\005Csurefirebooter4916712797844466717.jar C:\005CUsers\005Crreyes\005CAppData\005CLocal\005CTemp\005Csurefire4947252774064284825 2021-05-05T12-47-31_159-jvmRun1 surefire468930940367518395tmp surefire_0821524661951620131tmp
+
+
+# Created at 2021-05-05T12:47:43.206
+Unexpected IOException: I,1,surefire.test.class.path,C:\005CUsers\005Crreyes\005CDesktop\005CPrograms\005CrepositoriosGIT\005CPruebasAutomaticas\005CPA_PC_V2\005CFront\005CPFIOperation\005Cbuild\005Ccobis\005Crel\005Cprojects\005Cpfprt.pfioperation.test.impl\005Ctarget\005Ctest-classes;C:\005CUsers\005Crreyes\005CDesktop\005CPrograms\005CrepositoriosGIT\005CPruebasAutomaticas\005CPA_PC_V2\005CFront\005CPFIOperation\005Cbuild\005Ccobis\005Crel\005Cprojects\005Cpfprt.pfioperation.test.impl\005Ctarget\005Cpfprt.pfioperation.test.impl-1.0.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Ccobiscorp\005Ccobis\005Cpfprt.pfioperation.test\005C1.0.0\005Cpfprt.pfioperation.test-1.0.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Ccobiscorp\005Ccobis-test-actions-api\005C1.0.0\005Ccobis-test-actions-api-1.0.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cch\005Cqos\005Clogback\005Clogback-classic\005C1.0.13\005Clogback-classic-1.0.13.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cch\005Cqos\005Clogback\005Clogback-core\005C1.0.13\005Clogback-core-1.0.13.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cslf4j\005Cslf4j-api\005C1.7.5\005Cslf4j-api-1.7.5.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cnet\005Cserenity-bdd\005Cserenity-core\005C2.2.0\005Cserenity-core-2.2.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cnet\005Cbytebuddy\005Cbyte-buddy\005C1.10.1\005Cbyte-buddy-1.10.1.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cnet\005Cbytebuddy\005Cbyte-buddy-agent\005C1.10.1\005Cbyte-buddy-agent-1.10.1.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cgoogle\005Cguava\005Cguava\005C25.0-jre\005Cguava-25.0-jre.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cgoogle\005Ccode\005Cfindbugs\005Cjsr305\005C1.3.9\005Cjsr305-1.3.9.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Ccheckerframework\005Cchecker-compat-qual\005C2.0.0\005Cchecker-compat-qual-2.0.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cgoogle\005Cerrorprone\005Cerror_prone_annotations\005C2.1.3\005Cerror_prone_annotations-2.1.3.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cgoogle\005Cj2objc\005Cj2objc-annotations\005C1.1\005Cj2objc-annotations-1.1.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Ccodehaus\005Cmojo\005Canimal-sniffer-annotations\005C1.14\005Canimal-sniffer-annotations-1.14.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cgoogle\005Cinject\005Cguice\005C4.2.2\005Cguice-4.2.2.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cjavax\005Cinject\005Cjavax.inject\005C1\005Cjavax.inject-1.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Caopalliance\005Caopalliance\005C1.0\005Caopalliance-1.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cow2\005Casm\005Casm\005C7.2\005Casm-7.2.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccommons-codec\005Ccommons-codec\005C1.10\005Ccommons-codec-1.10.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cobjenesis\005Cobjenesis\005C3.0.1\005Cobjenesis-3.0.1.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cxml-apis\005Cxml-apis\005C1.4.01\005Cxml-apis-1.4.01.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cio\005Ccucumber\005Ccucumber-core\005C5.5.0\005Ccucumber-core-5.5.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cio\005Ccucumber\005Ccucumber-gherkin\005C5.5.0\005Ccucumber-gherkin-5.5.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cio\005Ccucumber\005Ccucumber-gherkin-vintage\005C5.5.0\005Ccucumber-gherkin-vintage-5.5.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cio\005Ccucumber\005Ctag-expressions\005C2.0.4\005Ctag-expressions-2.0.4.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cio\005Ccucumber\005Ccucumber-expressions\005C8.3.1\005Ccucumber-expressions-8.3.1.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cio\005Ccucumber\005Cdatatable\005C3.3.0\005Cdatatable-3.3.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cio\005Ccucumber\005Ccucumber-plugin\005C5.5.0\005Ccucumber-plugin-5.5.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cio\005Ccucumber\005Cdocstring\005C5.5.0\005Cdocstring-5.5.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cio\005Ccucumber\005Ccucumber-java\005C5.5.0\005Ccucumber-java-5.5.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccommons-logging\005Ccommons-logging\005C1.2\005Ccommons-logging-1.2.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cio\005Cvavr\005Cvavr\005C0.9.0\005Cvavr-0.9.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cio\005Cvavr\005Cvavr-match\005C0.9.0\005Cvavr-match-0.9.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cjavax\005Cxml\005Cbind\005Cjaxb-api\005C2.2.12\005Cjaxb-api-2.2.12.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Csun\005Cxml\005Cbind\005Cjaxb-core\005C2.3.0.1\005Cjaxb-core-2.3.0.1.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Csun\005Cxml\005Cbind\005Cjaxb-impl\005C2.3.0.1\005Cjaxb-impl-2.3.0.1.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cjavax\005Cactivation\005Cactivation\005C1.1.1\005Cactivation-1.1.1.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cmockito\005Cmockito-core\005C3.1.0\005Cmockito-core-3.1.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cnet\005Cserenity-bdd\005Cserenity-report-resources\005C2.2.0\005Cserenity-report-resources-2.2.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cnet\005Cserenity-bdd\005Cserenity-model\005C2.2.0\005Cserenity-model-2.2.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccommons-net\005Ccommons-net\005C3.6\005Ccommons-net-3.6.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Capache\005Ccommons\005Ccommons-text\005C1.6\005Ccommons-text-1.6.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ces\005Cnitaur\005Cmarkdown\005Ctxtmark\005C0.16\005Ctxtmark-0.16.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cnet\005Cserenity-bdd\005Cserenity-reports\005C2.2.0\005Cserenity-reports-2.2.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cnet\005Cserenity-bdd\005Cserenity-stats\005C2.2.0\005Cserenity-stats-2.2.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cjetbrains\005Ckotlin\005Ckotlin-stdlib\005C1.3.31\005Ckotlin-stdlib-1.3.31.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cjetbrains\005Ckotlin\005Ckotlin-stdlib-common\005C1.3.31\005Ckotlin-stdlib-common-1.3.31.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cjetbrains\005Cannotations\005C13.0\005Cannotations-13.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cgoogle\005Ccode\005Cgson\005Cgson\005C2.8.4\005Cgson-2.8.4.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccommons-io\005Ccommons-io\005C2.6\005Ccommons-io-2.6.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cseleniumhq\005Cselenium\005Cselenium-server\005C3.141.59\005Cselenium-server-3.141.59.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cseleniumhq\005Cselenium\005Cselenium-firefox-driver\005C3.141.59\005Cselenium-firefox-driver-3.141.59.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cseleniumhq\005Cselenium\005Cselenium-ie-driver\005C3.141.59\005Cselenium-ie-driver-3.141.59.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cbeust\005Cjcommander\005C1.72\005Cjcommander-1.72.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Capache\005Ccommons\005Ccommons-exec\005C1.3\005Ccommons-exec-1.3.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cnet\005Cjcip\005Cjcip-annotations\005C1.0\005Cjcip-annotations-1.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cseleniumhq\005Cselenium\005Cjetty-repacked\005C9.4.12.v20180830\005Cjetty-repacked-9.4.12.v20180830.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Csquareup\005Cokhttp3\005Cokhttp\005C3.11.0\005Cokhttp-3.11.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Csquareup\005Cokio\005Cokio\005C1.14.0\005Cokio-1.14.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cjavax\005Cservlet\005Cjavax.servlet-api\005C3.1.0\005Cjavax.servlet-api-3.1.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cyaml\005Csnakeyaml\005C1.19\005Csnakeyaml-1.19.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cseleniumhq\005Cselenium\005Cselenium-java\005C3.141.59\005Cselenium-java-3.141.59.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cseleniumhq\005Cselenium\005Cselenium-api\005C3.141.59\005Cselenium-api-3.141.59.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cseleniumhq\005Cselenium\005Cselenium-chrome-driver\005C3.141.59\005Cselenium-chrome-driver-3.141.59.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cseleniumhq\005Cselenium\005Cselenium-edge-driver\005C3.141.59\005Cselenium-edge-driver-3.141.59.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cseleniumhq\005Cselenium\005Cselenium-remote-driver\005C3.141.59\005Cselenium-remote-driver-3.141.59.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cseleniumhq\005Cselenium\005Cselenium-safari-driver\005C3.141.59\005Cselenium-safari-driver-3.141.59.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cseleniumhq\005Cselenium\005Cselenium-opera-driver\005C3.141.59\005Cselenium-opera-driver-3.141.59.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cseleniumhq\005Cselenium\005Cselenium-support\005C3.141.59\005Cselenium-support-3.141.59.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cpaulhammant\005Cngwebdriver\005C1.1.4\005Cngwebdriver-1.1.4.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cassertthat\005Cselenium-shutterbug\005C0.9.3\005Cselenium-shutterbug-0.9.3.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cprojectlombok\005Clombok\005C1.18.8\005Clombok-1.18.8.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cgithub\005Czafarkhaja\005Cjava-semver\005C0.9.0\005Cjava-semver-0.9.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Ccodeborne\005Cphantomjsdriver\005C1.4.4\005Cphantomjsdriver-1.4.4.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cseleniumhq\005Cselenium\005Chtmlunit-driver\005C2.37.0\005Chtmlunit-driver-2.37.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cio\005Cappium\005Cjava-client\005C7.3.0\005Cjava-client-7.3.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccommons-validator\005Ccommons-validator\005C1.6\005Ccommons-validator-1.6.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccommons-beanutils\005Ccommons-beanutils\005C1.9.2\005Ccommons-beanutils-1.9.2.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccommons-digester\005Ccommons-digester\005C1.8.1\005Ccommons-digester-1.8.1.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Caspectj\005Caspectjweaver\005C1.9.4\005Caspectjweaver-1.9.4.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-context-support\005C5.1.2.RELEASE\005Cspring-context-support-5.1.2.RELEASE.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-beans\005C5.1.2.RELEASE\005Cspring-beans-5.1.2.RELEASE.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-context\005C5.1.2.RELEASE\005Cspring-context-5.1.2.RELEASE.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-aop\005C5.1.2.RELEASE\005Cspring-aop-5.1.2.RELEASE.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-expression\005C5.1.2.RELEASE\005Cspring-expression-5.1.2.RELEASE.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-core\005C5.1.2.RELEASE\005Cspring-core-5.1.2.RELEASE.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cspringframework\005Cspring-jcl\005C5.1.2.RELEASE\005Cspring-jcl-5.1.2.RELEASE.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Ccodehaus\005Cgroovy\005Cgroovy\005C2.5.5\005Cgroovy-2.5.5.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cnet\005Csf\005Copencsv\005Copencsv\005C2.0\005Copencsv-2.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccommons-beanutils\005Ccommons-beanutils-core\005C1.8.3\005Ccommons-beanutils-core-1.8.3.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cjoda-time\005Cjoda-time\005C2.7\005Cjoda-time-2.7.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cthoughtworks\005Cxstream\005Cxstream\005C1.4.9\005Cxstream-1.4.9.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cxmlpull\005Cxmlpull\005C1.1.3.1\005Cxmlpull-1.1.3.1.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cxpp3\005Cxpp3_min\005C1.1.4c\005Cxpp3_min-1.1.4c.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Capache\005Ccommons\005Ccommons-lang3\005C3.8.1\005Ccommons-lang3-3.8.1.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccommons-collections\005Ccommons-collections\005C3.2.2\005Ccommons-collections-3.2.2.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cfreemarker\005Cfreemarker\005C2.3.29\005Cfreemarker-2.3.29.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cnet\005Csourceforge\005Cjexcelapi\005Cjxl\005C2.6.12\005Cjxl-2.6.12.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Chamcrest\005Chamcrest-core\005C1.3\005Chamcrest-core-1.3.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Chamcrest\005Chamcrest-library\005C1.3\005Chamcrest-library-1.3.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cnet\005Csourceforge\005Chtmlunit\005Chtmlunit\005C2.37.0\005Chtmlunit-2.37.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cnet\005Csourceforge\005Chtmlunit\005Chtmlunit-core-js\005C2.37.0\005Chtmlunit-core-js-2.37.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cnet\005Csourceforge\005Chtmlunit\005Cneko-htmlunit\005C2.37.0\005Cneko-htmlunit-2.37.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cxerces\005CxercesImpl\005C2.12.0\005CxercesImpl-2.12.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cnet\005Csourceforge\005Chtmlunit\005Chtmlunit-cssparser\005C1.5.0\005Chtmlunit-cssparser-1.5.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cbrotli\005Cdec\005C0.1.2\005Cdec-0.1.2.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Ceclipse\005Cjetty\005Cwebsocket\005Cwebsocket-client\005C9.4.26.v20200117\005Cwebsocket-client-9.4.26.v20200117.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Ceclipse\005Cjetty\005Cjetty-client\005C9.4.26.v20200117\005Cjetty-client-9.4.26.v20200117.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Ceclipse\005Cjetty\005Cjetty-http\005C9.4.26.v20200117\005Cjetty-http-9.4.26.v20200117.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Ceclipse\005Cjetty\005Cjetty-xml\005C9.4.26.v20200117\005Cjetty-xml-9.4.26.v20200117.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Ceclipse\005Cjetty\005Cjetty-util\005C9.4.26.v20200117\005Cjetty-util-9.4.26.v20200117.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Ceclipse\005Cjetty\005Cjetty-io\005C9.4.26.v20200117\005Cjetty-io-9.4.26.v20200117.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Ceclipse\005Cjetty\005Cwebsocket\005Cwebsocket-common\005C9.4.26.v20200117\005Cwebsocket-common-9.4.26.v20200117.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Ceclipse\005Cjetty\005Cwebsocket\005Cwebsocket-api\005C9.4.26.v20200117\005Cwebsocket-api-9.4.26.v20200117.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Capache\005Chttpcomponents\005Chttpclient\005C4.5.5\005Chttpclient-4.5.5.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Capache\005Chttpcomponents\005Chttpcore\005C4.4.9\005Chttpcore-4.4.9.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Capache\005Chttpcomponents\005Chttpmime\005C4.5.5\005Chttpmime-4.5.5.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cfluentlenium\005Cfluentlenium-core\005C0.10.2\005Cfluentlenium-core-0.10.2.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cjhlabs\005Cfilters\005C2.0.235\005Cfilters-2.0.235.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Casciidoctor\005Casciidoctorj\005C1.5.6\005Casciidoctorj-1.5.6.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cjruby\005Cjruby-complete\005C1.7.26\005Cjruby-complete-1.7.26.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cimgscalr\005Cimgscalr-lib\005C4.2\005Cimgscalr-lib-4.2.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cjavax\005Cel\005Cjavax.el-api\005C2.2.4\005Cjavax.el-api-2.2.4.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cglassfish\005Cweb\005Cjavax.el\005C2.2.4\005Cjavax.el-2.2.4.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cxalan\005Cxalan\005C2.7.2\005Cxalan-2.7.2.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cxalan\005Cserializer\005C2.7.2\005Cserializer-2.7.2.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cawaitility\005Cawaitility\005C4.0.1\005Cawaitility-4.0.1.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Chamcrest\005Chamcrest\005C2.1\005Chamcrest-2.1.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Ctypesafe\005Cconfig\005C1.3.1\005Cconfig-1.3.1.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cjsoup\005Cjsoup\005C1.10.3\005Cjsoup-1.10.3.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cgoogle\005Cjimfs\005Cjimfs\005C1.1\005Cjimfs-1.1.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-all\005C0.34.30\005Cflexmark-all-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark\005C0.34.30\005Cflexmark-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-abbreviation\005C0.34.30\005Cflexmark-ext-abbreviation-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-admonition\005C0.34.30\005Cflexmark-ext-admonition-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-anchorlink\005C0.34.30\005Cflexmark-ext-anchorlink-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-aside\005C0.34.30\005Cflexmark-ext-aside-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-attributes\005C0.34.30\005Cflexmark-ext-attributes-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-autolink\005C0.34.30\005Cflexmark-ext-autolink-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cnibor\005Cautolink\005Cautolink\005C0.6.0\005Cautolink-0.6.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-definition\005C0.34.30\005Cflexmark-ext-definition-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-emoji\005C0.34.30\005Cflexmark-ext-emoji-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-enumerated-reference\005C0.34.30\005Cflexmark-ext-enumerated-reference-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-escaped-character\005C0.34.30\005Cflexmark-ext-escaped-character-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-footnotes\005C0.34.30\005Cflexmark-ext-footnotes-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-gfm-issues\005C0.34.30\005Cflexmark-ext-gfm-issues-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-gfm-strikethrough\005C0.34.30\005Cflexmark-ext-gfm-strikethrough-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-gfm-tables\005C0.34.30\005Cflexmark-ext-gfm-tables-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-gfm-tasklist\005C0.34.30\005Cflexmark-ext-gfm-tasklist-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-gfm-users\005C0.34.30\005Cflexmark-ext-gfm-users-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-gitlab\005C0.34.30\005Cflexmark-ext-gitlab-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-jekyll-front-matter\005C0.34.30\005Cflexmark-ext-jekyll-front-matter-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-jekyll-tag\005C0.34.30\005Cflexmark-ext-jekyll-tag-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-media-tags\005C0.34.30\005Cflexmark-ext-media-tags-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-test-util\005C0.34.30\005Cflexmark-test-util-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-ins\005C0.34.30\005Cflexmark-ext-ins-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-xwiki-macros\005C0.34.30\005Cflexmark-ext-xwiki-macros-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-superscript\005C0.34.30\005Cflexmark-ext-superscript-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-tables\005C0.34.30\005Cflexmark-ext-tables-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-toc\005C0.34.30\005Cflexmark-ext-toc-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-typographic\005C0.34.30\005Cflexmark-ext-typographic-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-wikilink\005C0.34.30\005Cflexmark-ext-wikilink-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-yaml-front-matter\005C0.34.30\005Cflexmark-ext-yaml-front-matter-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-ext-youtube-embedded\005C0.34.30\005Cflexmark-ext-youtube-embedded-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-formatter\005C0.34.30\005Cflexmark-formatter-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-html-parser\005C0.34.30\005Cflexmark-html-parser-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-jira-converter\005C0.34.30\005Cflexmark-jira-converter-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-pdf-converter\005C0.34.30\005Cflexmark-pdf-converter-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Copenhtmltopdf\005Copenhtmltopdf-core\005C0.0.1-RC13\005Copenhtmltopdf-core-0.0.1-RC13.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Copenhtmltopdf\005Copenhtmltopdf-pdfbox\005C0.0.1-RC13\005Copenhtmltopdf-pdfbox-0.0.1-RC13.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Capache\005Cpdfbox\005Cpdfbox\005C2.0.8\005Cpdfbox-2.0.8.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Capache\005Cpdfbox\005Cfontbox\005C2.0.8\005Cfontbox-2.0.8.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Capache\005Cpdfbox\005Cxmpbox\005C2.0.8\005Cxmpbox-2.0.8.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cde\005Crototor\005Cpdfbox\005Cgraphics2d\005C0.12\005Cgraphics2d-0.12.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Copenhtmltopdf\005Copenhtmltopdf-rtl-support\005C0.0.1-RC13\005Copenhtmltopdf-rtl-support-0.0.1-RC13.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cibm\005Cicu\005Cicu4j\005C59.1\005Cicu4j-59.1.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Copenhtmltopdf\005Copenhtmltopdf-jsoup-dom-converter\005C0.0.1-RC13\005Copenhtmltopdf-jsoup-dom-converter-0.0.1-RC13.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-profile-pegdown\005C0.34.30\005Cflexmark-profile-pegdown-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-util\005C0.34.30\005Cflexmark-util-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Ccom\005Cvladsch\005Cflexmark\005Cflexmark-youtrack-converter\005C0.34.30\005Cflexmark-youtrack-converter-0.34.30.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cnet\005Cserenity-bdd\005Cserenity-junit\005C2.2.0\005Cserenity-junit-2.2.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cnet\005Cserenity-bdd\005Cserenity-screenplay\005C2.2.0\005Cserenity-screenplay-2.2.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cnet\005Cserenity-bdd\005Cserenity-cucumber5\005C2.2.0\005Cserenity-cucumber5-2.2.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cnet\005Cserenity-bdd\005Cserenity-screenplay-webdriver\005C2.2.0\005Cserenity-screenplay-webdriver-2.2.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cio\005Ccucumber\005Ccucumber-junit\005C5.5.0\005Ccucumber-junit-5.5.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Capiguardian\005Capiguardian-api\005C1.1.0\005Capiguardian-api-1.1.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cio\005Ccucumber\005Cdatatable-matchers\005C3.3.0\005Cdatatable-matchers-3.3.0.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Capache\005Ccommons\005Ccommons-csv\005C1.5\005Ccommons-csv-1.5.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Cjunit\005Cjunit\005C4.12\005Cjunit-4.12.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Cassertj\005Cassertj-core\005C3.6.2\005Cassertj-core-3.6.2.jar;C:\005CUsers\005Crreyes\005C.m2\005Crepository\005Corg\005Chamcrest\005Chamcrest-all\005C1.3\005Chamcrest-all-1.3.jar;
+
+
+# Created at 2021-05-05T12:47:43.221
+Unexpected IOException: I,1,sun.cpu.endian,little
+
+
+# Created at 2021-05-05T12:47:43.224
+Unexpected IOException: I,1,user.home,C:\005CUsers\005Crreyes
+
+
+# Created at 2021-05-05T12:47:43.225
+Unexpected IOException: I,1,user.language,es
+
+
+# Created at 2021-05-05T12:47:43.225
+Unexpected IOException: I,1,java.specification.vendor,Oracle Corporation
+
+
+# Created at 2021-05-05T12:47:43.225
+Unexpected IOException: I,1,java.home,C:\005CProgram Files\005CJava\005Cjdk1.8.0_271\005Cjre
+
+
+# Created at 2021-05-05T12:47:43.232
+Unexpected IOException: I,1,basedir,C:\005CUsers\005Crreyes\005CDesktop\005CPrograms\005CrepositoriosGIT\005CPruebasAutomaticas\005CPA_PC_V2\005CFront\005CPFIOperation\005Cbuild\005Ccobis\005Crel\005Cprojects\005Cpfprt.pfioperation.test.impl
+
+
+# Created at 2021-05-05T12:47:43.234
+Unexpected IOException: I,1,file.separator,\005C
+
+
+# Created at 2021-05-05T12:47:43.234
+Unexpected IOException: I,1,line.separator,\000D\000A
+
+
+# Created at 2021-05-05T12:47:43.234
+Unexpected IOException: I,1,java.vm.specification.vendor,Oracle Corporation
+
+
+# Created at 2021-05-05T12:47:43.234
+Unexpected IOException: I,1,java.specification.name,Java Platform API Specification
+
+
+# Created at 2021-05-05T12:47:43.243
+Unexpected IOException: I,1,java.awt.graphicsenv,sun.awt.Win32GraphicsEnvironment
+
+
+# Created at 2021-05-05T12:47:43.244
+Unexpected IOException: I,1,surefire.real.class.path,C:\005CUsers\005Crreyes\005CAppData\005CLocal\005CTemp\005Csurefire4947252774064284825\005Csurefirebooter4916712797844466717.jar
+
+
+# Created at 2021-05-05T12:47:43.244
+Unexpected IOException: I,1,sun.boot.class.path,C:\005CProgram Files\005CJava\005Cjdk1.8.0_271\005Cjre\005Clib\005Cresources.jar;C:\005CProgram Files\005CJava\005Cjdk1.8.0_271\005Cjre\005Clib\005Crt.jar;C:\005CProgram Files\005CJava\005Cjdk1.8.0_271\005Cjre\005Clib\005Csunrsasign.jar;C:\005CProgram Files\005CJava\005Cjdk1.8.0_271\005Cjre\005Clib\005Cjsse.jar;C:\005CProgram Files\005CJava\005Cjdk1.8.0_271\005Cjre\005Clib\005Cjce.jar;C:\005CProgram Files\005CJava\005Cjdk1.8.0_271\005Cjre\005Clib\005Ccharsets.jar;C:\005CProgram Files\005CJava\005Cjdk1.8.0_271\005Cjre\005Clib\005Cjfr.jar;C:\005CProgram Files\005CJava\005Cjdk1.8.0_271\005Cjre\005Cclasses
+
+
+# Created at 2021-05-05T12:47:43.244
+Unexpected IOException: I,1,user.script,
+
+
+# Created at 2021-05-05T12:47:43.252
+Unexpected IOException: I,1,sun.management.compiler,HotSpot 64-Bit Tiered Compilers
+
+
+# Created at 2021-05-05T12:47:43.255
+Unexpected IOException: I,1,java.runtime.version,1.8.0_271-b09
+
+
+# Created at 2021-05-05T12:47:43.255
+Unexpected IOException: I,1,user.name,rreyes
+
+
+# Created at 2021-05-05T12:47:43.255
+Unexpected IOException: I,1,path.separator,;
+
+
+# Created at 2021-05-05T12:47:43.263
+Unexpected IOException: I,1,os.version,10.0
+
+
+# Created at 2021-05-05T12:47:43.265
+Unexpected IOException: I,1,java.endorsed.dirs,C:\005CProgram Files\005CJava\005Cjdk1.8.0_271\005Cjre\005Clib\005Cendorsed
+
+
+# Created at 2021-05-05T12:47:43.265
+Unexpected IOException: I,1,java.runtime.name,Java(TM) SE Runtime Environment
+
+
+# Created at 2021-05-05T12:47:43.265
+Unexpected IOException: I,1,file.encoding,Cp1252
+
+
+# Created at 2021-05-05T12:47:43.273
+Unexpected IOException: I,1,webdriver.base.url,
+
+
+# Created at 2021-05-05T12:47:43.275
+Unexpected IOException: I,1,java.vm.name,Java HotSpot(TM) 64-Bit Server VM
+
+
+# Created at 2021-05-05T12:47:43.275
+Unexpected IOException: I,1,localRepository,C:\005CUsers\005Crreyes\005C.m2\005Crepository
+
+
+# Created at 2021-05-05T12:47:43.275
+Unexpected IOException: I,1,java.vendor.url.bug,http://bugreport.sun.com/bugreport/
+
+
+# Created at 2021-05-05T12:47:43.283
+Unexpected IOException: I,1,java.io.tmpdir,C:\005CUsers\005Crreyes\005CAppData\005CLocal\005CTemp\005C
+
+
+# Created at 2021-05-05T12:47:43.285
+Unexpected IOException: I,1,cucumber.filter.tags,@CancelacionCuentaCerrada
+
+
+# Created at 2021-05-05T12:47:43.285
+Unexpected IOException: I,1,java.version,1.8.0_271
+
+
+# Created at 2021-05-05T12:47:43.285
+Unexpected IOException: I,1,user.dir,C:\005CUsers\005Crreyes\005CDesktop\005CPrograms\005CrepositoriosGIT\005CPruebasAutomaticas\005CPA_PC_V2\005CFront\005CPFIOperation\005Cbuild\005Ccobis\005Crel\005Cprojects\005Cpfprt.pfioperation.test.impl
+
+
+# Created at 2021-05-05T12:47:43.295
+Unexpected IOException: I,1,os.arch,amd64
+
+
+# Created at 2021-05-05T12:47:43.295
+Unexpected IOException: I,1,webdriver.gecko.driver,C:\005CUsers\005Crreyes\005CDesktop\005CPrograms\005CrepositoriosGIT\005CPruebasAutomaticas\005CPA_PC_V2\005CFront\005CPFIOperation\005Cbuild\005Ccobis\005Crel\005Cprojects\005Cpfprt.pfioperation.test.impl\005Csrc\005Ctest\005Cresources\005Cwebdriver\005Cwindows\005Cgeckodriver.exe
+
+
+# Created at 2021-05-05T12:47:43.295
+Unexpected IOException: I,1,java.vm.specification.name,Java Virtual Machine Specification
+
+
+# Created at 2021-05-05T12:47:43.304
+Unexpected IOException: I,1,java.awt.printerjob,sun.awt.windows.WPrinterJob
+
+
+# Created at 2021-05-05T12:47:43.306
+Unexpected IOException: I,1,sun.os.patch.level,
+
+
+# Created at 2021-05-05T12:47:43.314
+Unexpected IOException: I,1,java.library.path,C:\005CProgram Files\005CJava\005Cjdk1.8.0_271\005Cjre\005Cbin;C:\005CWindows\005CSun\005CJava\005Cbin;C:\005CWindows\005Csystem32;C:\005CWindows;C:\005CProgram Files\005CJava\005Cjdk1.8.0_271\005Cbin;C:\005CUsers\005CSTEVEN REYES\005CDesktop\005CProgramas\005Capache-maven-3.5.3-cloud\005Cbin;C:\005CProgram Files (x86)\005CCommon Files\005COracle\005CJava\005Cjavapath;C:\005CWindows\005Csystem32;C:\005CWindows;C:\005CWindows\005CSystem32\005CWbem;C:\005CWindows\005CSystem32\005CWindowsPowerShell\005Cv1.0\005C;C:\005CWindows\005CSystem32\005COpenSSH\005C;C:\005CProgram Files\005CGit\005Ccmd;C:\005CProgram Files\005CTortoiseGit\005Cbin;;C:\005CProgram Files\005CDocker\005CDocker\005Cresources\005Cbin;C:\005CProgramData\005CDockerDesktop\005Cversion-bin;C:\005CProgram Files\005Cnodejs;C:\005CUsers\005Crreyes\005CAppData\005CRoaming\005Cnpm;C:\005CUsers\005Crreyes\005CAppData\005CLocal\005CMicrosoft\005CWindowsApps;C:\005CUsers\005Crreyes\005CAppData\005CLocal\005CPrograms\005CMicrosoft VS Code\005Cbin;.
+
+
+# Created at 2021-05-05T12:47:43.316
+Unexpected IOException: I,1,java.vm.info,mixed mode
+
+
+# Created at 2021-05-05T12:47:43.316
+Unexpected IOException: I,1,java.vendor,Oracle Corporation
+
+
+# Created at 2021-05-05T12:47:43.326
+Unexpected IOException: I,1,java.vm.version,25.271-b09
+
+
+# Created at 2021-05-05T12:47:43.326
+Unexpected IOException: I,1,java.ext.dirs,C:\005CProgram Files\005CJava\005Cjdk1.8.0_271\005Cjre\005Clib\005Cext;C:\005CWindows\005CSun\005CJava\005Clib\005Cext
+
+
+# Created at 2021-05-05T12:47:43.326
+Unexpected IOException: I,1,sun.io.unicode.encoding,UnicodeLittle
+
+
+# Created at 2021-05-05T12:47:43.336
+Unexpected IOException: I,1,java.class.version,52.0
+
+
+# Created at 2021-05-05T12:47:43.336
+Unexpected IOException: 1,1,Cancelacion de Certificado de Deposito,Cancelacion de Certificado de Deposito,null,null,null
+
+
+# Created at 2021-05-05T12:47:43.336
+Unexpected IOException: 5,1,Cancelacion de Certificado de Deposito,Verificar la cancelaci\00F3n de un Certificado de Deposito con NC a una cuenta aho/cte cerrada(Cancelacion de Certificado de Deposito),null,null,7532
+
+
+# Created at 2021-05-05T12:47:43.345
+Unexpected IOException with stream: 
+
+
+# Created at 2021-05-05T12:47:43.347
+Unexpected IOException with stream: @CancelacionCuentaCerrada
+
+# Created at 2021-05-05T12:47:43.347
+Unexpected IOException with stream: 
+
+
+# Created at 2021-05-05T12:47:43.347
+Unexpected IOException with stream: Esquema del escenario: Verificar la cancelación de un Certificado de Deposito con NC a una cuenta aho/cte cerrada                                                                                                                                         [90m# src/test/resources/features/Example/CancelacionCertificado.feature:51[0m
+
+# Created at 2021-05-05T12:47:43.355
+Unexpected IOException with stream: 
+
+
+# Created at 2021-05-05T12:47:43.357
+Unexpected IOException with stream: Feature from file:///C:/Users/rreyes/Desktop/Programs/repositoriosGIT/PruebasAutomaticas/PA_PC_V2/Front/PFIOperation/build/cobis/rel/projects/pfprt.pfioperation.test.impl/src/test/resources/features/Example/CancelacionCertificado.feature
+
+
+# Created at 2021-05-05T12:47:43.357
+Unexpected IOException with stream: 12:47:34.124 [pool-1-thread-1] INFO   - 
+ _____ _____ ____ _____   ____ _____  _    ____ _____ _____ ____  
+|_   _| ____/ ___|_   _| / ___|_   _|/ \  |  _ \_   _| ____|  _ \ 
+  | | |  _| \___ \ | |   \___ \ | | / _ \ | |_) || | |  _| | | | |
+  | | | |___ ___) || |    ___) || |/ ___ \|  _ < | | | |___| |_| |
+  |_| |_____|____/ |_|   |____/ |_/_/   \_\_| \_\|_| |_____|____/ 
+
+Verificar la cancelación de un Certificado de Deposito con NC a una cuenta aho/cte cerrada(cancelacion-de-certificado-de-deposito;verificar-la-cancelación-de-un-certificado-de-deposito-con-nc-a-una-cuenta-aho/cte-cerrada)
+-------------------------------------------------------------------
+
+
+# Created at 2021-05-05T12:47:43.357
+Unexpected IOException with stream: 12:47:34.224 [pool-1-thread-1] DEBUG n.t.c.r.m.cucumber.CucumberParser - Added feature Cancelacion de Certificado de Deposito
+
+
+# Created at 2021-05-05T12:47:43.365
+Unexpected IOException with stream: 12:47:34.224 [pool-1-thread-1] DEBUG n.t.c.r.m.cucumber.CucumberParser - Added feature Probar Banco Cobis
+
+
+# Created at 2021-05-05T12:47:43.367
+Unexpected IOException with stream: 12:47:34.603 [pool-1-thread-1] DEBUG n.t.core.steps.StepInterceptor - STARTING STEP: ContainerActions.browseToCobis - {0} navega hacia la pagina: #url
+
+
+# Created at 2021-05-05T12:47:43.367
+Unexpected IOException with stream: 12:47:34.619 [pool-1-thread-1] DEBUG n.t.core.steps.StepInterceptor - STARTING STEP: ContainerActions.browseToCobis - {0} opens the #url
+
+
+# Created at 2021-05-05T12:47:43.367
+Unexpected IOException with stream: may 05, 2021 12:47:34 PM org.openqa.selenium.remote.DesiredCapabilities chrome
+INFORMACIÓN: Using `new ChromeOptions()` is preferred to `DesiredCapabilities.chrome()`
+
+
+# Created at 2021-05-05T12:47:43.375
+Unexpected IOException with stream: 12:47:35.145 [pool-1-thread-1] INFO  n.s.c.w.d.ProvideNewDriver - Instantiating driver
+
+
+# Created at 2021-05-05T12:47:43.375
+Unexpected IOException with stream: 12:47:35.145 [pool-1-thread-1] INFO  n.s.c.w.d.ProvideNewDriver - Driver capabilities: Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [], extensions: []}, loggingPrefs: org.openqa.selenium.logging..., platform: ANY, version: }
+
+
+# Created at 2021-05-05T12:47:43.375
+Unexpected IOException with stream: S
+
+# Created at 2021-05-05T12:47:43.375
+Unexpected IOException with stream: t
+
+# Created at 2021-05-05T12:47:43.375
+Unexpected IOException with stream: a
+
+# Created at 2021-05-05T12:47:43.386
+Unexpected IOException with stream: r
+
+# Created at 2021-05-05T12:47:43.386
+Unexpected IOException with stream: t
+
+# Created at 2021-05-05T12:47:43.386
+Unexpected IOException with stream: i
+
+# Created at 2021-05-05T12:47:43.386
+Unexpected IOException with stream: n
+
+# Created at 2021-05-05T12:47:43.386
+Unexpected IOException with stream: g
+
+# Created at 2021-05-05T12:47:43.386
+Unexpected IOException with stream:  
+
+# Created at 2021-05-05T12:47:43.402
+Unexpected IOException with stream: C
+
+# Created at 2021-05-05T12:47:43.402
+Unexpected IOException with stream: h
+
+# Created at 2021-05-05T12:47:43.402
+Unexpected IOException with stream: r
+
+# Created at 2021-05-05T12:47:43.402
+Unexpected IOException with stream: o
+
+# Created at 2021-05-05T12:47:43.417
+Unexpected IOException with stream: m
+
+# Created at 2021-05-05T12:47:43.417
+Unexpected IOException with stream: e
+
+# Created at 2021-05-05T12:47:43.417
+Unexpected IOException with stream: D
+
+# Created at 2021-05-05T12:47:43.417
+Unexpected IOException with stream: r
+
+# Created at 2021-05-05T12:47:43.433
+Unexpected IOException with stream: i
+
+# Created at 2021-05-05T12:47:43.433
+Unexpected IOException with stream: v
+
+# Created at 2021-05-05T12:47:43.433
+Unexpected IOException with stream: e
+
+# Created at 2021-05-05T12:47:43.433
+Unexpected IOException with stream: r
+
+# Created at 2021-05-05T12:47:43.449
+Unexpected IOException with stream:  
+
+# Created at 2021-05-05T12:47:43.449
+Unexpected IOException with stream: 9
+
+# Created at 2021-05-05T12:47:43.449
+Unexpected IOException with stream: 0
+
+# Created at 2021-05-05T12:47:43.449
+Unexpected IOException with stream: .
+
+# Created at 2021-05-05T12:47:43.465
+Unexpected IOException with stream: 0
+
+# Created at 2021-05-05T12:47:43.465
+Unexpected IOException with stream: .
+
+# Created at 2021-05-05T12:47:43.465
+Unexpected IOException with stream: 4
+
+# Created at 2021-05-05T12:47:43.465
+Unexpected IOException with stream: 4
+
+# Created at 2021-05-05T12:47:43.465
+Unexpected IOException with stream: 3
+
+# Created at 2021-05-05T12:47:43.481
+Unexpected IOException with stream: 0
+
+# Created at 2021-05-05T12:47:43.485
+Unexpected IOException with stream: .
+
+# Created at 2021-05-05T12:47:43.485
+Unexpected IOException with stream: 2
+
+# Created at 2021-05-05T12:47:43.485
+Unexpected IOException with stream: 4
+
+# Created at 2021-05-05T12:47:43.485
+Unexpected IOException with stream:  
+
+# Created at 2021-05-05T12:47:43.501
+Unexpected IOException with stream: (
+
+# Created at 2021-05-05T12:47:43.501
+Unexpected IOException with stream: 4
+
+# Created at 2021-05-05T12:47:43.501
+Unexpected IOException with stream: c
+
+# Created at 2021-05-05T12:47:43.501
+Unexpected IOException with stream: 6
+
+# Created at 2021-05-05T12:47:43.517
+Unexpected IOException with stream: d
+
+# Created at 2021-05-05T12:47:43.517
+Unexpected IOException with stream: 8
+
+# Created at 2021-05-05T12:47:43.517
+Unexpected IOException with stream: 5
+
+# Created at 2021-05-05T12:47:43.517
+Unexpected IOException with stream: 0
+
+# Created at 2021-05-05T12:47:43.533
+Unexpected IOException with stream: f
+
+# Created at 2021-05-05T12:47:43.533
+Unexpected IOException with stream: 0
+
+# Created at 2021-05-05T12:47:43.533
+Unexpected IOException with stream: 8
+
+# Created at 2021-05-05T12:47:43.533
+Unexpected IOException with stream: 7
+
+# Created at 2021-05-05T12:47:43.533
+Unexpected IOException with stream: d
+
+# Created at 2021-05-05T12:47:43.549
+Unexpected IOException with stream: a
+
+# Created at 2021-05-05T12:47:43.549
+Unexpected IOException with stream: 4
+
+# Created at 2021-05-05T12:47:43.549
+Unexpected IOException with stream: 6
+
+# Created at 2021-05-05T12:47:43.549
+Unexpected IOException with stream: 7
+
+# Created at 2021-05-05T12:47:43.549
+Unexpected IOException with stream: d
+
+# Created at 2021-05-05T12:47:43.565
+Unexpected IOException with stream: 9
+
+# Created at 2021-05-05T12:47:43.565
+Unexpected IOException with stream: 2
+
+# Created at 2021-05-05T12:47:43.565
+Unexpected IOException with stream: 6
+
+# Created at 2021-05-05T12:47:43.565
+Unexpected IOException with stream: e
+
+# Created at 2021-05-05T12:47:43.565
+Unexpected IOException with stream: 8
+
+# Created at 2021-05-05T12:47:43.565
+Unexpected IOException with stream: e
+
+# Created at 2021-05-05T12:47:43.565
+Unexpected IOException with stream: d
+
+# Created at 2021-05-05T12:47:43.581
+Unexpected IOException with stream: d
+
+# Created at 2021-05-05T12:47:43.581
+Unexpected IOException with stream: b
+
+# Created at 2021-05-05T12:47:43.586
+Unexpected IOException with stream: 7
+
+# Created at 2021-05-05T12:47:43.586
+Unexpected IOException with stream: 6
+
+# Created at 2021-05-05T12:47:43.586
+Unexpected IOException with stream: 5
+
+# Created at 2021-05-05T12:47:43.586
+Unexpected IOException with stream: 5
+
+# Created at 2021-05-05T12:47:43.586
+Unexpected IOException with stream: 0
+
+# Created at 2021-05-05T12:47:43.586
+Unexpected IOException with stream: a
+
+# Created at 2021-05-05T12:47:43.602
+Unexpected IOException with stream: e
+
+# Created at 2021-05-05T12:47:43.602
+Unexpected IOException with stream: d
+
+# Created at 2021-05-05T12:47:43.602
+Unexpected IOException with stream: 6
+
+# Created at 2021-05-05T12:47:43.602
+Unexpected IOException with stream: 5
+
+# Created at 2021-05-05T12:47:43.602
+Unexpected IOException with stream: 5
+
+# Created at 2021-05-05T12:47:43.618
+Unexpected IOException with stream: 9
+
+# Created at 2021-05-05T12:47:43.618
+Unexpected IOException with stream: 9
+
+# Created at 2021-05-05T12:47:43.618
+Unexpected IOException with stream: 1
+
+# Created at 2021-05-05T12:47:43.618
+Unexpected IOException with stream: -
+
+# Created at 2021-05-05T12:47:43.618
+Unexpected IOException with stream: r
+
+# Created at 2021-05-05T12:47:43.618
+Unexpected IOException with stream: e
+
+# Created at 2021-05-05T12:47:43.634
+Unexpected IOException with stream: f
+
+# Created at 2021-05-05T12:47:43.634
+Unexpected IOException with stream: s
+
+# Created at 2021-05-05T12:47:43.634
+Unexpected IOException with stream: /
+
+# Created at 2021-05-05T12:47:43.634
+Unexpected IOException with stream: b
+
+# Created at 2021-05-05T12:47:43.634
+Unexpected IOException with stream: r
+
+# Created at 2021-05-05T12:47:43.650
+Unexpected IOException with stream: a
+
+# Created at 2021-05-05T12:47:43.650
+Unexpected IOException with stream: n
+
+# Created at 2021-05-05T12:47:43.650
+Unexpected IOException with stream: c
+
+# Created at 2021-05-05T12:47:43.650
+Unexpected IOException with stream: h
+
+# Created at 2021-05-05T12:47:43.669
+Unexpected IOException with stream: -
+
+# Created at 2021-05-05T12:47:43.672
+Unexpected IOException with stream: h
+
+# Created at 2021-05-05T12:47:43.674
+Unexpected IOException with stream: e
+
+# Created at 2021-05-05T12:47:43.677
+Unexpected IOException with stream: a
+
+# Created at 2021-05-05T12:47:43.680
+Unexpected IOException with stream: d
+
+# Created at 2021-05-05T12:47:43.681
+Unexpected IOException with stream: s
+
+# Created at 2021-05-05T12:47:43.681
+Unexpected IOException with stream: /
+
+# Created at 2021-05-05T12:47:43.686
+Unexpected IOException with stream: 4
+
+# Created at 2021-05-05T12:47:43.686
+Unexpected IOException with stream: 4
+
+# Created at 2021-05-05T12:47:43.686
+Unexpected IOException with stream: 3
+
+# Created at 2021-05-05T12:47:43.686
+Unexpected IOException with stream: 0
+
+# Created at 2021-05-05T12:47:43.702
+Unexpected IOException with stream: @
+
+# Created at 2021-05-05T12:47:43.702
+Unexpected IOException with stream: {
+
+# Created at 2021-05-05T12:47:43.702
+Unexpected IOException with stream: #
+
+# Created at 2021-05-05T12:47:43.702
+Unexpected IOException with stream: 4
+
+# Created at 2021-05-05T12:47:43.718
+Unexpected IOException with stream: 2
+
+# Created at 2021-05-05T12:47:43.718
+Unexpected IOException with stream: 9
+
+# Created at 2021-05-05T12:47:43.718
+Unexpected IOException with stream: }
+
+# Created at 2021-05-05T12:47:43.734
+Unexpected IOException with stream: )
+
+# Created at 2021-05-05T12:47:43.734
+Unexpected IOException with stream:  
+
+# Created at 2021-05-05T12:47:43.734
+Unexpected IOException with stream: o
+
+# Created at 2021-05-05T12:47:43.734
+Unexpected IOException with stream: n
+
+# Created at 2021-05-05T12:47:43.734
+Unexpected IOException with stream:  
+
+# Created at 2021-05-05T12:47:43.734
+Unexpected IOException with stream: p
+
+# Created at 2021-05-05T12:47:43.749
+Unexpected IOException with stream: o
+
+# Created at 2021-05-05T12:47:43.749
+Unexpected IOException with stream: r
+
+# Created at 2021-05-05T12:47:43.749
+Unexpected IOException with stream: t
+
+# Created at 2021-05-05T12:47:43.749
+Unexpected IOException with stream:  
+
+# Created at 2021-05-05T12:47:43.749
+Unexpected IOException with stream: 3
+
+# Created at 2021-05-05T12:47:43.749
+Unexpected IOException with stream: 1
+
+# Created at 2021-05-05T12:47:43.765
+Unexpected IOException with stream: 2
+
+# Created at 2021-05-05T12:47:43.765
+Unexpected IOException with stream: 4
+
+# Created at 2021-05-05T12:47:43.765
+Unexpected IOException with stream: 1
+
+# Created at 2021-05-05T12:47:43.765
+Unexpected IOException with stream: 
+
+# Created at 2021-05-05T12:47:43.765
+Unexpected IOException with stream: 
+
+
+# Created at 2021-05-05T12:47:43.786
+Unexpected IOException with stream: O
+
+# Created at 2021-05-05T12:47:43.786
+Unexpected IOException with stream: n
+
+# Created at 2021-05-05T12:47:43.786
+Unexpected IOException with stream: l
+
+# Created at 2021-05-05T12:47:43.786
+Unexpected IOException with stream: y
+
+# Created at 2021-05-05T12:47:43.786
+Unexpected IOException with stream:  
+
+# Created at 2021-05-05T12:47:43.786
+Unexpected IOException with stream: l
+
+# Created at 2021-05-05T12:47:43.786
+Unexpected IOException with stream: o
+
+# Created at 2021-05-05T12:47:43.802
+Unexpected IOException with stream: c
+
+# Created at 2021-05-05T12:47:43.802
+Unexpected IOException with stream: a
+
+# Created at 2021-05-05T12:47:43.802
+Unexpected IOException with stream: l
+
+# Created at 2021-05-05T12:47:43.802
+Unexpected IOException with stream:  
+
+# Created at 2021-05-05T12:47:43.802
+Unexpected IOException with stream: c
+
+# Created at 2021-05-05T12:47:43.802
+Unexpected IOException with stream: o
+
+# Created at 2021-05-05T12:47:43.817
+Unexpected IOException with stream: n
+
+# Created at 2021-05-05T12:47:43.817
+Unexpected IOException with stream: n
+
+# Created at 2021-05-05T12:47:43.817
+Unexpected IOException with stream: e
+
+# Created at 2021-05-05T12:47:43.817
+Unexpected IOException with stream: c
+
+# Created at 2021-05-05T12:47:43.833
+Unexpected IOException with stream: t
+
+# Created at 2021-05-05T12:47:43.833
+Unexpected IOException with stream: i
+
+# Created at 2021-05-05T12:47:43.833
+Unexpected IOException with stream: o
+
+# Created at 2021-05-05T12:47:43.833
+Unexpected IOException with stream: n
+
+# Created at 2021-05-05T12:47:43.833
+Unexpected IOException with stream: s
+
+# Created at 2021-05-05T12:47:43.848
+Unexpected IOException with stream:  
+
+# Created at 2021-05-05T12:47:43.848
+Unexpected IOException with stream: a
+
+# Created at 2021-05-05T12:47:43.848
+Unexpected IOException with stream: r
+
+# Created at 2021-05-05T12:47:43.864
+Unexpected IOException with stream: e
+
+# Created at 2021-05-05T12:47:43.864
+Unexpected IOException with stream:  
+
+# Created at 2021-05-05T12:47:43.864
+Unexpected IOException with stream: a
+
+# Created at 2021-05-05T12:47:43.864
+Unexpected IOException with stream: l
+
+# Created at 2021-05-05T12:47:43.880
+Unexpected IOException with stream: l
+
+# Created at 2021-05-05T12:47:43.886
+Unexpected IOException with stream: o
+
+# Created at 2021-05-05T12:47:43.886
+Unexpected IOException with stream: w
+
+# Created at 2021-05-05T12:47:43.886
+Unexpected IOException with stream: e
+
+# Created at 2021-05-05T12:47:43.901
+Unexpected IOException with stream: d
+
+# Created at 2021-05-05T12:47:43.901
+Unexpected IOException with stream: .
+
+# Created at 2021-05-05T12:47:43.901
+Unexpected IOException with stream: 
+
+# Created at 2021-05-05T12:47:43.901
+Unexpected IOException with stream: 
+
+
+# Created at 2021-05-05T12:47:43.917
+Unexpected IOException with stream: P
+
+# Created at 2021-05-05T12:47:43.917
+Unexpected IOException with stream: l
+
+# Created at 2021-05-05T12:47:43.917
+Unexpected IOException with stream: e
+
+# Created at 2021-05-05T12:47:43.933
+Unexpected IOException with stream: a
+
+# Created at 2021-05-05T12:47:43.933
+Unexpected IOException with stream: s
+
+# Created at 2021-05-05T12:47:43.933
+Unexpected IOException with stream: e
+
+# Created at 2021-05-05T12:47:43.950
+Unexpected IOException with stream:  
+
+# Created at 2021-05-05T12:47:43.952
+Unexpected IOException with stream: s
+
+# Created at 2021-05-05T12:47:43.952
+Unexpected IOException with stream: e
+
+# Created at 2021-05-05T12:47:43.952
+Unexpected IOException with stream: e
+
+# Created at 2021-05-05T12:47:43.952
+Unexpected IOException with stream:  
+
+# Created at 2021-05-05T12:47:43.968
+Unexpected IOException with stream: h
+
+# Created at 2021-05-05T12:47:43.968
+Unexpected IOException with stream: t
+
+# Created at 2021-05-05T12:47:43.968
+Unexpected IOException with stream: t
+
+# Created at 2021-05-05T12:47:43.968
+Unexpected IOException with stream: p
+
+# Created at 2021-05-05T12:47:43.986
+Unexpected IOException with stream: s
+
+# Created at 2021-05-05T12:47:43.986
+Unexpected IOException with stream: :
+
+# Created at 2021-05-05T12:47:43.986
+Unexpected IOException with stream: /
+
+# Created at 2021-05-05T12:47:43.986
+Unexpected IOException with stream: /
+
+# Created at 2021-05-05T12:47:44.002
+Unexpected IOException with stream: c
+
+# Created at 2021-05-05T12:47:44.002
+Unexpected IOException with stream: h
+
+# Created at 2021-05-05T12:47:44.002
+Unexpected IOException with stream: r
+
+# Created at 2021-05-05T12:47:44.002
+Unexpected IOException with stream: o
+
+# Created at 2021-05-05T12:47:44.017
+Unexpected IOException with stream: m
+
+# Created at 2021-05-05T12:47:44.017
+Unexpected IOException with stream: e
+
+# Created at 2021-05-05T12:47:44.017
+Unexpected IOException with stream: d
+
+# Created at 2021-05-05T12:47:44.017
+Unexpected IOException with stream: r
+
+# Created at 2021-05-05T12:47:44.017
+Unexpected IOException with stream: i
+
+# Created at 2021-05-05T12:47:44.033
+Unexpected IOException with stream: v
+
+# Created at 2021-05-05T12:47:44.033
+Unexpected IOException with stream: e
+
+# Created at 2021-05-05T12:47:44.033
+Unexpected IOException with stream: r
+
+# Created at 2021-05-05T12:47:44.033
+Unexpected IOException with stream: .
+
+# Created at 2021-05-05T12:47:44.033
+Unexpected IOException with stream: c
+
+# Created at 2021-05-05T12:47:44.048
+Unexpected IOException with stream: h
+
+# Created at 2021-05-05T12:47:44.048
+Unexpected IOException with stream: r
+
+# Created at 2021-05-05T12:47:44.048
+Unexpected IOException with stream: o
+
+# Created at 2021-05-05T12:47:44.048
+Unexpected IOException with stream: m
+
+# Created at 2021-05-05T12:47:44.048
+Unexpected IOException with stream: i
+
+# Created at 2021-05-05T12:47:44.064
+Unexpected IOException with stream: u
+
+# Created at 2021-05-05T12:47:44.064
+Unexpected IOException with stream: m
+
+# Created at 2021-05-05T12:47:44.064
+Unexpected IOException with stream: .
+
+# Created at 2021-05-05T12:47:44.064
+Unexpected IOException with stream: o
+
+# Created at 2021-05-05T12:47:44.064
+Unexpected IOException with stream: r
+
+# Created at 2021-05-05T12:47:44.080
+Unexpected IOException with stream: g
+
+# Created at 2021-05-05T12:47:44.080
+Unexpected IOException with stream: /
+
+# Created at 2021-05-05T12:47:44.080
+Unexpected IOException with stream: s
+
+# Created at 2021-05-05T12:47:44.086
+Unexpected IOException with stream: e
+
+# Created at 2021-05-05T12:47:44.086
+Unexpected IOException with stream: c
+
+# Created at 2021-05-05T12:47:44.086
+Unexpected IOException with stream: u
+
+# Created at 2021-05-05T12:47:44.086
+Unexpected IOException with stream: r
+
+# Created at 2021-05-05T12:47:44.086
+Unexpected IOException with stream: i
+
+# Created at 2021-05-05T12:47:44.086
+Unexpected IOException with stream: t
+
+# Created at 2021-05-05T12:47:44.086
+Unexpected IOException with stream: y
+
+# Created at 2021-05-05T12:47:44.102
+Unexpected IOException with stream: -
+
+# Created at 2021-05-05T12:47:44.102
+Unexpected IOException with stream: c
+
+# Created at 2021-05-05T12:47:44.102
+Unexpected IOException with stream: o
+
+# Created at 2021-05-05T12:47:44.102
+Unexpected IOException with stream: n
+
+# Created at 2021-05-05T12:47:44.102
+Unexpected IOException with stream: s
+
+# Created at 2021-05-05T12:47:44.118
+Unexpected IOException with stream: i
+
+# Created at 2021-05-05T12:47:44.118
+Unexpected IOException with stream: d
+
+# Created at 2021-05-05T12:47:44.118
+Unexpected IOException with stream: e
+
+# Created at 2021-05-05T12:47:44.118
+Unexpected IOException with stream: r
+
+# Created at 2021-05-05T12:47:44.118
+Unexpected IOException with stream: a
+
+# Created at 2021-05-05T12:47:44.118
+Unexpected IOException with stream: t
+
+# Created at 2021-05-05T12:47:44.133
+Unexpected IOException with stream: i
+
+# Created at 2021-05-05T12:47:44.133
+Unexpected IOException with stream: o
+
+# Created at 2021-05-05T12:47:44.133
+Unexpected IOException with stream: n
+
+# Created at 2021-05-05T12:47:44.133
+Unexpected IOException with stream: s
+
+# Created at 2021-05-05T12:47:44.150
+Unexpected IOException with stream:  
+
+# Created at 2021-05-05T12:47:44.150
+Unexpected IOException with stream: f
+
+# Created at 2021-05-05T12:47:44.150
+Unexpected IOException with stream: o
+
+# Created at 2021-05-05T12:47:44.165
+Unexpected IOException with stream: r
+
+# Created at 2021-05-05T12:47:44.165
+Unexpected IOException with stream:  
+
+# Created at 2021-05-05T12:47:44.165
+Unexpected IOException with stream: s
+
+# Created at 2021-05-05T12:47:44.165
+Unexpected IOException with stream: u
+
+# Created at 2021-05-05T12:47:44.165
+Unexpected IOException with stream: g
+
+# Created at 2021-05-05T12:47:44.185
+Unexpected IOException with stream: g
+
+# Created at 2021-05-05T12:47:44.189
+Unexpected IOException with stream: e
+
+# Created at 2021-05-05T12:47:44.194
+Unexpected IOException with stream: s
+
+# Created at 2021-05-05T12:47:44.195
+Unexpected IOException with stream: t
+
+# Created at 2021-05-05T12:47:44.195
+Unexpected IOException with stream: i
+
+# Created at 2021-05-05T12:47:44.195
+Unexpected IOException with stream: o
+
+# Created at 2021-05-05T12:47:44.195
+Unexpected IOException with stream: n
+
+# Created at 2021-05-05T12:47:44.195
+Unexpected IOException with stream: s
+
+# Created at 2021-05-05T12:47:44.211
+Unexpected IOException with stream:  
+
+# Created at 2021-05-05T12:47:44.211
+Unexpected IOException with stream: o
+
+# Created at 2021-05-05T12:47:44.211
+Unexpected IOException with stream: n
+
+# Created at 2021-05-05T12:47:44.211
+Unexpected IOException with stream:  
+
+# Created at 2021-05-05T12:47:44.211
+Unexpected IOException with stream: k
+
+# Created at 2021-05-05T12:47:44.211
+Unexpected IOException with stream: e
+
+# Created at 2021-05-05T12:47:44.211
+Unexpected IOException with stream: e
+
+# Created at 2021-05-05T12:47:44.227
+Unexpected IOException with stream: p
+
+# Created at 2021-05-05T12:47:44.227
+Unexpected IOException with stream: i
+
+# Created at 2021-05-05T12:47:44.227
+Unexpected IOException with stream: n
+
+# Created at 2021-05-05T12:47:44.227
+Unexpected IOException with stream: g
+
+# Created at 2021-05-05T12:47:44.243
+Unexpected IOException with stream:  
+
+# Created at 2021-05-05T12:47:44.243
+Unexpected IOException with stream: C
+
+# Created at 2021-05-05T12:47:44.243
+Unexpected IOException with stream: h
+
+# Created at 2021-05-05T12:47:44.243
+Unexpected IOException with stream: r
+
+# Created at 2021-05-05T12:47:44.258
+Unexpected IOException with stream: o
+
+# Created at 2021-05-05T12:47:44.258
+Unexpected IOException with stream: m
+
+# Created at 2021-05-05T12:47:44.258
+Unexpected IOException with stream: e
+
+# Created at 2021-05-05T12:47:44.258
+Unexpected IOException with stream: D
+
+# Created at 2021-05-05T12:47:44.258
+Unexpected IOException with stream: r
+
+# Created at 2021-05-05T12:47:44.274
+Unexpected IOException with stream: i
+
+# Created at 2021-05-05T12:47:44.274
+Unexpected IOException with stream: v
+
+# Created at 2021-05-05T12:47:44.274
+Unexpected IOException with stream: e
+
+# Created at 2021-05-05T12:47:44.274
+Unexpected IOException with stream: r
+
+# Created at 2021-05-05T12:47:44.286
+Unexpected IOException with stream:  
+
+# Created at 2021-05-05T12:47:44.286
+Unexpected IOException with stream: s
+
+# Created at 2021-05-05T12:47:44.286
+Unexpected IOException with stream: a
+
+# Created at 2021-05-05T12:47:44.286
+Unexpected IOException with stream: f
+
+# Created at 2021-05-05T12:47:44.303
+Unexpected IOException with stream: e
+
+# Created at 2021-05-05T12:47:44.303
+Unexpected IOException with stream: .
+
+# Created at 2021-05-05T12:47:44.303
+Unexpected IOException with stream: 
+
+# Created at 2021-05-05T12:47:44.319
+Unexpected IOException with stream: 
+
+
+# Created at 2021-05-05T12:47:44.319
+Unexpected IOException with stream: C
+
+# Created at 2021-05-05T12:47:44.319
+Unexpected IOException with stream: h
+
+# Created at 2021-05-05T12:47:44.335
+Unexpected IOException with stream: r
+
+# Created at 2021-05-05T12:47:44.335
+Unexpected IOException with stream: o
+
+# Created at 2021-05-05T12:47:44.335
+Unexpected IOException with stream: m
+
+# Created at 2021-05-05T12:47:44.335
+Unexpected IOException with stream: e
+
+# Created at 2021-05-05T12:47:44.350
+Unexpected IOException with stream: D
+
+# Created at 2021-05-05T12:47:44.350
+Unexpected IOException with stream: r
+
+# Created at 2021-05-05T12:47:44.350
+Unexpected IOException with stream: i
+
+# Created at 2021-05-05T12:47:44.350
+Unexpected IOException with stream: v
+
+# Created at 2021-05-05T12:47:44.350
+Unexpected IOException with stream: e
+
+# Created at 2021-05-05T12:47:44.366
+Unexpected IOException with stream: r
+
+# Created at 2021-05-05T12:47:44.366
+Unexpected IOException with stream:  
+
+# Created at 2021-05-05T12:47:44.366
+Unexpected IOException with stream: w
+
+# Created at 2021-05-05T12:47:44.366
+Unexpected IOException with stream: a
+
+# Created at 2021-05-05T12:47:44.366
+Unexpected IOException with stream: s
+
+# Created at 2021-05-05T12:47:44.366
+Unexpected IOException with stream:  
+
+# Created at 2021-05-05T12:47:44.382
+Unexpected IOException with stream: s
+
+# Created at 2021-05-05T12:47:44.382
+Unexpected IOException with stream: t
+
+# Created at 2021-05-05T12:47:44.387
+Unexpected IOException with stream: a
+
+# Created at 2021-05-05T12:47:44.387
+Unexpected IOException with stream: r
+
+# Created at 2021-05-05T12:47:44.387
+Unexpected IOException with stream: t
+
+# Created at 2021-05-05T12:47:44.387
+Unexpected IOException with stream: e
+
+# Created at 2021-05-05T12:47:44.402
+Unexpected IOException with stream: d
+
+# Created at 2021-05-05T12:47:44.402
+Unexpected IOException with stream:  
+
+# Created at 2021-05-05T12:47:44.402
+Unexpected IOException with stream: s
+
+# Created at 2021-05-05T12:47:44.418
+Unexpected IOException with stream: u
+
+# Created at 2021-05-05T12:47:44.418
+Unexpected IOException with stream: c
+
+# Created at 2021-05-05T12:47:44.418
+Unexpected IOException with stream: c
+
+# Created at 2021-05-05T12:47:44.418
+Unexpected IOException with stream: e
+
+# Created at 2021-05-05T12:47:44.418
+Unexpected IOException with stream: s
+
+# Created at 2021-05-05T12:47:44.418
+Unexpected IOException with stream: s
+
+# Created at 2021-05-05T12:47:44.433
+Unexpected IOException with stream: f
+
+# Created at 2021-05-05T12:47:44.433
+Unexpected IOException with stream: u
+
+# Created at 2021-05-05T12:47:44.433
+Unexpected IOException with stream: l
+
+# Created at 2021-05-05T12:47:44.433
+Unexpected IOException with stream: l
+
+# Created at 2021-05-05T12:47:44.450
+Unexpected IOException with stream: y
+
+# Created at 2021-05-05T12:47:44.450
+Unexpected IOException with stream: .
+
+# Created at 2021-05-05T12:47:44.450
+Unexpected IOException with stream: 
+
+# Created at 2021-05-05T12:47:44.466
+Unexpected IOException with stream: 
+
+
+# Created at 2021-05-05T12:47:44.466
+Unexpected IOException with stream: may 05, 2021 12:47:36 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFORMACIÓN: Detected dialect: W3C
+
+
+# Created at 2021-05-05T12:47:44.466
+Unexpected IOException with stream: 12:47:41.022 [pool-1-thread-1] DEBUG n.t.core.steps.StepInterceptor - STEP DONE: {0} opens the #url
+
+
+# Created at 2021-05-05T12:47:44.466
+Unexpected IOException with stream: 12:47:41.032 [pool-1-thread-1] DEBUG n.t.core.steps.StepInterceptor - STEP DONE: {0} navega hacia la pagina: #url
+
+
+# Created at 2021-05-05T12:47:44.466
+Unexpected IOException with stream: 12:47:41.051 [pool-1-thread-1] DEBUG n.t.core.steps.StepInterceptor - STARTING STEP: BaseActions.waitUntilCharge - performAs
+
+
+# Created at 2021-05-05T12:47:44.466
+Unexpected IOException with stream: 12:47:41.106 [pool-1-thread-1] DEBUG n.s.core.photography.Darkroom - Opening darkroom
+
+
+# Created at 2021-05-05T12:47:44.482
+Unexpected IOException with stream: 12:47:41.107 [Darkroom Processing Line] DEBUG n.s.c.p.DarkroomProcessingLine - Darkroom processing line starting up
+
+
+# Created at 2021-05-05T12:47:44.487
+Unexpected IOException with stream:   [31mDado [0m[31mque usuario:[0m[31m[1m"admuser"[0m[31m realiza Login en COBIS con pass:[0m[31m[1m"Passw0rd2019*#"[0m[31m rol:[0m[31m[1m"MENU POR PROCESOS"[0m[31m filial:[0m[31m[1m"BANCO COBIS"[0m[31m oficina:[0m[31m[1m"OFICINA MATRIZ"[0m[31m en la url:[0m[31m[1m"http://www.demo1.cloud-cobiscorp.com/CWC/services/cobis/web/bank/views/commons/login.html"[0m [90m# com.cobiscorp.cobis.pfprt.test.impl.steps.CommonStepDefinitions.que_usuario_realiza_Login_en_COBIS_con_pass_rol_filial_oficina_en_la_url(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[0m
+
+# Created at 2021-05-05T12:47:44.487
+Unexpected IOException with stream: 
+
+
+# Created at 2021-05-05T12:47:44.487
+Unexpected IOException with stream:       [31morg.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=90.0.4430.93)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PC01EXT100', ip: '192.168.200.13', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 90.0.4430.93, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: C:\Users\rreyes\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:61581}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: c7972c62e70e26e2f3bd026585de9f9d
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeAsyncScript(RemoteWebDriver.java:506)
+	at net.thucydides.core.webdriver.WebDriverFacade.executeAsyncScript(WebDriverFacade.java:380)
+	at com.paulhammant.ngwebdriver.NgWebDriver.waitForAngularRequestsToFinish(NgWebDriver.java:68)
+	at net.serenitybdd.core.pages.PageObject.lambda$waitForAngularRequestsToFinish$1(PageObject.java:1327)
+	at java.util.Optional.ifPresent(Optional.java:159)
+	at net.serenitybdd.core.pages.PageObject.waitForAngularRequestsToFinish(PageObject.java:1326)
+	at net.serenitybdd.screenplay.waits.WaitUntilAngularIsReady.performAs(WaitUntilAngularIsReady.java:21)
+	at net.serenitybdd.screenplay.waits.WaitUntilAngularIsReady$ByteBuddy$To7crzve.performAs$accessor$U6BO87Il(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.thucydides.core.steps.StepInterceptor.invokeMethod(StepInterceptor.java:488)
+	at net.thucydides.core.steps.StepInterceptor.executeTestStepMethod(StepInterceptor.java:468)
+	at net.thucydides.core.steps.StepInterceptor.runTestStep(StepInterceptor.java:441)
+	at net.thucydides.core.steps.StepInterceptor.runOrSkipMethod(StepInterceptor.java:197)
+	at net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:184)
+	at net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:77)
+	at net.serenitybdd.screenplay.waits.WaitUntilAngularIsReady$ByteBuddy$To7crzve.performAs(Unknown Source)
+	at net.serenitybdd.screenplay.Actor.performTask(Actor.java:248)
+	at net.serenitybdd.screenplay.Actor.perform(Actor.java:229)
+	at net.serenitybdd.screenplay.Actor.attemptsTo(Actor.java:175)
+	at com.cobiscorp.cobis.serenity.actions.BaseActions.waitUntilCharge(BaseActions.java:23)
+	at com.cobiscorp.cobis.serenity.actions.ContainerActions.loginWith(ContainerActions.java:33)
+	at com.cobiscorp.cobis.pfprt.test.impl.steps.CommonStepDefinitions.que_usuario_realiza_Login_en_COBIS_con_pass_rol_filial_oficina_en_la_url(CommonStepDefinitions.java:24)
+	at ?.que usuario:"admuser" realiza Login en COBIS con pass:"Passw0rd2019*#" rol:"MENU POR PROCESOS" filial:"BANCO COBIS" oficina:"OFICINA MATRIZ" en la url:"http://www.demo1.cloud-cobiscorp.com/CWC/services/cobis/web/bank/views/commons/login.html"(file:///C:/Users/rreyes/Desktop/Programs/repositoriosGIT/PruebasAutomaticas/PA_PC_V2/Front/PFIOperation/build/cobis/rel/projects/pfprt.pfioperation.test.impl/src/test/resources/features/Example/CancelacionCertificado.feature:11)
+[0m
+
+# Created at 2021-05-05T12:47:44.487
+Unexpected IOException with stream: 
+
+
+# Created at 2021-05-05T12:47:44.502
+Unexpected IOException with stream:   [36mDado [0m[36mque navega desde [0m[36m[1m"Depósitos a Plazo"[0m[36m hacia [0m[36m[1m"Búsqueda de Depósitos"[0m                                                                                                                                                                                 [90m# com.cobiscorp.cobis.pfprt.test.impl.steps.CommonStepDefinitions.que_navega_desde_origen_hacia_destino(java.lang.String,java.lang.String)[0m
+
+# Created at 2021-05-05T12:47:44.502
+Unexpected IOException with stream: 
+
+
+# Created at 2021-05-05T12:47:44.502
+Unexpected IOException with stream:   [36mCuando [0m[36mse busca el certificado de depósito por [0m[36m[1m"Numero de operación"[0m[36m con [0m[36m[1m"70100016374"[0m                                                                                                                                                                  [90m# com.cobiscorp.cobis.pfprt.test.impl.steps.CancelacionCertificado.se_busca_el_certificado_de_depósito_por_con(java.lang.String,java.lang.String)[0m
+
+# Created at 2021-05-05T12:47:44.518
+Unexpected IOException with stream: 
+
+
+# Created at 2021-05-05T12:47:44.518
+Unexpected IOException with stream:   [36mY [0m[36mse presiona el menú acciones, escoge la opción [0m[36m[1m"Cancelación Normal"[0m                                                                                                                                                                                   [90m# com.cobiscorp.cobis.pfprt.test.impl.steps.CancelacionCertificado.se_presiona_el_menú_acciones_escoge_la_opción(java.lang.String)[0m
+
+# Created at 2021-05-05T12:47:44.518
+Unexpected IOException with stream: 
+
+
+# Created at 2021-05-05T12:47:44.534
+Unexpected IOException with stream:   [36mY [0m[36mpresiona el botón siguientes[0m                                                                                                                                                                                                                          [90m# com.cobiscorp.cobis.pfprt.test.impl.steps.CancelacionCertificado.presiona_el_botón_siguientes()[0m
+
+# Created at 2021-05-05T12:47:44.534
+Unexpected IOException with stream: 
+
+
+# Created at 2021-05-05T12:47:44.534
+Unexpected IOException with stream:   [36mY [0m[36mdiligencia el formulario de Cancelación [0m[36m[1m"12000"[0m[36m,[0m[36m[1m"6000"[0m[36m,[0m[36m[1m'12'[0m[36m,[0m[36m[1m'12000'[0m[36m,[0m[36m[1m'12'[0m[36m,[0m[36m[1m''[0m[36m,[0m[36m[1m'RAMON  GARCIA LOPEZ'[0m[36m,[0m[36m[1m''[0m                                                                                                                                                  [90m# com.cobiscorp.cobis.pfprt.test.impl.steps.CancelacionCertificado.diligencia_el_formulario_de_Cancelación(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[0m
+
+# Created at 2021-05-05T12:47:44.550
+Unexpected IOException with stream: 
+
+
+# Created at 2021-05-05T12:47:44.550
+Unexpected IOException with stream:   [36mY [0m[36mllena el formulario de forma de pago [0m[36m[1m'CUENTA DE AHORROS'[0m[36m a [0m[36m[1m'RAMON  GARCIA LOPEZ'[0m[36m,[0m[36m[1m'1'[0m[36m,[0m[36m[1m'0000100100000000401'[0m[36m con [0m[36m[1m'12345678'[0m                                                                                                                             [90m# com.cobiscorp.cobis.pfprt.test.impl.steps.CancelacionCertificado.llena_el_formulario_de_forma_de_pago_a_con(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[0m
+
+# Created at 2021-05-05T12:47:44.550
+Unexpected IOException with stream: 
+
+
+# Created at 2021-05-05T12:47:44.566
+Unexpected IOException with stream:   [36mEntonces [0m[36men la pantalla emergente de los números de cuenta no se visualiza la cuenta cerrada[0m                                                                                                                                                            [90m# com.cobiscorp.cobis.pfprt.test.impl.steps.CancelacionCertificado.en_la_pantalla_emergente_de_los_números_de_cuenta_no_se_visualiza_la_cuenta_cerrada()[0m
+
+# Created at 2021-05-05T12:47:44.566
+Unexpected IOException with stream: 
+
+
+# Created at 2021-05-05T12:47:44.566
+Unexpected IOException with stream: 12:47:43.167 [Darkroom Processing Line] DEBUG n.s.c.p.DarkroomProcessingLine - Darkroom processing line shutting down
+
+
+# Created at 2021-05-05T12:47:44.581
+Unexpected IOException: 7,1,Cancelacion de Certificado de Deposito,Verificar la cancelaci\00F3n de un Certificado de Deposito con NC a una cuenta aho/cte cerrada(Cancelacion de Certificado de Deposito),null,no such window: target window already closed\000Afrom unknown error: web view not found\000A  (Session info: chrome=90.0.4430.93)\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'PC01EXT100'\002C ip: '192.168.200.13'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_271'\000ADriver info: org.openqa.selenium.chrome.ChromeDriver\000ACapabilities {acceptInsecureCerts: true\002C browserName: chrome\002C browserVersion: 90.0.4430.93\002C chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da...\002C userDataDir: C:\005CUsers\005Crreyes\005CAppData\005CLoc...}\002C goog:chromeOptions: {debuggerAddress: localhost:61581}\002C javascriptEnabled: true\002C networkConnectionEnabled: false\002C pageLoadStrategy: normal\002C platform: WINDOWS\002C platformName: WINDOWS\002C proxy: Proxy()\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify\002C webauthn:extension:largeBlob: true\002C webauthn:virtualAuthenticators: true}\000ASession ID: c7972c62e70e26e2f3bd026585de9f9d,7532,no such window: target window already closed\000Afrom unknown error: web view not found\000A  (Session info: chrome=90.0.4430.93)\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'PC01EXT100'\002C ip: '192.168.200.13'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_271'\000ADriver info: org.openqa.selenium.chrome.ChromeDriver\000ACapabilities {acceptInsecureCerts: true\002C browserName: chrome\002C browserVersion: 90.0.4430.93\002C chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da...\002C userDataDir: C:\005CUsers\005Crreyes\005CAppData\005CLoc...}\002C goog:chromeOptions: {debuggerAddress: localhost:61581}\002C javascriptEnabled: true\002C networkConnectionEnabled: false\002C pageLoadStrategy: normal\002C platform: WINDOWS\002C platformName: WINDOWS\002C proxy: Proxy()\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify\002C webauthn:extension:largeBlob: true\002C webauthn:virtualAuthenticators: true}\000ASession ID: c7972c62e70e26e2f3bd026585de9f9d,no such window: target window already closed\000Afrom unknown error: web view not found\000A  (Session info: chrome=90.0.4430.93)\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'PC01EXT100'\002C ip: '192.168.200.13'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_271'\000ADriver info: org.openqa.selenium.chrome.ChromeDriver\000ACapabilities {acceptInsecureCerts: true\002C browserName: chrome\002C browserVersion: 90.0.4430.93\002C chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da...\002C userDataDir: C:\005CUsers\005Crreyes\005CAppData\005CLoc...}\002C goog:chromeOptions: {debuggerAddress: localhost:61581}\002C javascriptEnabled: true\002C networkConnectionEnabled: false\002C pageLoadStrategy: normal\002C platform: WINDOWS\002C platformName: WINDOWS\002C proxy: Proxy()\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify\002C webauthn:extension:largeBlob: true\002C webauthn:virtualAuthenticators: true}\000ASession ID: c7972c62e70e26e2f3bd026585de9f9d,org.openqa.selenium.NoSuchWindowException: \000Ano such window: target window already closed\000Afrom unknown error: web view not found\000A  (Session info: chrome=90.0.4430.93)\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'PC01EXT100'\002C ip: '192.168.200.13'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_271'\000ADriver info: org.openqa.selenium.chrome.ChromeDriver\000ACapabilities {acceptInsecureCerts: true\002C browserName: chrome\002C browserVersion: 90.0.4430.93\002C chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da...\002C userDataDir: C:\005CUsers\005Crreyes\005CAppData\005CLoc...}\002C goog:chromeOptions: {debuggerAddress: localhost:61581}\002C javascriptEnabled: true\002C networkConnectionEnabled: false\002C pageLoadStrategy: normal\002C platform: WINDOWS\002C platformName: WINDOWS\002C proxy: Proxy()\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify\002C webauthn:extension:largeBlob: true\002C webauthn:virtualAuthenticators: true}\000ASession ID: c7972c62e70e26e2f3bd026585de9f9d\000A
+
+
+# Created at 2021-05-05T12:47:44.587
+Unexpected IOException: 2,1,Cancelacion de Certificado de Deposito,Cancelacion de Certificado de Deposito,null,null,7532
+
+

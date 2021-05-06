@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Features</title>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.20/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.20/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.20/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.20/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.20/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- JQuery-UI -->
+<link type="text/css" href="jqueryui/1.11.2-start/jquery-ui.min.css" rel="Stylesheet" />
+<script type="text/javascript" src="jqueryui/1.11.2-start/jquery-ui.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.20/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.20/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.20/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.20/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.20/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            var scenarioTable = $('.scenario-result-table').DataTable({
+
+                "order": [],
+                "language": {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                }
+            });
+
+            $('.example-table table').DataTable({
+                searching: false,
+                ordering: false,
+                paging: false,
+                info: false
+            });
+
+            $('.example-table-in-scenario table').DataTable({
+                searching: false,
+                ordering: false,
+                paging: false,
+                info: false
+            });
+
+            $('#evidence-table').DataTable(
+                    {
+                        searching: false,
+                        ordering: false,
+                        paging: false,
+                        info: false
+                    }
+            );
+
+
+            $(".scenario-docs .card-body table").wrap("<div class='table-responsive'></div>");
+
+            $("#requirements-tabs").tabs();
+            $("#test-tabs").tabs();
+
+            var requirementsTree = [{"text":"Cancelacion de Certificado de Deposito","type":"feature","href":"3ba666175879d7b27f44a7ad9f4293f80d840b0df14bcb52317ccfae8106c702.html","nodes":[],"selectable":false,"tags":["","\u003cspan class\u003d\u0027feature-count\u0027\u003e3 scenarios\u003c/span\u003e"]}];
+
+            $('#tree').treeview({
+                data: requirementsTree,
+                enableLinks: true,
+                showTags: true,
+                expandIcon: "glyphicon glyphicon-folder-close",
+                collapseIcon: "glyphicon glyphicon-folder-open",
+                emptyIcon: "glyphicon glyphicon-book"
+            });
+
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $(".scenario-docs > div > p").html(function () {
+                var text = $(this).text().trim().split(" ");
+                var first = text.shift();
+                return (text.length > 0 ? "<strong>" + first + "</strong> " : first) + text.join(" ");
+            });
+        });
+    </script>
+</head>
+
+<body class="results-page">
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Serenity and JUnit Quick Start Project</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+            <a href='index.html'>Home</a> > <a href="capabilities.html">Requirements</a>
+
+                > <a href="96f4f24c6d8bdbfda64f34442ccf6d08eaf515d90ba83f16f37ba7d3c53aa120.html">Example</a>
+
+
+                > <span class="truncate-40">Cancelacion De Certificado De Deposito</span>
+
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li >
+            <a href="index.html"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="7ea0a5e2d679b9deeda9910ae4a9bcd3a281e0d908303a9e16e486103e98880c.html"><i class="fa fa-comments-o"></i> Capabilities</a>
+        </li>
+        <li class="active">
+            <a href="#"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 05-05-2021 10:22</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+    <div id="beforetable"></div>
+    <div id="results-dashboard">
+        <div class="table">
+                <div class=row">
+                    <div class="col-sm-12">
+                        <div>
+                            <div clas="table">
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                    <span>
+                                            <h2><i class="fa fa-book"></i> Feature:  Cancelacion De Certificado De Deposito</h2>
+                                        </span>
+                                </div>
+                                    <div class="col-sm-4">
+                                        <span class="feature-tags">
+                                                <p class="tag">
+                                                    <span class="badge tag-badge" style="background:default;">
+                                                        <i class="fa fa-tag"></i>&nbsp;<a class="tagLink"
+                                                                                          style="background:default;"
+                                                                                          href="dbf44a7e671a5efb5e1b94ac5b8f336ca1b8f41530b25fa8a72eef603df3caca.html">Cancelacion Cuenta Bloqueada
+                                                        (tag)</a>
+                                                    </span>
+                                                </p>
+                                        </span>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="requirementNarrativeTitle">
+                                COMO usuario de la plataforma Cobis , usando filial , oficina y rol del modulo de DPF<br />
+QUIERO cancelar un Certificado de Depósitos a Plazo<br />
+PARA  evidenciar la cancelación correcta de un Certificado de Depósito
+                            </div>
+
+                        </div>
+                    </div>
+
+
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <!-- Requirements result tabs -->
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-toggle="tab" href="#specs"><i class="fas fa-comments"></i> Specifications</a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#results"><i class="fas fa-tachometer-alt"></i> Test Results</a>
+                        </li>
+                    </ul>
+
+                    <!-- Specifications and Results tabs -->
+                    <div class="card border">
+                        <div class="tab-content" id="pills-tabContent">
+                            <div id="specs" class="tab-pane fade in active">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+
+
+                                            <h3>Scenarios</h3>
+
+                                            <div id="toc">
+                                                <table class="table" id="toc-table">
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#5e280f97176458e875ed85110b55b1172a65ebf4771ea19ce594a407c4d0a913" title="View scenario details" >El usuario ingresa a cobis</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#879f1aad832e9bba8f2bcda7cccaae2ba7f4e200a5b2f8ee81d841ba4d88502d" title="View scenario details" >Verificar la cancelación de un certificado de deposito con NC a una cuenta aho/cte bloqueada contra depósito</a>
+                                                                     (1 example)
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="0d12f07e34fa5740f3c2f8027b4bfc87fc0b1599d20f7da3742372da6b73dfe8.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="0d12f07e34fa5740f3c2f8027b4bfc87fc0b1599d20f7da3742372da6b73dfe8.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#71ac9ba08cb2a8329782f797d1c61a26a93c9cb7bac820d750ece73925c6783b" title="View scenario details" >Verificar la cancelación de un certificado de deposito con NC a una cuenta aho/cte inmovilizada</a>
+                                                                     (1 example)
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="86c68f84de18522ecb06f01d1d0206ba5d58d5d36430d09a5aff824e37e0fd54.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="86c68f84de18522ecb06f01d1d0206ba5d58d5d36430d09a5aff824e37e0fd54.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#a6d8cf65bec895a20c93181a3ded18ad66ff23e2d1fe4d9d0f8cee6789df1724" title="View scenario details" >Verificar la cancelación de un certificado de deposito con NC a una cuenta aho/cte cerrada</a>
+                                                                     (1 example)
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="1bc22f51cb4a77fdde31475e36f83d5744b9f4d7cbe765590c2f8c2def068e4b.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="1bc22f51cb4a77fdde31475e36f83d5744b9f4d7cbe765590c2f8c2def068e4b.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                </table>
+
+                                            </div>
+
+                                            <h3>Scenario details</h3>
+
+                                                <div class="scenario-docs card" id="5e280f97176458e875ed85110b55b1172a65ebf4771ea19ce594a407c4d0a913">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">El usuario ingresa a cobis</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Dado que usuario realiza login en el sistema cobis</p>
+                                                            <p>Dado que navega desde &quot;Depósitos a Plazo&quot; hacia &quot;Búsqueda de Depósitos&quot;</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="879f1aad832e9bba8f2bcda7cccaae2ba7f4e200a5b2f8ee81d841ba4d88502d">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="0d12f07e34fa5740f3c2f8027b4bfc87fc0b1599d20f7da3742372da6b73dfe8.html" title="View test results">Verificar la cancelación de un Certificado de Deposito con NC a una cuenta aho/cte bloqueada contra depósito</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Cuando se busca el certificado de depósito por {numero_de_operacion} con {numero}</p>
+                                                            <p>Y se presiona el menú acciones, escoge la opción {opcion}</p>
+                                                            <p>Y presiona el botón siguientes</p>
+                                                            <p>Y diligencia el formulario de Cancelación {capital},{saldo},{impuesto},{total},{interesGanado},{interesPagado},{solicitante},{observacion}</p>
+                                                            <p>Y llena el formulario de forma de pago {formaRecepcion} a {beneficiario},{columna},{cuenta} con {montoPago}</p>
+                                                            <p>Entonces el sistema despliega un mensaje informativo indicando que la cuenta se encuentra {estado}</p>
+                                                        <div class="examples">
+                                                            <p><p>Ejemplos:</p>
+<div class='example-table-in-scenario'><table>
+<thead>
+<tr><th>numero_de_operacion</th><th>numero</th><th>opcion</th><th>capital</th><th>saldo</th><th>impuesto</th><th>total</th><th>interesGanado</th><th>interesPagado</th><th>solicitante</th><th>observacion</th><th>formaRecepcion</th><th>beneficiario</th><th>columna</th><th>cuenta</th><th>montoPago</th><th>estado</th><th></th></tr>
+</thead>
+<tbody>
+<tr><td>&quot;Numero de operación&quot;</td><td>&quot;70100016369&quot;</td><td>&quot;Cancelación Normal&quot;</td><td>&quot;&quot;</td><td>&quot;&quot;</td><td>''</td><td>''</td><td>''</td><td>''</td><td>'LUIS CHAVEZ'</td><td>''</td><td>'CUENTA DE AHORROS'</td><td>'LUIS CHAVEZ'</td><td>'1'</td><td>'4090010300000000030'</td><td>'15103.54'</td><td>'CAN'</td><td><a href='0d12f07e34fa5740f3c2f8027b4bfc87fc0b1599d20f7da3742372da6b73dfe8.html#beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a></td></tr>
+</tbody>
+</table></div>
+</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="71ac9ba08cb2a8329782f797d1c61a26a93c9cb7bac820d750ece73925c6783b">
+                                                    <div class="scenario-docs card-header error" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="86c68f84de18522ecb06f01d1d0206ba5d58d5d36430d09a5aff824e37e0fd54.html" title="View test results">Verificar la cancelación de un Certificado de Deposito con NC a una cuenta aho/cte inmovilizada</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Cuando se busca el certificado de depósito por {numero_de_operacion} con {numero}</p>
+                                                            <p>Y se presiona el menú acciones, escoge la opción {opcion}</p>
+                                                            <p>Y presiona el botón siguientes</p>
+                                                            <p>Y diligencia el formulario de Cancelación {capital},{saldo},{impuesto},{total},{interesGanado},{interesPagado},{solicitante},{observacion}</p>
+                                                            <p>Y llena el formulario de forma de pago {formaRecepcion} a {beneficiario},{columna},{cuenta} con {montoPago}</p>
+                                                            <p>Entonces el sistema despliega un mensaje informativo indicando que la cuenta se encuentra {estado}</p>
+                                                        <div class="examples">
+                                                            <p><p>Ejemplos:</p>
+<div class='example-table-in-scenario'><table>
+<thead>
+<tr><th>numero_de_operacion</th><th>numero</th><th>opcion</th><th>capital</th><th>saldo</th><th>impuesto</th><th>total</th><th>interesGanado</th><th>interesPagado</th><th>solicitante</th><th>observacion</th><th>formaRecepcion</th><th>beneficiario</th><th>columna</th><th>cuenta</th><th>montoPago</th><th>estado</th><th></th></tr>
+</thead>
+<tbody>
+<tr><td>&quot;Numero de operación&quot;</td><td>&quot;70100016306&quot;</td><td>&quot;Cancelación Normal&quot;</td><td>&quot;&quot;</td><td>&quot;&quot;</td><td>''</td><td>''</td><td>''</td><td>''</td><td>'ANTONIO  GONZALEZ'</td><td>''</td><td>'CUENTA DE AHORROS'</td><td>'ANTONIO  GONZALEZ'</td><td>'1'</td><td>'1234567892'</td><td>'12345678'</td><td>'CAN'</td><td><a href='86c68f84de18522ecb06f01d1d0206ba5d58d5d36430d09a5aff824e37e0fd54.html#beforetable'><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i></a></td></tr>
+</tbody>
+</table></div>
+</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="a6d8cf65bec895a20c93181a3ded18ad66ff23e2d1fe4d9d0f8cee6789df1724">
+                                                    <div class="scenario-docs card-header failure" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="1bc22f51cb4a77fdde31475e36f83d5744b9f4d7cbe765590c2f8c2def068e4b.html" title="View test results">Verificar la cancelación de un Certificado de Deposito con NC a una cuenta aho/cte cerrada</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Cuando se busca el certificado de depósito por {numero_de_operacion} con {numero}</p>
+                                                            <p>Y se presiona el menú acciones, escoge la opción {opcion}</p>
+                                                            <p>Y presiona el botón siguientes</p>
+                                                            <p>Y diligencia el formulario de Cancelación {capital},{saldo},{impuesto},{total},{interesGanado},{interesPagado},{solicitante},{observacion}</p>
+                                                            <p>Y llena el formulario de forma de pago {formaRecepcion} a {beneficiario},{columna},{cuenta} con {montoPago}</p>
+                                                            <p>Entonces en la pantalla emergente de los números de cuenta no se visualiza la cuenta cerrada</p>
+                                                        <div class="examples">
+                                                            <p><p>Ejemplos:</p>
+<div class='example-table-in-scenario'><table>
+<thead>
+<tr><th>numero_de_operacion</th><th>numero</th><th>opcion</th><th>capital</th><th>saldo</th><th>impuesto</th><th>total</th><th>interesGanado</th><th>interesPagado</th><th>solicitante</th><th>observacion</th><th>formaRecepcion</th><th>beneficiario</th><th>columna</th><th>cuenta</th><th>montoPago</th><th>estado</th><th></th></tr>
+</thead>
+<tbody>
+<tr><td>&quot;Numero de operación&quot;</td><td>&quot;70100016374&quot;</td><td>&quot;Cancelación Normal&quot;</td><td>&quot;&quot;</td><td>&quot;&quot;</td><td>''</td><td>''</td><td>''</td><td>''</td><td>'RAMON  GARCIA LOPEZ'</td><td>''</td><td>'CUENTA DE AHORROS'</td><td>'RAMON  GARCIA LOPEZ'</td><td>'1'</td><td>'0000100100000000401'</td><td>'12345678'</td><td>'CAN'</td><td><a href='1bc22f51cb4a77fdde31475e36f83d5744b9f4d7cbe765590c2f8c2def068e4b.html#beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a></td></tr>
+</tbody>
+</table></div>
+</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="results" class="tab-pane fade">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+
+                                            <div style="width:300px;" class="chart-container automated-and-manual-results">
+                                                <div class="ct-chart ct-square"></div>
+                                            </div>
+                                            <script>
+
+                                                var labels = ['33%', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '33%', ' ', '33%', ' ', ' ', ' '];
+                                                // Our series array that contains series objects or in this case series data arrays
+
+                                                var series = [{meta: 'Passing tests (automated)', value: 1}, {meta: 'Passing tests (manual)', value: 0}, {meta: 'Pending tests (automated)', value: 0}, {meta: 'Pending tests (manual)', value: 0}, {meta: 'Ignored tests (automated)', value: 0}, {meta: 'Ignored tests (manual)', value: 0}, {meta: 'Skipped tests (automated)', value: 0}, {meta: 'Skipped tests (manual)', value: 0}, {meta: 'Failing tests (automated)', value: 1}, {meta: 'Failing tests (manual)', value: 0}, {meta: 'Broken tests (automated)', value: 1}, {meta: 'Broken tests (manual)', value: 0}, {meta: 'Compromised tests (automated)', value: 0}, {meta: 'Compromised tests (manual)', value: 0}];
+
+                                                // As options we currently only set a static size of 300x200 px. We can also omit this and use aspect ratio containers
+                                                // as you saw in the previous example
+                                                var options = {
+                                                    width: 350,
+                                                    height: 300
+                                                };
+
+                                                $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                                                    new Chartist.Pie('.ct-chart', {
+                                                        series: series,
+                                                        labels: labels,
+                                                    }, {
+                                                        donut: true,
+                                                        donutWidth: 60,
+                                                        donutSolid: true,
+                                                        startAngle: 270,
+                                                        showLabel: true
+                                                    }, options);
+                                                });
+
+                                            </script>
+                                        </div>
+                                        <div class="col-sm-8">
+
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th scope="col">Scenario Results (including rows of test data)</th>
+                                                <th scope="col" colspan="2" class="automated-stats">
+                                                    Automated
+                                                </th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                                    <td class="aggregate-result-count">
+                                                                        <a href="1f6b359befc47f10e1d312c42228e323035aa43b1d51a3d95e7744ce5919b762.html"><i
+                                                                                class='fa fa-check-circle-o success-icon'></i>&nbsp;Passing</a>
+                                                                    </td>
+                                                <td class="automated-stats">1</td>
+                                                <td class="automated-stats">33%</td>
+                                            </tr>
+                                            <tr>
+                                                                    <td class="aggregate-result-count"><i
+                                                                            class='fa fa-stop-circle-o pending-icon'></i>&nbsp;Pending
+                                                                    </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                        class='fa fa-ban ignored-icon'></i>&nbsp;Ignored
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                        class='fa fa-fast-forward skip-icon'></i>&nbsp;Skipped
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr>
+                                                                             <td colspan="3"><a href="f26203e6a7653229d5d4cf262b8177009436c094edd49e487c6dc6683ed84f8d.html"><i
+                                                                                    class='fa fa-times failure-icon'></i>&nbsp;<em>Unsuccessful</em></a>
+                                                                            </td>
+
+                                            </tr>
+
+                                            <tr>
+                                                                    <td class="aggregate-result-count indented-error-category">
+                                                                        <a href="f3cd6e034b9decfeb49d2694e5b5df1d883360f97a3593660a2d26b71bc417ae.html"><i
+                                                                                class='fa fa-times-circle failure-icon'></i>&nbsp;Failed</a>
+                                                                    </td>
+                                                <td class="automated-stats">1</td>
+                                                <td class="automated-stats">33%</td>
+                                            <tr>
+                                                                    <td class="aggregate-result-count indented-error-category">
+                                                                        <a href="e3b10d35ac205f72fcae0505c09e79e0b5d8d2c91607d89b5fc83926ab806f0b.html"><i
+                                                                                class='fa fa-exclamation-triangle error-icon'></i>&nbsp;Broken</a>
+                                                                    </td>
+                                                <td class="automated-stats">1</td>
+                                                <td class="automated-stats">33%</td>
+                                            <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-chain-broken compromised-icon'></i>&nbsp;Compromised
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr class="summary-stats">
+                                                <td class="aggregate-result-count">Total</td>
+                                                <td class="automated-stats">3</td>
+                                                <td class="automated-stats"></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <table class="table">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Execution Time</th>
+                                                        <th>Clock Time</th>
+                                                        <th>Fastest Test</th>
+                                                        <th>Slowest Test</th>
+                                                        <th>Average Execution Time</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td> 2m 9s</td>
+                                                        <td> 6h  2m 19s</td>
+                                                        <td>0ms</td>
+                                                        <td> 1m 1s</td>
+                                                        <td>43s</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h3><i class="fas fa-cogs"></i> Automated Tests</h3>
+
+                                            <table class="scenario-result-table table" id="scenario-results">
+                                                <thead>
+                                                <tr>
+                                                    <th class="test-name-column">Scenario</th>
+                                                    <th>Steps</th>
+                                                    <th>Start Time</th>
+                                                    <th>Duration</th>
+                                                    <th>Result</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            El usuario ingresa a cobis
+                                                    </td>
+                                                    <td>2</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="0d12f07e34fa5740f3c2f8027b4bfc87fc0b1599d20f7da3742372da6b73dfe8.html">Verificar la cancelación de un Certificado de Deposito con NC a una cuenta aho/cte bloqueada contra depósito</a>
+                                                               (1 example)
+                                                    </td>
+                                                    <td>6</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result ERROR">
+                                                    <td>
+                                                            <a href="86c68f84de18522ecb06f01d1d0206ba5d58d5d36430d09a5aff824e37e0fd54.html">Verificar la cancelación de un Certificado de Deposito con NC a una cuenta aho/cte inmovilizada</a>
+                                                               (1 example)
+                                                    </td>
+                                                    <td>6</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i></a> <span
+                                                                style="display:none">ERROR</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result FAILURE">
+                                                    <td>
+                                                            <a href="1bc22f51cb4a77fdde31475e36f83d5744b9f4d7cbe765590c2f8c2def068e4b.html">Verificar la cancelación de un Certificado de Deposito con NC a una cuenta aho/cte cerrada</a>
+                                                               (1 example)
+                                                    </td>
+                                                    <td>6</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a> <span
+                                                                style="display:none">FAILURE</span>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h3><i class="fas fa-edit"></i> Manual Tests</h3>
+
+                                                No manual tests were recorded
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <span class="version">Serenity BDD version 2.2.0</span>
+                    </div>
+                </div>
+            </div>
+</body>
+</html>
