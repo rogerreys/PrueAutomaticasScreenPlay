@@ -19,7 +19,7 @@ Antecedentes: El usuario ingresa a cobis
 	 Entonces se genera el bloqueo del Certificado de Depósito por el <montobloqueado> <porcentaje>
 	  Ejemplos:
 	 |numero_de_operacion  |    numero		 |     motivo                |    observacion     |   monto  |  porcentaje   | montobloqueado |
-	 |'Numero de operación'| '70100016442' | 'DETERIORO'               | 'Bloqueo Total'    |  '7000'  |  "total"      |  "7,000.00"    |
-	 |'Numero de operación'| '70100016458' | 'REQUERIMIENTO JUDICIAL'  | 'Bloqueo Parcial'  |  '7000'  |  "parcial"    |  "5,600.00"    |
+	 |'Numero de operación'| '70100016479' | 'DETERIORO'               | 'Bloqueo Total'    |  '7000'  |  "total"      |  "7,000.00"    |
+	 |'Numero de operación'| '70100016484' | 'REQUERIMIENTO JUDICIAL'  | 'Bloqueo Parcial'  |  '7000'  |  "parcial"    |  "5,600.00"    |
 	 |'Numero de operación'| '70100016290' | 'MIGRACION'               | 'Bloqueo Superior' |  '7000'  |  "superior"   |     ""         |  
 	 
