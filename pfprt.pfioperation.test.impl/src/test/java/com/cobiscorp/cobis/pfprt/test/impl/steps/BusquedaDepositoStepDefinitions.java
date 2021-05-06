@@ -42,14 +42,8 @@ public class BusquedaDepositoStepDefinitions {
 		FormActions.clickOn(FBusquedaDepositoForm.GridListaP.gridPrimerCliente);
 	}
 
-
-	@Cuando("se abre el menú de acciones escoger la opción Activar")
-	public void se_abre_el_menú_de_acciones_escoger_la_opción_Activar() {
-		HeaderActions.clickAction(FDetalleOperacionApertura.Buttons.botonOpcionesApertura);
-	}
 	@Cuando("presiona el botón Aceptar")
 	public void presiona_el_botón_Aceptar() {
-		HeaderActions.clickAction(FDetalleOperacionApertura.Buttons.botonActivar);
 		FormActions.clickOn(FDetalleOperacionApertura.Buttons.botonAceptar);
 	}
 	@Entonces("el Certificado de Depósito se muestra un mensaje de excepcion {string} y se mantiene en estado {string}")

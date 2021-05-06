@@ -63,6 +63,8 @@ Antecedentes: El usuario ingresa a cobis
 		|numero_de_operacion  | numero_de_cuenta | nombre_solicitante        | observacion          | forma_recepcion     | monto     |  estado  |
 	  |'Numero de operación'|'70100016133'     | 'MARIANA  HERNANDEZ LOPEZ' | 'PRUEBA CANCELACION' | 'CUENTA DE AHORROS'| '7048.32' |  "CAN"   |
 	  
+	  
+	 # QA-S466332 - Verificar la cancelación de un Certificado de Deposito con NC a una cuenta bloqueada contra depósito
 	 @CancelacionCuentaBloqueada
    Esquema del escenario: Verificar la cancelación de un Certificado de Deposito con NC a una cuenta aho/cte bloqueada contra depósito
 	 Cuando se busca el certificado de depósito por <numero_de_operacion> con <numero>
@@ -75,7 +77,7 @@ Antecedentes: El usuario ingresa a cobis
 	 |numero_de_operacion  | numero 			| opcion						 |capital|saldo |impuesto|total  |interesGanado|interesPagado|solicitante	 |observacion|formaRecepcion		 |beneficiario |columna|cuenta								|montoPago |estado|
 	 |"Numero de operación"|"70100016369"|"Cancelación Normal"|""     |""    |''  		 |''     |''  				 |''					 |'LUIS CHAVEZ'|''				 |'CUENTA DE AHORROS'|'LUIS CHAVEZ'|'1'    |'4090010300000000030'|'15103.54'|'CAN'	|
 	
-	
+	 # QA-S466332	- Verificar la cancelación de un Certificado de Deposito con una cuenta inmovilizada
 	 @CancelacionCuentaInmovilizada
 	 Esquema del escenario: Verificar la cancelación de un Certificado de Deposito con NC a una cuenta aho/cte inmovilizada
 	 Cuando se busca el certificado de depósito por <numero_de_operacion> con <numero>
@@ -88,7 +90,7 @@ Antecedentes: El usuario ingresa a cobis
 	 |numero_de_operacion  | numero 			| opcion						 |capital|saldo |impuesto|total  |interesGanado|interesPagado|solicitante				 |observacion|formaRecepcion		 |beneficiario			 |columna|cuenta			|montoPago |estado|
 	 |"Numero de operación"|"70100016306"|"Cancelación Normal"|""		 |""		|''			 |'' 		 |''				 	 |''					 |'ANTONIO  GONZALEZ'|''				 |'CUENTA DE AHORROS'|'ANTONIO  GONZALEZ'|'1'		 |'1234567892'|'12345678'|'CAN'	|
 	
-	
+	 # QA-S466332 - Verificar la cancelación de un Certificado de Deposito con NC a una cuenta cerrada
 	 @CancelacionCuentaCerrada
 	 Esquema del escenario: Verificar la cancelación de un Certificado de Deposito con NC a una cuenta aho/cte cerrada
 	 Cuando se busca el certificado de depósito por <numero_de_operacion> con <numero>

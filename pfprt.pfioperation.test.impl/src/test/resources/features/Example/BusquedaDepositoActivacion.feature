@@ -14,7 +14,7 @@ Antecedentes: El usuario ingresa a cobis
    @BusquedaDepositoDivision
    Esquema del escenario: Verificar la activación de un Certificado de Depósito
 	 Cuando se busca el certificado de depósito por <numero_de_operacion> con <numero>
-	 Y se abre el menú de acciones escoger la opción Activar
+	 Y se presiona el menú acciones, escoger la opción "Activar"
 	 Y presiona el botón Aceptar
 	 Entonces el Certificado de Depósito se muestra un mensaje de excepcion <MensajeExcepcion> y se mantiene en estado <Estado>
 	 Ejemplos:
