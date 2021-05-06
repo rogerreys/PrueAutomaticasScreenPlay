@@ -88,7 +88,7 @@ Antecedentes: El usuario ingresa a cobis
 	 Entonces el sistema despliega un mensaje informativo indicando que la cuenta se encuentra <estado>
 	 Ejemplos:
 	 |numero_de_operacion  | numero 			| opcion						 |capital|saldo |impuesto|total  |interesGanado|interesPagado|solicitante				 |observacion|formaRecepcion		 |beneficiario			 |columna|cuenta			|montoPago |estado|
-	 |"Numero de operación"|"70100016306"|"Cancelación Normal"|""		 |""		|''			 |'' 		 |''				 	 |''					 |'ANTONIO  GONZALEZ'|''				 |'CUENTA DE AHORROS'|'ANTONIO  GONZALEZ'|'1'		 |'1234567892'|'12345678'|'CAN'	|
+	 |"Numero de operación"|"70100016306"|"Cancelación Normal" |""		 |""		|''			 |'' 		 |''				 	 |''					 |'ANTONIO  GONZALEZ'|''				 |'CUENTA DE AHORROS'|'ANTONIO  GONZALEZ'|'1'		 |'0000100100000000088'|'15103.54'|'CAN'	|
 	
 	 # QA-S466332 - Verificar la cancelación de un Certificado de Deposito con NC a una cuenta cerrada
 	 @CancelacionCuentaCerrada
